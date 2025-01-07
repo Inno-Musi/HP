@@ -34,7 +34,7 @@ export const HeaderSp = ({ restPath }: Props) => {
               onClick={() => setIsOpen(!isOpen)}
               className="m-2 cursor-pointer"
             />
-            <div className="flex flex-col gap-y-4 items-center max-w-[345px] px-4 mx-auto pt-4">
+            <div className="flex flex-col gap-y-6 items-center max-w-[345px] px-4 mx-auto pt-4">
               {links.map((link) => (
                 <button
                   type="button"
@@ -42,22 +42,21 @@ export const HeaderSp = ({ restPath }: Props) => {
                   className="font-semibold flex flex-col items-center w-full"
                   onClick={() => {
                     setIsOpen(false)
-                    router.push(`/ja/${link.href}`)
+                    router.push(`/en/${link.href}`)
                   }}
                 >
-                  <span className="text-lg">{link.text}</span>
-                  <span className="text-sm">{link.subText}</span>
+                  <span className="text-xl">{link.text}</span>
                 </button>
               ))}
               <button
                 type="button"
-                className="border border-darkNavy px-3 py-1 font-semibold mt-2"
                 onClick={() => {
                   setIsOpen(false)
-                  router.push(`/en/${restPath}`)
+                  router.push(`/ja/${restPath}`)
                 }}
+                className="border border-darkNavy px-3 py-1 font-semibold font-notoSansJp"
               >
-                English
+                日本語
               </button>
             </div>
           </>

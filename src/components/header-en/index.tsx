@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { links } from './_assets/const/links'
+import { HeaderSp } from './_components/header-sp'
 
 export const HeaderEn = () => {
   const pathname = usePathname()
@@ -31,6 +32,7 @@ export const HeaderEn = () => {
           日本語
         </Link>
       </div>
+      <HeaderSp restPath={restPath} />
     </header>
   )
 }
