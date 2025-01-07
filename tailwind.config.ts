@@ -12,6 +12,9 @@ export default {
         darkNavy: '#1B264F',
         passion: '#FF4B4B',
       },
+      fontFamily: {
+        notoSansJp: ['var(--font-noto-sans-jp)'],
+      },
     },
   },
   plugins: [],

@@ -1,18 +1,18 @@
 'use client'
 
-import { RxHamburgerMenu } from 'react-icons/rx'
-import { useState } from 'react'
-import { twMerge } from 'tailwind-merge'
-import { IoCloseOutline } from 'react-icons/io5'
-import { links } from '../_assets/const/links'
 import { useRouter } from 'next/navigation'
+import { useState } from 'react'
+import { IoCloseOutline } from 'react-icons/io5'
+import { RxHamburgerMenu } from 'react-icons/rx'
+import { twMerge } from 'tailwind-merge'
+import { links } from '../_assets/const/links'
 
 export const HeaderSp = () => {
   const [isOpen, setIsOpen] = useState(false)
   const router = useRouter()
 
   return (
-    <div className="sm:hidden block">
+    <div className="md:hidden block">
       <RxHamburgerMenu
         className="cursor-pointer"
         size={24}
@@ -31,7 +31,7 @@ export const HeaderSp = () => {
               onClick={() => setIsOpen(!isOpen)}
               className="m-2 cursor-pointer"
             />
-            <div className="flex flex-col gap-y-3 items-center max-w-[345px] px-4 mx-auto">
+            <div className="flex flex-col gap-y-4 items-center max-w-[345px] px-4 mx-auto">
               {links.map((link) => (
                 <button
                   type="button"

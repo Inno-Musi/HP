@@ -10,6 +10,11 @@ export const links = [
     subText: 'ABOUT US',
   },
   {
+    href: '/services',
+    text: '事業内容',
+    subText: 'SERVICES',
+  },
+  {
     href: '/news',
     text: 'お知らせ',
     subText: 'NEWS',
@@ -18,10 +23,5 @@ export const links = [
     href: '/contact',
     text: 'お問い合わせ',
     subText: 'CONTACT',
-  },
-  {
-    href: '/services',
-    text: '事業内容',
-    subText: 'SERVICES',
   },
 ]
