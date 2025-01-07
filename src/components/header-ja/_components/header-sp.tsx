@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { IoCloseOutline } from 'react-icons/io5'
@@ -7,7 +8,11 @@ import { RxHamburgerMenu } from 'react-icons/rx'
 import { twMerge } from 'tailwind-merge'
 import { links } from '../_assets/const/links'
 
-export const HeaderSp = () => {
+type Props = {
+  restPath: string
+}
+
+export const HeaderSp = ({ restPath }: Props) => {
   const [isOpen, setIsOpen] = useState(false)
   const router = useRouter()
 
@@ -31,7 +36,7 @@ export const HeaderSp = () => {
               onClick={() => setIsOpen(!isOpen)}
               className="m-2 cursor-pointer"
             />
-            <div className="flex flex-col gap-y-4 items-center max-w-[345px] px-4 mx-auto">
+            <div className="flex flex-col gap-y-4 items-center max-w-[345px] px-4 mx-auto pt-4">
               {links.map((link) => (
                 <button
                   type="button"
@@ -39,13 +44,19 @@ export const HeaderSp = () => {
                   className="font-semibold flex flex-col items-center w-full"
                   onClick={() => {
                     setIsOpen(false)
-                    router.push(`/${link.href}`)
+                    router.push(`/ja/${link.href}`)
                   }}
                 >
                   <span className="text-lg">{link.text}</span>
                   <span className="text-sm">{link.subText}</span>
                 </button>
               ))}
+              <Link
+                href={`/en/${restPath}`}
+                className="border border-darkNavy px-3 py-1 font-semibold mt-4"
+              >
+                English
+              </Link>
             </div>
           </>
         )}

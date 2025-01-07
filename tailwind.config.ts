@@ -14,6 +14,7 @@ export default {
       },
       fontFamily: {
         notoSansJp: ['var(--font-noto-sans-jp)'],
+        roboto: ['var(--font-roboto)'],
       },
     },
   },

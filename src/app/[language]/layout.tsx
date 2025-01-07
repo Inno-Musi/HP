@@ -3,11 +3,19 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import type { ReactNode } from 'react'
 import '../globals.css'
-import { Noto_Sans_JP } from 'next/font/google'
+import { HeaderEn } from '@/components/header-en'
+import { Noto_Sans_JP, Roboto } from 'next/font/google'
+import { twMerge } from 'tailwind-merge'
 
 const notoSansJp = Noto_Sans_JP({
   subsets: ['latin'],
   variable: '--font-noto-sans-jp',
+})
+
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['400', '500', '700', '900'],
+  variable: '--font-roboto',
 })
 
 export const metadata: Metadata = {
@@ -26,9 +34,15 @@ export default async function RootLayout({ children, params }: Props) {
 
   return (
     <html lang={language}>
-      <body className={`${notoSansJp.variable} font-notoSansJp`}>
+      <body
+        className={twMerge(
+          `${notoSansJp.variable}  ${roboto.variable}`,
+          language === 'ja' ? 'font-notoSansJp' : 'font-roboto',
+        )}
+      >
         {language === 'ja' && <HeaderJa />}
-        <main className="relative min-h-[200vh]">{children}</main>
+        {language === 'en' && <HeaderEn />}
+        <main className="relative min-h-[200vh] bg-zinc-100">{children}</main>
       </body>
     </html>
   )
