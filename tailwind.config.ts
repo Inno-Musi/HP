@@ -11,6 +11,8 @@ export default {
       colors: {
         darkNavy: '#1B264F',
         passion: '#FF4B4B',
+        error: '#D8000C',
+        gray: '#B0BEC5',
       },
       fontFamily: {
         notoSansJp: ['var(--font-noto-sans-jp)'],
