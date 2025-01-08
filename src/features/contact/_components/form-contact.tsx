@@ -16,24 +16,34 @@ export const FormContact = ({ language }: Props) => {
       className="bg-white p-6 max-w-[800px] mx-auto w-full flex flex-col gap-y-5"
     >
       <div className="flex flex-col gap-y-1">
-        <Label text={language === 'ja' ? 'お名前' : 'Full Name'} />
+        <Label text={language === 'ja' ? 'お名前' : 'Full Name'} required />
         <Input type="text" />
       </div>
       <div className="flex flex-col gap-y-1">
-        <Label text={language === 'ja' ? 'メールアドレス' : 'Email Address'} />
+        <Label
+          text={language === 'ja' ? 'メールアドレス' : 'Email Address'}
+          required
+        />
         <Input type="email" />
       </div>
       <div className="flex flex-col gap-y-1">
-        <Label text={language === 'ja' ? '電話番号' : 'Phone Number'} />
+        <Label
+          text={language === 'ja' ? '電話番号' : 'Phone Number'}
+          required
+        />
         <Input type="tel" />
       </div>
       <div className="flex flex-col gap-y-1">
-        <Label text={language === 'ja' ? 'お問い合わせ種別' : 'Inquiry Type'} />
+        <Label
+          text={language === 'ja' ? 'お問い合わせ種別' : 'Inquiry Type'}
+          required
+        />
         <Input type="text" />
       </div>
       <div className="flex flex-col gap-y-1">
         <Label
           text={language === 'ja' ? 'お問い合わせ内容' : 'Inquiry Details'}
+          required
         />
         <Textarea />
       </div>

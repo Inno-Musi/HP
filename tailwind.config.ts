@@ -13,6 +13,8 @@ export default {
         passion: '#FF4B4B',
         error: '#D8000C',
         gray: '#B0BEC5',
+        emerald: '#2F4F4F',
+        moss: '#315E3D',
       },
       fontFamily: {
         notoSansJp: ['var(--font-noto-sans-jp)'],
