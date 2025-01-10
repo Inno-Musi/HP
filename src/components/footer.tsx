@@ -49,8 +49,8 @@ const mainLinks = [
 export const Footer = ({ language }: Props) => {
   return (
     <footer className="shadow-lg">
-      <div className="bg-white flex flex-col gap-y-3 items-center py-8">
-        <p className="font-bold text-emerald text-2xl font-serif">
+      <div className="bg-white flex flex-col gap-y-3 items-center py-6 md:py-8 px-4 md:px-8">
+        <p className="font-bold text-emerald text-xl md:text-2xl font-serif">
           サンプルなコンサルティングを
         </p>
         <Image
@@ -60,7 +60,7 @@ export const Footer = ({ language }: Props) => {
           height={114}
           className="w-[168px]"
         />
-        <div className="flex gap-x-7">
+        <div className="flex flex-wrap justify-center gap-x-7 gap-y-2">
           {mainLinks.map((link) => (
             <Link
               key={link.href}
@@ -74,7 +74,7 @@ export const Footer = ({ language }: Props) => {
           ))}
         </div>
       </div>
-      <div className="bg-emerald text-white px-8 py-3 flex justify-between items-center">
+      <div className="bg-emerald text-white px-4 md:px-8 py-5 lg:py-3 flex flex-col gap-y-3 lg:flex-row justify-between items-center">
         <div className="flex gap-x-5">
           {policies.map((policy) => (
             <Link
@@ -82,7 +82,9 @@ export const Footer = ({ language }: Props) => {
               href={`/${language}/${policy.href}`}
               className="flex flex-col gap-y-0.5 items-center leading-none group"
             >
-              <span className="font-semibold">{policy.label}</span>
+              <span className="font-semibold text-sm md:text-base">
+                {policy.label}
+              </span>
               <span className="text-xs">{policy.labelEn}</span>
               <span className="group-hover:w-[100%] transition-all duration-300 w-0 h-[1px] bg-white" />
             </Link>
