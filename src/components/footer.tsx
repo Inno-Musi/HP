@@ -1,0 +1,97 @@
+import Image from 'next/image'
+import Link from 'next/link'
+
+type Props = {
+  language: 'en' | 'ja'
+}
+
+const policies = [
+  {
+    label: 'プライバシーポリシー',
+    labelEn: 'PRIVACY POLICY',
+    href: '/privacy-policy',
+  },
+  {
+    label: 'セキュリティーポリシー',
+    labelEn: 'SECURITY POLICY',
+    href: '/security-policy',
+  },
+]
+
+const mainLinks = [
+  {
+    label: '経営理念',
+    labelEn: 'PHILOSOPHY',
+    href: '/philosophy',
+  },
+  {
+    label: '会社概要',
+    labelEn: 'ABOUT US',
+    href: '/about',
+  },
+  {
+    label: '事業内容',
+    labelEn: 'SERVICES',
+    href: '/services',
+  },
+  {
+    label: 'お知らせ',
+    labelEn: 'NEWS',
+    href: '/news',
+  },
+  {
+    label: 'お問い合わせ',
+    labelEn: 'CONTACT',
+    href: '/contact',
+  },
+]
+
+export const Footer = ({ language }: Props) => {
+  return (
+    <footer className="shadow-lg">
+      <div className="bg-white flex flex-col gap-y-3 items-center py-8">
+        <p className="font-bold text-emerald text-2xl font-serif">
+          サンプルなコンサルティングを
+        </p>
+        <Image
+          src="/musico_logo.png"
+          alt="musico logo"
+          width={252}
+          height={114}
+          className="w-[168px]"
+        />
+        <div className="flex gap-x-7">
+          {mainLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={`/${language}/${link.href}`}
+              className="flex flex-col items-center leading-none group"
+            >
+              <span className="font-semibold text-lg">{link.label}</span>
+              <span className="text-xs">{link.labelEn}</span>
+              <span className="group-hover:w-[100%] transition-all duration-300 w-0 h-[1px] bg-emerald" />
+            </Link>
+          ))}
+        </div>
+      </div>
+      <div className="bg-emerald text-white px-8 py-3 flex justify-between items-center">
+        <div className="flex gap-x-5">
+          {policies.map((policy) => (
+            <Link
+              key={policy.href}
+              href={`/${language}/${policy.href}`}
+              className="flex flex-col gap-y-0.5 items-center leading-none group"
+            >
+              <span className="font-semibold">{policy.label}</span>
+              <span className="text-xs">{policy.labelEn}</span>
+              <span className="group-hover:w-[100%] transition-all duration-300 w-0 h-[1px] bg-white" />
+            </Link>
+          ))}
+        </div>
+        <p className="text-sm">
+          Copyright &copy; MUSICO Inc. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  )
+}

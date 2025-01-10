@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import type { ReactNode } from 'react'
 import '../globals.css'
+import { Footer } from '@/components/footer'
 import { HeaderEn } from '@/components/header-en'
 import { Noto_Sans_JP, Roboto } from 'next/font/google'
 import { twMerge } from 'tailwind-merge'
@@ -43,6 +44,7 @@ export default async function RootLayout({ children, params }: Props) {
         {language === 'ja' && <HeaderJa />}
         {language === 'en' && <HeaderEn />}
         <main className="relative bg-zinc-100">{children}</main>
+        <Footer language={language} />
       </body>
     </html>
   )
