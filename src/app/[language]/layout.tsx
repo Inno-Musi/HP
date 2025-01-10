@@ -42,7 +42,7 @@ export default async function RootLayout({ children, params }: Props) {
       >
         {language === 'ja' && <HeaderJa />}
         {language === 'en' && <HeaderEn />}
-        <main className="relative min-h-[200vh] bg-zinc-100">{children}</main>
+        <main className="relative bg-zinc-100">{children}</main>
       </body>
     </html>
   )

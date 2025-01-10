@@ -21,7 +21,7 @@ export default async function AboutPage({ params }: Props) {
             key={overview.label}
             className="flex items-center border-b pb-2 border-gray"
           >
-            <p className="w-[250px] text-darkNavy font-semibold text-xl ml-4">
+            <p className="w-[250px] text-emerald font-bold text-xl ml-4">
               {overview.label}
             </p>
             <div className="text-lg">{overview.content}</div>

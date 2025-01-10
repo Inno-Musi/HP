@@ -13,7 +13,7 @@ export const Label = (props: Props) => {
     <div className="flex items-center gap-x-0.5">
       <label
         {...rest}
-        className={twMerge('cursor-pointer text-darkNavy font-bold', className)}
+        className={twMerge('cursor-pointer font-bold', className)}
       >
         {text}
       </label>
