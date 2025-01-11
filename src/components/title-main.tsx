@@ -12,6 +12,7 @@ export const TitleMain = ({ titleJa, titleEn, language }: Props) => {
       className={twMerge(
         'text-center font-semibold text-4xl',
         language === 'ja' && 'font-extrabold',
+        language === 'en' && 'text-5xl',
       )}
     >
       {language === 'ja' ? titleJa : titleEn}

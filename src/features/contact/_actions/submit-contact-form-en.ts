@@ -1,3 +1,5 @@
+'use server'
+
 export const submitContactFormEn = async (
   _prevState: any,
   formData: FormData,
