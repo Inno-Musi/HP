@@ -80,13 +80,12 @@ export const Footer = ({ language }: Props) => {
             <Link
               key={policy.href}
               href={`/${language}/${policy.href}`}
-              className="flex flex-col gap-y-0.5 items-center leading-none group"
+              className="flex flex-col items-center leading-none"
             >
               <span className="font-semibold text-sm md:text-base">
                 {policy.label}
               </span>
               <span className="text-xs">{policy.labelEn}</span>
-              <span className="group-hover:w-[100%] transition-all duration-300 w-0 h-[1px] bg-white" />
             </Link>
           ))}
         </div>
