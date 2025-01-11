@@ -5,7 +5,6 @@ import { Input } from '@/components/input'
 import { Label } from '@/components/label'
 import { Textarea } from '@/components/textarea'
 import { useActionState } from 'react'
-import { submitContactFormEn } from '../_actions/submit-contact-form-en'
 import { submitContactFormJa } from '../_actions/submit-contact-form-ja'
 import { SelectInquiryType } from './select-inquiry-type'
 
