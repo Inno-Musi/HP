@@ -9,6 +9,28 @@ export const submitContactFormJa = async (
   const formObject = Object.fromEntries(formData.entries())
   const result = schemaContactFormJa.safeParse(formObject)
 
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_VERCEL_ENV === 'development' ? 'http://' : 'https://'}${process.env.NEXT_PUBLIC_VERCEL_URL}/api/email`,
+    {
+      method: 'POST',
+      headers: {
+        'X-API-KEY': process.env.X_API_KEY ?? '',
+      },
+      body: JSON.stringify({
+        template: 'contact',
+        props: {
+          name: '',
+          affiliation: '',
+          email: '',
+          phoneNumber: '',
+          inquiryType: '',
+          inquiryDetails: '',
+        },
+        subject: '【musicoホームページ】お問い合わせがありました',
+      }),
+    },
+  )
+
   if (!result.success) {
     const { fieldErrors } = result.error.flatten()
 
@@ -26,4 +48,23 @@ export const submitContactFormJa = async (
       },
     }
   }
+
+  // const res = await fetch(
+  //   `${process.env.NEXT_PUBLIC_VERCEL_ENV === 'development' ? 'http://' : 'https://'}${process.env.NEXT_PUBLIC_VERCEL_URL}/api/email`,
+  //   {
+  //     method: 'POST',
+  //     body: JSON.stringify({
+  //       template: 'contact',
+  //       props: {
+  //         name: '',
+  //         affiliation: '',
+  //         email: '',
+  //         phoneNumber: '',
+  //         inquiryType: '',
+  //         inquiryDetails: '',
+  //       },
+  //       subject: '【musicoホームページ】お問い合わせがありました',
+  //     }),
+  //   },
+  // )
 }
