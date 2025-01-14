@@ -8,6 +8,7 @@ import {
 
 type Props = {
   language: 'en' | 'ja'
+  defaultValue?: string
 }
 
 const inquiryTypes = [
@@ -21,9 +22,9 @@ const inquiryTypes = [
   },
 ]
 
-export const SelectInquiryType = ({ language }: Props) => {
+export const SelectInquiryType = ({ language, defaultValue }: Props) => {
   return (
-    <Select name="inquiryType">
+    <Select name="inquiryType" defaultValue={defaultValue}>
       <SelectTrigger className="border-gray">
         <SelectValue
           placeholder={language === 'ja' ? '選択してください' : 'Please select'}
