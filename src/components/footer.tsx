@@ -51,7 +51,9 @@ export const Footer = ({ language }: Props) => {
     <footer className="shadow-lg">
       <div className="bg-white flex flex-col gap-y-3 items-center py-6 md:py-8 px-4 md:px-8">
         <p className="font-bold text-emerald text-xl md:text-2xl font-serif">
-          サンプルなコンサルティングを
+          {language === 'ja'
+            ? 'サンプルなコンサルティングを'
+            : 'Sample Consulting'}
         </p>
         <Image
           src="/musico_logo.png"
@@ -61,17 +63,34 @@ export const Footer = ({ language }: Props) => {
           className="w-[168px]"
         />
         <div className="flex flex-wrap justify-center gap-x-7 gap-y-2">
-          {mainLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={`/${language}/${link.href}`}
-              className="flex flex-col items-center leading-none group"
-            >
-              <span className="font-semibold text-lg">{link.label}</span>
-              <span className="text-xs">{link.labelEn}</span>
-              <span className="group-hover:w-[100%] transition-all duration-300 w-0 h-[1px] bg-emerald" />
-            </Link>
-          ))}
+          {language === 'ja' ? (
+            <>
+              {mainLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={`/ja/${link.href}`}
+                  className="flex flex-col items-center leading-none group"
+                >
+                  <span className="font-semibold text-lg">{link.label}</span>
+                  <span className="text-xs">{link.labelEn}</span>
+                  <span className="group-hover:w-[100%] transition-all duration-300 w-0 h-[1px] bg-emerald" />
+                </Link>
+              ))}
+            </>
+          ) : (
+            <>
+              {mainLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={`/en/${link.href}`}
+                  className="flex flex-col items-center leading-none group"
+                >
+                  <span className="font-semibold text-lg">{link.labelEn}</span>
+                  <span className="group-hover:w-[100%] transition-all duration-300 w-0 h-[1px] bg-emerald" />
+                </Link>
+              ))}
+            </>
+          )}
         </div>
       </div>
       <div className="bg-emerald text-white px-4 md:px-8 py-5 lg:py-3 flex flex-col gap-y-3 lg:flex-row justify-between items-center">
@@ -82,10 +101,14 @@ export const Footer = ({ language }: Props) => {
               href={`/${language}/${policy.href}`}
               className="flex flex-col items-center leading-none"
             >
-              <span className="font-semibold text-sm md:text-base">
-                {policy.label}
-              </span>
-              <span className="text-xs">{policy.labelEn}</span>
+              {language === 'ja' ? (
+                <>
+                  <span className="font-semibold text-sm">{policy.label}</span>
+                  <span className="text-xs">{policy.labelEn}</span>
+                </>
+              ) : (
+                <span>{policy.labelEn}</span>
+              )}
             </Link>
           ))}
         </div>
