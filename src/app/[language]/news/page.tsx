@@ -6,26 +6,20 @@ type Props = {
   params: Promise<{
     language: 'ja' | 'en'
   }>
-  searchParams: Promise<SearchParams>
 }
 
-export default async function NewsPage({ params, searchParams }: Props) {
+export default async function NewsPage({ params }: Props) {
   const { language } = await params
-  const { page: pageParam } = await searchParams
-  let page: number
-  if (!pageParam || Array.isArray(pageParam)) {
-    page = 1
-  } else {
-    page = Number(pageParam)
-  }
 
   return (
-    <div>
-      <h1 className="text-2xl md:text-3xl font-bold text-center py-[100px]">
-        {language === 'ja' ? 'お知らせ一覧' : 'Notifications'}
-      </h1>
-      <NewsList />
-      {/* <Pagenation language={language} page={page} /> */}
+    <>
+      <div className="py-[100px] flex flex-col gap-y-16">
+        <h1 className="text-3xl md:text-4xl font-bold text-center">
+          {language === 'ja' ? 'お知らせ一覧' : 'Notifications'}
+        </h1>
+        <NewsList language={language} />
+        {/* <Pagenation language={language} page={page} /> */}
+      </div>
       <BreadCrumbs
         language={language}
         crumbs={[
@@ -36,6 +30,6 @@ export default async function NewsPage({ params, searchParams }: Props) {
           },
         ]}
       />
-    </div>
+    </>
   )
 }
