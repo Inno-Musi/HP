@@ -21,8 +21,17 @@ export const NewsList = async ({ language }: Props) => {
             ? news.fvImage.url
             : '/musico_logo.png'
 
+        const newsDetail =
+          language === 'ja'
+            ? news.contentJa
+                .replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, '')
+                .slice(0, 50)
+            : news.contentEn
+                .replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, '')
+                .slice(0, 100)
+
         return (
-          <div key={news.id} className="bg-white">
+          <div key={news.id} className="bg-white flex flex-col">
             <Link
               href={`/${language}/news/${news.id}`}
               className="relative aspect-[16/9] block group overflow-hidden"
@@ -34,13 +43,16 @@ export const NewsList = async ({ language }: Props) => {
                 className="object-cover group-hover:scale-110 transition-all duration-300"
               />
             </Link>
-            <div className="p-3">
-              <Link
-                href={`/${language}/news/${news.id}`}
-                className="font-bold text-lg"
-              >
-                {language === 'ja' ? news.titleJa : news.titleEn}
-              </Link>
+            <div className="p-3 flex flex-col gap-y-2 justify-between flex-grow">
+              <div className="flex flex-col gap-y-1">
+                <Link
+                  href={`/${language}/news/${news.id}`}
+                  className="font-bold text-lg"
+                >
+                  {language === 'ja' ? news.titleJa : news.titleEn}
+                </Link>
+                <p>{newsDetail}...</p>
+              </div>
               <p className="text-gray text-end mt-1">
                 {dayjs(news.publishedAt).format('YYYY/MM/DD')}
               </p>
