@@ -12,12 +12,14 @@ type Props = {
 
 export const NewsContent = async ({ language, id }: Props) => {
   const news = await fetchNewsDetail(id)
-  const imageUrlJa = news.fvImage ? news.fvImage.url : '/musico-logo.png'
+  const imageUrlJa = news.fvImage
+    ? news.fvImage.url
+    : '/musico-logo-bg-white.png'
   const imageUrlEn = news.fvImageEn
     ? news.fvImageEn.url
     : news.fvImage
       ? news.fvImage.url
-      : '/musico-logo.png'
+      : '/musico-logo-bg-white.png'
 
   const xShareUrlJa = `https://x.com/intent/tweet?text=【株式会社Musico】${news.titleJa}&url=${process.env.NEXT_PUBLIC_VERCEL_ENV === 'development' ? 'http://' : 'https://'}${process.env.NEXT_PUBLIC_VERCEL_URL}/ja/news/${id}`
   const xShareUrlEn = `https://x.com/intent/tweet?text=【Musico Inc.】${news.titleEn}&url=${process.env.NEXT_PUBLIC_VERCEL_ENV === 'development' ? 'http://' : 'https://'}${process.env.NEXT_PUBLIC_VERCEL_URL}/en/news/${id}`
