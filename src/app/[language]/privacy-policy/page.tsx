@@ -26,7 +26,24 @@ export default async function PrivacyPolicyPage({ params }: Props) {
             </p>
           </>
         ) : (
-          <></>
+          <>
+            <p>
+              MUSICO Inc. (hereinafter referred to as "the Company") recognizes
+              the proper handling and protection of customers' (hereinafter
+              referred to as "Users") personal information as a social
+              responsibility.
+            </p>
+            <p>
+              The Company complies with the Personal Information Protection Law,
+              other related laws, and guidelines, and establishes this Privacy
+              Policy (hereinafter referred to as "this Policy") as outlined
+              below. We are committed to implementing, maintaining, and
+              continuously improving this Policy. This Policy applies to the
+              website operated and managed by the Company (hereinafter referred
+              to as "this Site") as well as to all services provided by the
+              Company.
+            </p>
+          </>
         )}
       </div>
       <div className="bg-white max-w-[1000px] w-full mx-auto px-4 md:px-10 py-6 md:py-12 flex flex-col gap-y-12">
@@ -39,7 +56,7 @@ export default async function PrivacyPolicyPage({ params }: Props) {
           <div className="text-sm md:text-base leading-6 md:leading-7">
             {language === 'ja'
               ? '本ポリシーにおける「個人情報」とは、個人情報保護法その他の関連法令で定義される「個人情報」を指し、特定の個人を識別し、または識別し得る情報（氏名、住所、電話番号、メールアドレス、クレジットカード情報、銀行口座情報、その他の記述・数値など）を含みます。'
-              : ''}
+              : 'In this Policy, "personal information" refers to "personal information" as defined by the Personal Information Protection Law and other related laws and regulations. This includes information that identifies or can identify a specific individual, such as name, address, telephone number, email address, credit card information, bank account information, and other descriptions or numerical data.'}
           </div>
         </div>
         <div className="flex flex-col gap-y-4">
@@ -61,7 +78,27 @@ export default async function PrivacyPolicyPage({ params }: Props) {
               </ul>
             </div>
           ) : (
-            ''
+            <div className="flex flex-col gap-y-4 text-sm md:text-base leading-6 md:leading-7">
+              <p>
+                The Company collects personal information through lawful and
+                fair means in the following situations:
+              </p>
+              <ul className="list-disc pl-6">
+                <li>
+                  When filling out inquiry forms or membership registration
+                  forms on this site
+                </li>
+                <li>When applying for services or entering into contracts</li>
+                <li>
+                  When participating in various campaigns or responding to
+                  surveys
+                </li>
+                <li>
+                  During interactions via phone, email, or other face-to-face
+                  communications
+                </li>
+              </ul>
+            </div>
           )}
         </div>
         <div className="flex flex-col gap-y-4">
@@ -70,22 +107,64 @@ export default async function PrivacyPolicyPage({ params }: Props) {
             subtitleJa="3. 個人情報の利用目的"
             subtitleEn="3. Purpose of Use of Personal Information"
           />
-          <div className="flex flex-col gap-y-4 text-sm md:text-base leading-6 md:leading-7">
-            <p>当社は、取得した個人情報を以下の目的で利用いたします。</p>
-            <ul className="list-disc pl-6">
-              <li>ユーザーからのお問い合わせ・ご相談等への対応</li>
-              <li>当社が提供するサービス・製品等のご案内・提供・維持・運営</li>
-              <li>ユーザー登録の管理、および契約・決済手続きの実施</li>
-              <li>新サービス・新機能の開発及び既存サービスの改善</li>
-              <li>キャンペーン、アンケートの実施、プレゼント発送等の遂行</li>
-              <li>ユーザーの趣味・嗜好に応じた広告やコンテンツの表示・配信</li>
-              <li>
-                統計データの作成・分析（個人を特定できない形でのデータの活用）
-              </li>
-              <li>個人情報保護法その他の法令で認められた範囲内での利用</li>
-              <li>上記利用目的に付随する業務の遂行</li>
-            </ul>
-          </div>
+          {language === 'ja' ? (
+            <div className="flex flex-col gap-y-4 text-sm md:text-base leading-6 md:leading-7">
+              <p>当社は、取得した個人情報を以下の目的で利用いたします。</p>
+              <ul className="list-disc pl-6">
+                <li>ユーザーからのお問い合わせ・ご相談等への対応</li>
+                <li>
+                  当社が提供するサービス・製品等のご案内・提供・維持・運営
+                </li>
+                <li>ユーザー登録の管理、および契約・決済手続きの実施</li>
+                <li>新サービス・新機能の開発及び既存サービスの改善</li>
+                <li>キャンペーン、アンケートの実施、プレゼント発送等の遂行</li>
+                <li>
+                  ユーザーの趣味・嗜好に応じた広告やコンテンツの表示・配信
+                </li>
+                <li>
+                  統計データの作成・分析（個人を特定できない形でのデータの活用）
+                </li>
+                <li>個人情報保護法その他の法令で認められた範囲内での利用</li>
+                <li>上記利用目的に付随する業務の遂行</li>
+              </ul>
+            </div>
+          ) : (
+            <div className="flex flex-col gap-y-4 text-sm md:text-base leading-6 md:leading-7">
+              <p>
+                The Company uses the collected personal information for the
+                following purposes:
+              </p>
+              <ul className="list-disc pl-6">
+                <li>Responding to inquiries and consultations from users</li>
+                <li>
+                  Providing, maintaining, and operating services and products
+                  offered by the Company
+                </li>
+                <li>
+                  Managing user registrations and carrying out contract and
+                  payment procedures
+                </li>
+                <li>
+                  Developing new services and features and improving existing
+                  services
+                </li>
+                <li>Conducting campaigns, surveys, and sending gifts</li>
+                <li>
+                  Displaying and delivering advertisements and content tailored
+                  to users' interests and preferences
+                </li>
+                <li>
+                  Creating and analyzing statistical data (utilizing data in a
+                  form that does not identify individuals)
+                </li>
+                <li>
+                  Utilizing information within the scope permitted by the
+                  Personal Information Protection Law and other relevant laws
+                </li>
+                <li>Performing tasks related to the above purposes</li>
+              </ul>
+            </div>
+          )}
         </div>
         <div className="flex flex-col gap-y-4">
           <SubtitlePolicy
@@ -119,7 +198,42 @@ export default async function PrivacyPolicyPage({ params }: Props) {
               </p>
             </div>
           ) : (
-            ''
+            <div className="flex flex-col gap-y-4 text-sm md:text-base leading-6 md:leading-7">
+              <p>
+                The Company will not disclose or provide personal information to
+                third parties except in the following cases:
+              </p>
+              <ul className="list-disc pl-6">
+                <li>When the user has given their consent</li>
+                <li>
+                  When outsourcing operations to subcontractors (including
+                  providing the minimum necessary information to the
+                  subcontractors)
+                </li>
+                <li>When disclosure is required by laws and regulations</li>
+                <li>
+                  When it is necessary to protect a person's life, body, or
+                  property, and it is difficult to obtain the user's consent
+                </li>
+                <li>
+                  When it is particularly necessary to improve public health or
+                  promote the sound growth of children, and it is difficult to
+                  obtain the user's consent
+                </li>
+                <li>
+                  When it is necessary to cooperate with national or local
+                  governments or their designees in carrying out duties
+                  prescribed by law, and obtaining the user's consent is likely
+                  to hinder the execution of those duties
+                </li>
+              </ul>
+              <p>
+                If the third party to whom personal information is provided is
+                located in a foreign country, the Company will take appropriate
+                measures in accordance with the Personal Information Protection
+                Law and other relevant laws and regulations.
+              </p>
+            </div>
           )}
         </div>
         <div className="flex flex-col gap-y-4">
@@ -148,7 +262,38 @@ export default async function PrivacyPolicyPage({ params }: Props) {
               </ul>
             </div>
           ) : (
-            ''
+            <div className="flex flex-col gap-y-4 text-sm md:text-base leading-6 md:leading-7">
+              <p>
+                The Company takes appropriate technical and organizational
+                security measures, including the following, to prevent leakage,
+                loss, or damage of personal information and to ensure the safe
+                management of personal information.
+              </p>
+              <ul className="list-disc pl-6">
+                <li>
+                  Access Control: Granting and managing access permissions to
+                  personal information
+                </li>
+                <li>
+                  Establishing Internal Policies: Developing and implementing
+                  regulations and guidelines for personal information protection
+                </li>
+                <li>
+                  Employee Training: Conducting regular training sessions for
+                  employees and related parties
+                </li>
+                <li>
+                  Physical Controls: Managing access to server rooms and
+                  document storage areas, including entry/exit control and
+                  locking mechanisms
+                </li>
+                <li>
+                  Technical Measures: Implementing SSL/TLS communication,
+                  installing firewalls and antivirus software, and conducting
+                  vulnerability assessments
+                </li>
+              </ul>
+            </div>
           )}
         </div>
         <div className="flex flex-col gap-y-4">
@@ -162,7 +307,13 @@ export default async function PrivacyPolicyPage({ params }: Props) {
               当社は、ユーザーの利便性向上やトラフィック分析、広告配信などの目的で、クッキー（Cookie）やウェブビーコン、その他類似技術を利用する場合があります。ユーザーは、ブラウザの設定によりクッキーの受け取りを拒否することができますが、本サイトのサービスの一部が利用できなくなる可能性があります。
             </p>
           ) : (
-            ''
+            <p className="text-sm md:text-base leading-6 md:leading-7">
+              The Company may use cookies, web beacons, and other similar
+              technologies for purposes such as improving user convenience,
+              traffic analysis, and delivering advertisements. Users can refuse
+              to accept cookies by adjusting their browser settings; however,
+              some services on this site may become unavailable as a result.
+            </p>
           )}
         </div>
         <div className="flex flex-col gap-y-4">
@@ -177,7 +328,15 @@ export default async function PrivacyPolicyPage({ params }: Props) {
               これらの請求を行う場合は、下記「お問い合わせ先」までご連絡ください。法令の定めに従って適切かつ迅速に対応いたします。
             </p>
           ) : (
-            ''
+            <p className="text-sm md:text-base leading-6 md:leading-7">
+              Users may request the disclosure, correction, addition, deletion,
+              suspension of use, or suspension of third-party provision of their
+              personal information in accordance with the Personal Information
+              Protection Law and other relevant laws. To make such requests,
+              please contact the "Contact Information" below. We will respond
+              appropriately and promptly in accordance with the applicable laws
+              and regulations.
+            </p>
           )}
         </div>
         <div className="flex flex-col gap-y-4">
@@ -191,7 +350,12 @@ export default async function PrivacyPolicyPage({ params }: Props) {
               未成年のユーザーが当社のサービスを利用する場合には、必ず保護者の同意を得た上で個人情報を提供してください。保護者の同意がない場合、当社はサービスの提供をお断りする場合がございます。
             </p>
           ) : (
-            ''
+            <p className="text-sm md:text-base leading-6 md:leading-7">
+              If a minor user wishes to use the Company’s services, they must
+              provide personal information only after obtaining the consent of a
+              guardian. If consent from the guardian is not obtained, the
+              Company may refuse to provide services.
+            </p>
           )}
         </div>
         <div className="flex flex-col gap-y-4">
@@ -200,9 +364,20 @@ export default async function PrivacyPolicyPage({ params }: Props) {
             subtitleJa="9. プライバシーポリシーの改定"
             subtitleEn="9. Revision of Privacy Policy"
           />
-          <p className="text-sm md:text-base leading-6 md:leading-7">
-            当社は、法令や社会情勢、サービス内容の変更等に応じて、予告なく本ポリシーを改定することがあります。重要な変更を行う場合には、改定内容と施行時期を本サイト上で周知いたします。改定後のプライバシーポリシーは、本サイト上に掲載された時点より効力を生じるものとします。
-          </p>
+          {language === 'ja' ? (
+            <p className="text-sm md:text-base leading-6 md:leading-7">
+              当社は、法令や社会情勢、サービス内容の変更等に応じて、予告なく本ポリシーを改定することがあります。重要な変更を行う場合には、改定内容と施行時期を本サイト上で周知いたします。改定後のプライバシーポリシーは、本サイト上に掲載された時点より効力を生じるものとします。
+            </p>
+          ) : (
+            <p className="text-sm md:text-base leading-6 md:leading-7">
+              The Company may revise this Policy without prior notice in
+              response to changes in laws, social circumstances, or service
+              content. In the case of significant changes, we will announce the
+              revised content and implementation date on this site. The revised
+              Privacy Policy will take effect from the time it is posted on this
+              site.
+            </p>
+          )}
         </div>
         <div className="flex flex-col gap-y-4">
           <SubtitlePolicy
@@ -225,7 +400,20 @@ export default async function PrivacyPolicyPage({ params }: Props) {
               </div>
             </div>
           ) : (
-            ''
+            <div className="flex flex-col gap-y-4 text-sm md:text-base leading-6 md:leading-7">
+              <p>
+                For inquiries regarding this Policy or requests for disclosure,
+                correction, etc. of personal information, please contact us at:
+              </p>
+              <div className="flex flex-col gap-y-1">
+                <p>【MUSICO Inc.】</p>
+                <div className="pl-2">
+                  <p>1-12 Udagawacho, Shibuya-ku, Tokyo 150-0042</p>
+                  <p>E-mail: info@musico.co.jp</p>
+                  <p>(Business hours: Weekdays 9:00-17:00)</p>
+                </div>
+              </div>
+            </div>
           )}
         </div>
       </div>
