@@ -1,6 +1,6 @@
+import { fetchNewsList } from '@/services/news/fetch-news-list'
 import Link from 'next/link'
 import { FETCH_LIMIT } from '../_assets/const/fetch-limit'
-import { fetchNews } from '../_services/fetch-news'
 
 type Props = {
   language: 'ja' | 'en'
@@ -8,7 +8,7 @@ type Props = {
 }
 
 export const Pagenation = async ({ page, language }: Props) => {
-  const news = await fetchNews()
+  const news = await fetchNewsList()
   const totalCount = news.totalCount
   const totalPage = Math.ceil(totalCount / FETCH_LIMIT)
 
