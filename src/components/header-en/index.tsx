@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { links } from './_assets/const/links'
@@ -22,12 +23,12 @@ export const HeaderEn = () => {
             key={link.href}
           >
             <span>{link.text}</span>
-            <span className="h-[1px] w-[0%] bg-emerald group-hover:w-[100%] duration-300" />
+            <span className="h-[1px] w-[0%] bg-darkNavy group-hover:w-[100%] duration-300" />
           </Link>
         ))}
         <Link
           href={`/ja/${restPath}`}
-          className="border border-emerald px-2 py-1 font-notoSansJp"
+          className="border border-darkNavy px-2 py-1 font-notoSansJp"
         >
           日本語
         </Link>

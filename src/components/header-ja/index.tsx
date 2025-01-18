@@ -23,12 +23,12 @@ export const HeaderJa = () => {
           >
             <span className="leading-4">{link.text}</span>
             <span className="text-[10px]">{link.subText}</span>
-            <span className="h-[1px] w-[0%] bg-emerald group-hover:w-[100%] duration-300" />
+            <span className="h-[1px] w-[0%] bg-darkNavy group-hover:w-[100%] duration-300" />
           </Link>
         ))}
         <Link
           href={`/en/${restPath}`}
-          className="border border-emerald px-2 py-1"
+          className="border border-darkNavy px-2 py-1"
         >
           English
         </Link>

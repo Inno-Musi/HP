@@ -17,6 +17,18 @@ const inquiryTypes = [
     labelEn: 'About recruitment',
   },
   {
+    labelJa: '協業・提携について',
+    labelEn: 'About collaboration',
+  },
+  {
+    labelJa: '事業やサービスのご相談',
+    labelEn: 'Consultation about business and services',
+  },
+  {
+    labelJa: '新規取引のお申込',
+    labelEn: 'Application for new business',
+  },
+  {
     labelJa: 'その他',
     labelEn: 'Other',
   },

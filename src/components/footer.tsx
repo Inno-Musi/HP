@@ -50,7 +50,7 @@ export const Footer = ({ language }: Props) => {
   return (
     <footer className="shadow-lg">
       <div className="bg-white flex flex-col gap-y-3 items-center py-6 md:py-8 px-4 md:px-8">
-        <p className="font-bold text-emerald text-xl md:text-2xl font-serif">
+        <p className="font-bold text-darkNavy text-xl md:text-2xl font-serif">
           {language === 'ja'
             ? 'サンプルなコンサルティングを'
             : 'Sample Consulting'}
@@ -93,7 +93,7 @@ export const Footer = ({ language }: Props) => {
           )}
         </div>
       </div>
-      <div className="bg-emerald text-white px-4 md:px-8 py-5 lg:py-3 flex flex-col gap-y-3 lg:flex-row justify-between items-center">
+      <div className="bg-darkNavy text-white px-4 md:px-8 py-5 lg:py-3 flex flex-col gap-y-3 lg:flex-row justify-between items-center">
         <div className="flex gap-x-5">
           {policies.map((policy) => (
             <Link
