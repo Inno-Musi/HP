@@ -1,6 +1,5 @@
 import { HeaderJa } from '@/components/header-ja'
 import type { Metadata } from 'next'
-import { notFound } from 'next/navigation'
 import type { ReactNode } from 'react'
 import '../globals.css'
 import { Footer } from '@/components/footer'
@@ -26,12 +25,11 @@ export const metadata: Metadata = {
 
 type Props = {
   children: ReactNode
-  params: Promise<{ language: string }>
+  params: Promise<{ language: 'ja' | 'en' }>
 }
 
 export default async function RootLayout({ children, params }: Props) {
   const { language } = await params
-  if (language !== 'en' && language !== 'ja') notFound()
 
   return (
     <html lang={language}>
