@@ -31,6 +31,18 @@ export const submitContactFormJa = async (
     }
   }
 
+  const {
+    lastName,
+    firstName,
+    lastNameKana,
+    firstNameKana,
+    affiliation,
+    email,
+    phoneNumber,
+    inquiryType,
+    inquiryDetails,
+  } = result.data
+
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_VERCEL_ENV === 'development' ? 'http://' : 'https://'}${process.env.NEXT_PUBLIC_VERCEL_URL}/api/email`,
     {
@@ -41,12 +53,12 @@ export const submitContactFormJa = async (
       body: JSON.stringify({
         template: 'contact',
         props: {
-          name: '',
-          affiliation: '',
-          email: '',
-          phoneNumber: '',
-          inquiryType: '',
-          inquiryDetails: '',
+          name: `${lastName} ${firstName} (${lastNameKana} ${firstNameKana})`,
+          affiliation: affiliation,
+          email: email,
+          phoneNumber: phoneNumber,
+          inquiryType: inquiryType,
+          inquiryDetails: inquiryDetails,
         },
         subject: '【musicoホームページ】お問い合わせがありました',
       }),

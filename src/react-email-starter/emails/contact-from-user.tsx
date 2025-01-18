@@ -43,6 +43,7 @@ export default function ContactFormUser({
                 height="456"
                 alt="musico logo"
                 className="my-0 mx-auto"
+                style={{ width: '140px' }}
               />
             </Section>
             <Heading className="text-black text-[20px] font-bold text-center p-0 my-[30px] mx-0">
@@ -51,22 +52,22 @@ export default function ContactFormUser({
               お問い合わせがありました
             </Heading>
             <Text className="text-black text-[14px] leading-[24px]">
-              <strong>氏名</strong> {name}
+              <strong>氏名:</strong> {name}
             </Text>
             <Text className="text-black text-[14px] leading-[24px]">
-              <strong>所属</strong> {affiliation}
+              <strong>所属:</strong> {affiliation}
             </Text>
             <Text className="text-black text-[14px] leading-[24px]">
-              <strong>メールアドレス</strong> {email}
+              <strong>メールアドレス:</strong> {email}
             </Text>
             <Text className="text-black text-[14px] leading-[24px]">
-              <strong>電話番号</strong> {phoneNumber}
+              <strong>電話番号:</strong> {phoneNumber}
             </Text>
             <Text className="text-black text-[14px] leading-[24px]">
-              <strong>お問い合わせ種別</strong> {inquiryType}
+              <strong>お問い合わせ種別:</strong> {inquiryType}
             </Text>
             <Text className="text-black text-[14px] leading-[24px]">
-              <strong>お問い合わせ内容</strong> {inquiryDetails}
+              <strong>お問い合わせ内容:</strong> {inquiryDetails}
             </Text>
             <Hr className="border border-solid border-[#eaeaea] my-[26px] mx-0 w-full" />
             <Text className="text-[#666666] text-[12px] leading-[24px]">
