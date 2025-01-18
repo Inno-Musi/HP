@@ -21,7 +21,7 @@ export const NewsCard = ({ news, language }: Props) => {
       : news.contentEn.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, '').slice(0, 100)
 
   return (
-    <div key={news.id} className="bg-white flex flex-col">
+    <div key={news.id} className="bg-white flex flex-col h-full">
       <Link
         href={`/${language}/news/${news.id}`}
         className="relative aspect-[16/9] block group overflow-hidden"
