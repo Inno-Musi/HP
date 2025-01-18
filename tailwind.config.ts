@@ -16,6 +16,7 @@ export default {
         gray: '#B0BEC5',
         emerald: '#2F4F4F',
         moss: '#315E3D',
+        vividBlue: '#2B6CB0',
       },
       fontFamily: {
         notoSansJp: ['var(--font-noto-sans-jp)'],
