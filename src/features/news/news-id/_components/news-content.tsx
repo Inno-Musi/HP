@@ -1,9 +1,9 @@
 import { BreadCrumbs } from '@/components/bread-crumbs'
 import dayjs from '@/lib/dayjs'
+import { fetchNewsDetail } from '@/services/news/fetch-news'
 import parse from 'html-react-parser'
 import Image from 'next/image'
 import Link from 'next/link'
-import { fetchNewsDetail } from '../_services/fetch-news-detail'
 
 type Props = {
   language: 'ja' | 'en'

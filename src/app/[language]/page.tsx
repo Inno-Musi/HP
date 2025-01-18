@@ -1,4 +1,5 @@
 import { SectionContact } from '@/features/root/_components/section-contact'
+import { SectionNews } from '@/features/root/_components/section-news'
 
 type Props = {
   params: Promise<{
@@ -11,6 +12,7 @@ export default async function HomePage({ params }: Props) {
 
   return (
     <div className="pb-[100px]">
+      <SectionNews />
       <SectionContact language={language} />
     </div>
   )
