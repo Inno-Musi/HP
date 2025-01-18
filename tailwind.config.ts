@@ -16,6 +16,7 @@ export default {
         gray: '#B0BEC5',
         emerald: '#2F4F4F',
         moss: '#315E3D',
+        lightBlue: '#F0F4F8',
         vividBlue: '#2B6CB0',
       },
       fontFamily: {
