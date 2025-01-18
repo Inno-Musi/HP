@@ -16,12 +16,18 @@ export default async function PrivacyPolicyPage({ params }: Props) {
         language={language}
       />
       <div className="max-w-[800px] mx-auto leading-6 md:leading-7 flex flex-col gap-y-2 text-sm md:text-base px-2">
-        <p>
-          株式会社MUSICO（以下「当社」といいます。）は、お客様（以下「ユーザー」といいます。）の個人情報を適切に取り扱い、保護することを社会的責務と認識しております。
-        </p>
-        <p>
-          当社は、個人情報保護法その他関連法令・ガイドラインを遵守し、以下のとおりプライバシーポリシー（以下「本ポリシー」といいます。）を定め、これを実行・維持するとともに、継続的な改善に努めます。本ポリシーは、当社が運営・管理するウェブサイト（以下「本サイト」といいます。）および当社のサービス全般に関して適用されます。
-        </p>
+        {language === 'ja' ? (
+          <>
+            <p>
+              株式会社MUSICO（以下「当社」といいます。）は、お客様（以下「ユーザー」といいます。）の個人情報を適切に取り扱い、保護することを社会的責務と認識しております。
+            </p>
+            <p>
+              当社は、個人情報保護法その他関連法令・ガイドラインを遵守し、以下のとおりプライバシーポリシー（以下「本ポリシー」といいます。）を定め、これを実行・維持するとともに、継続的な改善に努めます。本ポリシーは、当社が運営・管理するウェブサイト（以下「本サイト」といいます。）および当社のサービス全般に関して適用されます。
+            </p>
+          </>
+        ) : (
+          <></>
+        )}
       </div>
       <div className="bg-white max-w-[1000px] w-full mx-auto px-4 md:px-10 py-6 md:py-12 flex flex-col gap-y-12">
         <div className="flex flex-col gap-y-4">
@@ -209,7 +215,7 @@ export default async function PrivacyPolicyPage({ params }: Props) {
               <p>
                 本ポリシーに関するお問い合わせや、個人情報の開示・訂正等の請求につきましては、下記までご連絡ください。
               </p>
-              <div className="flex flex-col gap-y-2">
+              <div className="flex flex-col gap-y-1">
                 <p>【株式会社MUSICO】</p>
                 <div className="pl-2">
                   <p>〒150-0042 東京都渋谷区宇田川町1-12</p>
