@@ -14,12 +14,12 @@ export const NewsList = async ({ language }: Props) => {
   return (
     <div className="w-[1200px] max-w-[calc(100vw-32px)] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
       {news.map((news: any) => {
-        const imageUrlJa = news.fvImage ? news.fvImage.url : '/musico_logo.png'
+        const imageUrlJa = news.fvImage ? news.fvImage.url : '/musico-logo.png'
         const imageUrlEn = news.fvImageEn
           ? news.fvImageEn.url
           : news.fvImage
             ? news.fvImage.url
-            : '/musico_logo.png'
+            : '/musico-logo.png'
 
         const newsDetail =
           language === 'ja'

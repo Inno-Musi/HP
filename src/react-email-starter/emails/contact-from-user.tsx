@@ -38,10 +38,10 @@ export default function ContactFormUser({
           <Container className="border border-solid border-[#eaeaea] rounded my-[40px] mx-auto p-[20px] max-w-[465px]">
             <Section className="mt-[32px]">
               <Img
-                src={`${process.env.NEXT_PUBLIC_VERCEL_ENV === 'development' ? 'http://' : 'https://'}${process.env.NEXT_PUBLIC_VERCEL_URL}/musico_logo.png`}
-                width="40"
-                height="37"
-                alt="Vercel"
+                src={`${process.env.NEXT_PUBLIC_VERCEL_ENV === 'development' ? 'http://' : 'https://'}${process.env.NEXT_PUBLIC_VERCEL_URL}/musico-logo.png`}
+                width="1008"
+                height="456"
+                alt="musico logo"
                 className="my-0 mx-auto"
               />
             </Section>

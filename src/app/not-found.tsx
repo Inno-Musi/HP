@@ -7,10 +7,11 @@ export default async function NotFound() {
       <body>
         <div className="flex flex-col gap-y-6 lg:flex-row items-center justify-center h-screen">
           <Image
-            src="/musico_logo.png"
+            src="/musico-logo.png"
             alt="musico logo"
-            width={252}
-            height={114}
+            width={1008}
+            height={456}
+            className="w-[250px]"
           />
           <div className="lg:border-l border-gray lg:pl-12 lg:ml-12 lg:h-[250px] flex flex-col justify-center text-center lg:text-left max-w-[calc(100%-32px)]">
             <p className="text-3xl font-medium mb-4">404 Not Found</p>

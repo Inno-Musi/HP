@@ -11,13 +11,16 @@ export default function Error() {
   return (
     <div className="flex flex-col lg:flex-row gap-y-6 items-center justify-center py-[100px]">
       <Image
-        src="/musico_logo.png"
+        src="/musico-logo.png"
         alt="musico logo"
-        width={252}
-        height={114}
+        width={1008}
+        height={456}
+        className="w-[250px]"
       />
-      <div className="lg:border-l border-gray lg:pl-12 lg:ml-12 h-[250px] flex flex-col justify-center text-center lg:text-left max-w-[calc(100%-32px)]">
-        <p className="text-3xl font-medium mb-4">500 Internal Server Error</p>
+      <div className="lg:border-l border-gray lg:pl-12 lg:ml-12 lg:h-[250px] flex flex-col justify-center text-center lg:text-left max-w-[calc(100%-32px)]">
+        <p className="text-2xl lg:text-3xl font-medium mb-4">
+          500 Internal Server Error
+        </p>
         <p>
           {language === 'ja'
             ? 'サーバーでエラーが発生しました。'

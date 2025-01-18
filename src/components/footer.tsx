@@ -56,11 +56,11 @@ export const Footer = ({ language }: Props) => {
             : 'Sample Consulting'}
         </p>
         <Image
-          src="/musico_logo.png"
+          src="/musico-logo.png"
           alt="musico logo"
-          width={252}
-          height={114}
-          className="w-[168px]"
+          width={1008}
+          height={456}
+          className="w-[230px]"
         />
         <div className="flex flex-wrap justify-center gap-x-7 gap-y-2">
           {language === 'ja' ? (
