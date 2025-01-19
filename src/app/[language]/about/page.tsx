@@ -23,7 +23,7 @@ export default async function AboutPage({ params }: Props) {
               key={overview.label}
               className="flex flex-col gap-y-2 lg:flex-row lg:items-center border-b pb-2 border-gray"
             >
-              <p className="lg:w-[250px] shrink-0 text-emerald font-bold text-xl lg:ml-4">
+              <p className="lg:w-[250px] shrink-0 text-darkNavy font-bold text-xl lg:ml-4">
                 {overview.label}
               </p>
               <div className="text-lg">{overview.content}</div>

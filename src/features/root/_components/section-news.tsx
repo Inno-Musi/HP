@@ -14,7 +14,7 @@ export const SectionNews = async ({ language }: Props) => {
   const { contents: newsList } = res
 
   return (
-    <div className="flex flex-col gap-y-10">
+    <div className="flex flex-col gap-y-8">
       <div className="text-center">
         <p className="text-6xl font-medium text-darkNavy">NEWS</p>
         {language === 'ja' && <p className="text-lg font-medium">お知らせ</p>}
