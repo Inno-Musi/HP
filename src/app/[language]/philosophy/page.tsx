@@ -12,7 +12,7 @@ export default async function PhilosophyPage({ params }: Props) {
 
   return (
     <>
-      <div>
+      <div className="pb-[100px]">
         <SectionFv language={language} />
       </div>
       <BreadCrumbs
