@@ -1,4 +1,5 @@
 import { BreadCrumbs } from '@/components/bread-crumbs'
+import { SectionBusinessArea } from '@/features/services/_components/section-business-area'
 
 type Props = {
   params: Promise<{ language: 'ja' | 'en' }>
@@ -9,7 +10,9 @@ export default async function ServicesPage({ params }: Props) {
 
   return (
     <>
-      <div>Services Page</div>
+      <div>
+        <SectionBusinessArea language={language} />
+      </div>
       <BreadCrumbs
         language={language}
         crumbs={[
