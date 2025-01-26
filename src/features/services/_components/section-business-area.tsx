@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 type Props = {
   language: 'en' | 'ja'
 }
@@ -5,9 +7,10 @@ type Props = {
 const businessAreas = [
   {
     title: 'コンサルティング',
+    image: '/technology.png',
     description: (
       <>
-        <ol>
+        <ol className="list-decimal pl-5 mb-2">
           <li>的確な経営課題の抽出</li>
           <li>柔軟な戦略立案</li>
           <li>力強い実行支援</li>
@@ -26,10 +29,10 @@ const businessAreas = [
   },
   {
     title: 'フードサービス',
+    image: '/buffet-2.jpg',
     description: (
       <>
-        <p>我々MUSICOはこれまで</p>
-        <ul>
+        <ul className="list-disc pl-5">
           <li>社内カフェの開業支援</li>
           <li>社内レストランの運営</li>
           <li>ケータリングの運営</li>
@@ -47,30 +50,50 @@ const businessAreas = [
       </>
     ),
   },
-  {
-    title: '海外事業',
-    description: (
-      <>
-        <p>
-          コンサルティング領域で培ってきた戦略立案・実行力に我々が強みとする「食」の領域を掛け合わせ、海外への事業展開も行っております。
-        </p>
-        <p>
-          国境を越え海外への支援を行い、得た知見をまたコンサルティングやフードサービスを通して顧客に還元することで、グローバルな視点を持った高品質なサービスの提供を実現しています。
-        </p>
-      </>
-    ),
-  },
+  // {
+  //   title: '海外事業',
+  //   description: (
+  //     <>
+  //       <p>
+  //         コンサルティング領域で培ってきた戦略立案・実行力に我々が強みとする「食」の領域を掛け合わせ、海外への事業展開も行っております。
+  //       </p>
+  //       <p>
+  //         国境を越え海外への支援を行い、得た知見をまたコンサルティングやフードサービスを通して顧客に還元することで、グローバルな視点を持った高品質なサービスの提供を実現しています。
+  //       </p>
+  //     </>
+  //   ),
+  // },
 ]
 
 export const SectionBusinessArea = ({ language }: Props) => {
   return (
-    <div>
-      <p>コンサルティング ✖︎ フードサービス</p>
-      <div>
+    <div className="w-[800px] lg:w-[1200px] mx-auto max-w-[calc(100vw-32px)] flex flex-col gap-y-12">
+      <p className="text-3xl md:text-4xl font-bold text-center">
+        コンサルティング <br className="md:hidden block" />×
+        <br className="md:hidden block" /> フードサービス
+      </p>
+      <div className="flex gap-x-4 gap-y-6 flex-col lg:flex-row">
         {businessAreas.map((businessArea) => (
-          <div key={businessArea.title}>
-            <p>{businessArea.title}</p>
-            <div>{businessArea.description}</div>
+          <div
+            key={businessArea.title}
+            className="lg:w-1/2 shadow-md rounded-sm overflow-hidden bg-white"
+          >
+            <div className="relative aspect-[16/9]">
+              <Image
+                src={businessArea.image}
+                alt={businessArea.title}
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="px-4 py-6 lg:py-8 flex flex-col gap-y-6 lg:gap-y-8">
+              <p className="text-center text-2xl lg:text-3xl font-bold text-darkNavy">
+                {businessArea.title}
+              </p>
+              <div className="leading-6 text-sm lg:leading-7 lg:text-base">
+                {businessArea.description}
+              </div>
+            </div>
           </div>
         ))}
       </div>
