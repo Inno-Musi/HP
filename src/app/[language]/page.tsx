@@ -13,7 +13,7 @@ export default async function HomePage({ params }: Props) {
   const { language } = await params
 
   return (
-    <div className="pb-[100px] flex flex-col gap-y-20">
+    <div className="pb-[100px] flex flex-col gap-y-12 lg:gap-y-20">
       <SectionFv language={language} />
       <SectionServices language={language} />
       <SectionNews language={language} />

@@ -8,17 +8,17 @@ type Props = {
 
 export const SectionServices = ({ language }: Props) => {
   return (
-    <div className="bg-white py-20">
-      <div className="w-[1200px] max-w-[calc(100vw-32px)] mx-auto flex items-center gap-x-10">
+    <div className="bg-white py-12 lg:py-20">
+      <div className="w-[600px] lg:w-[1200px] max-w-[calc(100vw-32px)] mx-auto flex flex-col lg:flex-row items-center gap-x-10 gap-y-8">
         <Image
           src="/consulting-buffet.png"
           alt="consulting-buffet"
           width={1848}
           height={1010}
-          className="w-1/2"
+          className="lg:w-1/2"
         />
-        <div className="w-1/2 flex flex-col gap-y-4">
-          <p className="text-lg sm:text-3xl lg:text-4xl font-bold text-darkNavy">
+        <div className="lg:w-1/2 flex flex-col gap-y-3 lg:gap-y-4">
+          <p className="text-3xl lg:text-4xl font-bold text-darkNavy">
             OUR SERVICES
           </p>
           <p className="leading-7">
