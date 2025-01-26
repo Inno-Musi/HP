@@ -15,7 +15,7 @@ export default {
         error: '#D8000C',
         gray: '#B0BEC5',
         emerald: '#2F4F4F',
-        moss: '#315E3D',
+        moss: '#3D963B',
         lightBlue: '#F0F4F8',
         vividBlue: '#2B6CB0',
       },
