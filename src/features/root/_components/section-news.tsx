@@ -1,3 +1,4 @@
+import { Button } from '@/components/button'
 import { MotionUp } from '@/components/motion-up'
 import { NewsCard } from '@/components/news-card'
 import { fetchNewsList } from '@/services/news/fetch-news-list'
@@ -14,7 +15,7 @@ export const SectionNews = async ({ language }: Props) => {
   const { contents: newsList } = res
 
   return (
-    <div className="flex flex-col gap-y-8">
+    <div className="flex flex-col gap-y-10 items-center">
       <div className="text-center">
         <p className="text-6xl font-medium text-darkNavy">NEWS</p>
         {language === 'ja' && <p className="text-lg font-medium">お知らせ</p>}
@@ -26,20 +27,13 @@ export const SectionNews = async ({ language }: Props) => {
           </MotionUp>
         ))}
       </div>
-      <div className="w-[1200px] max-w-[calc(100vw-32px)] mx-auto flex justify-end">
-        <Link
-          href={`/${language}/news`}
-          className="flex flex-col items-center group"
-        >
-          <span className="flex items-center gap-x-2">
-            <span className="text-xl font-semibold">
-              {language === 'ja' ? 'もっと見る' : 'See more'}
-            </span>
-            <FaArrowRight size={20} />
-          </span>
-          <span className="h-[1px] w-[0%] bg-darkNavy group-hover:w-[100%] duration-300" />
-        </Link>
-      </div>
+      <Link href="/ja/news">
+        <Button
+          type="button"
+          text="See More"
+          className="rounded-full bg-white text-darkNavy border border-darkNavy py-3 px-12 hover:opacity-100 hover:bg-darkNavy hover:text-white duration-300 text-lg"
+        />
+      </Link>
     </div>
   )
 }
