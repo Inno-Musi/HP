@@ -12,9 +12,9 @@ export default async function ServicesPage({ params }: Props) {
 
   return (
     <>
-      <div className="flex flex-col gap-y-20">
+      <div className="flex flex-col gap-y-20 pb-[50px] lg:pb-[100px]">
         <SectionFv language={language} />
-        <div>
+        <div className="flex flex-col gap-y-10">
           <SectionBusinessArea language={language} />
           <SectionExample language={language} />
         </div>
