@@ -1,4 +1,5 @@
 import { SectionContact } from '@/features/root/_components/section-contact'
+import { SectionFv } from '@/features/root/_components/section-fv'
 import { SectionNews } from '@/features/root/_components/section-news'
 
 type Props = {
@@ -12,6 +13,7 @@ export default async function HomePage({ params }: Props) {
 
   return (
     <div className="pb-[100px] flex flex-col gap-y-[100px]">
+      <SectionFv />
       <SectionNews language={language} />
       <SectionContact language={language} />
     </div>
