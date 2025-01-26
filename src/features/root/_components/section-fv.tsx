@@ -19,12 +19,12 @@ export const SectionFv = ({ language }: Props) => {
             MUSICO
           </p>
         </MotionUp>
-        <MotionUp duration={0.5} initialY={0}>
+        <MotionUp duration={0.4} initialY={0}>
           <p className="text-lg sm:text-xl lg:text-2xl font-bold">
             Sow the Seeds of Happiness
           </p>
         </MotionUp>
-        <MotionUp duration={1} initialY={0}>
+        <MotionUp duration={0.7} initialY={0}>
           <div className="text-center leading-7 md:leading-8 text-sm lg:text-base">
             <p>我々MUSICOは総合コンサルタントとして</p>
             <p>オーダーメイドの戦略立案から専門チームによる実行まで</p>
@@ -32,7 +32,7 @@ export const SectionFv = ({ language }: Props) => {
             <p>さぁ、未来に大きな花を咲かせましょう。</p>
           </div>
         </MotionUp>
-        <MotionUp duration={1.5} initialY={0}>
+        <MotionUp duration={1} initialY={0}>
           <Link href="/ja/philosophy">
             <Button
               type="button"
