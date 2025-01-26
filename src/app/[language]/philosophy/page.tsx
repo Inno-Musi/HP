@@ -15,11 +15,13 @@ export default async function PhilosophyPage({ params }: Props) {
 
   return (
     <>
-      <div className="pb-[100px]">
+      <div className="pb-[50px] md:pb-[100px]">
         <SectionFv language={language} />
-        <SectionConcept language={language} />
-        <SectionFlexible language={language} />
-        <SectionAction language={language} />
+        <div className="w-[800px] lg:w-[1200px] mx-auto max-w-[calc(100vw-32px)] flex flex-col gap-y-12 md:gap-y-[100px] pt-10 md:pt-16">
+          <SectionConcept language={language} />
+          <SectionFlexible language={language} />
+          <SectionAction language={language} />
+        </div>
       </div>
       <BreadCrumbs
         language={language}
