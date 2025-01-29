@@ -50,25 +50,12 @@ const businessAreas = [
       </>
     ),
   },
-  // {
-  //   title: '海外事業',
-  //   description: (
-  //     <>
-  //       <p>
-  //         コンサルティング領域で培ってきた戦略立案・実行力に我々が強みとする「食」の領域を掛け合わせ、海外への事業展開も行っております。
-  //       </p>
-  //       <p>
-  //         国境を越え海外への支援を行い、得た知見をまたコンサルティングやフードサービスを通して顧客に還元することで、グローバルな視点を持った高品質なサービスの提供を実現しています。
-  //       </p>
-  //     </>
-  //   ),
-  // },
 ]
 
 export const SectionBusinessArea = ({ language }: Props) => {
   return (
-    <div className="w-[800px] lg:w-[1200px] mx-auto max-w-[calc(100vw-32px)] flex flex-col gap-y-12">
-      <p className="text-3xl md:text-4xl font-bold text-center">
+    <div className="w-[800px] lg:w-[1200px] mx-auto max-w-[calc(100vw-32px)] flex flex-col gap-y-8 lg:gap-y-12">
+      <p className="text-2xl md:text-4xl font-bold text-center">
         コンサルティング <br className="md:hidden block" />×
         <br className="md:hidden block" /> フードサービス
       </p>

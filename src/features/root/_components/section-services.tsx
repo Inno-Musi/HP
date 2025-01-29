@@ -30,7 +30,7 @@ export const SectionServices = ({ language }: Props) => {
             <span className="font-bold text-darkNavy">フードサービス領域</span>
             を大きな2本の柱として、クライアント企業の経営資源を最大限活用し、成長を加速させるお手伝いを行なっています。
           </p>
-          <Link href="/ja/services">
+          <Link href="/ja/services" className="mx-auto lg:mx-0">
             <Button
               type="button"
               text="See More"

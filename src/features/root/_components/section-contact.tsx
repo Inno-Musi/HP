@@ -1,5 +1,6 @@
 import { Button } from '@/components/button'
 import { MotionUp } from '@/components/motion-up'
+import Link from 'next/link'
 
 type Props = {
   language: 'en' | 'ja'
@@ -33,10 +34,12 @@ export const SectionContact = ({ language }: Props) => {
               </>
             )}
           </p>
-          <Button
-            text={language === 'en' ? 'Contact' : 'お問い合わせ'}
-            className="py-3 md:py-4 text-base md:text-xl rounded-full px-12 md:px-16 border-2 border-darkNavy hover:opacity-100 hover:bg-white hover:text-darkNavy duration-300 font-medium"
-          />
+          <Link href={`/${language}/contact`}>
+            <Button
+              text={language === 'en' ? 'Contact' : 'お問い合わせ'}
+              className="rounded-full bg-white text-darkNavy border border-darkNavy px-12 py-3 hover:opacity-100 hover:bg-darkNavy hover:text-white duration-300 text-lg"
+            />
+          </Link>
         </div>
       </div>
     </MotionUp>

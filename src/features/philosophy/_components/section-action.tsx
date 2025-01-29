@@ -31,7 +31,7 @@ export const SectionAction = ({ language }: Props) => {
         alt="collaborate"
         width={1920}
         height={1310}
-        className="lg:w-1/2"
+        className="lg:w-[51%]"
       />
     </div>
   )

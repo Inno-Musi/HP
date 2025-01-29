@@ -12,7 +12,7 @@ export const SectionFlexible = ({ language }: Props) => {
         alt="consulting"
         width={1920}
         height={1280}
-        className="lg:w-1/2"
+        className="lg:w-[51%]"
       />
       <div className="lg:w-1/2 flex flex-col gap-y-4">
         <p className="text-2xl font-bold">しなやかに、変化を制する</p>
