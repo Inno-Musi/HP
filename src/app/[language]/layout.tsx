@@ -4,6 +4,7 @@ import type { ReactNode } from 'react'
 import '../globals.css'
 import { Footer } from '@/components/footer'
 import { HeaderEn } from '@/components/header-en'
+import { GoogleTagManager } from '@next/third-parties/google'
 import { Noto_Sans_JP, Roboto } from 'next/font/google'
 import { twMerge } from 'tailwind-merge'
 
@@ -33,6 +34,7 @@ export default async function RootLayout({ children, params }: Props) {
 
   return (
     <html lang={language}>
+      <GoogleTagManager gtmId={process.env.GTM_ID as string} />
       <body
         className={twMerge(
           `${notoSansJp.variable}  ${roboto.variable}`,
