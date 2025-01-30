@@ -1,6 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+export const metadata = {
+  title: '404 Not Found | MUSICO Inc.',
+  description:
+    'お探しのページは見つかりませんでした。ページが存在しないか、削除された可能性があります。',
+}
+
 export default async function NotFound() {
   return (
     <html lang="ja">

@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useParams, usePathname } from 'next/navigation'
+import { useParams } from 'next/navigation'
 
 // biome-ignore lint/suspicious/noShadowRestrictedNames:
 export default function Error() {
