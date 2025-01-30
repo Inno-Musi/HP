@@ -1,11 +1,27 @@
 import { BreadCrumbs } from '@/components/bread-crumbs'
 import { NewsList } from '@/features/news/_components/news-list'
-import type { SearchParams } from 'next/dist/server/request/search-params'
 
 type Props = {
   params: Promise<{
     language: 'ja' | 'en'
   }>
+}
+
+export const generateMetadata = async ({ params }: Props) => {
+  const { language } = await params
+
+  if (language === 'ja') {
+    return {
+      title: 'お知らせ一覧 | 株式会社MUSICO',
+      description:
+        '株式会社MUSICOのサービス情報や、プレスリリースなどお知らせの一覧です。',
+    }
+  }
+
+  return {
+    title: 'News | MUSICO Inc.',
+    description: 'News and press releases from MUSICO Inc.',
+  }
 }
 
 export default async function NewsPage({ params }: Props) {
