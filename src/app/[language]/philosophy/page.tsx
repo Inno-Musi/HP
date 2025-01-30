@@ -11,6 +11,24 @@ type Props = {
   }>
 }
 
+export const generateMetadata = async ({ params }: Props) => {
+  const { language } = await params
+
+  if (language === 'ja') {
+    return {
+      title: '経営理念 | 株式会社MUSICO',
+      description:
+        'MUSICOは「幸せの種を蒔く」をビジョンに掲げ、戦略段階から実行段階までオーダーメイドのコンサルティングとフードサービスを提供します。',
+    }
+  }
+
+  return {
+    title: 'Corporate Philosophy | MUSICO Inc.',
+    description:
+      'MUSICO upholds the vision of "Sowing the Seeds of Happiness" and provides tailor-made consulting and food services from the strategy phase to execution.',
+  }
+}
+
 export default async function PhilosophyPage({ params }: Props) {
   const { language } = await params
 

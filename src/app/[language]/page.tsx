@@ -10,7 +10,9 @@ type Props = {
   }>
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export const generateMetadata = async ({
+  params,
+}: Props): Promise<Metadata> => {
   const { language } = await params
 
   if (language === 'ja') {
