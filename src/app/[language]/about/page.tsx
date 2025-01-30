@@ -9,6 +9,22 @@ type Props = {
   params: Promise<{ language: 'en' | 'ja' }>
 }
 
+export const generateMetadata = async ({ params }: Props) => {
+  const { language } = await params
+
+  if (language === 'ja') {
+    return {
+      title: '会社概要 | 株式会社MUSICO',
+      description: '株式会社MUSICOの会社概要です。',
+    }
+  }
+
+  return {
+    title: 'About Us | MUSICO Inc.',
+    description: 'This is the company profile of MUSICO Inc.',
+  }
+}
+
 export default async function AboutPage({ params }: Props) {
   const { language } = await params
   const overviews = language === 'ja' ? overviewsJa : overviewsEn
