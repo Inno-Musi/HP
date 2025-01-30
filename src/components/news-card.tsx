@@ -1,3 +1,4 @@
+import { removeHtmlTag } from '@/helpers/remove-html-tag'
 import dayjs from '@/lib/dayjs'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -17,8 +18,8 @@ export const NewsCard = ({ news, language }: Props) => {
 
   const newsDetail =
     language === 'ja'
-      ? news.contentJa.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, '').slice(0, 50)
-      : news.contentEn.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, '').slice(0, 100)
+      ? removeHtmlTag(news.contentJa).slice(0, 50)
+      : removeHtmlTag(news.contentEn).slice(0, 100)
 
   return (
     <div key={news.id} className="bg-white flex flex-col h-full">
