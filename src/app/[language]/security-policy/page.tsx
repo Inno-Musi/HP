@@ -6,6 +6,24 @@ type Props = {
   params: Promise<{ language: 'en' | 'ja' }>
 }
 
+export const generateMetadata = async ({ params }: Props) => {
+  const { language } = await params
+
+  if (language === 'ja') {
+    return {
+      title: 'セキュリティポリシー | 株式会社MUSICO',
+      description:
+        'MUSICOのセキュリティポリシーです。当社が取り扱う情報資産の保護方針についてご案内しております。',
+    }
+  }
+
+  return {
+    title: 'Security Policy | MUSICO Inc.',
+    description:
+      "This is MUSICO's Security Policy, outlining our principles for protecting the information assets we handle.",
+  }
+}
+
 export default async function SecurityPolicyPage({ params }: Props) {
   const { language } = await params
 

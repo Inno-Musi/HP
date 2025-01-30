@@ -6,6 +6,24 @@ type Props = {
   params: Promise<{ language: 'en' | 'ja' }>
 }
 
+export const generateMetadata = async ({ params }: Props) => {
+  const { language } = await params
+
+  if (language === 'ja') {
+    return {
+      title: 'プライバシーポリシー | 株式会社MUSICO',
+      description:
+        'MUSICOのプライバシーポリシーです。個人情報の取り扱いに関して、基本方針をご案内しております。',
+    }
+  }
+
+  return {
+    title: 'Privacy Policy | MUSICO Inc.',
+    description:
+      "This is MUSICO's Privacy Policy, outlining our fundamental principles regarding the handling of personal information.",
+  }
+}
+
 export default async function PrivacyPolicyPage({ params }: Props) {
   const { language } = await params
 
