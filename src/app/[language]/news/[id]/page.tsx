@@ -1,6 +1,7 @@
 import { NewsContent } from '@/features/news/news-id/_components/news-content'
 import { removeHtmlTag } from '@/helpers/remove-html-tag'
 import { fetchNewsDetail } from '@/services/news/fetch-news'
+import { Suspense } from 'react'
 
 type Props = {
   params: Promise<{ language: 'ja' | 'en'; id: string }>
@@ -27,5 +28,9 @@ export const generateMetadata = async ({ params }: Props) => {
 export default async function NewsDetailPage({ params }: Props) {
   const { language, id } = await params
 
-  return <NewsContent language={language} id={id} />
+  return (
+    <Suspense>
+      <NewsContent language={language} id={id} />
+    </Suspense>
+  )
 }

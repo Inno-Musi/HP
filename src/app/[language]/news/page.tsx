@@ -29,7 +29,7 @@ export default async function NewsPage({ params }: Props) {
 
   return (
     <>
-      <div className="py-[100px] flex flex-col gap-y-16">
+      <div className="py-16 md:py-20 flex flex-col gap-y-10 md:gap-y-12">
         <h1 className="text-3xl md:text-4xl font-bold text-center">
           {language === 'ja' ? 'お知らせ一覧' : 'Notifications'}
         </h1>

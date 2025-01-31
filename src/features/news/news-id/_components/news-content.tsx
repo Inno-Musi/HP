@@ -28,7 +28,7 @@ export const NewsContent = async ({ language, id }: Props) => {
 
   return (
     <>
-      <div className="py-[100px] w-[900px] max-w-[calc(100vw-32px)] mx-auto flex flex-col gap-y-16">
+      <div className="py-16 md:py-20 w-[900px] max-w-[calc(100vw-32px)] mx-auto flex flex-col gap-y-10 md:gap-y-12">
         <h1 className="text-3xl font-bold text-center">
           {language === 'ja' ? news.titleJa : news.titleEn}
         </h1>
