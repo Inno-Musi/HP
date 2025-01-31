@@ -36,7 +36,7 @@ export default async function ContactCompletedPage({ params }: Props) {
         </div>
         <Link
           href={language === 'ja' ? '/ja' : '/en'}
-          className="flex items-center gap-x-1 font-bold text-moss hover:underline underline-offset-2 mx-auto"
+          className="flex items-center gap-x-1 font-bold text-darkNavy hover:underline underline-offset-2 mx-auto"
         >
           {language === 'ja' ? 'トップページへ戻る' : 'Back to Homepage'}
         </Link>

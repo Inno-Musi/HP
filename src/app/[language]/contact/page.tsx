@@ -35,14 +35,20 @@ export default async function ContactPage({ params }: Props) {
           language={language}
         />
         {language === 'ja' ? (
-          <div className="max-w-[600px] w-full mx-auto text-center leading-7">
-            <p>当社へのお問い合わせは、下記のフォームからお願い致します。</p>
+          <div className="max-w-[600px] w-full mx-auto text-sm md:text-base text-center leading-6 md:leading-7">
             <p>
-              ご入力頂いたメールアドレス宛に担当者からご連絡させて頂きます。
+              当社へのお問い合わせは、
+              <br className="block md:hidden" />
+              下記のフォームからお願い致します。
+            </p>
+            <p>
+              ご入力頂いたメールアドレス宛に
+              <br className="block md:hidden" />
+              担当者からご連絡させて頂きます。
             </p>
           </div>
         ) : (
-          <div className="max-w-[600px] w-full mx-auto text-center leading-7 text-lg">
+          <div className="max-w-[600px] w-full mx-auto text-center leading-6 text-sm md:text-base md:leading-7">
             <p>For inquiries to our company, please use the form below.</p>
             <p>
               Our representative will contact you at the email address you
