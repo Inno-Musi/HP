@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { links } from './_assets/const/links'
@@ -11,9 +12,18 @@ export const HeaderJa = () => {
 
   return (
     <header className="h-16 border-b border-gray flex items-center px-5 md:px-6 shadow justify-between sticky top-0 z-50 bg-white">
-      <Link href="/ja" className="text-xl">
-        MUSICO
-      </Link>
+      <div className="flex items-center gap-x-2">
+        <Image
+          src="/icon-512.png"
+          width={512}
+          height={512}
+          alt="musico"
+          className="w-8"
+        />
+        <Link href="/ja" className="text-xl">
+          MUSICO
+        </Link>
+      </div>
       <div className="items-center gap-x-5 hidden md:flex font-semibold">
         {links.map((link) => (
           <Link

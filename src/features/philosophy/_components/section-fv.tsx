@@ -42,7 +42,7 @@ export const SectionFv = ({ language }: Props) => {
         className="w-[91%] absolute bottom-0 right-0 block md:hidden"
       />
       {language === 'ja' ? (
-        <div className="absolute text-darkNavy top-[20%] right-[6%] z-10 font-semibold text-base sm:text-xl md:text-4xl flex flex-col gap-y-2 items-end font-serif leading-none">
+        <div className="absolute top-[20%] right-[6%] z-10 font-semibold text-base sm:text-xl md:text-4xl flex flex-col gap-y-2 items-end font-serif leading-none">
           <p className="flex sm:flex-row flex-col gap-y-2 items-end">
             <span>調和の</span>
             <span>メロディーを奏でる</span>

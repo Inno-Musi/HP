@@ -50,11 +50,6 @@ export const Footer = ({ language }: Props) => {
   return (
     <footer className="shadow-lg">
       <div className="bg-white flex flex-col gap-y-3 items-center py-6 md:py-8 px-4 md:px-8">
-        <p className="font-bold text-darkNavy text-xl md:text-2xl font-serif">
-          {language === 'ja'
-            ? 'サンプルなコンサルティングを'
-            : 'Sample Consulting'}
-        </p>
         <Image
           src="/musico-logo.png"
           alt="musico logo"
