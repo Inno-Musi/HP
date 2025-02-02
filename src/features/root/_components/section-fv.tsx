@@ -26,10 +26,24 @@ export const SectionFv = ({ language }: Props) => {
         </MotionUp>
         <MotionUp duration={0.7} initialY={0}>
           <div className="text-center leading-7 md:leading-8 text-sm lg:text-base">
-            <p>我々MUSICOは総合コンサルタントとして</p>
-            <p>オーダーメイドの戦略立案から専門チームによる実行まで</p>
-            <p>顧客のビジョン実現に伴走します。</p>
-            <p>さぁ、未来に大きな花を咲かせましょう。</p>
+            {language === 'ja' ? (
+              <>
+                <p>我々MUSICOは総合コンサルタントとして</p>
+                <p>オーダーメイドの戦略立案から専門チームによる実行まで</p>
+                <p>顧客のビジョン実現に伴走します。</p>
+                <p>さぁ、未来に大きな花を咲かせましょう。</p>
+              </>
+            ) : (
+              <>
+                <p>We, MUSICO, as a comprehensive consulting firm,</p>
+                <p>
+                  accompany our clients from tailor-made strategy planning to
+                </p>
+                <p>execution by a specialized team,</p>
+                <p>helping them bring their vision to life.</p>
+                <p>Now, let’s make a great future bloom.</p>
+              </>
+            )}
           </div>
         </MotionUp>
         <MotionUp duration={1} initialY={0}>

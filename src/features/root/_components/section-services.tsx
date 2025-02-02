@@ -21,15 +21,40 @@ export const SectionServices = ({ language }: Props) => {
           <p className="text-3xl lg:text-4xl font-bold text-darkNavy">
             OUR SERVICES
           </p>
-          <p className="leading-7">
-            我々MUSICOは戦略立案段階から実行支援段階まで、包括的に支援を行う
-            <span className="font-bold text-darkNavy">
-              コンサルティング領域
-            </span>
-            と、企業内で運営されるカフェやレストランなどを設立支援・運営する
-            <span className="font-bold text-darkNavy">フードサービス領域</span>
-            を大きな2本の柱として、クライアント企業の経営資源を最大限活用し、成長を加速させるお手伝いを行なっています。
-          </p>
+          {language === 'ja' ? (
+            <>
+              <p className="leading-7">
+                我々MUSICOは戦略立案段階から実行支援段階まで、包括的に支援を行う
+                <span className="font-bold text-darkNavy">
+                  コンサルティング領域
+                </span>
+                と、企業内で運営されるカフェやレストランなどを設立支援・運営する
+                <span className="font-bold text-darkNavy">
+                  フードサービス領域
+                </span>
+                を大きな2本の柱として、クライアント企業の経営資源を最大限活用し、成長を加速させるお手伝いを行なっています。
+              </p>
+            </>
+          ) : (
+            <>
+              <p className="leading-7">
+                We, MUSICO, provide comprehensive support from the strategy
+                planning phase to the execution phase. Our two main pillars are
+                the{' '}
+                <span className="font-bold text-darkNavy">
+                  consulting domain
+                </span>
+                , which covers everything from strategic planning to execution
+                support, and the{' '}
+                <span className="font-bold text-darkNavy">
+                  food service domain
+                </span>
+                , which supports the establishment and operation of in-house
+                cafés and restaurants. We help client companies maximize their
+                management resources and accelerate their growth.
+              </p>
+            </>
+          )}
           <Link href="/ja/services" className="mx-auto lg:mx-0">
             <Button
               type="button"
