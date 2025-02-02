@@ -15,7 +15,7 @@ export const HeaderSp = ({ restPath }: Props) => {
   const router = useRouter()
 
   return (
-    <div className="md:hidden block">
+    <div>
       <RxHamburgerMenu
         className="cursor-pointer"
         size={24}

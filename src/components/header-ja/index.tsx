@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { LinkCompanyName } from '../link-company-name'
+import { LinkSwitchLanguage } from '../link-switch-language'
 import { links } from './_assets/const/links'
 import { HeaderSp } from './_components/header-sp'
 
@@ -26,14 +27,12 @@ export const HeaderJa = () => {
             <span className="h-[1px] w-[0%] bg-darkNavy group-hover:w-[100%] duration-300" />
           </Link>
         ))}
-        <Link
-          href={`/en/${restPath}`}
-          className="border border-darkNavy px-2 py-1"
-        >
-          English
-        </Link>
+        <LinkSwitchLanguage switchTo="en" restPath={restPath} />
       </div>
-      <HeaderSp restPath={restPath} />
+      <div className="flex items-center gap-x-4 md:hidden">
+        <LinkSwitchLanguage switchTo="en" restPath={restPath} />
+        <HeaderSp restPath={restPath} />
+      </div>
     </header>
   )
 }
