@@ -9,8 +9,9 @@ export const overviewsJa = [
     label: '事業内容',
     content: (
       <ul className="list-disc pl-6">
-        <li>中小企業向け経営コンサルティング</li>
-        <li>ホテルコントラクトフードサービス</li>
+        <li>コーポレートサービス支援</li>
+        <li>企業内フードサービス運営</li>
+        <li>経営およびITコンサルティング</li>
       </ul>
     ),
   },
@@ -72,8 +73,9 @@ export const overviewsEn = [
     label: 'Business Activities',
     content: (
       <ul className="list-disc pl-6">
-        <li>Management consulting for small and medium-sized enterprises</li>
-        <li>Hotel contract food services</li>
+        <li>Corporate service support</li>
+        <li>In-house food service management</li>
+        <li>Management and IT consulting</li>
       </ul>
     ),
   },
