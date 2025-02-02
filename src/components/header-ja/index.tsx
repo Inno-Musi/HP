@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { LinkCompanyName } from '../link-company-name'
 import { links } from './_assets/const/links'
 import { HeaderSp } from './_components/header-sp'
 
@@ -12,18 +13,7 @@ export const HeaderJa = () => {
 
   return (
     <header className="h-16 border-b border-gray flex items-center px-5 md:px-6 shadow justify-between sticky top-0 z-50 bg-white">
-      <div className="flex items-center gap-x-2">
-        <Image
-          src="/icon-512.png"
-          width={512}
-          height={512}
-          alt="musico"
-          className="w-8"
-        />
-        <Link href="/ja" className="text-xl">
-          MUSICO
-        </Link>
-      </div>
+      <LinkCompanyName />
       <div className="items-center gap-x-5 hidden md:flex font-semibold">
         {links.map((link) => (
           <Link
