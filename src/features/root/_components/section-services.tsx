@@ -10,8 +10,8 @@ type Props = {
 export const SectionServices = ({ language }: Props) => {
   return (
     <div className="bg-white py-12 lg:py-20">
-      <div className="w-[600px] lg:w-[1200px] max-w-[calc(100vw-32px)] mx-auto flex flex-col lg:flex-row items-center gap-x-10 gap-y-8">
-        <MotionUp>
+      <MotionUp>
+        <div className="w-[600px] lg:w-[1200px] max-w-[calc(100vw-32px)] mx-auto flex flex-col lg:flex-row items-center gap-x-10 gap-y-8">
           <Image
             src="/consulting-buffet.png"
             alt="consulting-buffet"
@@ -19,8 +19,7 @@ export const SectionServices = ({ language }: Props) => {
             height={1010}
             className="lg:w-1/2"
           />
-        </MotionUp>
-        <MotionUp>
+
           <div className="lg:w-1/2 flex flex-col gap-y-3 lg:gap-y-4">
             <p className="text-3xl lg:text-4xl font-bold text-darkNavy">
               OUR SERVICES
@@ -67,8 +66,8 @@ export const SectionServices = ({ language }: Props) => {
               />
             </Link>
           </div>
-        </MotionUp>
-      </div>
+        </div>
+      </MotionUp>
     </div>
   )
 }
