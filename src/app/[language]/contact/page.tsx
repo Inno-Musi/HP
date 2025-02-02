@@ -28,7 +28,7 @@ export default async function ContactPage({ params }: Props) {
 
   return (
     <>
-      <div className="max-w-[calc(100vw-32px)] mx-auto py-16 md:py-20 flex flex-col gap-y-10 md:gap-y-12">
+      <div className="max-w-[calc(100vw-32px)] mx-auto py-16 md:py-20 flex flex-col gap-y-6 md:gap-y-12">
         <TitleMain
           titleJa="お問い合わせ"
           titleEn="Contact"

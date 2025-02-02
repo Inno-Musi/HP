@@ -33,6 +33,7 @@ export const SectionFv = ({ language }: Props) => {
         height={1316}
         alt="about us"
         className="w-[91%] absolute bottom-0 right-0 hidden md:block"
+        priority
       />
       <Image
         src={imageAboutSP}
@@ -40,6 +41,7 @@ export const SectionFv = ({ language }: Props) => {
         height={589}
         alt="about us"
         className="w-[91%] absolute bottom-0 right-0 block md:hidden"
+        priority
       />
       {language === 'ja' ? (
         <div className="absolute top-[20%] right-[6%] z-10 font-semibold text-base sm:text-xl md:text-4xl flex flex-col gap-y-2 items-end font-serif leading-none">

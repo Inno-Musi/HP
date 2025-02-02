@@ -41,7 +41,7 @@ export const NewsContent = async ({ language, id }: Props) => {
               className="object-contain bg-emerald/10"
             />
           </div>
-          <div className="px-10 pb-14 pt-8 flex flex-col gap-y-6">
+          <div className="px-6 md:px-10 py-6 md:pb-14 md:pt-8 flex flex-col gap-y-6">
             <div className="flex justify-between items-center">
               <p className="text-zinc-500 font-bold text-lg">
                 {dayjs(news.publishedAt).format('YYYY/MM/DD')}

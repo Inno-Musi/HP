@@ -13,6 +13,7 @@ export const SectionFv = ({ language }: Props) => {
         width={1848}
         height={1010}
         className="absolute"
+        priority
       />
       <div className="absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <div className="bg-white text-center px-8 sm:px-16 lg:px-24 py-4 sm:py-8 lg:py-12 flex flex-col gap-y-1 sm:gap-y-2 lg:gap-y-4 rounded-sm shadow-md">
