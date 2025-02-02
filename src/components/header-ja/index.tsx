@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { LinkCompanyName } from '../link-company-name'
@@ -14,7 +13,7 @@ export const HeaderJa = () => {
 
   return (
     <header className="h-16 border-b border-gray flex items-center px-5 md:px-6 shadow justify-between sticky top-0 z-50 bg-white">
-      <LinkCompanyName />
+      <LinkCompanyName language="ja" />
       <div className="items-center gap-x-5 hidden md:flex font-semibold">
         {links.map((link) => (
           <Link

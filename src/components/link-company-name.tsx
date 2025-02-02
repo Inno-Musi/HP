@@ -1,9 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-export const LinkCompanyName = () => {
+type Props = {
+  language: 'ja' | 'en'
+}
+
+export const LinkCompanyName = ({ language }: Props) => {
   return (
-    <Link href="/ja" className="flex items-center gap-x-2">
+    <Link href={`/${language}`} className="flex items-center gap-x-2">
       <Image
         src="/icon-512.png"
         width={512}
