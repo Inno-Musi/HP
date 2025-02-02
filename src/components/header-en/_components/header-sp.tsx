@@ -39,7 +39,7 @@ export const HeaderSp = ({ restPath }: Props) => {
                 <button
                   type="button"
                   key={link.href}
-                  className="font-semibold flex flex-col items-center w-full"
+                  className="font-semibold flex flex-col items-center w-full border-b border-gray pb-2"
                   onClick={() => {
                     setIsOpen(false)
                     router.push(`/en/${link.href}`)
@@ -48,16 +48,6 @@ export const HeaderSp = ({ restPath }: Props) => {
                   <span className="text-xl">{link.text}</span>
                 </button>
               ))}
-              <button
-                type="button"
-                onClick={() => {
-                  setIsOpen(false)
-                  router.push(`/ja/${restPath}`)
-                }}
-                className="border border-darkNavy px-3 py-1 font-semibold font-notoSansJp"
-              >
-                日本語
-              </button>
             </div>
           </>
         )}

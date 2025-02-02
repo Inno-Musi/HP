@@ -49,16 +49,6 @@ export const HeaderSp = ({ restPath }: Props) => {
                   <span className="text-sm">{link.subText}</span>
                 </button>
               ))}
-              <button
-                type="button"
-                className="border border-darkNavy px-3 py-1 font-semibold mt-2"
-                onClick={() => {
-                  setIsOpen(false)
-                  router.push(`/en/${restPath}`)
-                }}
-              >
-                English
-              </button>
             </div>
           </>
         )}
