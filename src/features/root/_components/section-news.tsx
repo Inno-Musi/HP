@@ -18,7 +18,7 @@ export const SectionNews = async ({ language }: Props) => {
     <div className="flex flex-col gap-y-10 items-center">
       <MotionUp>
         <div className="text-center">
-          <p className="text-6xl font-medium text-darkNavy">NEWS</p>
+          <p className="text-6xl font-medium text-darkNavy font-roboto">NEWS</p>
           {language === 'ja' && <p className="text-lg font-medium">お知らせ</p>}
         </div>
       </MotionUp>
@@ -34,7 +34,7 @@ export const SectionNews = async ({ language }: Props) => {
           <Button
             type="button"
             text="See More"
-            className="rounded-full bg-white text-darkNavy border border-darkNavy py-3 px-12 hover:opacity-100 hover:bg-darkNavy hover:text-white duration-300 text-lg"
+            className="rounded-full bg-white text-darkNavy border border-darkNavy py-3 px-12 hover:opacity-100 hover:bg-darkNavy hover:text-white duration-300 text-lg font-roboto"
           />
         </Link>
       </MotionUp>

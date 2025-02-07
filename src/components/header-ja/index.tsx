@@ -22,7 +22,7 @@ export const HeaderJa = () => {
             key={link.href}
           >
             <span className="leading-4">{link.text}</span>
-            <span className="text-[10px]">{link.subText}</span>
+            <span className="text-[10px] font-roboto">{link.subText}</span>
             <span className="h-[1px] w-[0%] bg-darkNavy group-hover:w-[100%] duration-300" />
           </Link>
         ))}

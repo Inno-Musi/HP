@@ -1,5 +1,6 @@
 import { Button } from '@/components/button'
 import { MotionUp } from '@/components/motion-up'
+import Image from 'next/image'
 import Link from 'next/link'
 
 type Props = {
@@ -8,11 +9,19 @@ type Props = {
 
 export const SectionContact = ({ language }: Props) => {
   return (
-    <MotionUp>
-      <div className="w-[800px] mx-auto max-w-[calc(100vw-32px)]">
+    <div className="relative py-12">
+      <Image
+        src="/bg-contact.jpg"
+        width={1920}
+        height={1280}
+        alt="bg-contact"
+        className="absolute top-0 left-0 w-full h-full object-cover"
+      />
+      <div className="absolute top-0 left-0 w-full h-full bg-darkNavy opacity-70" />
+      <div className="relative z-20 w-[800px] mx-auto max-w-[calc(100vw-32px)]">
         <div className="bg-white flex flex-col items-center py-10 px-4 gap-y-6">
           <div className="flex flex-col items-center gap-y-1">
-            <p className="text-4xl md:text-5xl text-darkNavy font-semibold">
+            <p className="text-4xl md:text-5xl text-darkNavy font-semibold font-roboto">
               Contact
             </p>
             {language === 'ja' && (
@@ -42,6 +51,6 @@ export const SectionContact = ({ language }: Props) => {
           </Link>
         </div>
       </div>
-    </MotionUp>
+    </div>
   )
 }

@@ -16,7 +16,8 @@ export const LinkSwitchLanguage = ({
     <Link
       href={`/${switchTo}/${restPath}`}
       className={twMerge(
-        'border border-darkNavy px-2 py-1 font-semibold',
+        'border border-darkNavy px-[10px] py-1 font-semibold',
+        switchTo === 'ja' ? 'font-sawarabiGothic' : 'font-roboto',
         className,
       )}
     >

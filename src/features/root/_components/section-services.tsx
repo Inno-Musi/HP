@@ -21,7 +21,7 @@ export const SectionServices = ({ language }: Props) => {
           />
 
           <div className="lg:w-1/2 flex flex-col gap-y-3 lg:gap-y-4">
-            <p className="text-3xl lg:text-4xl font-bold text-darkNavy">
+            <p className="text-3xl lg:text-4xl font-bold text-darkNavy font-roboto">
               OUR SERVICES
             </p>
             {language === 'ja' ? (
@@ -62,7 +62,7 @@ export const SectionServices = ({ language }: Props) => {
               <Button
                 type="button"
                 text="See More"
-                className="rounded-full bg-white text-darkNavy border border-darkNavy px-12 hover:opacity-100 hover:bg-darkNavy hover:text-white duration-300 text-lg"
+                className="rounded-full bg-white text-darkNavy border border-darkNavy px-12 hover:opacity-100 hover:bg-darkNavy hover:text-white duration-300 text-lg font-roboto"
               />
             </Link>
           </div>

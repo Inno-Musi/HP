@@ -12,20 +12,20 @@ type Props = {
 
 export const SectionFv = ({ language }: Props) => {
   return (
-    <div className="relative aspect-[16/14] sm:aspect-[16/8.5]">
+    <div className="relative aspect-[16/14] md:aspect-[16/8]">
       <div className="absolute w-full h-full flex flex-col gap-y-4 justify-center items-center z-10">
         <MotionUp duration={0.2} initialY={0}>
-          <p className="text-darkNavy text-5xl sm:text-6xl lg:text-8xl">
+          <p className="text-darkNavy text-5xl sm:text-6xl lg:text-8xl font-roboto">
             MUSICO
           </p>
         </MotionUp>
         <MotionUp duration={0.4} initialY={0}>
-          <p className="text-lg sm:text-xl lg:text-2xl font-bold">
+          <p className="text-lg sm:text-xl lg:text-2xl font-bold font-roboto">
             Sow the Seeds of Happiness
           </p>
         </MotionUp>
         <MotionUp duration={0.7} initialY={0}>
-          <div className="text-center leading-7 md:leading-8 text-sm lg:text-base">
+          <div className="text-center leading-7 md:!leading-8 text-sm lg:text-base">
             {language === 'ja' ? (
               <>
                 <p>我々MUSICOは総合コンサルタントとして</p>
@@ -51,7 +51,7 @@ export const SectionFv = ({ language }: Props) => {
             <Button
               type="button"
               text="OUR PHILOSOPHY"
-              className="rounded-full bg-white text-darkNavy border border-darkNavy px-8 sm:py-3 hover:opacity-100 hover:bg-darkNavy hover:text-white duration-300"
+              className="rounded-full bg-white text-darkNavy border border-darkNavy px-8 sm:py-3 hover:opacity-100 hover:bg-darkNavy hover:text-white duration-300 font-roboto"
             />
           </Link>
         </MotionUp>
