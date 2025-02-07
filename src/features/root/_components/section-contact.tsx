@@ -18,39 +18,41 @@ export const SectionContact = ({ language }: Props) => {
         className="absolute top-0 left-0 w-full h-full object-cover"
       />
       <div className="absolute top-0 left-0 w-full h-full bg-darkNavy opacity-70" />
-      <div className="relative z-20 w-[800px] mx-auto max-w-[calc(100vw-32px)]">
-        <div className="bg-white flex flex-col items-center py-10 px-4 gap-y-6">
-          <div className="flex flex-col items-center gap-y-1">
-            <p className="text-4xl md:text-5xl text-darkNavy font-semibold font-roboto">
-              Contact
+      <MotionUp>
+        <div className="relative z-20 w-[800px] mx-auto max-w-[calc(100vw-32px)]">
+          <div className="bg-white flex flex-col items-center py-10 px-4 gap-y-6">
+            <div className="flex flex-col items-center gap-y-1">
+              <p className="text-4xl md:text-5xl text-darkNavy font-semibold font-roboto">
+                Contact
+              </p>
+              {language === 'ja' && (
+                <p className="text-base md:text-xl font-medium">お問い合わせ</p>
+              )}
+            </div>
+            <p className="text-sm md:text-lg flex flex-col items-center md:flex-row">
+              {language === 'ja' ? (
+                <>
+                  <span>協業・事業に関するご相談・採用などに関する</span>
+                  <span>お問い合わせはこちらから</span>
+                </>
+              ) : (
+                <>
+                  <span className="pr-1">
+                    For inquiries about business collaboration,
+                  </span>
+                  <span>business consulting, and recruitment</span>
+                </>
+              )}
             </p>
-            {language === 'ja' && (
-              <p className="text-base md:text-xl font-medium">お問い合わせ</p>
-            )}
+            <Link href={`/${language}/contact`}>
+              <Button
+                text={language === 'en' ? 'Contact' : 'お問い合わせ'}
+                className="rounded-full bg-white text-darkNavy border border-darkNavy px-12 py-3 hover:opacity-100 hover:bg-darkNavy hover:text-white duration-300 text-lg"
+              />
+            </Link>
           </div>
-          <p className="text-sm md:text-lg flex flex-col items-center md:flex-row">
-            {language === 'ja' ? (
-              <>
-                <span>協業・事業に関するご相談・採用などに関する</span>
-                <span>お問い合わせはこちらから</span>
-              </>
-            ) : (
-              <>
-                <span className="pr-1">
-                  For inquiries about business collaboration,
-                </span>
-                <span>business consulting, and recruitment</span>
-              </>
-            )}
-          </p>
-          <Link href={`/${language}/contact`}>
-            <Button
-              text={language === 'en' ? 'Contact' : 'お問い合わせ'}
-              className="rounded-full bg-white text-darkNavy border border-darkNavy px-12 py-3 hover:opacity-100 hover:bg-darkNavy hover:text-white duration-300 text-lg"
-            />
-          </Link>
         </div>
-      </div>
+      </MotionUp>
     </div>
   )
 }
