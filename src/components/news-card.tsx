@@ -38,7 +38,7 @@ export const NewsCard = ({ news, language }: Props) => {
         <div className="flex flex-col gap-y-1">
           <Link
             href={`/${language}/news/${news.id}`}
-            className="font-bold text-lg"
+            className="font-bold text-lg text-darkNavy"
           >
             {language === 'ja' ? news.titleJa : news.titleEn}
           </Link>

@@ -17,7 +17,9 @@ const businessAreas = [
         </ol>
         <p>の3本の柱を基礎としたコンサルティングを提供します。</p>
         <p>
-          特に、IT領域ではAIを積極的に活用したアプローチを強みとしています。
+          特に、IT領域では
+          <span className="text-darkNavy font-bold">AIを積極的に活用</span>
+          したアプローチを強みとしています。
         </p>
         <p>
           経営に関するご相談以外にも、クライアントのコーポレートサービスへの支援等も承っており、
@@ -44,8 +46,11 @@ const businessAreas = [
           我々の豊富な実績とノウハウを基に、カジュアルなものからラグジュアリーなものまでお客様のニーズに合わせたフードサービスを提供いたします。
         </p>
         <p>
-          また、CSR(Corporate Social
-          Responsibility)活動としてフェアトレードやフードロス削減などに取り組んでおり、フードサービスを通じてより良い社会を創ることへの貢献に日々取り組んでいます。
+          また、
+          <span className="text-darkNavy font-bold">
+            CSR(Corporate Social Responsibility)活動
+          </span>
+          としてフェアトレードやフードロス削減などに取り組んでおり、フードサービスを通じてより良い社会を創ることへの貢献に日々取り組んでいます。
         </p>
       </>
     ),
@@ -55,7 +60,7 @@ const businessAreas = [
 export const SectionBusinessArea = ({ language }: Props) => {
   return (
     <div className="w-[800px] lg:w-[1200px] mx-auto max-w-[calc(100vw-32px)] flex flex-col gap-y-8 lg:gap-y-12">
-      <p className="text-2xl md:text-4xl font-bold text-center">
+      <p className="text-2xl md:text-4xl font-bold text-center text-darkNavy">
         コンサルティング <br className="md:hidden block" />×
         <br className="md:hidden block" /> フードサービス
       </p>

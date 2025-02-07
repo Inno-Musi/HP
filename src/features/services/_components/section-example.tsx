@@ -71,7 +71,7 @@ export const SectionExample = ({ language }: Props) => {
           <p className="text-4xl md:text-5xl font-bold text-darkNavy">
             事例紹介
           </p>
-          <p className="text-xl md:text-2xl font-bold text-darkNavy">
+          <p className="text-xl md:text-2xl font-bold text-darkNavy font-roboto">
             OUR WORK
           </p>
         </div>
@@ -90,7 +90,9 @@ export const SectionExample = ({ language }: Props) => {
                 />
               </div>
               <div className="px-6 py-4 flex flex-col gap-y-2">
-                <p className="text-xl font-bold">{example.title}</p>
+                <p className="text-xl font-bold text-darkNavy">
+                  {example.title}
+                </p>
                 <div>{example.description}</div>
               </div>
             </div>
