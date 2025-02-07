@@ -17,7 +17,14 @@ export const TitleMain = ({ titleJa, titleEn, language, className }: Props) => {
         className,
       )}
     >
-      {language === 'ja' ? titleJa : titleEn}
+      {language === 'ja' ? (
+        <span className="flex flex-col">
+          <span>{titleJa}</span>
+          <span className="font-roboto text-xl font-normal">{titleEn}</span>
+        </span>
+      ) : (
+        titleEn
+      )}
     </h1>
   )
 }

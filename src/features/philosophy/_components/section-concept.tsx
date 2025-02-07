@@ -8,7 +8,7 @@ export const SectionConcept = ({ language }: Props) => {
   return (
     <div className="text-start sm:text-center flex flex-col gap-y-2 sm:gap-y-4">
       <MotionUp>
-        <p className="text-2xl sm:text-3xl font-extrabold">
+        <p className="text-2xl sm:text-3xl font-extrabold text-darkNavy">
           オーダーメイドのコンサルティング
         </p>
       </MotionUp>

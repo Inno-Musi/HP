@@ -1,6 +1,5 @@
 import Image from 'next/image'
-import imageAboutPC from '../_assets/images/about_pc.png'
-import imageAboutSP from '../_assets/images/about_sp.png'
+import imageAbout from '../_assets/images/bg-fv-about.jpeg'
 
 type Props = {
   language: 'en' | 'ja'
@@ -8,8 +7,17 @@ type Props = {
 
 export const SectionFv = ({ language }: Props) => {
   return (
-    <div className="relative aspect-[1000/600] md:aspect-[1000/480]">
-      <div className="absolute z-10 bg-white w-[40%] md:w-1/3 aspect-[480/298] shadow-md flex justify-center items-center">
+    <div className="relative aspect-[1000/1000] md:aspect-[1000/480]">
+      <Image
+        src={imageAbout}
+        width={7952}
+        height={5304}
+        alt="about us"
+        className="absolute h-full w-full object-cover bottom-0 right-0"
+        priority
+      />
+      <div className="absolute bottom-0 right-0 w-full h-full bg-black opacity-50" />
+      <div className="absolute z-10 bg-white w-[40%] md:w-1/3 aspect-[480/298] shadow-md flex justify-center items-center top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
         {language === 'ja' ? (
           <div className="flex flex-col items-center gap-y-2 md:gap-y-3">
             <h1 className="font-bold text-2xl md:text-4xl text-darkNavy">
@@ -27,42 +35,6 @@ export const SectionFv = ({ language }: Props) => {
           </h1>
         )}
       </div>
-      <Image
-        src={imageAboutPC}
-        width={2874}
-        height={1316}
-        alt="about us"
-        className="w-[91%] absolute bottom-0 right-0 hidden md:block"
-        priority
-      />
-      <Image
-        src={imageAboutSP}
-        width={980}
-        height={589}
-        alt="about us"
-        className="w-[91%] absolute bottom-0 right-0 block md:hidden"
-        priority
-      />
-      {language === 'ja' ? (
-        <div className="absolute top-[20%] right-[6%] z-10 font-semibold text-base sm:text-xl md:text-4xl flex flex-col gap-y-2 items-end font-serif leading-none">
-          <p className="flex sm:flex-row flex-col gap-y-2 items-end">
-            <span>調和の</span>
-            <span>メロディーを奏でる</span>
-          </p>
-          <p>幸せの種を蒔く</p>
-        </div>
-      ) : (
-        <div className="absolute text-darkNavy top-[18%] md:top-[20%] right-[3%] lg:right-[6%] z-10 flex flex-col gap-y-1 font-bold text-base sm:text-lg lg:text-3xl items-end leading-none">
-          <p className="flex flex-col gap-y-1 items-end sm:flex-row">
-            <span>Sowing </span>
-            <span>the seeds of happiness</span>
-          </p>
-          <p className="flex flex-col gap-y-1 items-end sm:flex-row">
-            <span>Orchestrating </span>
-            <span>melodies of harmony</span>
-          </p>
-        </div>
-      )}
     </div>
   )
 }

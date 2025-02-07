@@ -8,7 +8,9 @@ export const SectionAction = ({ language }: Props) => {
   return (
     <div className="flex flex-col-reverse lg:flex-row items-center gap-x-10 gap-y-6">
       <div className="lg:w-1/2 flex flex-col gap-y-4">
-        <p className="text-2xl font-bold">アイデアを現実に。成果を未来に。</p>
+        <p className="text-2xl font-bold text-darkNavy">
+          アイデアを現実に。成果を未来に。
+        </p>
         <div className="leading-7">
           <p>『コンサルは口だけ』</p>
           <p>──そんなイメージを払拭するのが、私たちMUSICOです。</p>

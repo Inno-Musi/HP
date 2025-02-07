@@ -8,14 +8,16 @@ export const SectionFlexible = ({ language }: Props) => {
   return (
     <div className="flex flex-col lg:flex-row items-center gap-x-10 gap-y-6">
       <Image
-        src="/consulting.jpg"
+        src="/handshake.jpg"
         alt="consulting"
         width={1920}
         height={1280}
         className="lg:w-[51%]"
       />
       <div className="lg:w-1/2 flex flex-col gap-y-4">
-        <p className="text-2xl font-bold">しなやかに、変化を制する</p>
+        <p className="text-2xl font-bold text-darkNavy">
+          しなやかに、変化を制する
+        </p>
         <div className="leading-7">
           <p>
             従来のコンサルティングがフレームワークに基づく経営戦略を中心としてきた中、我々MUSICOは顧客のビジョンとニーズに寄り添い、オーダーメイドの戦略を設計します。
