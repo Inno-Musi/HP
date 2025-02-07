@@ -66,7 +66,6 @@ export default async function ContactPage({ params }: Props) {
         crumbs={[
           { labelJa: 'お問い合わせ', labelEn: 'Contact', href: '/contact' },
         ]}
-        className="text-white"
       />
     </>
   )

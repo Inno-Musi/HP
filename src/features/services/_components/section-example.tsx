@@ -65,7 +65,7 @@ type Props = {
 
 export const SectionExample = ({ language }: Props) => {
   return (
-    <div className="bg-lightBlue py-10">
+    <div className="bg-lightBlue py-10 lg:py-20">
       <div className="w-[600px] lg:w-[1200px] mx-auto max-w-[calc(100vw-32px)] flex flex-col gap-y-8 md:gap-y-10">
         <div className="text-center flex flex-col gap-y-2">
           <p className="text-4xl md:text-5xl font-bold text-darkNavy">

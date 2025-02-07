@@ -6,25 +6,35 @@ type Props = {
 
 export const SectionFv = ({ language }: Props) => {
   return (
-    <div className="relative aspect-[1848/1010]">
-      <Image
-        src="/consulting-buffet.png"
-        alt="consulting-buffet"
-        width={1848}
-        height={1010}
-        className="absolute"
-        priority
-      />
-      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-30" />
-      <div className="absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-        <div className="bg-white text-center px-8 sm:px-16 lg:px-24 py-4 sm:py-8 lg:py-12 flex flex-col gap-y-1 sm:gap-y-2 lg:gap-y-4 rounded-sm shadow-md">
-          <p className="text-darkNavy text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-bold">
-            事業内容
-          </p>
-          <p className="text-darkNavy text-sm sm:text-xl md:text-2xl lg:text-3xl font-bold font-roboto">
-            OUR SERVICES
-          </p>
-        </div>
+    <div className="relative aspect-[1000/1000] md:aspect-[1000/480]">
+      <div className="fixed w-full -z-10 top-16 left-0 aspect-[1000/1000] md:aspect-[1000/480]">
+        <Image
+          src="/consulting-buffet.png"
+          width={1848}
+          height={1010}
+          alt="about us"
+          className="object-cover w-full h-full"
+          priority
+        />
+        <div className="absolute bottom-0 right-0 w-full h-full bg-black opacity-50" />
+      </div>
+      <div className="absolute z-10 bg-white w-[40%] md:w-1/3 max-w-[500px] aspect-[480/298] shadow-md flex justify-center items-center top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
+        {language === 'ja' ? (
+          <div className="flex flex-col items-center gap-y-2 md:gap-y-3">
+            <h1 className="font-bold text-2xl md:text-4xl text-darkNavy">
+              事業内容
+            </h1>
+            <p className="flex gap-x-2 md:flex-row flex-col leading-none font-semibold text-sm md:text-lg text-darkNavy">
+              <span>OUR</span>
+              <span>SERVICES</span>
+            </p>
+          </div>
+        ) : (
+          <h1 className="text-xl md:text-4xl lg:text-5xl font-roboto font-semibold flex flex-col items-center gap-y-1 md:gap-y-4 text-darkNavy">
+            <span>OUR</span>
+            <span>SERVICES</span>
+          </h1>
+        )}
       </div>
     </div>
   )

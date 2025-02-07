@@ -14,35 +14,37 @@ type Props = {
 
 export const BreadCrumbs = ({ language, crumbs, className }: Props) => {
   return (
-    <div
-      className={twMerge(
-        'flex gap-x-2 items-center w-[1200px] mx-auto max-w-[calc(100vw-32px)] py-2 text-darkNavy',
-        className,
-      )}
-    >
-      <div className="flex items-center gap-x-2">
-        <Link
-          href={`/${language}`}
-          className="hover:underline underline-offset-2 font-semibold text-sm"
-        >
-          {language === 'ja' ? 'トップページ' : 'Homepage'}
-        </Link>
-        <FaChevronRight size={15} />
-      </div>
-      {crumbs.map((crumb, index) => (
-        <div key={crumb.href} className="flex items-center gap-x-2">
+    <div className="bg-zinc-50">
+      <div
+        className={twMerge(
+          'flex gap-x-2 items-center w-[1200px] mx-auto max-w-[calc(100vw-32px)] py-2 text-darkNavy',
+          className,
+        )}
+      >
+        <div className="flex items-center gap-x-2">
           <Link
-            href={`/${language}${crumb.href}`}
-            className={twMerge(
-              'hover:underline underline-offset-2 font-semibold text-sm',
-              index === crumbs.length - 1 && 'pointer-events-none',
-            )}
+            href={`/${language}`}
+            className="hover:underline underline-offset-2 font-semibold text-sm"
           >
-            {language === 'ja' ? crumb.labelJa : crumb.labelEn}
+            {language === 'ja' ? 'トップページ' : 'Homepage'}
           </Link>
-          {index !== crumbs.length - 1 && <FaChevronRight size={15} />}
+          <FaChevronRight size={15} />
         </div>
-      ))}
+        {crumbs.map((crumb, index) => (
+          <div key={crumb.href} className="flex items-center gap-x-2">
+            <Link
+              href={`/${language}${crumb.href}`}
+              className={twMerge(
+                'hover:underline underline-offset-2 font-semibold text-sm',
+                index === crumbs.length - 1 && 'pointer-events-none',
+              )}
+            >
+              {language === 'ja' ? crumb.labelJa : crumb.labelEn}
+            </Link>
+            {index !== crumbs.length - 1 && <FaChevronRight size={15} />}
+          </div>
+        ))}
+      </div>
     </div>
   )
 }

@@ -30,13 +30,9 @@ export default async function ServicesPage({ params }: Props) {
 
   return (
     <>
-      <div className="flex flex-col gap-y-10 lg:gap-y-20">
-        <SectionFv language={language} />
-        <div className="flex flex-col gap-y-10">
-          <SectionBusinessArea language={language} />
-          <SectionExample language={language} />
-        </div>
-      </div>
+      <SectionFv language={language} />
+      <SectionBusinessArea language={language} />
+      <SectionExample language={language} />
       <BreadCrumbs
         language={language}
         crumbs={[

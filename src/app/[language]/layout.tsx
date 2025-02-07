@@ -39,7 +39,7 @@ export default async function RootLayout({ children, params }: Props) {
       >
         {language === 'ja' && <HeaderJa />}
         {language === 'en' && <HeaderEn />}
-        <RootMainTag>{children}</RootMainTag>
+        <main className="pt-16">{children}</main>
         <Footer language={language} />
       </body>
     </html>

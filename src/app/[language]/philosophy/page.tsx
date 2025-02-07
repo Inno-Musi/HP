@@ -34,18 +34,10 @@ export default async function PhilosophyPage({ params }: Props) {
 
   return (
     <>
-      <div className="pb-[50px] md:pb-[100px]">
-        <SectionFv language={language} />
-        <div className="w-[800px] lg:w-[1200px] mx-auto max-w-[calc(100vw-32px)] flex flex-col gap-y-12 md:gap-y-20 pt-10 md:pt-14">
-          <SectionConcept language={language} />
-          <MotionUp>
-            <SectionFlexible language={language} />
-          </MotionUp>
-          <MotionUp>
-            <SectionAction language={language} />
-          </MotionUp>
-        </div>
-      </div>
+      <SectionFv language={language} />
+      <SectionConcept language={language} />
+      <SectionFlexible language={language} />
+      <SectionAction language={language} />
       <BreadCrumbs
         language={language}
         crumbs={[
