@@ -12,7 +12,7 @@ export const HeaderEn = () => {
   const restPath = pathname.split('/').slice(2).join('/')
 
   return (
-    <header className="h-16 border-b border-gray flex items-center px-5 md:px-6 shadow justify-between sticky top-0 z-50 bg-white">
+    <header className="h-16 w-full border-b border-gray flex items-center px-5 md:px-6 shadow justify-between fixed top-0 z-50 bg-white">
       <LinkCompanyName language="en" />
       <div className="items-center gap-x-5 hidden md:flex font-semibold">
         {links.map((link) => (
@@ -28,14 +28,14 @@ export const HeaderEn = () => {
         <LinkSwitchLanguage
           switchTo="ja"
           restPath={restPath}
-          className="font-notoSansJp"
+          className="font-sawarabiGothic"
         />
       </div>
       <div className="flex items-center gap-x-4 md:hidden">
         <LinkSwitchLanguage
           switchTo="ja"
           restPath={restPath}
-          className="font-notoSansJp"
+          className="font-sawarabiGothic"
         />
         <HeaderSp restPath={restPath} />
       </div>

@@ -20,7 +20,7 @@ export default {
         vividBlue: '#2B6CB0',
       },
       fontFamily: {
-        notoSansJp: ['var(--font-noto-sans-jp)'],
+        sawarabiGothic: ['var(--font-sawarabi-gothic)'],
         roboto: ['var(--font-roboto)'],
       },
       borderRadius: {

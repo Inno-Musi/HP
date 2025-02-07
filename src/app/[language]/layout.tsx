@@ -3,13 +3,15 @@ import type { ReactNode } from 'react'
 import '../globals.css'
 import { Footer } from '@/components/footer'
 import { HeaderEn } from '@/components/header-en'
+import { RootMainTag } from '@/components/root-main-tag'
 import { GoogleTagManager } from '@next/third-parties/google'
-import { Noto_Sans_JP, Roboto } from 'next/font/google'
+import { Roboto, Sawarabi_Gothic } from 'next/font/google'
 import { twMerge } from 'tailwind-merge'
 
-const notoSansJp = Noto_Sans_JP({
+const sawarabiGothic = Sawarabi_Gothic({
   subsets: ['latin'],
-  variable: '--font-noto-sans-jp',
+  weight: '400',
+  variable: '--font-sawarabi-gothic',
 })
 
 const roboto = Roboto({
@@ -31,13 +33,13 @@ export default async function RootLayout({ children, params }: Props) {
       <GoogleTagManager gtmId={process.env.GTM_ID as string} />
       <body
         className={twMerge(
-          `${notoSansJp.variable}  ${roboto.variable}`,
-          language === 'ja' ? 'font-notoSansJp' : 'font-roboto',
+          `${sawarabiGothic.variable}  ${roboto.variable}`,
+          language === 'ja' ? 'font-sawarabiGothic' : 'font-roboto',
         )}
       >
         {language === 'ja' && <HeaderJa />}
         {language === 'en' && <HeaderEn />}
-        <main className="relative bg-zinc-100">{children}</main>
+        <RootMainTag>{children}</RootMainTag>
         <Footer language={language} />
       </body>
     </html>

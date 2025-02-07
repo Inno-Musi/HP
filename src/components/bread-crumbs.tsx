@@ -9,11 +9,17 @@ type Props = {
     labelEn: string
     href: string
   }[]
+  className?: string
 }
 
-export const BreadCrumbs = ({ language, crumbs }: Props) => {
+export const BreadCrumbs = ({ language, crumbs, className }: Props) => {
   return (
-    <div className="flex gap-x-2 items-center w-[1200px] mx-auto max-w-[calc(100vw-32px)] py-2">
+    <div
+      className={twMerge(
+        'flex gap-x-2 items-center w-[1200px] mx-auto max-w-[calc(100vw-32px)] py-2',
+        className,
+      )}
+    >
       <div className="flex items-center gap-x-2">
         <Link
           href={`/${language}`}
