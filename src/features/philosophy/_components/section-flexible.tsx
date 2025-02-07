@@ -7,7 +7,7 @@ type Props = {
 
 export const SectionFlexible = ({ language }: Props) => {
   return (
-    <div className="bg-zinc-50 py-6 md:py-10">
+    <div className="bg-zinc-50 py-10 md:py-20">
       <MotionUp>
         <div className="w-[800px] lg:w-[1200px] mx-auto max-w-[calc(100vw-32px)] flex flex-col lg:flex-row items-center gap-x-10 gap-y-6">
           <Image

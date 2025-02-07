@@ -39,7 +39,7 @@ export const HeaderSp = ({ restPath }: Props) => {
                 <button
                   type="button"
                   key={link.href}
-                  className="font-semibold flex flex-col items-center w-full border-b border-gray pb-2"
+                  className="font-semibold flex flex-col items-center w-full border-b border-darkNavy/50 pb-2"
                   onClick={() => {
                     setIsOpen(false)
                     router.push(`/en/${link.href}`)

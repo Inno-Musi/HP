@@ -12,7 +12,7 @@ type Props = {
 
 export const SectionFv = ({ language }: Props) => {
   return (
-    <div className="relative aspect-[16/14] md:aspect-[16/8]">
+    <div className="relative aspect-[16/14] md:aspect-[16/8] max-w-[1400px] w-full mx-auto">
       <div className="absolute w-full h-full flex flex-col gap-y-4 justify-center items-center z-10">
         <MotionUp duration={0.2} initialY={0}>
           <p className="text-darkNavy text-5xl sm:text-6xl lg:text-8xl font-roboto">

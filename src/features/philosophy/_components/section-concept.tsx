@@ -6,7 +6,7 @@ type Props = {
 
 export const SectionConcept = ({ language }: Props) => {
   return (
-    <div className="text-start sm:text-center bg-white pb-6 md:pb-10 pt-10 md:pt-14">
+    <div className="text-start sm:text-center bg-white py-10 md:py-14">
       <div className="w-[800px] lg:w-[1200px] mx-auto max-w-[calc(100vw-32px)] flex flex-col gap-y-2 sm:gap-y-4">
         <MotionUp>
           <p className="text-2xl sm:text-3xl font-extrabold text-darkNavy">

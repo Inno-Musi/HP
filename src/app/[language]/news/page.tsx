@@ -1,4 +1,5 @@
 import { BreadCrumbs } from '@/components/bread-crumbs'
+import { TitleMain } from '@/components/title-main'
 import { NewsList } from '@/features/news/_components/news-list'
 
 type Props = {
@@ -30,9 +31,11 @@ export default async function NewsPage({ params }: Props) {
   return (
     <>
       <div className="py-16 md:py-20 flex flex-col gap-y-10 md:gap-y-12 bg-zinc-50">
-        <h1 className="text-3xl md:text-4xl font-bold text-center text-darkNavy">
-          {language === 'ja' ? 'お知らせ一覧' : 'Notifications'}
-        </h1>
+        <TitleMain
+          titleJa="お知らせ一覧"
+          titleEn="Notifications"
+          language={language}
+        />
         <NewsList language={language} />
         {/* <Pagenation language={language} page={page} /> */}
       </div>

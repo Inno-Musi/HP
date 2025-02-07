@@ -1,4 +1,5 @@
 import { BreadCrumbs } from '@/components/bread-crumbs'
+import { TitleMain } from '@/components/title-main'
 import dayjs from '@/lib/dayjs'
 import { fetchNewsDetail } from '@/services/news/fetch-news'
 import parse from 'html-react-parser'
@@ -27,9 +28,9 @@ export const NewsContent = async ({ language, id }: Props) => {
   const facebookShareUrlEn = `https://www.facebook.com/share.php?u=${process.env.NEXT_PUBLIC_VERCEL_ENV === 'development' ? 'http://' : 'https://'}${process.env.NEXT_PUBLIC_VERCEL_URL}/en/news/${id}`
 
   return (
-    <>
-      <div className="py-16 md:py-20 w-[900px] max-w-[calc(100vw-32px)] mx-auto flex flex-col gap-y-10 md:gap-y-12">
-        <h1 className="text-3xl font-bold text-center">
+    <div className="bg-zinc-50">
+      <div className="py-16 md:py-20 w-[900px] max-w-[calc(100vw-32px)] mx-auto flex flex-col gap-y-10 md:gap-y-12 ">
+        <h1 className="text-3xl font-bold text-center text-darkNavy">
           {language === 'ja' ? news.titleJa : news.titleEn}
         </h1>
         <div className="bg-white">
@@ -103,6 +104,6 @@ export const NewsContent = async ({ language, id }: Props) => {
           },
         ]}
       />
-    </>
+    </div>
   )
 }

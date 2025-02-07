@@ -67,7 +67,7 @@ export const Footer = ({ language }: Props) => {
                   className="flex flex-col items-center leading-none group"
                 >
                   <span className="font-semibold text-lg">{link.label}</span>
-                  <span className="text-xs">{link.labelEn}</span>
+                  <span className="text-xs font-roboto">{link.labelEn}</span>
                   <span className="group-hover:w-[100%] transition-all duration-300 w-0 h-[1px] bg-emerald" />
                 </Link>
               ))}
@@ -99,15 +99,15 @@ export const Footer = ({ language }: Props) => {
               {language === 'ja' ? (
                 <>
                   <span className="font-semibold text-sm">{policy.label}</span>
-                  <span className="text-xs">{policy.labelEn}</span>
+                  <span className="text-xs font-roboto">{policy.labelEn}</span>
                 </>
               ) : (
-                <span>{policy.labelEn}</span>
+                <span className="font-roboto">{policy.labelEn}</span>
               )}
             </Link>
           ))}
         </div>
-        <p className="text-sm">
+        <p className="text-sm font-roboto">
           Copyright &copy; MUSICO Inc. All rights reserved.
         </p>
       </div>

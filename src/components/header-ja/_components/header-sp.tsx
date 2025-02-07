@@ -46,7 +46,7 @@ export const HeaderSp = ({ restPath }: Props) => {
                   }}
                 >
                   <span className="text-lg">{link.text}</span>
-                  <span className="text-sm">{link.subText}</span>
+                  <span className="text-sm font-roboto">{link.subText}</span>
                 </button>
               ))}
             </div>
