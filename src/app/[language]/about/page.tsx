@@ -31,20 +31,26 @@ export default async function AboutPage({ params }: Props) {
 
   return (
     <>
-      <div className="max-w-[calc(100vw-32px)] mx-auto py-16 md:py-20 flex flex-col gap-y-10 lg:gap-y-12 bg-zinc-50">
-        <TitleMain titleJa="会社概要" titleEn="About Us" language={language} />
-        <div className="flex flex-col gap-y-6 lg:gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto bg-white px-4 md:px-10 py-6 md:py-12 rounded-md">
-          {overviews.map((overview) => (
-            <div
-              key={overview.label}
-              className="flex flex-col gap-y-2 lg:flex-row lg:items-center border-b pb-2 border-gray"
-            >
-              <p className="lg:w-[250px] shrink-0 text-darkNavy font-bold text-xl lg:ml-4">
-                {overview.label}
-              </p>
-              <div className="text-lg">{overview.content}</div>
-            </div>
-          ))}
+      <div className="bg-zinc-50">
+        <div className="max-w-[calc(100vw-32px)] mx-auto py-16 md:py-20 flex flex-col gap-y-10 lg:gap-y-12">
+          <TitleMain
+            titleJa="会社概要"
+            titleEn="About Us"
+            language={language}
+          />
+          <div className="flex flex-col gap-y-6 lg:gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto bg-white px-4 md:px-10 py-6 md:py-12 rounded-md">
+            {overviews.map((overview) => (
+              <div
+                key={overview.label}
+                className="flex flex-col gap-y-2 lg:flex-row lg:items-center border-b pb-2 border-gray"
+              >
+                <p className="lg:w-[250px] shrink-0 text-darkNavy font-bold text-xl lg:ml-4">
+                  {overview.label}
+                </p>
+                <div className="text-lg">{overview.content}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
       <BreadCrumbs
