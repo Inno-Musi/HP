@@ -32,11 +32,11 @@ export const SectionAction = ({ language }: Props) => {
             </div>
           </div>
           <Image
-            src="/collaborate.jpg"
-            alt="collaborate"
-            width={1920}
-            height={1310}
-            className="lg:w-[51%]"
+            src="/musico-strategy.png"
+            alt="musico-strategy"
+            width={1636}
+            height={1516}
+            className="lg:w-[51%] bg-darkNavy/95"
           />
         </div>
       </MotionUp>
