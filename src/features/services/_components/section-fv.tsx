@@ -20,11 +20,11 @@ export const SectionFv = ({ language }: Props) => {
       </div>
       <div className="absolute z-10 bg-white w-[40%] md:w-1/3 max-w-[500px] aspect-[480/298] shadow-md flex justify-center items-center top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
         {language === 'ja' ? (
-          <div className="flex flex-col items-center gap-y-2 md:gap-y-3">
+          <div className="flex flex-col items-center gap-y-1 md:gap-y-3">
             <h1 className="font-bold text-2xl md:text-4xl text-darkNavy">
               事業内容
             </h1>
-            <p className="flex gap-x-2 md:flex-row flex-col leading-none font-semibold text-sm md:text-lg text-darkNavy">
+            <p className="flex gap-x-2 md:flex-row flex-col gap-y-0.5 items-center leading-none font-semibold text-sm md:text-lg text-darkNavy">
               <span>OUR</span>
               <span>SERVICES</span>
             </p>
