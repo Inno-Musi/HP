@@ -23,9 +23,7 @@ export const SectionConcept = ({ language }: Props) => {
             <div className="leading-7 sm:leading-8">
               <p>我々MUSICOは、コンサルティング・業務支援を通じて</p>
               <p>あなたのための「種」を届けたい。</p>
-              <p className="">
-                さぁ、私たちと一緒に、大きな花を咲かせましょう。
-              </p>
+              <p>さぁ、私たちと一緒に、大きな花を咲かせましょう。</p>
             </div>
           </div>
         </MotionUp>
