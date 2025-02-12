@@ -25,13 +25,15 @@ export const SectionFv = ({ language }: Props) => {
           </p>
         </MotionUp>
         <MotionUp duration={0.7} initialY={0}>
-          <div className="text-center leading-7 md:!leading-8 text-sm lg:text-base">
+          <div className="text-center leading-7 md:!leading-8 text-sm lg:text-base px-4">
             {language === 'ja' ? (
               <>
-                <p>我々MUSICOは総合コンサルタントとして</p>
-                <p>オーダーメイドの戦略立案から専門チームによる実行まで</p>
-                <p>顧客のビジョン実現に伴走します。</p>
-                <p>さぁ、未来に大きな花を咲かせましょう。</p>
+                <p>私たちは、企業のコーポレートサービスを支援する</p>
+                <p>
+                  オーダーメイドのBPO（ビジネス・プロセス・アウトソーシング）企業として、
+                </p>
+                <p>経営・財務・ITなどの業務最適化を通じて、</p>
+                <p>効率的で持続可能なビジネス運営に伴走します。</p>
               </>
             ) : (
               <>
@@ -62,7 +64,7 @@ export const SectionFv = ({ language }: Props) => {
           alt="MUSICO"
           width={1298}
           height={428}
-          className="w-[300px] md:w-[400px] lg:w-[500px] xl:w-[650px] rotate-90 absolute -top-[40px] md:top-[120px] lg:top-[160px] xl:top-[180px] -left-[100px] sm:-left-[40px] md:-left-[80px] lg:-left-[120px]"
+          className="w-[300px] md:w-[400px] lg:w-[500px] xl:w-[650px] rotate-90 absolute -top-[50px] md:top-[120px] lg:top-[160px] xl:top-[180px] -left-[100px] sm:-left-[40px] md:-left-[80px] lg:-left-[120px]"
         />
       </Fade>
       <Fade>

@@ -10,7 +10,7 @@ export const SectionConcept = ({ language }: Props) => {
       <div className="w-[800px] lg:w-[1200px] mx-auto max-w-[calc(100vw-32px)] flex flex-col gap-y-2 sm:gap-y-4">
         <MotionUp>
           <p className="text-2xl sm:text-3xl font-extrabold text-darkNavy">
-            オーダーメイドのコンサルティング
+            オーダーメイドのコーポレートサービス支援
           </p>
         </MotionUp>
         <MotionUp>
@@ -21,7 +21,7 @@ export const SectionConcept = ({ language }: Props) => {
               <p>人の心を動かす幸せの花を咲かせる。</p>
             </div>
             <div className="leading-7 sm:leading-8">
-              <p>我々MUSICOは、コンサルティング・業務支援を通じて</p>
+              <p>私たちは、コンサルティング・業務支援を通じて</p>
               <p>あなたのための「種」を届けたい。</p>
               <p>さぁ、私たちと一緒に、大きな花を咲かせましょう。</p>
             </div>
