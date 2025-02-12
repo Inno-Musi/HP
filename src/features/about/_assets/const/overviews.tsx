@@ -47,6 +47,7 @@ export const overviewsJa = [
     label: '主要取引銀行',
     content: (
       <ul className="list-disc pl-6">
+        <li>商工中金</li>
         <li>みずほ銀行</li>
         <li>昭和信用金庫</li>
         <li>日本政策金融公庫</li>
@@ -102,6 +103,7 @@ export const overviewsEn = [
     label: 'Main Banks',
     content: (
       <ul className="list-disc pl-6">
+        <li>The Shoko Chukin Bank, Ltd.</li>
         <li>Mizuho Bank</li>
         <li>Showa Shinkin Bank</li>
         <li>Japan Finance Corporation</li>
