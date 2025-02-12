@@ -1,10 +1,10 @@
 'use client'
 
 import { Button } from '@/components/button'
+import { Fade } from '@/components/fade'
 import { MotionUp } from '@/components/motion-up'
-import Lottie from 'lottie-react'
+import Image from 'next/image'
 import Link from 'next/link'
-import animationData from '../_assets/animation/top-animation.json'
 
 type Props = {
   language: 'en' | 'ja'
@@ -56,16 +56,24 @@ export const SectionFv = ({ language }: Props) => {
           </Link>
         </MotionUp>
       </div>
-      <Lottie
-        animationData={animationData}
-        loop={true}
-        className="w-[25%] absolute left-0 bottom-0"
-      />
-      <Lottie
-        animationData={animationData}
-        loop={true}
-        className="w-1/3 absolute right-0 top-0"
-      />
+      <Fade>
+        <Image
+          src="/musico-pattern.png"
+          alt="MUSICO"
+          width={1298}
+          height={428}
+          className="w-[300px] md:w-[400px] lg:w-[500px] xl:w-[650px] rotate-90 absolute -top-[40px] md:top-[120px] lg:top-[160px] xl:top-[180px] -left-[100px] sm:-left-[40px] md:-left-[80px] lg:-left-[120px]"
+        />
+      </Fade>
+      <Fade>
+        <Image
+          src="/musico-pattern.png"
+          alt="MUSICO"
+          width={1298}
+          height={428}
+          className="w-[300px] md:w-[400px] lg:w-[500px] xl:w-[700px] absolute -bottom-[50px] -right-[50px]"
+        />
+      </Fade>
     </div>
   )
 }
