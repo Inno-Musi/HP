@@ -32,14 +32,7 @@ export const overviewsJa = [
     content: (
       <div>
         <p>〒150-0042</p>
-        <Link
-          href="https://maps.app.goo.gl/1nxgkQ6hnSwfmmJr6"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-vividBlue underline"
-        >
-          東京都渋谷区宇田川町１番１２
-        </Link>
+        <p>東京都渋谷区宇田川町１番１２</p>
       </div>
     ),
   },
@@ -87,15 +80,8 @@ export const overviewsEn = [
     label: 'Office',
     content: (
       <div>
-        <p>150-0042</p>
-        <Link
-          href="https://maps.app.goo.gl/1nxgkQ6hnSwfmmJr6"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-vividBlue underline"
-        >
-          1-12 Udagawacho, Shibuya-ku, Tokyo
-        </Link>
+        <p>〒150-0042</p>
+        <p>1-12 Udagawacho, Shibuya-ku, Tokyo</p>
       </div>
     ),
   },
