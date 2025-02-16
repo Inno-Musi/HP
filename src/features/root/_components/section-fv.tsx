@@ -1,18 +1,17 @@
 'use client'
 
 import { Button } from '@/components/button'
-import { Fade } from '@/components/fade'
 import { MotionUp } from '@/components/motion-up'
-import Image from 'next/image'
+import Lottie from 'lottie-react'
 import Link from 'next/link'
-
+import topAnimationNew from '../_assets/animation/top-animation-new.json'
 type Props = {
   language: 'en' | 'ja'
 }
 
 export const SectionFv = ({ language }: Props) => {
   return (
-    <div className="relative aspect-[16/14] md:aspect-[16/8] max-w-[1400px] w-full mx-auto">
+    <div className="relative aspect-[16/15] md:aspect-[16/8] max-w-[1400px] w-full mx-auto">
       <div className="absolute w-full h-full flex flex-col gap-y-4 justify-center items-center z-10">
         <MotionUp duration={0.2} initialY={0}>
           <p className="text-darkNavy text-5xl sm:text-6xl lg:text-8xl font-roboto">
@@ -58,7 +57,25 @@ export const SectionFv = ({ language }: Props) => {
           </Link>
         </MotionUp>
       </div>
-      <Fade>
+      <Lottie
+        animationData={topAnimationNew}
+        loop={true}
+        autoplay={true}
+        className="absolute top-0 left-0 w-1/3"
+      />
+      <Lottie
+        animationData={topAnimationNew}
+        loop={true}
+        autoplay={true}
+        className="absolute -bottom-[50px] right-0 w-[20%]"
+      />
+      <Lottie
+        animationData={topAnimationNew}
+        loop={true}
+        autoplay={true}
+        className="absolute -bottom-[50px] right-0 w-1/3"
+      />
+      {/* <Fade>
         <Image
           src="/musico-pattern.png"
           alt="MUSICO"
@@ -75,7 +92,7 @@ export const SectionFv = ({ language }: Props) => {
           height={428}
           className="w-[300px] md:w-[400px] lg:w-[500px] xl:w-[700px] absolute -bottom-[50px] -right-[50px]"
         />
-      </Fade>
+      </Fade> */}
     </div>
   )
 }
