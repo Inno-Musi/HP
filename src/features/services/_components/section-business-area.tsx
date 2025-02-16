@@ -6,7 +6,7 @@ type Props = {
 
 const businessAreas = [
   {
-    title: 'コンサルティング',
+    title: 'コーポレートサービス支援',
     image: '/technology.png',
     description: (
       <>
@@ -60,7 +60,7 @@ export const SectionBusinessArea = ({ language }: Props) => {
     <div className="bg-zinc-50 py-10 lg:py-20">
       <div className="w-[800px] lg:w-[1200px] mx-auto max-w-[calc(100vw-32px)] flex flex-col gap-y-8 lg:gap-y-12">
         <p className="text-2xl md:text-4xl font-bold text-center text-darkNavy">
-          コンサルティング <br className="md:hidden block" />×
+          コーポレートサービス支援 <br className="md:hidden block" />×
           <br className="md:hidden block" /> フードサービス
         </p>
         <div className="flex gap-x-4 gap-y-6 flex-col lg:flex-row">
