@@ -11,10 +11,10 @@ export const SectionFlexible = ({ language }: Props) => {
       <MotionUp>
         <div className="w-[800px] lg:w-[1200px] mx-auto max-w-[calc(100vw-32px)] flex flex-col lg:flex-row items-center gap-x-10 gap-y-6">
           <Image
-            src="/handshake.jpg"
+            src="/consulting-image.jpg"
             alt="consulting"
-            width={1920}
-            height={1280}
+            width={1280}
+            height={960}
             className="lg:w-[51%]"
           />
           <div className="lg:w-1/2 flex flex-col gap-y-4">

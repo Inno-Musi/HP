@@ -25,19 +25,18 @@ export const SectionServices = ({ language }: Props) => {
               OUR SERVICES
             </p>
             {language === 'ja' ? (
-              <>
-                <p className="leading-7">
-                  我々MUSICOは戦略立案段階から実行支援段階まで、包括的に支援を行う
+              <div className="flex flex-col gap-y-2 leading-7">
+                <p>
+                  私たちは戦略立案から実行支援まで、包括的に支援を行う
+                  <span className="font-bold text-darkNavy">サポート領域</span>
+                  と、専任部隊を配置し運営する
                   <span className="font-bold text-darkNavy">
-                    コンサルティング領域
+                    オペレーション領域
                   </span>
-                  と、企業内で運営されるカフェやレストランなどを設立支援・運営する
-                  <span className="font-bold text-darkNavy">
-                    フードサービス領域
-                  </span>
-                  を大きな2本の柱として、クライアント企業の経営資源を最大限活用し、成長を加速させるお手伝いを行なっています。
+                  を大きな2本の柱として、企業の経営資源を最大限活用し、成長を加速させるお手伝いを行なっています。
                 </p>
-              </>
+                <p>フードサービス・IT・SCMなど</p>
+              </div>
             ) : (
               <>
                 <p className="leading-7">
