@@ -30,8 +30,8 @@ export const SectionAction = ({ language }: Props) => {
           <Image
             src="/musico-approach.png"
             alt="musico-approach"
-            width={2806}
-            height={2532}
+            width={1012}
+            height={906}
             className="lg:w-[51%] bg-darkNavy/95"
           />
         </div>
