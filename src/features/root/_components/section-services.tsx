@@ -35,7 +35,6 @@ export const SectionServices = ({ language }: Props) => {
                   </span>
                   を大きな2本の柱として、企業の経営資源を最大限活用し、成長を加速させるお手伝いを行なっています。
                 </p>
-                <p>フードサービス・IT・SCMなど</p>
               </div>
             ) : (
               <>
