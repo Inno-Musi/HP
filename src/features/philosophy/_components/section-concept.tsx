@@ -7,7 +7,7 @@ type Props = {
 export const SectionConcept = ({ language }: Props) => {
   return (
     <div className="text-start sm:text-center bg-white py-10 md:py-14">
-      <div className="w-[800px] lg:w-[1200px] mx-auto max-w-[calc(100vw-32px)] flex flex-col gap-y-2 sm:gap-y-4">
+      <div className="mx-auto max-w-[calc(100vw-32px)] flex flex-col gap-y-2 sm:gap-y-4">
         <MotionUp>
           <p className="text-2xl sm:text-3xl font-extrabold text-darkNavy">
             オーダーメイドのコーポレートサービス支援
@@ -15,16 +15,18 @@ export const SectionConcept = ({ language }: Props) => {
         </MotionUp>
         <MotionUp>
           <div className="flex flex-col gap-y-1 sm:gap-y-2 text-base sm:text-lg">
-            <div className="leading-7 sm:leading-8">
-              <p>人とモノを繋ぎ、人と人を繋ぐ種</p>
-              <p>その種はやがて調和の芽を出し、</p>
-              <p>人の心を動かす幸せの花を咲かせる。</p>
-            </div>
-            <div className="leading-7 sm:leading-8">
-              <p>私たちは、コンサルティング・業務支援を通じて</p>
-              <p>あなたのための「種」を届けたい。</p>
-              <p>さぁ、私たちと一緒に、大きな花を咲かせましょう。</p>
-            </div>
+            <p className="leading-7 sm:leading-8">
+              私たちは、戦略策定に留まらず、実行と成果創出にコミットするコンサルティング&ソリューションパートナーです。
+            </p>
+            <p className="leading-7 sm:leading-8">
+              従来のコンサルティングが戦略提案に偏りがちであったのに対し、私たちは豊富な事業実績と専門チームによる実行力を強みとしています。
+            </p>
+            <p className="leading-7 sm:leading-8">
+              御社それぞれの事業状況を深く理解し、個別最適化された戦略を実行することで、確実な事業成長を実現します。
+            </p>
+            <p className="leading-7 sm:leading-8">
+              変化の激しい時代において、真に成果に繋がる成長戦略を、私たちと共につくり上げ、実現しませんか。
+            </p>
           </div>
         </MotionUp>
       </div>
