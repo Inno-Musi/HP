@@ -37,10 +37,8 @@ export const SectionContact = ({ language }: Props) => {
                 </>
               ) : (
                 <>
-                  <span className="pr-1">
-                    For inquiries about business collaboration,
-                  </span>
-                  <span>business consulting, and recruitment</span>
+                  <span>For inquiries regarding BPO, business matters,</span>
+                  <span>or recruitment, please contact us here.</span>
                 </>
               )}
             </p>

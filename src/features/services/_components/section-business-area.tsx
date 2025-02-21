@@ -6,9 +6,10 @@ type Props = {
 
 const businessAreas = [
   {
-    title: 'コーポレートサービス支援',
+    titleJa: 'コーポレートサービス支援',
+    titleEn: 'Corporate Service Support',
     image: '/technology.png',
-    description: (
+    descriptionJa: (
       <>
         <ol className="list-decimal pl-5 mb-2">
           <li>的確な経営課題の抽出</li>
@@ -26,11 +27,37 @@ const businessAreas = [
         </p>
       </>
     ),
+    descriptionEn: (
+      <>
+        <ol className="list-decimal pl-5 mb-2">
+          <li>Accurate identification of management challenges</li>
+          <li>Flexible strategy planning</li>
+          <li>Strong execution support</li>
+        </ol>
+        <p>
+          We provide corporate service support based on these three pillars.
+        </p>
+        <p>
+          In particular, we excel in the IT domain by
+          <span className="text-darkNavy font-bold">
+            {' '}
+            actively utilizing AI
+          </span>
+          .
+        </p>
+        <p>
+          We also offer support for corporate services, maximizing our clients'
+          management resources as a business partner, and driving their growth
+          with strength and confidence.
+        </p>
+      </>
+    ),
   },
   {
-    title: 'フードサービス',
+    titleJa: 'フードサービス',
+    titleEn: 'Food Service',
     image: '/buffet-2.jpg',
-    description: (
+    descriptionJa: (
       <>
         <ul className="list-disc pl-5">
           <li>企業内カフェ／レストランの開業支援や運営</li>
@@ -52,6 +79,33 @@ const businessAreas = [
         </p>
       </>
     ),
+    descriptionEn: (
+      <>
+        <ul className="list-disc pl-5">
+          <li>Support and management of in-house cafés/restaurants</li>
+          <li>Operation of in-house catering services</li>
+          <li>Management of fine dining services for VIPs</li>
+        </ul>
+        <p>
+          We have extensive experience providing services to companies,
+          including major foreign financial institutions, in the food service
+          domain.
+        </p>
+        <p>
+          Based on our rich track record and expertise, we offer food services
+          tailored to client needs, from casual to luxurious.
+        </p>
+        <p>
+          Additionally, as part of our{' '}
+          <span className="text-darkNavy font-bold">
+            CSR (Corporate Social Responsibility)
+          </span>{' '}
+          activities, we are committed to fair trade and food waste reduction,
+          working daily to contribute to building a better society through food
+          services.
+        </p>
+      </>
+    ),
   },
 ]
 
@@ -60,29 +114,37 @@ export const SectionBusinessArea = ({ language }: Props) => {
     <div className="bg-zinc-50 py-10 lg:py-20">
       <div className="w-[800px] lg:w-[1200px] mx-auto max-w-[calc(100vw-32px)] flex flex-col gap-y-8 lg:gap-y-12">
         <p className="text-2xl md:text-4xl font-bold text-center text-darkNavy">
-          コーポレートサービス支援 <br className="md:hidden block" />×
-          <br className="md:hidden block" /> フードサービス
+          {language === 'ja'
+            ? 'コーポレートサービス支援'
+            : 'Corporate Service Support'}{' '}
+          <br className="md:hidden block" />×
+          <br className="md:hidden block" />{' '}
+          {language === 'ja' ? 'フードサービス' : 'Food Service'}
         </p>
         <div className="flex gap-x-4 gap-y-6 flex-col lg:flex-row">
           {businessAreas.map((businessArea) => (
             <div
-              key={businessArea.title}
+              key={businessArea.titleJa}
               className="lg:w-1/2 shadow-md rounded-sm overflow-hidden bg-white"
             >
               <div className="relative aspect-[16/9]">
                 <Image
                   src={businessArea.image}
-                  alt={businessArea.title}
+                  alt={businessArea.titleJa}
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="px-4 py-6 lg:py-8 flex flex-col gap-y-6 lg:gap-y-8">
                 <p className="text-center text-2xl lg:text-3xl font-bold text-darkNavy">
-                  {businessArea.title}
+                  {language === 'ja'
+                    ? businessArea.titleJa
+                    : businessArea.titleEn}
                 </p>
                 <div className="leading-6 text-sm lg:leading-7 lg:text-base">
-                  {businessArea.description}
+                  {language === 'ja'
+                    ? businessArea.descriptionJa
+                    : businessArea.descriptionEn}
                 </div>
               </div>
             </div>

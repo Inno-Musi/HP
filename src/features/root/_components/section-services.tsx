@@ -38,21 +38,19 @@ export const SectionServices = ({ language }: Props) => {
               </div>
             ) : (
               <>
-                <p className="leading-7">
-                  We, MUSICO, provide comprehensive support from the strategy
-                  planning phase to the execution phase. Our two main pillars
-                  are the{' '}
+                <p>
+                  We provide comprehensive support from strategy planning to
+                  execution, with two main pillars{' '}
                   <span className="font-bold text-darkNavy">
-                    consulting domain
+                    Support Domain
                   </span>
-                  , which covers everything from strategic planning to execution
-                  support, and the{' '}
+                  , which covers strategic planning and assistance, and{' '}
                   <span className="font-bold text-darkNavy">
-                    food service domain
+                    Operation Domain
                   </span>
-                  , which supports the establishment and operation of in-house
-                  cafés and restaurants. We help client companies maximize their
-                  management resources and accelerate their growth.
+                  , where we assign dedicated teams for execution and
+                  management. Through these, we help businesses maximize their
+                  resources and accelerate growth.
                 </p>
               </>
             )}
