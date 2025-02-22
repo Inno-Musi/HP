@@ -52,13 +52,23 @@ export const SectionAction = ({ language }: Props) => {
               </>
             )}
           </div>
-          <Image
-            src="/musico-approach.png"
-            alt="musico-approach"
-            width={930}
-            height={796}
-            className="lg:w-[51%] bg-darkNavy/95"
-          />
+          {language === 'ja' ? (
+            <Image
+              src="/musico-approach.png"
+              alt="musico-approach"
+              width={930}
+              height={796}
+              className="lg:w-[51%]"
+            />
+          ) : (
+            <Image
+              src="/musico-approach-en.png"
+              alt="musico-approach"
+              width={876}
+              height={758}
+              className="lg:w-[51%]"
+            />
+          )}
         </div>
       </MotionUp>
     </div>
