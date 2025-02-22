@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import imageAbout from '../_assets/images/bg-fv-about.jpeg'
 
 type Props = {
   language: 'en' | 'ja'
@@ -10,7 +9,7 @@ export const SectionFv = ({ language }: Props) => {
     <div className="relative aspect-[1000/1000] md:aspect-[1000/480]">
       <div className="fixed -z-10 top-16 left-0 aspect-[1000/1000] md:aspect-[1000/480]">
         <Image
-          src={imageAbout}
+          src="/bg-fv-about.jpeg"
           width={7952}
           height={5304}
           alt="about us"
