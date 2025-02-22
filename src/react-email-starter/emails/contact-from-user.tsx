@@ -36,7 +36,7 @@ export default function ContactFormUser({
       <Tailwind>
         <Body className="bg-white my-auto mx-auto font-sans px-2">
           <Container className="border border-solid border-[#eaeaea] rounded my-[40px] mx-auto p-[20px] max-w-[465px]">
-            <Section className="mt-[32px]">
+            <Section>
               <Img
                 src={`${process.env.NEXT_PUBLIC_VERCEL_ENV === 'development' ? 'http://' : 'https://'}${process.env.NEXT_PUBLIC_VERCEL_URL}/musico-logo.png`}
                 width="1008"
@@ -46,7 +46,7 @@ export default function ContactFormUser({
                 style={{ width: '140px', objectFit: 'contain' }}
               />
             </Section>
-            <Heading className="text-black text-[20px] font-bold text-center p-0 my-[30px] mx-0">
+            <Heading className="text-black text-[20px] font-bold text-center p-0 mb-[30px] mx-0">
               musicoホームページに
               <br />
               お問い合わせがありました
