@@ -19,14 +19,14 @@ export const generateMetadata = async ({
     return {
       title: '株式会社MUSICO',
       description:
-        'MUSICOは「幸せの種を蒔く」をビジョンに掲げ、戦略から実行まで伴走するコンサルティング領域と、企業内のレストランの運営、ケータリングの提供を行うフードサービス領域を軸として、クライアント企業の成長を加速させるお手伝いを行なっています。',
+        '私たちは、企業のコーポレートサービスを支援するオーダーメイドのBPO企業として、経営・財務・ITなどの業務最適化を通じて、効率的で持続可能なビジネス運営に伴走します。',
     }
   }
 
   return {
     title: 'MUSICO Inc.',
     description:
-      'MUSICO embraces the vision of "Sowing the Seeds of Happiness" and supports client companies in accelerating their growth. We operate in two core areas: consulting, where we provide end-to-end support from strategy to execution, and food services, which include managing in-house corporate restaurants and offering catering services.',
+      'We are a custom-made BPO company that supports corporate services, optimizing operations in management, finance, and IT to ensure efficient and sustainable business operations.',
   }
 }
 

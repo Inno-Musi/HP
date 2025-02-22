@@ -14,14 +14,14 @@ export const generateMetadata = async ({ params }: Props) => {
     return {
       title: '事業内容 | 株式会社MUSICO',
       description:
-        '株式会社MUSICOではコンサルティングとフードサービスを主軸とした事業を展開しており、これまで社内レストラン運営や経営研修の開催、カンボジアでの農業支援などの実績を残してきました。',
+        '株式会社MUSICOではコーポレートサービス支援とフードサービスを主軸とした事業を展開しており、これまで社内レストラン運営や経営研修の開催、カンボジアでの農業支援などの実績を残してきました。',
     }
   }
 
   return {
     title: 'Services | MUSICO Inc.',
     description:
-      'MUSICO Inc. provides consulting and food services as its main business, and has achieved results such as the operation of an internal restaurant, the holding of management training, and agricultural support in Cambodia.',
+      'At MUSICO Inc., we focus on corporate service support and food service as our core businesses. Our past achievements include operating in-house restaurants, organizing management training programs, and supporting agricultural initiatives in Cambodia.',
   }
 }
 

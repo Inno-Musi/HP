@@ -18,14 +18,14 @@ export const generateMetadata = async ({ params }: Props) => {
     return {
       title: '経営理念 | 株式会社MUSICO',
       description:
-        'MUSICOは「幸せの種を蒔く」をビジョンに掲げ、戦略段階から実行段階までオーダーメイドのコンサルティングとフードサービスを提供します。',
+        '私たちは、戦略策定に留まらず、実行と成果創出にコミットするコンサルティング&ソリューションパートナーです。豊富な事業実績と専門チームによる実行力を強みとしています。',
     }
   }
 
   return {
     title: 'Corporate Philosophy | MUSICO Inc.',
     description:
-      'MUSICO upholds the vision of "Sowing the Seeds of Happiness" and provides tailor-made consulting and food services from the strategy phase to execution.',
+      'We are a consulting and solutions partner committed not only to strategy development but also to execution and delivering results. Our strengths lie in our extensive business track record and the execution capabilities of our expert team.',
   }
 }
 

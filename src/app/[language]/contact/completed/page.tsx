@@ -8,6 +8,22 @@ type Props = {
   }>
 }
 
+export const generateMetadata = async ({ params }: Props) => {
+  const { language } = await params
+
+  if (language === 'ja') {
+    return {
+      title: 'お問い合わせ完了 | 株式会社MUSICO',
+      description: '株式会社MUSICOへのお問い合わせ完了ページです。',
+    }
+  }
+
+  return {
+    title: 'Contact Completed | MUSICO Inc.',
+    description: 'Contact completion page for MUSICO Inc.',
+  }
+}
+
 export default async function ContactCompletedPage({ params }: Props) {
   const { language } = await params
   return (
