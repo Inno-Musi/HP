@@ -25,7 +25,7 @@ export const POST = async (req: NextRequest) => {
 
     await resend.emails.send({
       from: process.env.SENDER_EMAIL ?? '',
-      to: 'ayumu_note@outlook.jp',
+      to: 'info@musico.co.jp',
       subject: body.subject,
       html: htmlContent,
     })
