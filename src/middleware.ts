@@ -10,28 +10,28 @@ export const middleware = (req: NextRequest) => {
   }
 
   // BASIC認証
-  if (process.env.NEXT_PUBLIC_VERCEL_ENV === 'development') {
-    return NextResponse.next()
-  }
+  // if (process.env.NEXT_PUBLIC_VERCEL_ENV === 'development') {
+  //   return NextResponse.next()
+  // }
 
-  const basicAuth = req.headers.get('Authorization')
+  // const basicAuth = req.headers.get('Authorization')
 
-  if (basicAuth) {
-    const authValue = basicAuth.split(' ')[1]
-    const [user, password] = atob(authValue).split(':')
+  // if (basicAuth) {
+  //   const authValue = basicAuth.split(' ')[1]
+  //   const [user, password] = atob(authValue).split(':')
 
-    if (user === 'admin' && password === 'adminuser55') {
-      return NextResponse.next()
-    }
-  }
+  //   if (user === 'admin' && password === 'adminuser55') {
+  //     return NextResponse.next()
+  //   }
+  // }
 
-  return NextResponse.json(
-    { error: 'Basic Auth Required' },
-    {
-      headers: { 'WWW-Authenticate': 'Basic realm="Secure Area"' },
-      status: 401,
-    },
-  )
+  // return NextResponse.json(
+  //   { error: 'Basic Auth Required' },
+  //   {
+  //     headers: { 'WWW-Authenticate': 'Basic realm="Secure Area"' },
+  //     status: 401,
+  //   },
+  // )
 }
 
 export const config = {
