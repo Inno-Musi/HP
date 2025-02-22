@@ -43,7 +43,7 @@ export default function ContactFormUser({
                 height="456"
                 alt="musico logo"
                 className="my-0 mx-auto"
-                style={{ width: '140px' }}
+                style={{ width: '140px', objectFit: 'contain' }}
               />
             </Section>
             <Heading className="text-black text-[20px] font-bold text-center p-0 my-[30px] mx-0">
