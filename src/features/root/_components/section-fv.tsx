@@ -13,13 +13,14 @@ export const SectionFv = ({ language }: Props) => {
   return (
     <div className="relative aspect-[16/16] sm:aspect-[16/15] md:aspect-[16/8] max-w-[1400px] w-full mx-auto">
       <div className="absolute w-full h-full flex flex-col gap-y-2 md:gap-y-4 justify-center items-center z-10">
-        <MotionUp duration={0.2} initialY={0}>
+        {/* <MotionUp duration={0.2} initialY={0}>
           <p className="text-darkNavy text-5xl sm:text-6xl lg:text-8xl font-roboto">
             MUSICO
           </p>
-        </MotionUp>
+        </MotionUp> */}
         <MotionUp duration={0.4} initialY={0}>
-          <p className="text-lg sm:text-xl lg:text-2xl font-bold font-roboto">
+          {/* <p className="text-lg sm:text-xl lg:text-2xl font-bold font-roboto"> */}
+          <p className="text-2xl sm:text-3xl lg:text-4xl font-bold font-roboto text-darkNavy">
             Sow the Seeds of Happiness
           </p>
         </MotionUp>
