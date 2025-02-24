@@ -27,10 +27,10 @@ export const SectionFv = ({ language }: Props) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="relative aspect-[16/16] sm:aspect-[16/15] md:aspect-[16/8] max-w-[1400px] w-full mx-auto overflow-hidden"
+            className="relative min-h-[calc(100vh-64px)] w-full mx-auto overflow-hidden"
           >
             <div 
-              className="absolute inset-0 w-full h-full bg-cover bg-center z-0 bg-black/30 scale-110" 
+              className="absolute inset-0 w-full h-full bg-cover bg-center z-0 bg-black/30" 
               style={{ backgroundImage: "url('/bg-fv-top.jpg')" }}
             />
             <div className="absolute w-full h-full flex flex-col gap-y-2 md:gap-y-4 items-start justify-end pb-16 pl-8 md:pl-16 z-10">

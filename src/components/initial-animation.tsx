@@ -15,11 +15,11 @@ export const InitialAnimation = ({ onComplete }: { onComplete: () => void }) => 
     const timer2 = setTimeout(() => setShowFirstLottie(true), 1500)
     const timer2Hide = setTimeout(() => setShowFirstLottie(false), 2000)
 
-    const timer3 = setTimeout(() => setShowSecondLottie(true), 2000)
-    const timer3Hide = setTimeout(() => setShowSecondLottie(false), 2500)
+    const timer3 = setTimeout(() => setShowSecondLottie(true), 2200)
+    const timer3Hide = setTimeout(() => setShowSecondLottie(false), 2700)
 
-    const timer4 = setTimeout(() => setShowThirdLottie(true), 3000)
-    const timer4Hide = setTimeout(() => setShowThirdLottie(false), 3500)
+    const timer4 = setTimeout(() => setShowThirdLottie(true), 3200)
+    const timer4Hide = setTimeout(() => setShowThirdLottie(false), 3700)
 
     // 最後にロゴとアニメーション全体を終了
     const timer5 = setTimeout(() => {
@@ -83,7 +83,7 @@ export const InitialAnimation = ({ onComplete }: { onComplete: () => void }) => 
               animationData={topAnimationNew}
               loop={false}
               autoplay={true}
-              className="absolute top-0 left-0 w-1/3"
+              className="absolute top-1/3 left-0 w-1/3"
             />
           </motion.div>
         )}
