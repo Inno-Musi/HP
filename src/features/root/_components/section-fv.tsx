@@ -12,6 +12,10 @@ type Props = {
 export const SectionFv = ({ language }: Props) => {
   return (
     <div className="relative aspect-[16/16] sm:aspect-[16/15] md:aspect-[16/8] max-w-[1400px] w-full mx-auto">
+      <div 
+        className="absolute inset-0 w-full h-full bg-cover bg-center z-0" 
+        style={{ backgroundImage: "url('/bg-fv-top.jpg')" }}
+      />
       <div className="absolute w-full h-full flex flex-col gap-y-2 md:gap-y-4 justify-center items-center z-10">
         {/* <MotionUp duration={0.2} initialY={0}>
           <p className="text-darkNavy text-5xl sm:text-6xl lg:text-8xl font-roboto">
@@ -20,12 +24,12 @@ export const SectionFv = ({ language }: Props) => {
         </MotionUp> */}
         <MotionUp duration={0.4} initialY={0}>
           {/* <p className="text-lg sm:text-xl lg:text-2xl font-bold font-roboto"> */}
-          <p className="text-2xl sm:text-3xl lg:text-4xl font-bold font-roboto text-darkNavy">
+          <p className="text-2xl sm:text-3xl lg:text-4xl font-bold font-roboto text-white">
             Sow the Seeds of Happiness
           </p>
         </MotionUp>
         <MotionUp duration={0.7} initialY={0}>
-          <div className="text-center leading-7 md:!leading-8 text-sm lg:text-base px-4">
+          <div className="text-center leading-7 md:!leading-8 text-sm lg:text-base px-4 text-white">
             {language === 'ja' ? (
               <>
                 <p>私たちは、企業のコーポレートサービスを支援する</p>
