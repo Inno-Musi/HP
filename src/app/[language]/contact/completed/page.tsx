@@ -26,6 +26,7 @@ export const generateMetadata = async ({ params }: Props) => {
 
 export default async function ContactCompletedPage({ params }: Props) {
   const { language } = await params
+
   return (
     <>
       <GeometricBackground className="fixed" />
