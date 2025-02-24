@@ -101,7 +101,7 @@ export const InitialAnimation = ({ onComplete }: { onComplete: () => void }) => 
               animationData={topAnimationNew}
               loop={false}
               autoplay={true}
-              className="absolute -bottom-[50px] right-0 w-[20%]"
+              className="absolute -bottom-0 right-0 w-[20%]"
             />
           </motion.div>
         )}
@@ -119,7 +119,7 @@ export const InitialAnimation = ({ onComplete }: { onComplete: () => void }) => 
               animationData={topAnimationNew}
               loop={false}
               autoplay={true}
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-[100vh] w-auto"
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-[300vh] w-auto"
             />
           </motion.div>
         )}

@@ -6,8 +6,6 @@ import { InitialAnimation } from '@/components/initial-animation'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import { useState } from 'react'
-import Lottie from 'lottie-react'
-import topAnimationNew from '../_assets/animation/top-animation-new.json'
 
 type Props = {
   language: 'en' | 'ja'
@@ -24,9 +22,9 @@ export const SectionFv = ({ language }: Props) => {
       <AnimatePresence>
         {!showInitialAnimation && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="relative min-h-[calc(100vh-64px)] w-full mx-auto overflow-hidden"
           >
             <div 
@@ -51,9 +49,9 @@ export const SectionFv = ({ language }: Props) => {
                     <>
                       <p>私たちは、企業のコーポレートサービスを支援する</p>
                       <p>
-                        オーダーメイドのBPO（ビジネス・プロセス・アウトソーシング）企業として、
+                        オーダーメイドのBPO（ビジネス・プロセス・アウトソーシング）企業として
                       </p>
-                      <p>経営・財務・ITなどの業務最適化を通じて、</p>
+                      <p>経営・財務・ITなどの業務最適化を通じて</p>
                       <p>効率的で持続可能なビジネス運営に伴走します。</p>
                     </>
                   ) : (
