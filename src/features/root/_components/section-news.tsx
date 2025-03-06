@@ -11,7 +11,7 @@ type Props = {
 
 export const SectionNews = async ({ language }: Props) => {
   const FETCH_LIMIT = 3
-  const res = await fetchNewsList(FETCH_LIMIT)
+  const res = await fetchNewsList({ limit: FETCH_LIMIT })
   const { contents: newsList } = res
 
   return (

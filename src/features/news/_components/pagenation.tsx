@@ -8,7 +8,7 @@ type Props = {
 }
 
 export const Pagenation = async ({ page, language }: Props) => {
-  const news = await fetchNewsList()
+  const news = await fetchNewsList({})
   const totalCount = news.totalCount
   const totalPage = Math.ceil(totalCount / FETCH_LIMIT)
 
