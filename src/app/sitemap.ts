@@ -1,6 +1,17 @@
+import { fetchNewsList } from '@/services/news/fetch-news-list'
 import type { MetadataRoute } from 'next'
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+export async function generateSitemaps() {
+  const res = await fetchNewsList({ fields: ['id'] })
+
+  return res.contents as { id: string }[]
+}
+
+export default async function sitemap({
+  id,
+}: {
+  id: string
+}): Promise<MetadataRoute.Sitemap> {
   return [
     {
       url: 'https://www.musico.co.jp/ja',
@@ -44,7 +55,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           en: 'https://www.musico.co.jp/en/news',
         },
       },
-      priority: 0.8,
+      priority: 0.7,
+    },
+    {
+      url: `https://www.musico.co.jp/ja/news/${id}`,
+      lastModified: new Date(),
+      alternates: {
+        languages: {
+          ja: `https://www.musico.co.jp/ja/news/${id}`,
+          en: `https://www.musico.co.jp/en/news/${id}`,
+        },
+      },
+      priority: 0.6,
     },
     {
       url: 'https://www.musico.co.jp/ja/philosophy',
@@ -55,7 +77,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           en: 'https://www.musico.co.jp/en/philosophy',
         },
       },
-      priority: 0.8,
+      priority: 0.5,
     },
     {
       url: 'https://www.musico.co.jp/ja/privacy-policy',
@@ -66,7 +88,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           en: 'https://www.musico.co.jp/en/privacy-policy',
         },
       },
-      priority: 0.8,
+      priority: 0.3,
     },
     {
       url: 'https://www.musico.co.jp/ja/security-policy',
@@ -77,7 +99,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           en: 'https://www.musico.co.jp/en/security-policy',
         },
       },
-      priority: 0.8,
+      priority: 0.3,
     },
     {
       url: 'https://www.musico.co.jp/ja/services',
@@ -88,7 +110,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           en: 'https://www.musico.co.jp/en/services',
         },
       },
-      priority: 0.8,
+      priority: 0.7,
     },
   ]
 }
