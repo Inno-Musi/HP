@@ -42,7 +42,7 @@ export const HeaderSp = ({ restPath }: Props) => {
                   className="font-semibold flex flex-col items-center w-full"
                   onClick={() => {
                     setIsOpen(false)
-                    router.push(`/ja/${link.href}`)
+                    router.push(`/ja${link.href}`)
                   }}
                 >
                   <span className="text-lg">{link.text}</span>

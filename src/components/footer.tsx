@@ -63,7 +63,7 @@ export const Footer = ({ language }: Props) => {
               {mainLinks.map((link) => (
                 <Link
                   key={link.href}
-                  href={`/ja/${link.href}`}
+                  href={`/ja${link.href}`}
                   className="flex flex-col items-center leading-none group"
                 >
                   <span className="font-semibold text-lg">{link.label}</span>
