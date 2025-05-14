@@ -1,10 +1,14 @@
-import { useEffect, useState } from 'react'
-import Lottie from 'lottie-react'
-import { motion, AnimatePresence } from 'framer-motion'
-import Image from 'next/image'
 import topAnimationNew from '@/features/root/_assets/animation/top-animation-new.json'
+import { AnimatePresence, motion } from 'framer-motion'
+import dynamic from 'next/dynamic'
+import Image from 'next/image'
+import { useEffect, useState } from 'react'
 
-export const InitialAnimation = ({ onComplete }: { onComplete: () => void }) => {
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false })
+
+export const InitialAnimation = ({
+  onComplete,
+}: { onComplete: () => void }) => {
   const [showLogo, setShowLogo] = useState(true)
   const [showFirstLottie, setShowFirstLottie] = useState(false)
   const [showSecondLottie, setShowSecondLottie] = useState(false)
@@ -126,4 +130,4 @@ export const InitialAnimation = ({ onComplete }: { onComplete: () => void }) => 
       </AnimatePresence>
     </div>
   )
-} 
+}

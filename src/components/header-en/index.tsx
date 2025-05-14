@@ -17,7 +17,7 @@ export const HeaderEn = () => {
       <div className="items-center gap-x-5 hidden md:flex font-semibold">
         {links.map((link) => (
           <Link
-            href={`/en/${link.href}`}
+            href={`/en${link.href}`}
             className="flex flex-col items-center group mt-1"
             key={link.href}
           >

@@ -17,7 +17,7 @@ export const HeaderJa = () => {
       <div className="items-center gap-x-5 hidden md:flex font-semibold">
         {links.map((link) => (
           <Link
-            href={`/ja/${link.href}`}
+            href={`/ja${link.href}`}
             className="flex flex-col mt-2 items-center group"
             key={link.href}
           >

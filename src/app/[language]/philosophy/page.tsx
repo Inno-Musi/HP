@@ -1,5 +1,4 @@
 import { BreadCrumbs } from '@/components/bread-crumbs'
-import { MotionUp } from '@/components/motion-up'
 import { SectionAction } from '@/features/philosophy/_components/section-action'
 import { SectionConcept } from '@/features/philosophy/_components/section-concept'
 import { SectionFlexible } from '@/features/philosophy/_components/section-flexible'

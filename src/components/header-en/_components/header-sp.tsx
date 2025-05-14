@@ -42,7 +42,7 @@ export const HeaderSp = ({ restPath }: Props) => {
                   className="font-semibold flex flex-col items-center w-full border-b border-darkNavy/50 pb-2"
                   onClick={() => {
                     setIsOpen(false)
-                    router.push(`/en/${link.href}`)
+                    router.push(`/en${link.href}`)
                   }}
                 >
                   <span className="text-xl">{link.text}</span>

@@ -6,7 +6,7 @@ type Props = {
 }
 
 export const NewsList = async ({ language }: Props) => {
-  const data = await fetchNewsList()
+  const data = await fetchNewsList({})
   const { contents: news } = data
 
   return (
