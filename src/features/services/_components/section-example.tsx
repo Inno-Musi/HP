@@ -5,7 +5,7 @@ import Link from 'next/link'
 const examples = [
   {
     titleJa: '大手外資金融機関の社内レストラン運営',
-    titleEn: 'Management Game',
+    titleEn: 'In-House Restaurant Operations',
     image: '/restaurant.jpg',
     descriptionJa: (
       <>
