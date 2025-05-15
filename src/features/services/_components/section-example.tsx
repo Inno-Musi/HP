@@ -122,7 +122,6 @@ type Props = {
   language: 'ja' | 'en'
 }
 
-// comment
 export const SectionExample = ({ language }: Props) => {
   return (
     <div className="bg-lightBlue py-10 lg:py-20">
