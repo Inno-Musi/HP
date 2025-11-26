@@ -16,10 +16,6 @@ export const links = [
     text: 'NEWS',
   },
   {
-    href: '/recruit',
-    text: 'CAREERS',
-  },
-  {
     href: '/contact',
     text: 'CONTACT',
   },
