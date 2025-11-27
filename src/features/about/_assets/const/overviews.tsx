@@ -28,10 +28,19 @@ export const overviewsJa = [
   {
     label: 'オフィス',
     content: (
-      <div>
-        <p>〒152-0023</p>
-        <p>アトリエ／本社</p>
-        <p>東京都目黒区八雲3-17-20</p>
+      <div className="space-y-2">
+        <div>
+          <p className="font-semibold">アトリエ／本店</p>
+          <p>〒152-0023</p>
+          <p>東京都目黒区八雲3-17-20</p>
+        </div>
+        <div>
+          <p className="font-semibold">営業所</p>
+          <p>〒105-0001</p>
+          <p>東京都港区虎ノ門2-6-1</p>
+          <p>〒100-0005</p>
+          <p>東京都千代田区丸の内2-7-3</p>
+        </div>
       </div>
     ),
   },
@@ -39,10 +48,10 @@ export const overviewsJa = [
     label: '主要取引銀行',
     content: (
       <ul className="list-disc pl-6">
-        <li>商工中金</li>
-        <li>みずほ銀行</li>
+        <li>三菱UFJ銀行</li>
+        <li>商工組合中央金庫</li>
+        <li>きらぼし銀行</li>
         <li>昭和信用金庫</li>
-        <li>日本政策金融公庫</li>
       </ul>
     ),
   },
@@ -78,10 +87,19 @@ export const overviewsEn = [
   {
     label: 'Office',
     content: (
-      <div>
-        <p>〒152-0023</p>
-        <p>Atelier / Headquarters</p>
-        <p>3-17-20 Yakumo, Meguro-ku, Tokyo</p>
+      <div className="space-y-2">
+        <div>
+          <p className="font-semibold">Atelier / Head Office</p>
+          <p>152-0023</p>
+          <p>3-17-20 Yakumo, Meguro-ku, Tokyo</p>
+        </div>
+        <div>
+          <p className="font-semibold">Sales Office</p>
+          <p>105-0001</p>
+          <p>2-6-1 Toranomon, Minato-ku, Tokyo</p>
+          <p>100-0005</p>
+          <p>2-7-3 Marunouchi, Chiyoda-ku, Tokyo</p>
+        </div>
       </div>
     ),
   },
@@ -89,10 +107,10 @@ export const overviewsEn = [
     label: 'Main Banks',
     content: (
       <ul className="list-disc pl-6">
-        <li>The Shoko Chukin Bank, Ltd.</li>
-        <li>Mizuho Bank</li>
+        <li>MUFG Bank</li>
+        <li>The Shoko Chukin Bank</li>
+        <li>Kiraboshi Bank</li>
         <li>Showa Shinkin Bank</li>
-        <li>Japan Finance Corporation</li>
       </ul>
     ),
   },
