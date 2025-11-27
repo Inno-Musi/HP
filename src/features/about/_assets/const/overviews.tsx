@@ -29,8 +29,9 @@ export const overviewsJa = [
     label: 'オフィス',
     content: (
       <div>
-        <p>〒150-0042</p>
-        <p>東京都渋谷区宇田川町１番１２</p>
+        <p>〒152-0023</p>
+        <p>アトリエ／本社</p>
+        <p>東京都目黒区八雲3-17-20</p>
       </div>
     ),
   },
@@ -78,8 +79,9 @@ export const overviewsEn = [
     label: 'Office',
     content: (
       <div>
-        <p>〒150-0042</p>
-        <p>1-12 Udagawacho, Shibuya-ku, Tokyo</p>
+        <p>〒152-0023</p>
+        <p>Atelier / Headquarters</p>
+        <p>3-17-20 Yakumo, Meguro-ku, Tokyo</p>
       </div>
     ),
   },
