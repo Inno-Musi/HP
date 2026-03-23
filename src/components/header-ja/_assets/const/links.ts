@@ -20,11 +20,6 @@ export const links = [
     subText: 'NEWS',
   },
   {
-    href: '/recruit',
-    text: '採用情報',
-    subText: 'CAREERS',
-  },
-  {
     href: '/contact',
     text: 'お問い合わせ',
     subText: 'CONTACT',

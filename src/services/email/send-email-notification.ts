@@ -1,7 +1,13 @@
 import { getSiteUrl } from '@/lib/site-url'
-import type { EmailPayload } from './types'
+import type { ContactEmailProps } from './types'
 
-export const sendEmailNotification = async (payload: EmailPayload) =>
+type ContactEmailPayload = {
+  template: 'contact'
+  props: ContactEmailProps
+  subject: string
+}
+
+export const sendEmailNotification = async (payload: ContactEmailPayload) =>
   fetch(getSiteUrl('/api/email'), {
     method: 'POST',
     headers: {

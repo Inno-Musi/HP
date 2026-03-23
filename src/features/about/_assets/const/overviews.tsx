@@ -38,8 +38,6 @@ export const overviewsJa = [
           <p className="font-semibold">営業所</p>
           <p>〒105-0001</p>
           <p>東京都港区虎ノ門2-6-1</p>
-        </div>
-        <div>
           <p>〒100-0005</p>
           <p>東京都千代田区丸の内2-7-3</p>
         </div>
@@ -99,8 +97,6 @@ export const overviewsEn = [
           <p className="font-semibold">Sales Office</p>
           <p>105-0001</p>
           <p>2-6-1 Toranomon, Minato-ku, Tokyo</p>
-        </div>
-        <div>
           <p>100-0005</p>
           <p>2-7-3 Marunouchi, Chiyoda-ku, Tokyo</p>
         </div>
