@@ -1,16 +1,28 @@
 'use server'
 
+import { createErrorToast, type FormActionState } from '@/lib/form-action'
+import { sendEmailNotification } from '@/services/email/send-email-notification'
 import { notifySlack } from '@/services/slack/notify-slack'
 import { redirect } from 'next/navigation'
 import { schemaContactFormJa } from '../_helpers/schema-contact-form-ja'
 
+type ContactFormJaState = FormActionState<
+  | 'lastName'
+  | 'firstName'
+  | 'lastNameKana'
+  | 'firstNameKana'
+  | 'affiliation'
+  | 'email'
+  | 'phoneNumber'
+  | 'inquiryType'
+  | 'inquiryDetails'
+>
+
 export const submitContactFormJa = async (
-  _prevState: any,
+  _prevState: ContactFormJaState,
   formData: FormData,
 ) => {
-  const formObject = Object.fromEntries(formData.entries()) as {
-    [key: string]: string
-  }
+  const formObject = Object.fromEntries(formData.entries()) as Record<string, string>
   const result = schemaContactFormJa.safeParse(formObject)
 
   if (!result.success) {
@@ -55,41 +67,26 @@ export const submitContactFormJa = async (
       【問い合わせ内容】: ${inquiryDetails}
       `,
     ),
-    fetch(
-      `${process.env.NEXT_PUBLIC_VERCEL_ENV === 'development' ? 'http://' : 'https://'}${process.env.NEXT_PUBLIC_VERCEL_URL}/api/email`,
-      {
-        method: 'POST',
-        headers: {
-          'X-API-KEY': process.env.X_API_KEY ?? '',
-        },
-        body: JSON.stringify({
-          template: 'contact',
-          props: {
-            name: `${lastName} ${firstName} (${lastNameKana} ${firstNameKana})`,
-            affiliation: affiliation,
-            email: email,
-            phoneNumber: phoneNumber,
-            inquiryType: inquiryType,
-            inquiryDetails: inquiryDetails,
-          },
-          subject: '【musicoホームページ】お問い合わせがありました',
-        }),
+    sendEmailNotification({
+      template: 'contact',
+      props: {
+        name: `${lastName} ${firstName} (${lastNameKana} ${firstNameKana})`,
+        affiliation: affiliation ?? '',
+        email,
+        phoneNumber,
+        inquiryType,
+        inquiryDetails,
       },
-    ),
+      subject: '【musicoホームページ】お問い合わせがありました',
+    }),
   ])
-
-  const now = new Date().getTime()
 
   if (!res.ok) {
     await notifySlack(
       'お問い合わせの送信に失敗しました。速やかに確認してください。',
     )
     return {
-      toast: {
-        status: 'error',
-        message: 'お問い合わせの送信に失敗しました。',
-        timeStamp: now,
-      },
+      toast: createErrorToast('お問い合わせの送信に失敗しました。'),
       formObject,
     }
   }

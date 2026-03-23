@@ -1,5 +1,6 @@
 import ContactFormUser from '@/react-email-starter/emails/contact-from-user'
 import RecruitFormUser from '@/react-email-starter/emails/recruit-form-user'
+import type { EmailPayload } from '@/services/email/types'
 import { render } from '@react-email/render'
 import { type NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
@@ -11,39 +12,30 @@ export const POST = async (req: NextRequest) => {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
     }
 
-    const body = await req.json()
+    const body = (await req.json()) as EmailPayload
 
     const resend = new Resend(process.env.RESEND_API_KEY)
-    
-    // メールテンプレートのマッピング
-    const mailTemplateMap: { [key: string]: any } = {
-      contact: ContactFormUser,
-      recruit: RecruitFormUser,
+
+    if (body.template !== 'contact' && body.template !== 'recruit') {
+      return NextResponse.json(
+        { error: 'Invalid email template specified' },
+        { status: 400 },
+      )
     }
 
-    const TemplateComponent = mailTemplateMap[body.template]
+    const htmlContent =
+      body.template === 'contact'
+        ? await render(ContactFormUser(body.props))
+        : await render(RecruitFormUser(body.props))
 
-    if (!TemplateComponent) {
-      return NextResponse.json({ error: 'Invalid email template specified' }, { status: 400 })
-    }
-
-    const htmlContent = await render(TemplateComponent(body.props))
-
-    const mailOptions: any = {
+    const mailOptions = {
       from: process.env.SENDER_EMAIL ?? 'MUSICO Web <noreply@musico.co.jp>',
       to: 'info@musico.co.jp',
       subject: body.subject,
       html: htmlContent,
+      attachments: body.template === 'recruit' ? body.attachments : undefined,
     }
 
-    // 添付ファイルがある場合の処理 (採用応募フォームのみ)
-    if (body.template === 'recruit' && body.attachments && body.attachments.length > 0) {
-      mailOptions.attachments = body.attachments.map((att: { filename: string; content: string }) => ({
-        filename: att.filename,
-        content: att.content,
-      }))
-    }
-    
     await resend.emails.send(mailOptions)
 
     return NextResponse.json(
@@ -51,14 +43,13 @@ export const POST = async (req: NextRequest) => {
       { status: 201 },
     )
   } catch (error) {
-    console.error("Email sending error:", error)
-    // エラーオブジェクトの内容をより詳細にログ出力
+    console.error('Email sending error:', error)
     if (error instanceof Error) {
-      console.error("Error name:", error.name)
-      console.error("Error message:", error.message)
-      console.error("Error stack:", error.stack)
+      console.error('Error name:', error.name)
+      console.error('Error message:', error.message)
+      console.error('Error stack:', error.stack)
     } else {
-      console.error("Unknown error type:", typeof error, error)
+      console.error('Unknown error type:', typeof error, error)
     }
     return NextResponse.json(
       { status: 'error', message: 'メールの送信に失敗しました' },
