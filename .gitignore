@@ -23,6 +23,8 @@
 # misc
 .DS_Store
 *.pem
+repomix-output.xml
+postcss.config.mjs.zip
 
 # debug
 npm-debug.log*

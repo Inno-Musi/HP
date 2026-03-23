@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MUSICO HP Renewal
 
-## Getting Started
+株式会社MUSICO のコーポレートサイトです。`Next.js App Router` で構成されており、日本語・英語の2言語ページ、問い合わせフォーム、採用応募フォーム、お知らせ連携を提供します。
 
-First, run the development server:
+## セットアップ
+
+必要環境:
+
+- Node.js 20 以上
+- npm
+
+依存関係をインストールします。
+
+```bash
+npm install
+```
+
+開発サーバーを起動します。
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`http://localhost:3000/ja` または `http://localhost:3000/en` を開いて確認します。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 主な構成
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `src/app/[language]`: 言語別のページ
+- `src/features`: ページ単位の UI / action / schema
+- `src/components`: 共通コンポーネント
+- `src/services/news`: microCMS からのお知らせ取得
+- `src/app/api/email`: Resend 経由の通知メール送信
+- `src/react-email-starter/emails`: メールテンプレート
 
-## Learn More
+## 環境変数
 
-To learn more about Next.js, take a look at the following resources:
+少なくとも以下を設定してください。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `MICROCMS_API_KEY`
+- `RESEND_API_KEY`
+- `X_API_KEY`
+- `SENDER_EMAIL`
+- `SLACK_WEBHOOK_URL`
+- `GTM_ID`
+- `NEXT_PUBLIC_VERCEL_URL`
+- `NEXT_PUBLIC_VERCEL_ENV`
+- `NEXT_PUBLIC_APP_URL` 任意。ローカルやプレビューで絶対 URL を固定したい場合に使用
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## コマンド
 
-## Deploy on Vercel
+- `npm run dev`: 開発サーバー
+- `npm run build`: 本番ビルド
+- `npm run start`: 本番サーバー起動
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 補足
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+仕様・運用系の資料はリポジトリ直下の `仕様書.md`、`取扱説明書.md`、`機能一覧.csv`、`サイトマップ.csv`、`docs/` を参照してください。

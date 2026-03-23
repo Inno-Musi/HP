@@ -6,7 +6,7 @@
     "dev": "npx next dev --turbopack",
     "build": "npx next build",
     "start": "npx next start",
-    "lint": "npx next lint"
+    "lint": "npm run build"
   },
   "dependencies": {
     "@next/third-parties": "^15.1.6",
