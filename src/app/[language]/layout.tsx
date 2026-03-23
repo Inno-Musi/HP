@@ -21,11 +21,12 @@ const roboto = Roboto({
 
 type Props = {
   children: ReactNode
-  params: Promise<{ language: 'ja' | 'en' }>
+  params: Promise<{ language: string }>
 }
 
 export default async function RootLayout({ children, params }: Props) {
-  const { language } = await params
+  const { language: rawLanguage } = await params
+  const language = rawLanguage === 'en' ? 'en' : 'ja'
 
   return (
     <html lang={language}>

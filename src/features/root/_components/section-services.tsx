@@ -54,7 +54,7 @@ export const SectionServices = ({ language }: Props) => {
                 </p>
               </>
             )}
-            <Link href="/ja/services" className="mx-auto lg:mx-0">
+            <Link href={`/${language}/services`} className="mx-auto lg:mx-0">
               <Button
                 type="button"
                 text="See More"

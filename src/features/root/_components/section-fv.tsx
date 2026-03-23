@@ -75,7 +75,7 @@ export const SectionFv = ({ language }: Props) => {
                 </div>
               </MotionUp>
               <MotionUp duration={1} initialY={0}>
-                <Link href="/ja/philosophy">
+                <Link href={`/${language}/philosophy`}>
                   <Button
                     type="button"
                     text="OUR PHILOSOPHY"
