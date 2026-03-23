@@ -1,27 +1,26 @@
 import {
   Body,
+  Column,
   Container,
   Head,
   Heading,
   Hr,
   Html,
-  Img,
   Preview,
+  Row,
   Section,
   Tailwind,
   Text,
-  Column,
-  Row,
-} from '@react-email/components';
+} from '@react-email/components'
 
 type Props = {
-  jobTitle: string;
-  name: string;
-  email: string;
-  phoneNumber: string;
-  coverLetter: string;
-  fileName: string;
-};
+  jobTitle: string
+  name: string
+  email: string
+  phoneNumber: string
+  coverLetter: string
+  fileName: string
+}
 
 export default function RecruitFormUser({
   jobTitle,
@@ -47,23 +46,33 @@ export default function RecruitFormUser({
             <Hr className="border border-solid border-[#eaeaea] my-[26px] mx-0 w-full" />
             <Section>
               <Row>
-                <Column className="w-[120px] text-gray-500 font-medium">応募職種:</Column>
+                <Column className="w-[120px] text-gray-500 font-medium">
+                  応募職種:
+                </Column>
                 <Column>{jobTitle}</Column>
               </Row>
               <Row>
-                <Column className="w-[120px] text-gray-500 font-medium">氏名:</Column>
+                <Column className="w-[120px] text-gray-500 font-medium">
+                  氏名:
+                </Column>
                 <Column>{name}</Column>
               </Row>
               <Row>
-                <Column className="w-[120px] text-gray-500 font-medium">メールアドレス:</Column>
+                <Column className="w-[120px] text-gray-500 font-medium">
+                  メールアドレス:
+                </Column>
                 <Column>{email}</Column>
               </Row>
               <Row>
-                <Column className="w-[120px] text-gray-500 font-medium">電話番号:</Column>
+                <Column className="w-[120px] text-gray-500 font-medium">
+                  電話番号:
+                </Column>
                 <Column>{phoneNumber}</Column>
               </Row>
               <Row>
-                <Column className="w-[120px] text-gray-500 font-medium">添付ファイル:</Column>
+                <Column className="w-[120px] text-gray-500 font-medium">
+                  添付ファイル:
+                </Column>
                 <Column>{fileName}</Column>
               </Row>
             </Section>
@@ -82,5 +91,5 @@ export default function RecruitFormUser({
         </Body>
       </Tailwind>
     </Html>
-  );
-} 
+  )
+}

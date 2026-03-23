@@ -1,11 +1,11 @@
-import { z } from 'zod';
+import { z } from 'zod'
 
-const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
+const MAX_FILE_SIZE = 5 * 1024 * 1024
 const ACCEPTED_FILE_TYPES = [
   'application/pdf',
   'application/msword',
   'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-];
+]
 
 export const schemaRecruitFormEn = z.object({
   jobId: z.string(),
@@ -17,7 +17,7 @@ export const schemaRecruitFormEn = z.object({
     .min(1, 'Phone number is required')
     .regex(/^[0-9]+$/, 'Please enter a valid phone number (digits only).'),
   resumeFile: z
-    .any()
+    .custom<File>((file) => file instanceof File, 'Please upload your resume/CV.')
     .refine((file) => !!file && file.size > 0, 'Please upload your resume/CV.')
     .refine(
       (file) => file.size <= MAX_FILE_SIZE,
@@ -28,4 +28,4 @@ export const schemaRecruitFormEn = z.object({
       'Please upload a .pdf, .doc, or .docx file.',
     ),
   coverLetter: z.string().max(4000, 'Please enter a maximum of 4000 characters').optional(),
-}); 
+})
