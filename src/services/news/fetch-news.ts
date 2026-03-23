@@ -1,4 +1,6 @@
-export const fetchNewsDetail = async (id: string) => {
+import type { NewsItem } from './types'
+
+export const fetchNewsDetail = async (id: string): Promise<NewsItem> => {
   const res = await fetch(`https://musico-hp.microcms.io/api/v1/news/${id}`, {
     headers: {
       'X-MICROCMS-API-KEY': process.env.MICROCMS_API_KEY || '',
@@ -7,7 +9,7 @@ export const fetchNewsDetail = async (id: string) => {
 
   if (!res.ok) throw new Error('Failed to fetch news')
 
-  const data = await res.json()
+  const data = (await res.json()) as NewsItem
 
   return data
 }

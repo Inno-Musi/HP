@@ -1,10 +1,11 @@
 import { removeHtmlTag } from '@/helpers/remove-html-tag'
 import dayjs from '@/lib/dayjs'
+import type { NewsItem } from '@/services/news/types'
 import Image from 'next/image'
 import Link from 'next/link'
 
 type Props = {
-  news: any
+  news: NewsItem
   language: 'ja' | 'en'
 }
 

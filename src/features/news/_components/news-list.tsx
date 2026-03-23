@@ -11,7 +11,7 @@ export const NewsList = async ({ language }: Props) => {
 
   return (
     <div className="w-[1200px] max-w-[calc(100vw-32px)] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-      {news.map((news: any) => (
+      {news.map((news) => (
         <NewsCard key={news.id} news={news} language={language} />
       ))}
     </div>
