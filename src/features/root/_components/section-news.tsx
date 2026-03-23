@@ -23,14 +23,14 @@ export const SectionNews = async ({ language }: Props) => {
         </div>
       </MotionUp>
       <div className="w-[1200px] max-w-[calc(100vw-32px)] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        {newsList.map((news: any) => (
+        {newsList.map((news) => (
           <MotionUp key={news.id}>
             <NewsCard news={news} language={language} />
           </MotionUp>
         ))}
       </div>
       <MotionUp>
-        <Link href="/ja/news">
+        <Link href={`/${language}/news`}>
           <Button
             type="button"
             text="See More"

@@ -1,6 +1,6 @@
 import { BreadCrumbs } from '@/components/bread-crumbs'
-import { TitleMain } from '@/components/title-main'
 import dayjs from '@/lib/dayjs'
+import { getSiteUrl } from '@/lib/site-url'
 import { fetchNewsDetail } from '@/services/news/fetch-news'
 import parse from 'html-react-parser'
 import Image from 'next/image'
@@ -13,6 +13,7 @@ type Props = {
 
 export const NewsContent = async ({ language, id }: Props) => {
   const news = await fetchNewsDetail(id)
+  const newsUrl = getSiteUrl(`/${language}/news/${id}`)
   const imageUrlJa = news.fvImage
     ? news.fvImage.url
     : '/musico-logo-bg-white.png'
@@ -22,10 +23,12 @@ export const NewsContent = async ({ language, id }: Props) => {
       ? news.fvImage.url
       : '/musico-logo-bg-white.png'
 
-  const xShareUrlJa = `https://x.com/intent/tweet?text=【株式会社Musico】${news.titleJa}&url=${process.env.NEXT_PUBLIC_VERCEL_ENV === 'development' ? 'http://' : 'https://'}${process.env.NEXT_PUBLIC_VERCEL_URL}/ja/news/${id}`
-  const xShareUrlEn = `https://x.com/intent/tweet?text=【Musico Inc.】${news.titleEn}&url=${process.env.NEXT_PUBLIC_VERCEL_ENV === 'development' ? 'http://' : 'https://'}${process.env.NEXT_PUBLIC_VERCEL_URL}/en/news/${id}`
-  const facebookShareUrlJa = `https://www.facebook.com/share.php?u=${process.env.NEXT_PUBLIC_VERCEL_ENV === 'development' ? 'http://' : 'https://'}${process.env.NEXT_PUBLIC_VERCEL_URL}/ja/news/${id}`
-  const facebookShareUrlEn = `https://www.facebook.com/share.php?u=${process.env.NEXT_PUBLIC_VERCEL_ENV === 'development' ? 'http://' : 'https://'}${process.env.NEXT_PUBLIC_VERCEL_URL}/en/news/${id}`
+  const shareTitle =
+    language === 'ja'
+      ? `【株式会社Musico】${news.titleJa}`
+      : `【Musico Inc.】${news.titleEn}`
+  const xShareUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(shareTitle)}&url=${encodeURIComponent(newsUrl)}`
+  const facebookShareUrl = `https://www.facebook.com/share.php?u=${encodeURIComponent(newsUrl)}`
 
   return (
     <div className="bg-zinc-50">
@@ -51,11 +54,7 @@ export const NewsContent = async ({ language, id }: Props) => {
                 <p className="font-bold text-lg text-zinc-500 underline underline-offset-2">
                   Share
                 </p>
-                <Link
-                  href={language === 'ja' ? xShareUrlJa : xShareUrlEn}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <Link href={xShareUrl} target="_blank" rel="noopener noreferrer">
                   <Image
                     src="/x-logo.svg"
                     alt="X logo"
@@ -65,9 +64,7 @@ export const NewsContent = async ({ language, id }: Props) => {
                   />
                 </Link>
                 <Link
-                  href={
-                    language === 'ja' ? facebookShareUrlJa : facebookShareUrlEn
-                  }
+                  href={facebookShareUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
