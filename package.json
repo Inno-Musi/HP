@@ -20,7 +20,7 @@
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.471.0",
     "motion": "^11.18.1",
-    "next": "^15.1.6",
+    "next": "15.5.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-email": "^3.0.6",
