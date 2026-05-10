@@ -19,61 +19,23 @@ export const SectionFv = ({ language }: Props) => {
       {showInitialAnimation && (
         <InitialAnimation onComplete={() => setShowInitialAnimation(false)} />
       )}
+
       <AnimatePresence>
         {!showInitialAnimation && (
           <motion.div
             initial={{ opacity: 0, scale: 1.05 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
             className="relative min-h-[calc(100vh-64px)] w-full mx-auto overflow-hidden"
           >
-            <div 
-              className="absolute inset-0 w-full h-full bg-cover bg-center z-0 bg-black/30" 
-              style={{ backgroundImage: "url('/bg-fv-top.jpg')" }}
+            <div
+              className="absolute inset-0 w-full h-full bg-cover bg-center z-0"
+              style={{ backgroundImage: "url('/home-hero.png')" }}
             />
-            <div className="absolute w-full h-full flex flex-col gap-y-2 md:gap-y-4 items-start justify-end pb-16 pl-8 md:pl-16 z-10">
-              {/* <MotionUp duration={0.2} initialY={0}>
-                <p className="text-darkNavy text-5xl sm:text-6xl lg:text-8xl font-roboto">
-                  MUSICO
-                </p>
-              </MotionUp> */}
-              <MotionUp duration={0.4} initialY={0}>
-                {/* <p className="text-lg sm:text-xl lg:text-2xl font-bold font-roboto"> */}
-                <p className="text-2xl sm:text-3xl lg:text-4xl font-bold font-roboto text-white [text-shadow:_-0.5px_-0.5px_0_#99999980,_0.5px_-0.5px_0_#99999980,_-0.5px_0.5px_0_#99999980,_0.5px_0.5px_0_#99999980]">
-                  Sow the Seeds of Happiness
-                </p>
-              </MotionUp>
-              <MotionUp duration={0.7} initialY={0}>
-                <div className="text-left leading-7 md:!leading-8 text-sm lg:text-base text-white [text-shadow:_-0.5px_-0.5px_0_#99999980,_0.5px_-0.5px_0_#99999980,_-0.5px_0.5px_0_#99999980,_0.5px_0.5px_0_#99999980]">
-                  {language === 'ja' ? (
-                    <>
-                      <p>私たちは、企業のコーポレートサービスを支援する</p>
-                      <p>
-                        オーダーメイドのBPO（ビジネス・プロセス・アウトソーシング）企業として
-                      </p>
-                      <p>経営・財務・ITなどの業務最適化を通じて</p>
-                      <p>効率的で持続可能なビジネス運営に伴走します。</p>
-                    </>
-                  ) : (
-                    <>
-                      <p>
-                        We support corporate services for businesses{' '}
-                        <br className="block sm:hidden" />
-                        as a tailor-made
-                      </p>
-                      <p>BPO (Business Process Outsourcing) company,</p>
-                      <p>
-                        optimizing operations in management,{' '}
-                        <br className="block sm:hidden" />
-                        finance, IT, and more,
-                      </p>
-                      <p>
-                        to assist in efficient and sustainable business operations.
-                      </p>
-                    </>
-                  )}
-                </div>
-              </MotionUp>
+
+            <div className="absolute inset-0 bg-black/20 z-[1]" />
+
+            <div className="absolute w-full h-full flex flex-col gap-y-4 items-start justify-end pb-16 pl-8 md:pl-16 z-10">
               <MotionUp duration={1} initialY={0}>
                 <Link href={`/${language}/philosophy`}>
                   <Button
@@ -84,24 +46,6 @@ export const SectionFv = ({ language }: Props) => {
                 </Link>
               </MotionUp>
             </div>
-            {/* <Fade>
-              <Image
-                src="/musico-pattern.png"
-                alt="MUSICO"
-                width={1298}
-                height={428}
-                className="w-[300px] md:w-[400px] lg:w-[500px] xl:w-[650px] rotate-90 absolute -top-[50px] md:top-[120px] lg:top-[160px] xl:top-[180px] -left-[100px] sm:-left-[40px] md:-left-[80px] lg:-left-[120px]"
-              />
-            </Fade>
-            <Fade>
-              <Image
-                src="/musico-pattern.png"
-                alt="MUSICO"
-                width={1298}
-                height={428}
-                className="w-[300px] md:w-[400px] lg:w-[500px] xl:w-[700px] absolute -bottom-[50px] -right-[50px]"
-              />
-            </Fade> */}
           </motion.div>
         )}
       </AnimatePresence>
