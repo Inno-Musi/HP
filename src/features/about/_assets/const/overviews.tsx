@@ -7,16 +7,15 @@ export const overviewsJa = [
     label: '事業内容',
     content: (
       <ul className="list-disc pl-6">
-        <li>コーポレートサービス支援</li>
-        <li>企業内フードサービス運営</li>
         <li>経営およびITコンサルティング</li>
+        <li>コーポレートフードサービス運営</li>
+        <li>地方創生・町おこし支援</li>
+        <li>タレント支援</li>
+        <li>有料職業紹介　13-ユ-319136</li>
+        <li>労働者派遣　派13-318465</li>
       </ul>
     ),
   },
-  // {
-  //   label: '設立',
-  //   content: '2022年5月20日',
-  // },
   {
     label: '資本金',
     content: '1,000万円',
@@ -37,9 +36,9 @@ export const overviewsJa = [
         <div>
           <p className="font-semibold">営業所</p>
           <p>〒105-0001</p>
-          <p>東京都港区虎ノ門2-6-1</p>
-          <p>〒100-0005</p>
-          <p>東京都千代田区丸の内2-7-3</p>
+          <p>東京都港区虎ノ門4-1-1</p>
+          <p>〒107-0052</p>
+          <p>東京都港区赤坂9丁目7−2</p>
         </div>
       </div>
     ),
@@ -66,16 +65,15 @@ export const overviewsEn = [
     label: 'Business Activities',
     content: (
       <ul className="list-disc pl-6">
-        <li>Corporate service support</li>
-        <li>In-house food service management</li>
         <li>Management and IT consulting</li>
+        <li>Corporate food service operation</li>
+        <li>Regional revitalization and community development support</li>
+        <li>Talent support</li>
+        <li>Paid employment placement: 13-ユ-319136</li>
+        <li>Worker dispatching: 派13-318465</li>
       </ul>
     ),
   },
-  // {
-  //   label: 'Established',
-  //   content: 'May 20, 2022',
-  // },
   {
     label: 'Capital',
     content: '10 million yen',
@@ -96,9 +94,9 @@ export const overviewsEn = [
         <div>
           <p className="font-semibold">Sales Office</p>
           <p>105-0001</p>
-          <p>2-6-1 Toranomon, Minato-ku, Tokyo</p>
-          <p>100-0005</p>
-          <p>2-7-3 Marunouchi, Chiyoda-ku, Tokyo</p>
+          <p>4-1-1 Toranomon, Minato-ku, Tokyo</p>
+          <p>107-0052</p>
+          <p>9-7-2 Akasaka, Minato-ku, Tokyo</p>
         </div>
       </div>
     ),
