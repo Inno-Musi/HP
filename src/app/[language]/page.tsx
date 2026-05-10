@@ -18,23 +18,15 @@ export const generateMetadata = async ({
   if (language === 'ja') {
     return {
       title: '株式会社MUSICO',
-<<<<<<< HEAD
       description:
         '私たちは、企業のコーポレートサービスを支援するオーダーメイドのBPO企業として、経営・財務・ITなどの業務最適化を通じて、効率的で持続可能なビジネス運営に伴走します。',
-=======
-      description: '株式会社MUSICOのコーポレートサイトです。',
->>>>>>> fe5eb0f (initial commit)
     }
   }
 
   return {
     title: 'MUSICO Inc.',
-<<<<<<< HEAD
     description:
       'We are a custom-made BPO company that supports corporate services, optimizing operations in management, finance, and IT to ensure efficient and sustainable business operations.',
-=======
-    description: 'Corporate website of MUSICO Inc.',
->>>>>>> fe5eb0f (initial commit)
   }
 }
 
