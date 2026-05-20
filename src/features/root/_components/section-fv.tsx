@@ -1,9 +1,9 @@
 'use client'
 
 import { Button } from '@/components/button'
-import { MotionUp } from '@/components/motion-up'
 import { InitialAnimation } from '@/components/initial-animation'
-import { motion, AnimatePresence } from 'framer-motion'
+import { MotionUp } from '@/components/motion-up'
+import { AnimatePresence, motion } from 'framer-motion'
 import Link from 'next/link'
 import { useState } from 'react'
 
@@ -30,7 +30,7 @@ export const SectionFv = ({ language }: Props) => {
           >
             <div
               className="absolute inset-0 w-full h-full bg-cover bg-center z-0"
-              style={{ backgroundImage: "url('/home-hero.png')" }}
+              style={{ backgroundImage: "url('/home-hero.jpg')" }}
             />
 
             <div className="absolute inset-0 bg-black/20 z-[1]" />
