@@ -4,14 +4,18 @@ export type WorkImage = {
 
 export type WorkItem = {
   id: string
+  slug?: string
   titleJa: string
   titleEn?: string
   descriptionJa?: string
   descriptionEn?: string
+  contentJa?: string
+  contentEn?: string
   categoryJa?: string
   categoryEn?: string
   image?: WorkImage
   imageEn?: WorkImage
+  isFeatured?: boolean
   publishedAt?: string
 }
 

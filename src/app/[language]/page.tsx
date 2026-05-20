@@ -1,7 +1,7 @@
 import { SectionContact } from '@/features/root/_components/section-contact'
 import { SectionFv } from '@/features/root/_components/section-fv'
-import { SectionNews } from '@/features/root/_components/section-news'
 import { SectionServices } from '@/features/root/_components/section-services'
+import { SectionWorks } from '@/features/root/_components/section-works'
 import type { Metadata } from 'next'
 
 type Props = {
@@ -37,7 +37,7 @@ export default async function HomePage({ params }: Props) {
     <div className="flex flex-col gap-y-12 lg:gap-y-20 bg-zinc-50 overflow-hidden">
       <SectionFv language={language} />
       <SectionServices language={language} />
-      <SectionNews language={language} />
+      <SectionWorks language={language} />
       <SectionContact language={language} />
     </div>
   )

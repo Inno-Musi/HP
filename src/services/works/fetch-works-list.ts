@@ -2,7 +2,10 @@ import type { WorksListResponse } from './types'
 
 type Props = {
   limit?: number
+  offset?: number
   fields?: string[]
+  filters?: string
+  orders?: string
 }
 
 const createEmptyWorksList = (limit?: number): WorksListResponse => ({
@@ -14,7 +17,10 @@ const createEmptyWorksList = (limit?: number): WorksListResponse => ({
 
 export const fetchWorksList = async ({
   limit,
+  offset,
   fields,
+  filters,
+  orders,
 }: Props): Promise<WorksListResponse> => {
   const apiKey = process.env.MICROCMS_API_KEY
 
@@ -22,11 +28,14 @@ export const fetchWorksList = async ({
     return createEmptyWorksList(limit)
   }
 
-  const queries = []
-  if (limit) queries.push(`limit=${limit}`)
-  if (fields?.length) queries.push(`fields=${fields.join(',')}`)
+  const queries = new URLSearchParams()
+  if (limit) queries.set('limit', String(limit))
+  if (offset) queries.set('offset', String(offset))
+  if (fields?.length) queries.set('fields', fields.join(','))
+  if (filters) queries.set('filters', filters)
+  if (orders) queries.set('orders', orders)
 
-  const queryString = queries.length ? `?${queries.join('&')}` : ''
+  const queryString = queries.size ? `?${queries.toString()}` : ''
 
   try {
     const res = await fetch(
