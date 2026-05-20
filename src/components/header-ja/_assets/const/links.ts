@@ -1,10 +1,5 @@
 export const links = [
   {
-    href: '/philosophy',
-    text: '経営理念',
-    subText: 'PHILOSOPHY',
-  },
-  {
     href: '/about',
     text: '会社概要',
     subText: 'ABOUT US',
@@ -15,9 +10,14 @@ export const links = [
     subText: 'SERVICES',
   },
   {
-    href: '/news',
-    text: 'お知らせ',
-    subText: 'NEWS',
+    href: '/works',
+    text: '実績・事例',
+    subText: 'WORKS',
+  },
+  {
+    href: '/careers',
+    text: '採用',
+    subText: 'CAREERS',
   },
   {
     href: '/contact',

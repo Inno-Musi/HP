@@ -9,6 +9,10 @@ export const middleware = (req: NextRequest) => {
     return NextResponse.redirect(new URL('/ja', req.url))
   }
 
+  if (pathSegments[1] === 'philosophy') {
+    return NextResponse.redirect(new URL(`/${pathSegments[0]}/about`, req.url))
+  }
+
   // BASIC認証
   // if (process.env.NEXT_PUBLIC_VERCEL_ENV === 'development') {
   //   return NextResponse.next()

@@ -20,11 +20,6 @@ const policies = [
 
 const mainLinks = [
   {
-    label: '経営理念',
-    labelEn: 'PHILOSOPHY',
-    href: '/philosophy',
-  },
-  {
     label: '会社概要',
     labelEn: 'ABOUT US',
     href: '/about',
@@ -35,9 +30,14 @@ const mainLinks = [
     href: '/services',
   },
   {
-    label: 'お知らせ',
-    labelEn: 'NEWS',
-    href: '/news',
+    label: '実績・事例',
+    labelEn: 'WORKS',
+    href: '/works',
+  },
+  {
+    label: '採用',
+    labelEn: 'CAREERS',
+    href: '/careers',
   },
   {
     label: 'お問い合わせ',

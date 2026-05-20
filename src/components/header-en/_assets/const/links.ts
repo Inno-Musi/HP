@@ -1,9 +1,5 @@
 export const links = [
   {
-    href: '/philosophy',
-    text: 'PHILOSOPHY',
-  },
-  {
     href: '/about',
     text: 'ABOUT US',
   },
@@ -12,8 +8,12 @@ export const links = [
     text: 'SERVICES',
   },
   {
-    href: '/news',
-    text: 'NEWS',
+    href: '/works',
+    text: 'WORKS',
+  },
+  {
+    href: '/careers',
+    text: 'CAREERS',
   },
   {
     href: '/contact',

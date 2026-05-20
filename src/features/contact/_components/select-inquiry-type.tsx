@@ -13,10 +13,6 @@ type Props = {
 
 const inquiryTypes = [
   {
-    labelJa: '採用について',
-    labelEn: 'About recruitment',
-  },
-  {
     labelJa: '協業・提携について',
     labelEn: 'About collaboration',
   },

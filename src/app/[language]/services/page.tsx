@@ -1,6 +1,5 @@
 import { BreadCrumbs } from '@/components/bread-crumbs'
 import { SectionBusinessArea } from '@/features/services/_components/section-business-area'
-import { SectionExample } from '@/features/services/_components/section-example'
 import { SectionFv } from '@/features/services/_components/section-fv'
 
 type Props = {
@@ -14,14 +13,14 @@ export const generateMetadata = async ({ params }: Props) => {
     return {
       title: '事業内容 | 株式会社MUSICO',
       description:
-        '株式会社MUSICOではコーポレートサービス支援とフードサービスを主軸とした事業を展開しており、これまで社内レストラン運営や経営研修の開催、カンボジアでの農業支援などの実績を残してきました。',
+        '株式会社MUSICOの事業内容です。コーポレートフードサービス、ケータリングサービス、地方創生支援、AI導入支援、人材支援を展開しています。',
     }
   }
 
   return {
     title: 'Services | MUSICO Inc.',
     description:
-      'At MUSICO Inc., we focus on corporate service support and food service as our core businesses. Our past achievements include operating in-house restaurants, organizing management training programs, and supporting agricultural initiatives in Cambodia.',
+      'Services of MUSICO Inc., including corporate food service, catering, regional revitalization support, AI implementation support, and talent support.',
   }
 }
 
@@ -32,7 +31,6 @@ export default async function ServicesPage({ params }: Props) {
     <>
       <SectionFv language={language} />
       <SectionBusinessArea language={language} />
-      <SectionExample language={language} />
       <BreadCrumbs
         language={language}
         crumbs={[
