@@ -1,5 +1,6 @@
 import { BreadCrumbs } from '@/components/bread-crumbs'
 import { Button } from '@/components/button'
+import Image from 'next/image'
 import Link from 'next/link'
 
 type Props = {
@@ -12,97 +13,149 @@ export const generateMetadata = async ({ params }: Props) => {
     return {
       title: '人材支援 | 株式会社MUSICO',
       description:
-        'ホスピタリティ領域に特化した人材紹介・派遣サービス。採用要件の定義から定着支援まで、現場を知るチームが伴走します。有料職業紹介 13-ユ-319136 / 労働者派遣 派13-318465。',
+        '人材紹介会社ではなく、人材課題ソリューションファーム。中立コンサルから入り、採用・育成・派遣・業務委託・業務再設計を組み合わせて根本解決します。MUSICOの注力領域。',
     }
   }
   return {
-    title: 'Talent Support | MUSICO Inc.',
+    title: 'Talent Solutions | MUSICO Inc.',
     description:
-      'Staffing and placement services specialized in hospitality — from defining hiring requirements to supporting retention, with a team that knows the floor. License: 13-ユ-319136 / 派13-318465.',
+      'Not a staffing agency — a talent solutions firm. Starting from a neutral diagnosis, we combine hiring, development, staffing, outsourcing, and workflow redesign to solve at the root.',
   }
 }
 
 const painPoints = [
   {
-    ja: 'ホスピタリティ業界に精通した人材がなかなか採用できない',
-    en: 'Hard to find candidates who truly understand the hospitality industry',
+    ja: '採用ありきで動いてしまい、結果的に何も変わっていない',
+    en: 'Hired more people, but the underlying problem never changed',
   },
   {
-    ja: '採用しても定着せず、育成コストが無駄になっている',
-    en: "New hires don't stay — training investment keeps going to waste",
+    ja: '人材紹介会社の提案が、事業フェーズと合っていない',
+    en: "Staffing agency proposals don't fit our business stage",
   },
   {
-    ja: '求人票を出しても応募が集まらず、採用活動が長期化している',
-    en: 'Job postings attract few applicants — the search drags on',
+    ja: '育成・派遣・業務委託のどれが最適か、判断材料が足りない',
+    en: 'Not enough information to choose between training, staffing, or outsourcing',
   },
   {
-    ja: 'グローバル企業向けにバイリンガルのホスピタリティ人材が必要',
-    en: 'Need bilingual hospitality talent for a global corporate environment',
+    ja: 'ホスピタリティに精通した中立アドバイザーが社内にいない',
+    en: 'No neutral advisor on staff who understands the hospitality context',
   },
   {
-    ja: 'シーズン・繁忙期に合わせた柔軟な人材配置が難しい',
-    en: 'Flexible staffing for seasonal peaks is difficult to manage',
+    ja: 'グローバル / バイリンガル人材の調達ルートが限られている',
+    en: 'Channels for sourcing global and bilingual talent are limited',
   },
   {
-    ja: '業務委託・派遣・紹介の違いが分からず、最適な形を選べていない',
-    en: "Unclear on the difference between outsourcing, dispatch, and placement — can't choose the right model",
+    ja: '採用・育成・定着のどこにボトルネックがあるか分析できていない',
+    en: "Can't pinpoint whether the bottleneck is hiring, development, or retention",
   },
 ]
 
-const valueSteps = [
+const approachSteps = [
   {
     step: '01',
-    titleJa: '採用要件の定義',
-    titleEn: 'Defining Hiring Requirements',
+    titleJa: '中立診断',
+    titleEn: 'Neutral Diagnosis',
     descJa:
-      '現場の業務内容・必要スキル・カルチャーフィットを整理し、「どんな人を採るべきか」を明確化します。採用ペルソナの設計から始めます。',
+      '事業状況・組織課題・既存リソースを多面的にヒアリング。「本当に人材を増やすべきか」「採用ではなく業務再設計で解けないか」までを含めて、根本課題を見極めます。',
     descEn:
-      'Clarifying job duties, required skills, and culture fit to define exactly who you should be hiring. Starting with candidate persona design.',
+      'We interview across business situation, organizational challenges, and existing resources — including whether you should actually hire more people, or whether the problem dissolves through workflow redesign instead.',
   },
   {
     step: '02',
-    titleJa: '候補者マッチング・紹介',
-    titleEn: 'Candidate Matching & Placement',
+    titleJa: '最適手段の設計',
+    titleEn: 'Designing the Right Mix',
     descJa:
-      'ホスピタリティ領域に特化したネットワークを活用し、要件に合った候補者をご紹介。派遣・紹介・業務委託の最適な雇用形態もご提案します。',
+      '採用 / 育成 / 派遣 / 業務委託 / 業務再設計 の中から、最も筋のいい手段を組み合わせて提示。短期と中長期、コストと効果のバランスを設計します。',
     descEn:
-      'Leveraging our hospitality-specialized network to introduce matched candidates. We also advise on the optimal employment structure — dispatch, placement, or outsourcing.',
+      'We present the strongest combination from hiring, development, staffing, outsourcing, and workflow redesign — balancing short-term against long-term, cost against impact.',
   },
   {
     step: '03',
-    titleJa: '入職後の定着支援',
-    titleEn: 'Post-Placement Retention Support',
+    titleJa: '実行と継続伴走',
+    titleEn: 'Execute & Sustain',
     descJa:
-      '採用して終わりではなく、オンボーディング支援・スキルアップ研修・定期面談を通じて定着を促進。長期活躍できる環境づくりを支援します。',
+      '組み合わせた手段を実装。採用は紹介・派遣・スカウトを使い分け、育成は研修と連携、業務委託は実行チームを稼働。定着まで継続伴走します。',
     descEn:
-      "We don't stop at placement — we support retention through onboarding assistance, skills training, and regular check-ins to build an environment where people thrive long-term.",
+      'We implement the combined approach — using placement, dispatch, and scouting for hiring, partnering on training, and deploying execution teams for outsourcing. We stay with you through adoption and retention.',
+  },
+]
+
+const solutionMenu = [
+  {
+    labelJa: '採用支援',
+    labelEn: 'Placement',
+    descJa:
+      'ホスピタリティ業界に特化した候補者ネットワーク。バイリンガル・グローバル対応も可。',
+    descEn:
+      'Hospitality-specialized candidate network. Bilingual and global-ready talent available.',
+    licenseJa: '有料職業紹介 13-ユ-319136',
+    licenseEn: 'Paid placement license 13-ユ-319136',
+  },
+  {
+    labelJa: '派遣',
+    labelEn: 'Dispatch',
+    descJa: 'シーズン・繁忙期の柔軟な人材配置。即戦力を即時投入できます。',
+    descEn:
+      'Flexible staffing for seasonal peaks. Skilled workers deployed immediately.',
+    licenseJa: '労働者派遣 派13-318465',
+    licenseEn: 'Worker dispatch license 派13-318465',
+  },
+  {
+    labelJa: '業務委託 / BPO',
+    labelEn: 'Outsourcing / BPO',
+    descJa:
+      'MUSICOチームが現場業務を巻き取って実行。属人化を解消し、業務をスケール化します。',
+    descEn:
+      'MUSICO team takes over operations end-to-end — dissolving individual dependencies and scaling the work.',
+    licenseJa: '',
+    licenseEn: '',
+  },
+  {
+    labelJa: '育成・研修',
+    labelEn: 'Development & Training',
+    descJa:
+      'ホスピタリティ業界の現場知見を持つメンバーが研修を設計。OJTから体系研修まで対応。',
+    descEn:
+      'Training designed by people with hospitality floor experience — from OJT to structured programs.',
+    licenseJa: '',
+    licenseEn: '',
+  },
+  {
+    labelJa: '業務再設計',
+    labelEn: 'Workflow Redesign',
+    descJa:
+      '「人材を増やす」前に、業務そのものを見直す。AI/DX領域とも連携可能です。',
+    descEn:
+      'Before adding people, redesign the work itself — coordinating with our AI/DX practice when relevant.',
+    licenseJa: '',
+    licenseEn: '',
   },
 ]
 
 const strengths = [
   {
-    titleJa: 'ホスピタリティ現場を知るチームが対応',
-    titleEn: 'A Team That Knows the Floor',
+    titleJa: '中立アドバイザリー',
+    titleEn: 'Neutral Advisory',
     descJa:
-      'F&B・テーマパーク・外資金融の現場経験を持つメンバーが採用支援を行います。職務内容を深く理解した上でマッチングするため、ミスマッチが起きにくい。',
+      '紹介・派遣・委託のサービスをすべて提供できる立場ながら、「採用しない」という結論も出せる中立性。サービスを売るために課題を狭く定義しません。',
     descEn:
-      'Our team has hands-on experience in F&B, theme parks, and global financial environments. Deep understanding of the work means better matches and fewer mismatches.',
+      'We can provide placement, dispatch, and outsourcing — yet we are willing to conclude "do not hire." We do not narrow the problem to fit what we sell.',
   },
   {
-    titleJa: '紹介・派遣・業務委託をワンストップで',
-    titleEn: 'Placement, Dispatch & Outsourcing — All in One',
+    titleJa: 'ホスピタリティ業界の現場知見',
+    titleEn: 'Hospitality Operations Expertise',
     descJa:
-      '有料職業紹介（13-ユ-319136）と労働者派遣（派13-318465）の両ライセンスを保有。状況に応じた最適な雇用形態をご提案します。',
+      'F&B・テーマパーク・外資金融の現場経験を持つメンバーが、業務文脈を深く理解した上で診断します。机上の理論ではなく、現場で動く打ち手を提示します。',
     descEn:
-      'Licensed for both paid placement (13-ユ-319136) and worker dispatch (派13-318465) — we recommend the right model for your situation.',
+      'Our team brings hands-on experience from F&B, theme parks, and global financial environments — diagnosing with deep understanding of operational context, not just theory.',
   },
   {
-    titleJa: 'グローバル対応の人材ネットワーク',
-    titleEn: 'Global-Ready Talent Network',
+    titleJa: 'ワンストップ実行力',
+    titleEn: 'End-to-End Execution',
     descJa:
-      'バイリンガル人材・インバウンド対応スタッフ・外資グレードのサービス経験者など、グローバル企業のニーズに応えられる人材ネットワークを持ちます。',
+      '紹介・派遣・委託・育成・業務再設計まで、診断結果に応じてすべて自社で実行可能。複数ベンダーの調整負担なく、責任ある一本の窓口で進められます。',
     descEn:
-      'Our network includes bilingual talent, inbound-experienced staff, and service professionals with global corporate standards — ready for international work environments.',
+      'From placement, dispatch, outsourcing, training, to workflow redesign — we execute all in-house based on the diagnosis. One accountable point of contact, no multi-vendor coordination burden.',
   },
 ]
 
@@ -112,30 +165,58 @@ export default async function TalentPage({ params }: Props) {
   return (
     <>
       <div className="bg-zinc-50">
-        <div className="bg-darkNavy text-white">
-          <div className="max-w-[calc(100vw-32px)] mx-auto py-20 md:py-28">
+        {/* Hero */}
+        <div className="relative bg-darkNavy text-white overflow-hidden">
+          <Image
+            src="/talent-hero.jpg"
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover opacity-30"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-darkNavy via-darkNavy/85 to-darkNavy/40" />
+          <div className="relative max-w-[calc(100vw-32px)] mx-auto py-20 md:py-28">
             <div className="flex flex-col gap-y-4 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
-              <p className="text-xs font-roboto tracking-widest text-zinc-400 uppercase">
-                Talent Support
-              </p>
-              <h1 className="text-3xl md:text-5xl font-bold leading-tight">
-                {language === 'ja' ? '人材支援' : 'Talent\nSupport'}
-              </h1>
-              <p className="text-base md:text-lg leading-relaxed text-zinc-300 max-w-[600px]">
+              <div className="flex items-center gap-x-3">
+                <span className="inline-block px-2 py-1 bg-white text-darkNavy text-[10px] font-roboto font-semibold tracking-widest rounded">
+                  FOCUS
+                </span>
+                <p className="text-xs md:text-sm font-roboto tracking-widest text-zinc-300 uppercase font-semibold">
+                  Talent × Hospitality
+                </p>
+              </div>
+              <h1 className="text-3xl md:text-5xl font-bold leading-tight whitespace-pre-line">
                 {language === 'ja'
-                  ? 'ホスピタリティ領域に特化した人材紹介・派遣サービス。採用要件の定義から定着支援まで、現場を知るチームが伴走します。'
-                  : 'Staffing and placement services specialized in hospitality — from defining hiring requirements to supporting retention, with a team that knows the floor.'}
+                  ? '人材紹介会社では、\nありません。'
+                  : 'We are not\na staffing agency.'}
+              </h1>
+              <p className="text-base md:text-lg leading-relaxed text-zinc-200 max-w-[640px]">
+                {language === 'ja'
+                  ? '「人を増やす」ことだけが答えとは限りません。私たちは課題そのものを見極め、採用・育成・派遣・業務委託・業務再設計を組み合わせて、ホスピタリティ業界の人材課題を根本から解決します。'
+                  : "Adding headcount isn't always the answer. We diagnose the real problem first, then combine hiring, development, staffing, outsourcing, and workflow redesign to solve hospitality's talent challenges at the root."}
               </p>
-              <div className="pt-4">
+              <div className="flex flex-col sm:flex-row gap-3 pt-4">
                 <Link href={`/${language}/contact`}>
                   <Button
                     type="button"
                     text={
                       language === 'ja'
-                        ? 'まずは無料相談'
-                        : 'Book a Free Consultation'
+                        ? '無料診断を申し込む'
+                        : 'Book a Free Diagnosis'
                     }
-                    className="rounded-full bg-white text-darkNavy px-8 py-3 hover:opacity-80 duration-300 font-roboto text-sm font-semibold"
+                    className="rounded-full bg-white text-darkNavy px-8 py-3 hover:opacity-80 duration-300 font-roboto text-sm font-semibold w-fit"
+                  />
+                </Link>
+                <Link href={`/${language}/contact`}>
+                  <Button
+                    type="button"
+                    text={
+                      language === 'ja'
+                        ? '30分壁打ち相談 →'
+                        : '30-Min Free Session →'
+                    }
+                    className="rounded-full border border-white text-white px-8 py-3 hover:bg-white hover:text-darkNavy duration-300 font-roboto text-sm font-semibold w-fit"
                   />
                 </Link>
               </div>
@@ -144,6 +225,38 @@ export default async function TalentPage({ params }: Props) {
         </div>
 
         <div className="max-w-[calc(100vw-32px)] mx-auto py-16 md:py-20 flex flex-col gap-y-20 lg:gap-y-28">
+          {/* Vision / Our Stance */}
+          <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
+            <div className="flex flex-col gap-y-3">
+              <p className="text-xs font-roboto tracking-widest text-zinc-400 uppercase text-center">
+                Our Stance
+              </p>
+              <h2 className="text-2xl md:text-3xl font-bold text-darkNavy text-center whitespace-pre-line leading-snug">
+                {language === 'ja'
+                  ? '「人材」ではなく、\n「人材課題」を解く。'
+                  : 'We solve the talent problem —\nnot just supply talent.'}
+              </h2>
+            </div>
+            <div className="flex flex-col gap-y-3 text-base md:text-lg leading-relaxed text-darkNavy max-w-[720px] mx-auto">
+              <p>
+                {language === 'ja'
+                  ? '業界の人材会社は、サービスを売る構造上、「採用ありき」「研修ありき」で課題を切り取りがちです。本来は人材を増やさなくても解ける課題なのに、最初から人材ソリューションが前提として提示されます。'
+                  : "Staffing agencies are structurally biased — they have to sell their service, so they frame the problem as 'hiring-first' or 'training-first.' Problems that could be solved without adding people get presented as talent problems from the start."}
+              </p>
+              <p>
+                {language === 'ja'
+                  ? '私たちは、その逆を行きます。クライアントの人材課題を中立に診断し、採用 / 育成 / 派遣 / 業務委託 / 業務再設計の中から、最も筋のいい打ち手を組み合わせて返す。結論として「採用しない方が良い」という結論を出すこともあります。'
+                  : 'We do the opposite. We diagnose talent problems neutrally and return the strongest combination from hiring, development, staffing, outsourcing, and workflow redesign. Sometimes the conclusion is "do not hire."'}
+              </p>
+              <p>
+                {language === 'ja'
+                  ? '人材紹介会社ではなく、人材課題ソリューションファーム。それが私たちの立ち位置です。'
+                  : 'Not a staffing agency — a talent solutions firm. That is our position.'}
+              </p>
+            </div>
+          </div>
+
+          {/* Pain Points */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <div className="flex flex-col gap-y-3">
               <p className="text-xs font-roboto tracking-widest text-zinc-400 uppercase text-center">
@@ -175,6 +288,81 @@ export default async function TalentPage({ params }: Props) {
             </div>
           </div>
 
+          {/* Difference: vs. typical staffing agency */}
+          <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
+            <div className="flex flex-col gap-y-3">
+              <p className="text-xs font-roboto tracking-widest text-zinc-400 uppercase text-center">
+                The Difference
+              </p>
+              <h2 className="text-2xl md:text-3xl font-bold text-darkNavy text-center">
+                {language === 'ja'
+                  ? '人材会社と、人材課題ソリューションファームの違い'
+                  : 'Staffing Agency vs. Talent Solutions Firm'}
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {/* Typical staffing agency */}
+              <div className="flex flex-col gap-y-3 bg-zinc-100 rounded-md px-6 py-6 border border-zinc-200">
+                <p className="text-xs font-roboto tracking-widest text-zinc-500 uppercase font-semibold">
+                  {language === 'ja'
+                    ? '一般的な人材会社'
+                    : 'Typical Staffing Agency'}
+                </p>
+                <p className="text-darkNavy font-bold text-lg">
+                  {language === 'ja'
+                    ? '人材紹介 / 派遣 / 研修 ありき'
+                    : 'Placement / Dispatch / Training — first'}
+                </p>
+                <ul className="flex flex-col gap-y-2 text-sm text-zinc-700 leading-relaxed">
+                  <li>
+                    {language === 'ja'
+                      ? '・提案できる手段が自社サービスに限られる'
+                      : '・Solutions limited to what the agency sells'}
+                  </li>
+                  <li>
+                    {language === 'ja'
+                      ? '・課題と手段の不一致が起きやすい'
+                      : '・Problem and solution often misaligned'}
+                  </li>
+                  <li>
+                    {language === 'ja'
+                      ? '・「採用しない」という結論は出てこない'
+                      : '・Cannot conclude "do not hire"'}
+                  </li>
+                </ul>
+              </div>
+              {/* MUSICO */}
+              <div className="flex flex-col gap-y-3 bg-white rounded-md px-6 py-6 border-2 border-darkNavy shadow-sm">
+                <p className="text-xs font-roboto tracking-widest text-darkNavy uppercase font-semibold">
+                  MUSICO
+                </p>
+                <p className="text-darkNavy font-bold text-lg">
+                  {language === 'ja'
+                    ? '人材課題の中立診断から'
+                    : 'Starts with a neutral diagnosis'}
+                </p>
+                <ul className="flex flex-col gap-y-2 text-sm text-zinc-700 leading-relaxed">
+                  <li>
+                    {language === 'ja'
+                      ? '・採用 / 育成 / 派遣 / 委託 / 業務再設計の組合せ'
+                      : '・Combines hiring, training, staffing, outsourcing, redesign'}
+                  </li>
+                  <li>
+                    {language === 'ja'
+                      ? '・課題から逆算した最適手段を提示'
+                      : '・Solutions reverse-engineered from the problem'}
+                  </li>
+                  <li>
+                    {language === 'ja'
+                      ? '・「採用は不要」という結論もあり得る'
+                      : '・"Do not hire" is a valid conclusion'}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Our Approach */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <div className="flex flex-col gap-y-3">
               <p className="text-xs font-roboto tracking-widest text-zinc-400 uppercase text-center">
@@ -184,12 +372,17 @@ export default async function TalentPage({ params }: Props) {
                 {language === 'ja' ? '支援の進め方' : 'How We Work'}
               </h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {valueSteps.map((step) => (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 relative">
+              {approachSteps.map((step, index) => (
                 <div
                   key={step.step}
-                  className="flex flex-col gap-y-3 bg-white rounded-md px-6 py-8 shadow-sm border border-zinc-100"
+                  className="flex flex-col gap-y-3 bg-white rounded-md px-6 py-8 shadow-sm border border-zinc-100 relative"
                 >
+                  {index < approachSteps.length - 1 && (
+                    <div className="hidden md:block absolute top-1/2 -right-2 z-10 text-zinc-300 text-xl font-bold">
+                      →
+                    </div>
+                  )}
                   <span className="text-5xl font-bold font-roboto text-zinc-100 leading-none">
                     {step.step}
                   </span>
@@ -204,6 +397,46 @@ export default async function TalentPage({ params }: Props) {
             </div>
           </div>
 
+          {/* Solution Menu */}
+          <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
+            <div className="flex flex-col gap-y-3">
+              <p className="text-xs font-roboto tracking-widest text-zinc-400 uppercase text-center">
+                Solution Menu
+              </p>
+              <h2 className="text-2xl md:text-3xl font-bold text-darkNavy text-center">
+                {language === 'ja'
+                  ? '私たちが扱う、5つの打ち手'
+                  : 'Five Solutions in Our Toolkit'}
+              </h2>
+              <p className="text-base text-zinc-600 leading-relaxed text-center max-w-[600px] mx-auto">
+                {language === 'ja'
+                  ? '診断結果に応じて、これらを組み合わせて提案・実行します。'
+                  : 'Based on the diagnosis, we combine and execute these solutions.'}
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {solutionMenu.map((item) => (
+                <div
+                  key={item.labelJa}
+                  className="flex flex-col gap-y-2 bg-white rounded-md px-6 py-6 shadow-sm border border-zinc-100"
+                >
+                  <p className="text-darkNavy font-bold text-base">
+                    {language === 'ja' ? item.labelJa : item.labelEn}
+                  </p>
+                  <p className="text-sm text-zinc-600 leading-relaxed">
+                    {language === 'ja' ? item.descJa : item.descEn}
+                  </p>
+                  {item.licenseJa && (
+                    <p className="text-[10px] font-roboto text-zinc-400 mt-auto pt-2 tracking-wide">
+                      {language === 'ja' ? item.licenseJa : item.licenseEn}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Why MUSICO */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <div className="flex flex-col gap-y-3">
               <p className="text-xs font-roboto tracking-widest text-zinc-400 uppercase text-center">
@@ -234,22 +467,28 @@ export default async function TalentPage({ params }: Props) {
             </div>
           </div>
 
+          {/* CTA */}
           <div className="flex flex-col gap-y-6 max-w-[800px] lg:max-w-[1000px] w-full mx-auto bg-darkNavy rounded-md px-8 md:px-12 py-12 text-white text-center items-center">
-            <p className="text-2xl md:text-3xl font-bold">
-              {language === 'ja'
-                ? 'まずは無料相談から'
-                : 'Start with a Free Consultation'}
+            <p className="text-xs font-roboto tracking-widest text-zinc-400 uppercase">
+              Get Started
             </p>
-            <p className="text-sm leading-relaxed opacity-80 max-w-[520px]">
+            <p className="text-2xl md:text-3xl font-bold leading-snug">
               {language === 'ja'
-                ? '採用課題・必要な人材像・時期をお聞きし、最適な支援の形をご提案します。提案・売り込みは一切なし。'
-                : "Tell us about your hiring challenges, ideal candidate profile, and timeline — we'll propose the right form of support. No pitch, no sales."}
+                ? 'まずは、人材課題の中立診断から。'
+                : 'Start with a Neutral Diagnosis.'}
+            </p>
+            <p className="text-sm leading-relaxed opacity-80 max-w-[560px]">
+              {language === 'ja'
+                ? '人材を増やすべきか、業務を見直すべきか、それすら分からない段階でも結構です。30分の無料診断セッションで、課題の構造を一緒に整理しましょう。結論として「採用は不要」になることもあります。'
+                : "Even if you don't yet know whether to hire or to redesign the work, that's fine. In a free 30-minute diagnosis session, let's structure the problem together. The conclusion may well be \"do not hire.\""}
             </p>
             <Link href={`/${language}/contact`}>
               <Button
                 type="button"
                 text={
-                  language === 'ja' ? 'お問い合わせはこちら →' : 'Contact Us →'
+                  language === 'ja'
+                    ? '無料診断を申し込む →'
+                    : 'Book a Free Diagnosis →'
                 }
                 className="rounded-full bg-white text-darkNavy px-10 py-3 hover:opacity-80 duration-300 font-roboto font-semibold text-sm w-fit"
               />
@@ -262,7 +501,7 @@ export default async function TalentPage({ params }: Props) {
         language={language}
         crumbs={[
           { labelJa: '事業内容', labelEn: 'Services', href: '/services' },
-          { labelJa: '人材支援', labelEn: 'Talent Support', href: '/talent' },
+          { labelJa: '人材支援', labelEn: 'Talent Solutions', href: '/talent' },
         ]}
       />
     </>
