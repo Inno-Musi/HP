@@ -11,43 +11,43 @@ export const generateMetadata = async ({ params }: Props) => {
 
   if (language === 'ja') {
     return {
-      title: '現場DX・AI導入支援 | 株式会社MUSICO',
+      title: 'AI/DX × Hospitality | 株式会社MUSICO',
       description:
-        'AIを導入するだけでは現場は変わらない。現場理解・業務設計・人材育成まで含めて伴走する、ホスピタリティ×AIの実行支援サービス。',
+        '現場を知っているからこそ作れる、ホスピタリティ業界専用のAI/DX。属人化したノウハウを構造化し、現場で定着する仕組みへと再設計するMUSICOの注力領域。PoCパートナー募集中。',
     }
   }
 
   return {
-    title: 'On-Site DX & AI Implementation | MUSICO Inc.',
+    title: 'AI/DX × Hospitality | MUSICO Inc.',
     description:
-      "Simply deploying AI doesn't change the shop floor. We walk alongside you — from understanding operations, designing workflows, to developing people. Hospitality × AI execution support.",
+      'Built by people who run the floor — AI/DX designed specifically for the hospitality industry. We structure knowledge trapped in individuals into systems that take root on-site. PoC partners welcome.',
   }
 }
 
 const painPoints = [
   {
+    ja: '熟練スタッフのノウハウが属人化し、品質が再現できない',
+    en: 'Expertise is trapped in individuals — quality cannot be reproduced',
+  },
+  {
+    ja: 'シフト・予約・在庫管理がアナログで、判断が現場任せ',
+    en: 'Shift, reservation, and inventory data live in spreadsheets — decisions sit on the floor',
+  },
+  {
     ja: 'ツールを導入したが、現場スタッフが使いこなせていない',
     en: "Tools were introduced, but frontline staff can't actually use them",
+  },
+  {
+    ja: '外部ベンダーに丸投げしたが、ホスピタリティの現場文脈が伝わらない',
+    en: 'Outsourced to a vendor, but the hospitality context never lands',
   },
   {
     ja: 'AI活用の方向性が決まらず、PoC止まりになっている',
     en: 'No clear AI direction — stuck at proof-of-concept',
   },
   {
-    ja: 'DX推進担当が孤立し、現場と経営の橋渡しができていない',
-    en: 'DX leads are isolated; no bridge between ops and management',
-  },
-  {
-    ja: '外部ベンダーに丸投げしたが、運用が社内に定着しなかった',
-    en: 'Outsourced to a vendor, but operations never took root internally',
-  },
-  {
-    ja: '何から始めればいいか分からず、検討が止まっている',
-    en: 'Not sure where to start — everything is on hold',
-  },
-  {
-    ja: 'ROIの見せ方が分からず、経営層への説明に困っている',
-    en: "Can't demonstrate ROI — struggling to explain value to leadership",
+    ja: 'ROIや業界事例が見えず、経営層への説明に困っている',
+    en: "Can't show ROI or industry precedent — struggling to make the case",
   },
 ]
 
@@ -172,43 +172,45 @@ export default async function DxAiPage({ params }: Props) {
         <div className="bg-darkNavy text-white">
           <div className="max-w-[calc(100vw-32px)] mx-auto py-20 md:py-28">
             <div className="flex flex-col gap-y-4 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
-              <p className="text-xs md:text-sm font-roboto tracking-widest text-zinc-400 uppercase">
+              <div className="flex items-center gap-x-3">
+                <span className="inline-block px-2 py-1 bg-white text-darkNavy text-[10px] font-roboto font-semibold tracking-widest rounded">
+                  FOCUS
+                </span>
+                <p className="text-xs md:text-sm font-roboto tracking-widest text-zinc-300 uppercase font-semibold">
+                  AI/DX × Hospitality
+                </p>
+              </div>
+              <h1 className="text-3xl md:text-5xl font-bold leading-tight whitespace-pre-line">
                 {language === 'ja'
-                  ? 'DX・AI導入支援'
-                  : 'DX & AI Implementation'}
-              </p>
-              <h1 className="text-3xl md:text-5xl font-bold leading-tight">
-                {language === 'ja' ? (
-                  <>
-                    現場で
-                    <br />
-                    定着するAI/
-                    <br className="md:hidden" />
-                    DX支援
-                  </>
-                ) : (
-                  <>
-                    AI & DX That Actually
-                    <br />
-                    Sticks on the Floor
-                  </>
-                )}
+                  ? 'ホスピタリティ業界専用の、\nAI/DX。'
+                  : 'AI/DX, designed\nfor the hospitality industry.'}
               </h1>
-              <p className="text-base md:text-lg leading-relaxed text-zinc-300 max-w-[600px]">
+              <p className="text-base md:text-lg leading-relaxed text-zinc-300 max-w-[640px]">
                 {language === 'ja'
-                  ? 'AIを導入するだけでは現場は変わらない。現場理解・業務設計・人材育成まで含めて伴走する、ホスピタリティ×AIの実行支援サービスです。'
-                  : "Simply deploying AI doesn't change the floor. We walk alongside you through operations understanding, workflow design, and people development — Hospitality × AI execution support."}
+                  ? '現場を知っているからこそ作れる、ホスピタリティ業界専用のAI/DX。属人化したノウハウを構造化し、現場で定着する仕組みへと再設計します。'
+                  : 'Built by people who run the floor — AI/DX designed specifically for the hospitality industry. We structure knowledge trapped in individuals into systems that take root on-site.'}
               </p>
-              <div className="pt-4">
+              <div className="flex flex-col sm:flex-row gap-3 pt-4">
                 <Link href={`/${language}/contact`}>
                   <Button
                     type="button"
                     text={
                       language === 'ja'
-                        ? '60分無料壁打ちを申し込む'
-                        : 'Book a Free 60-Min Session'
+                        ? 'PoCパートナーになる'
+                        : 'Become a PoC Partner'
                     }
-                    className="rounded-full bg-white text-darkNavy px-8 py-3 hover:opacity-80 duration-300 font-roboto text-sm font-semibold"
+                    className="rounded-full bg-white text-darkNavy px-8 py-3 hover:opacity-80 duration-300 font-roboto text-sm font-semibold w-fit"
+                  />
+                </Link>
+                <Link href={`/${language}/contact`}>
+                  <Button
+                    type="button"
+                    text={
+                      language === 'ja'
+                        ? '30分壁打ち相談 →'
+                        : '30-Min Free Session →'
+                    }
+                    className="rounded-full border border-white text-white px-8 py-3 hover:bg-white hover:text-darkNavy duration-300 font-roboto text-sm font-semibold w-fit"
                   />
                 </Link>
               </div>
@@ -217,6 +219,37 @@ export default async function DxAiPage({ params }: Props) {
         </div>
 
         <div className="max-w-[calc(100vw-32px)] mx-auto py-16 md:py-20 flex flex-col gap-y-20 lg:gap-y-28">
+          {/* Vision / Our Stance */}
+          <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
+            <div className="flex flex-col gap-y-3">
+              <p className="text-xs font-roboto tracking-widest text-zinc-400 uppercase text-center">
+                Our Stance
+              </p>
+              <h2 className="text-2xl md:text-3xl font-bold text-darkNavy text-center whitespace-pre-line leading-snug">
+                {language === 'ja'
+                  ? '"Hospitality" の属人化は、\nAIで解ける。'
+                  : "Hospitality's individual-dependence\ncan be solved by AI."}
+              </h2>
+            </div>
+            <div className="flex flex-col gap-y-3 text-base md:text-lg leading-relaxed text-darkNavy max-w-[720px] mx-auto">
+              <p>
+                {language === 'ja'
+                  ? 'ホスピタリティ業界の現場には、長年「属人化した品質」「再現できないノウハウ」「スケールしない仕組み」が常態化してきました。'
+                  : 'For decades, hospitality operations have lived with quality trapped in individuals, knowledge that cannot be reproduced, and systems that do not scale.'}
+              </p>
+              <p>
+                {language === 'ja'
+                  ? '私たちは、現場運用者として日々この課題と向き合いながら、ホスピタリティ業界専用のAI/DXを設計しています。一般企業向けDXコンサルではなく、ホスピタリティの文脈に深くチューニングされた方法論を作るパートナーです。'
+                  : 'We design AI/DX specifically for the hospitality industry, working through these problems on the floor every day. We are not a generic DX consultancy — we are a partner building methodology deeply tuned to the hospitality context.'}
+              </p>
+              <p>
+                {language === 'ja'
+                  ? '私たち自身もAIネイティブな組織として動いています。自分たちが実証した方法論を、業界に還元する。それが私たちのスタンスです。'
+                  : 'We ourselves operate as an AI-native organization. Our stance: give back to the industry the methodologies we have proven in our own operations.'}
+              </p>
+            </div>
+          </div>
+
           {/* 課題提起 */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <div className="flex flex-col gap-y-3">
@@ -404,54 +437,80 @@ export default async function DxAiPage({ params }: Props) {
             </div>
           </div>
 
-          {/* 発信・知見 */}
-          <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
+          {/* PoC Partner */}
+          <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto bg-white rounded-md px-8 md:px-12 py-12 shadow-sm border-2 border-darkNavy">
             <div className="flex flex-col gap-y-3">
-              <p className="text-xs font-roboto tracking-widest text-zinc-400 uppercase text-center">
-                Knowledge
-              </p>
-              <h2 className="text-2xl md:text-3xl font-bold text-darkNavy text-center">
+              <div className="flex items-center gap-x-3">
+                <span className="inline-block px-2 py-1 bg-darkNavy text-white text-[10px] font-roboto font-semibold tracking-widest rounded">
+                  {language === 'ja' ? '募集中' : 'OPEN'}
+                </span>
+                <p className="text-xs font-roboto tracking-[0.2em] text-darkNavy uppercase font-semibold">
+                  PoC Partners
+                </p>
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold text-darkNavy leading-snug">
                 {language === 'ja'
-                  ? '私たちの知見・発信'
-                  : 'Our Thinking & Insights'}
+                  ? '業界の方法論を、一緒に作るパートナー企業を募集しています。'
+                  : 'Looking for partner companies to build the industry methodology with us.'}
               </h2>
+              <p className="text-base text-zinc-600 leading-relaxed">
+                {language === 'ja'
+                  ? '具体課題に対する短期PoC（2〜3ヶ月）から始め、効果が見えれば本格展開へ移行する形です。'
+                  : 'We start with a short PoC (2–3 months) on a specific problem, then expand once results are visible.'}
+              </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
                 {
-                  labelJa: 'AI導入の失敗パターン5選',
-                  labelEn: '5 Common AI Rollout Failures',
-                  tagJa: 'ナレッジ',
-                  tagEn: 'Knowledge',
+                  labelJa: '募集対象',
+                  labelEn: 'Who we work with',
+                  descJa:
+                    'ホテル / レストラン / 飲食チェーン / イベント運営 / リゾート など、ホスピタリティ業界全般',
+                  descEn:
+                    'Hotels, restaurants, F&B chains, event operators, resorts, and other hospitality businesses.',
                 },
                 {
-                  labelJa: 'ホスピタリティ×DXの現在地',
-                  labelEn: 'Hospitality × DX: Where We Are Now',
-                  tagJa: 'コラム',
-                  tagEn: 'Column',
+                  labelJa: '共に作るもの',
+                  labelEn: 'What we build together',
+                  descJa:
+                    '業界・業態に応じたAI/DX実装の型、現場定着の方法論、データ活用のKPI設計',
+                  descEn:
+                    'Implementation patterns by sub-vertical, on-site adoption methodology, and KPI design for data-driven operations.',
                 },
                 {
-                  labelJa: '現場定着を左右する3つの要素',
-                  labelEn: '3 Factors That Determine Adoption',
-                  tagJa: 'ナレッジ',
-                  tagEn: 'Knowledge',
+                  labelJa: '取り組み形態',
+                  labelEn: 'How we engage',
+                  descJa:
+                    'PoC費用は応相談、成果ベース設計可。取り組みは機密保持のもと、業界事例として一部公開可',
+                  descEn:
+                    'PoC fees are negotiable; outcome-based pricing possible. Engagements can be partially published as industry case studies under NDA.',
                 },
               ].map((item) => (
                 <div
                   key={item.labelJa}
-                  className="bg-white rounded-md px-6 py-6 shadow-sm border border-zinc-100 flex flex-col gap-y-3"
+                  className="flex flex-col gap-y-2 bg-zinc-50 rounded-md px-5 py-5 border border-zinc-100"
                 >
-                  <span className="text-xs font-roboto text-zinc-400 uppercase tracking-wide">
-                    {language === 'ja' ? item.tagJa : item.tagEn}
-                  </span>
-                  <p className="text-sm font-bold text-darkNavy leading-relaxed">
+                  <p className="text-xs font-roboto tracking-widest text-darkNavy uppercase font-semibold">
                     {language === 'ja' ? item.labelJa : item.labelEn}
                   </p>
-                  <p className="text-xs text-zinc-400 mt-auto">
-                    {language === 'ja' ? '準備中' : 'Coming soon'}
+                  <p className="text-sm text-zinc-700 leading-relaxed">
+                    {language === 'ja' ? item.descJa : item.descEn}
                   </p>
                 </div>
               ))}
+            </div>
+            <div>
+              <Link href={`/${language}/contact`}>
+                <Button
+                  type="button"
+                  text={
+                    language === 'ja'
+                      ? 'PoCパートナーに応募する →'
+                      : 'Apply as a PoC Partner →'
+                  }
+                  className="rounded-full bg-darkNavy text-white px-8 py-3 hover:opacity-80 duration-300 font-roboto font-semibold text-sm w-fit"
+                />
+              </Link>
             </div>
           </div>
 
@@ -462,30 +521,25 @@ export default async function DxAiPage({ params }: Props) {
             </p>
             <p className="text-2xl md:text-3xl font-bold leading-snug">
               {language === 'ja'
-                ? 'まずは壁打ちから'
-                : 'Start with a Conversation'}
+                ? 'まずは30分の壁打ちから'
+                : 'Start with a 30-Min Conversation'}
             </p>
             <p className="text-sm leading-relaxed opacity-80 max-w-[520px]">
               {language === 'ja'
-                ? '現場DX・AI活用に関するお悩みを、60分の無料セッションでお聞きします。提案・売り込みは一切なし。まずは率直に話しましょう。'
-                : 'Share your on-site DX and AI challenges in a free 60-minute session. No pitch, no sales. Just a candid conversation.'}
+                ? 'PoCパートナー応募はハードルが高い、まずは課題感だけ話したい、という方は、30分の無料壁打ちセッションをご利用ください。提案・売り込みは一切ありません。'
+                : "If applying as a PoC partner feels like too much commitment, start with a free 30-minute session to just talk through what's on your mind. No pitch, no sales."}
             </p>
             <Link href={`/${language}/contact`}>
               <Button
                 type="button"
                 text={
                   language === 'ja'
-                    ? '60分無料壁打ちを申し込む →'
-                    : 'Book Free 60-Min Session →'
+                    ? '30分壁打ちを申し込む →'
+                    : 'Book 30-Min Session →'
                 }
                 className="rounded-full bg-white text-darkNavy px-10 py-3 hover:opacity-80 duration-300 font-roboto font-semibold text-sm w-fit"
               />
             </Link>
-            <p className="text-xs text-zinc-500">
-              {language === 'ja'
-                ? 'お問い合わせフォームより「DX・AI支援について」とご記入ください。'
-                : 'In the contact form, please write "Regarding DX/AI Support."'}
-            </p>
           </div>
         </div>
       </div>
@@ -495,8 +549,8 @@ export default async function DxAiPage({ params }: Props) {
         crumbs={[
           { labelJa: '事業内容', labelEn: 'Services', href: '/services' },
           {
-            labelJa: '現場DX・AI導入支援',
-            labelEn: 'DX & AI Implementation',
+            labelJa: 'AI/DX × Hospitality',
+            labelEn: 'AI/DX × Hospitality',
             href: '/dx-ai',
           },
         ]}
