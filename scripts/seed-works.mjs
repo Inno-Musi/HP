@@ -58,18 +58,22 @@ const htmlEn = ({ summary, initiatives, areas }) => {
 const works = [
   {
     slug: 'sports-cx-basketball',
-    titleJa: 'プロバスケットボールクラブ CX構想プロジェクト',
-    titleEn: 'Pro Basketball Club — Customer Experience Initiative',
+    titleJa: 'ベルテックス静岡 カスタマーエクスペリエンス構想プロジェクト',
+    titleEn: 'VELTEX SHIZUOKA — Customer Experience Initiative',
     categoryJa: 'スポーツ&ホスピタリティ / 観戦体験デザイン',
     categoryEn: 'Sports & Hospitality / Experience Design',
+    clientLeadJa:
+      '<p><img src="/logos/veltex.png" alt="ベルテックス静岡 VELTEX SHIZUOKA" style="height:88px;width:auto;margin-bottom:12px;" /></p><p><strong>クライアント：ベルテックス静岡（VELTEX SHIZUOKA / B.LEAGUE）</strong></p>',
+    clientLeadEn:
+      '<p><img src="/logos/veltex.png" alt="VELTEX SHIZUOKA" style="height:88px;width:auto;margin-bottom:12px;" /></p><p><strong>Client: VELTEX SHIZUOKA (B.LEAGUE)</strong></p>',
     descriptionJa:
-      '東海地方を本拠地とするB.LEAGUEクラブのCX構想に Phase 01 から参画。観戦体験そのものを「再設計」しています。',
+      'B.LEAGUEクラブ「ベルテックス静岡」のCX構想に Phase 01 から参画。観戦体験そのものを「再設計」しています。',
     descriptionEn:
-      'Joined a B.LEAGUE club’s customer-experience initiative from Phase 01 — redesigning the game-day experience itself.',
+      'Joined B.LEAGUE club VELTEX SHIZUOKA’s customer-experience initiative from Phase 01 — redesigning the game-day experience itself.',
     summaryJa:
-      '東海地方を本拠地とするプロバスケットボールクラブのカスタマーエクスペリエンス（CX）構想プロジェクトに、Phase 01から参画しています。観戦体験そのものを「再設計」することがミッション。試合は約2時間ですが、ファンの体験はそれよりずっと長く、深い。それを設計するのが私たちの仕事です。\nプレシーズンマッチからレギュラーシーズン全試合まで、複数会場を巡回しながら、フード・グッズ・パートナーシップ・運営マニュアルまでを横断的にプロデュースしています。\n「観るだけのスポーツ」を「五感で参加するエンターテインメント」に変える。ホスピタリティのプロフェッショナルだからこそ実装できる、スポーツビジネスの新しいかたちです。',
+      '静岡を本拠地とするB.LEAGUEクラブ「ベルテックス静岡」のカスタマーエクスペリエンス（CX）構想プロジェクトに、Phase 01から参画しています。観戦体験そのものを「再設計」することがミッション。試合は約2時間ですが、ファンの体験はそれよりずっと長く、深い。それを設計するのが私たちの仕事です。\nプレシーズンマッチからレギュラーシーズン全試合まで、複数会場を巡回しながら、フード・グッズ・パートナーシップ・運営マニュアルまでを横断的にプロデュースしています。\n「観るだけのスポーツ」を「五感で参加するエンターテインメント」に変える。ホスピタリティのプロフェッショナルだからこそ実装できる、スポーツビジネスの新しいかたちです。',
     summaryEn:
-      'We joined the customer-experience (CX) initiative of a professional basketball club (B.LEAGUE) based in the Tokai region from Phase 01. Our mission is to redesign the game-day experience itself. A game lasts about two hours, but the fan experience is far longer and deeper — and designing it is our work.\nFrom preseason matches through every regular-season game, we travel across multiple venues, producing food, merchandise, partnerships, and operating manuals in an integrated way.\nWe turn "a sport you only watch" into "entertainment you join with all five senses" — a new form of sports business that only hospitality professionals can implement.',
+      'We joined the customer-experience (CX) initiative of VELTEX SHIZUOKA, a B.LEAGUE club based in Shizuoka, from Phase 01. Our mission is to redesign the game-day experience itself. A game lasts about two hours, but the fan experience is far longer and deeper — and designing it is our work.\nFrom preseason matches through every regular-season game, we travel across multiple venues, producing food, merchandise, partnerships, and operating manuals in an integrated way.\nWe turn "a sport you only watch" into "entertainment you join with all five senses" — a new form of sports business that only hospitality professionals can implement.',
     initiativesJa: [
       'CX（カスタマーエクスペリエンス）構想の設計と実装',
       '観戦体験を高めるオリジナルフードの開発',
@@ -285,16 +289,20 @@ export const buildBody = (w) => ({
   categoryEn: w.categoryEn,
   descriptionJa: w.descriptionJa,
   descriptionEn: w.descriptionEn,
-  contentJa: html({
-    summary: w.summaryJa,
-    initiatives: w.initiativesJa,
-    areas: w.areasJa,
-  }),
-  contentEn: htmlEn({
-    summary: w.summaryEn,
-    initiatives: w.initiativesEn,
-    areas: w.areasEn,
-  }),
+  contentJa:
+    (w.clientLeadJa ?? '') +
+    html({
+      summary: w.summaryJa,
+      initiatives: w.initiativesJa,
+      areas: w.areasJa,
+    }),
+  contentEn:
+    (w.clientLeadEn ?? '') +
+    htmlEn({
+      summary: w.summaryEn,
+      initiatives: w.initiativesEn,
+      areas: w.areasEn,
+    }),
 })
 
 export const workItems = works.map((w, i) => ({
