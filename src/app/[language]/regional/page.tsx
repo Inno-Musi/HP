@@ -1,5 +1,6 @@
 import { BreadCrumbs } from '@/components/bread-crumbs'
 import { Button } from '@/components/button'
+import Image from 'next/image'
 import Link from 'next/link'
 
 type Props = {
@@ -112,10 +113,19 @@ export default async function RegionalPage({ params }: Props) {
   return (
     <>
       <div className="bg-zinc-50">
-        <div className="bg-darkNavy text-white">
-          <div className="max-w-[calc(100vw-32px)] mx-auto py-20 md:py-28">
+        <div className="relative bg-darkNavy text-white overflow-hidden">
+          <Image
+            src="/service-regional.jpg"
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover opacity-30"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-darkNavy via-darkNavy/85 to-darkNavy/40" />
+          <div className="relative max-w-[calc(100vw-32px)] mx-auto py-20 md:py-28">
             <div className="flex flex-col gap-y-4 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
-              <p className="text-xs font-roboto tracking-widest text-zinc-400 uppercase">
+              <p className="text-xs font-roboto tracking-widest text-zinc-300 uppercase font-semibold">
                 Regional Revitalization
               </p>
               <h1 className="text-3xl md:text-5xl font-bold leading-tight">
