@@ -159,6 +159,57 @@ const strengths = [
   },
 ]
 
+const relatedCases = [
+  {
+    slug: 'us-ibank-executive-dining',
+    titleJa: '米国系投資銀行 オフィスホスピタリティ運営',
+    titleEn: 'US Investment Bank — Office Hospitality',
+    categoryJa: '高度人材・接遇品質',
+    categoryEn: 'Top Talent & Service Quality',
+  },
+  {
+    slug: 'enterprise-office-relocation-fb',
+    titleJa: 'エンタープライズ オフィス移転 F&B PM',
+    titleEn: 'Enterprise Office Relocation — F&B PM',
+    categoryJa: 'スタッフ採用・育成',
+    categoryEn: 'Hiring & Development',
+  },
+  {
+    slug: 'smb-new-business-launch',
+    titleJa: '中小企業の新規事業 立ち上げ支援',
+    titleEn: 'SMB New-Business Launch Support',
+    categoryJa: '組織・体制づくり',
+    categoryEn: 'Org & Team Building',
+  },
+]
+
+const faqs = [
+  {
+    qJa: '採用するべきか分からない段階でも相談できますか？',
+    qEn: 'Can we consult before deciding whether to hire?',
+    aJa: 'むしろその段階こそご相談ください。中立診断から入り、「採用しない」という結論も含めて最適な打ち手を提示します。',
+    aEn: 'That is exactly the right time. We start from a neutral diagnosis and present the best option — including "do not hire."',
+  },
+  {
+    qJa: '紹介・派遣・業務委託のどれが合うか分かりません。',
+    qEn: 'We’re unsure which model (placement / dispatch / outsourcing) fits.',
+    aJa: 'その判断こそ私たちの役割です。事業状況を踏まえ、採用・育成・派遣・業務委託・業務再設計を組み合わせて設計します。',
+    aEn: 'Choosing is our job. Based on your situation, we combine hiring, development, dispatch, outsourcing, and workflow redesign.',
+  },
+  {
+    qJa: 'ホスピタリティ以外の職種も対応できますか？',
+    qEn: 'Can you handle roles outside hospitality?',
+    aJa: 'ホスピタリティ領域を強みとしつつ、バックオフィス・専門職まで対応します。まずは課題をお聞かせください。',
+    aEn: 'Hospitality is our strength, but we also cover back-office and specialist roles. Tell us your challenge first.',
+  },
+  {
+    qJa: '有料職業紹介・派遣の免許は持っていますか？',
+    qEn: 'Do you hold placement and dispatch licenses?',
+    aJa: '有料職業紹介（13-ユ-319136）・労働者派遣（派13-318465）の両ライセンスを保有しています。',
+    aEn: 'Yes — paid placement (13-ユ-319136) and worker dispatch (派13-318465) licenses.',
+  },
+]
+
 export default async function TalentPage({ params }: Props) {
   const { language } = await params
 
@@ -220,6 +271,65 @@ export default async function TalentPage({ params }: Props) {
                   />
                 </Link>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Trust bar */}
+        <div className="border-b border-zinc-200 bg-white">
+          <div className="max-w-[800px] lg:max-w-[1000px] w-full mx-auto px-4 py-8 md:py-10 flex flex-col gap-y-6">
+            <p className="text-center text-xs font-roboto tracking-[0.2em] uppercase text-zinc-400">
+              {language === 'ja' ? '扱う打ち手' : 'Our Levers'}
+            </p>
+            <div className="flex flex-wrap justify-center gap-2 md:gap-3">
+              {[
+                { ja: '採用支援', en: 'Placement' },
+                { ja: '派遣', en: 'Dispatch' },
+                { ja: '業務委託 / BPO', en: 'Outsourcing' },
+                { ja: '育成・研修', en: 'Development' },
+                { ja: '業務再設計', en: 'Workflow Redesign' },
+              ].map((s) => (
+                <span
+                  key={s.ja}
+                  className="px-4 py-2 rounded-full border border-zinc-200 bg-zinc-50 text-xs md:text-sm font-semibold text-darkNavy"
+                >
+                  {language === 'ja' ? s.ja : s.en}
+                </span>
+              ))}
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+              {[
+                {
+                  vJa: '中立診断',
+                  vEn: 'Neutral Diagnosis',
+                  lJa: '採用ありきにしない',
+                  lEn: 'never hiring-first',
+                },
+                {
+                  vJa: 'ワンストップ',
+                  vEn: 'End-to-End',
+                  lJa: '診断から実行まで自社で',
+                  lEn: 'diagnosis to execution in-house',
+                },
+                {
+                  vJa: '有料紹介・派遣 免許',
+                  vEn: 'Licensed',
+                  lJa: '13-ユ-319136 / 派13-318465',
+                  lEn: '13-ユ-319136 / 派13-318465',
+                },
+              ].map((st) => (
+                <div
+                  key={st.lJa}
+                  className="flex flex-col items-center text-center gap-y-1"
+                >
+                  <p className="text-xl md:text-2xl font-bold text-darkNavy">
+                    {language === 'ja' ? st.vJa : st.vEn}
+                  </p>
+                  <p className="text-xs md:text-sm text-zinc-500 leading-relaxed">
+                    {language === 'ja' ? st.lJa : st.lEn}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -463,6 +573,85 @@ export default async function TalentPage({ params }: Props) {
                     {language === 'ja' ? s.descJa : s.descEn}
                   </p>
                 </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Related cases */}
+          <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
+            <div className="flex flex-col gap-y-3">
+              <p className="text-xs font-roboto tracking-widest text-zinc-400 uppercase text-center">
+                Case Studies
+              </p>
+              <h2 className="text-2xl md:text-3xl font-bold text-darkNavy text-center">
+                {language === 'ja' ? '関連する実績' : 'Related Work'}
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {relatedCases.map((c) => (
+                <Link
+                  key={c.slug}
+                  href={`/${language}/works/${c.slug}`}
+                  className="group bg-white rounded-md overflow-hidden shadow-sm border border-zinc-100 flex flex-col hover:shadow-md transition-shadow duration-200"
+                >
+                  <div className="relative aspect-[16/10] bg-zinc-100">
+                    <Image
+                      src={`/works/${c.slug}.jpg`}
+                      alt={language === 'ja' ? c.titleJa : c.titleEn}
+                      fill
+                      className="object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="px-5 py-4 flex flex-col gap-y-2 flex-1">
+                    <p className="text-xs font-roboto tracking-widest uppercase text-zinc-400">
+                      {language === 'ja' ? c.categoryJa : c.categoryEn}
+                    </p>
+                    <p className="text-sm font-bold text-darkNavy leading-snug">
+                      {language === 'ja' ? c.titleJa : c.titleEn}
+                    </p>
+                    <p className="text-xs font-roboto text-darkNavy mt-auto pt-1 group-hover:underline underline-offset-2">
+                      {language === 'ja' ? '詳しく見る →' : 'Read more →'}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+            <div className="text-center">
+              <Link
+                href={`/${language}/works`}
+                className="text-sm font-roboto text-darkNavy font-semibold hover:underline underline-offset-2"
+              >
+                {language === 'ja' ? 'すべての実績を見る →' : 'View all work →'}
+              </Link>
+            </div>
+          </div>
+
+          {/* FAQ */}
+          <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
+            <div className="flex flex-col gap-y-3">
+              <p className="text-xs font-roboto tracking-widest text-zinc-400 uppercase text-center">
+                FAQ
+              </p>
+              <h2 className="text-2xl md:text-3xl font-bold text-darkNavy text-center">
+                {language === 'ja' ? 'よくあるご質問' : 'Frequently Asked Questions'}
+              </h2>
+            </div>
+            <div className="flex flex-col gap-y-3">
+              {faqs.map((f) => (
+                <details
+                  key={f.qJa}
+                  className="group bg-white rounded-md px-6 py-5 shadow-sm border border-zinc-100"
+                >
+                  <summary className="flex items-center justify-between cursor-pointer list-none font-bold text-darkNavy text-sm md:text-base">
+                    <span>{language === 'ja' ? f.qJa : f.qEn}</span>
+                    <span className="ml-4 shrink-0 text-zinc-400 group-open:rotate-45 transition-transform duration-200 text-xl leading-none">
+                      +
+                    </span>
+                  </summary>
+                  <p className="mt-3 text-sm text-zinc-600 leading-relaxed">
+                    {language === 'ja' ? f.aJa : f.aEn}
+                  </p>
+                </details>
               ))}
             </div>
           </div>

@@ -107,6 +107,97 @@ const strengths = [
   },
 ]
 
+const trustSectors = [
+  { ja: '米系投資銀行', en: 'US Investment Bank' },
+  { ja: '外資系企業', en: 'Global Firms' },
+  { ja: 'VIP・役員イベント', en: 'VIP & Board Events' },
+  { ja: '大手エンタープライズ', en: 'Major Enterprise' },
+]
+
+const trustStats = [
+  {
+    valueJa: 'グローバル基準',
+    valueEn: 'Global-Standard',
+    labelJa: '外資金融グレードの接遇',
+    labelEn: 'finance-grade hospitality',
+  },
+  {
+    valueJa: '食・空間・演出',
+    valueEn: 'Food · Space · Flow',
+    labelJa: '体験を一体で設計',
+    labelEn: 'designed as one experience',
+  },
+  {
+    valueJa: '多様な食対応',
+    valueEn: 'Dietary-Ready',
+    labelJa: 'ハラル/ヴィーガン/アレルゲン',
+    labelEn: 'halal / vegan / allergens',
+  },
+]
+
+const relatedCases = [
+  {
+    slug: 'us-ibank-executive-dining',
+    titleJa: '米国系投資銀行 オフィスホスピタリティ運営',
+    titleEn: 'US Investment Bank — Office Hospitality',
+    categoryJa: 'エグゼクティブダイニング',
+    categoryEn: 'Executive Dining',
+  },
+  {
+    slug: 'enterprise-office-relocation-fb',
+    titleJa: 'エンタープライズ オフィス移転 F&B PM',
+    titleEn: 'Enterprise Office Relocation — F&B PM',
+    categoryJa: 'コーポレートF&B',
+    categoryEn: 'Corporate F&B',
+  },
+  {
+    slug: 'sports-cx-basketball',
+    titleJa: 'ベルテックス静岡 CX構想プロジェクト',
+    titleEn: 'VELTEX SHIZUOKA — CX Initiative',
+    categoryJa: '観戦体験・イベントフード',
+    categoryEn: 'Experience & Event Food',
+  },
+]
+
+// TODO(実テキスト差し替え): 公開前に実在のお客様の声へ差し替える。
+const testimonials = [
+  {
+    quoteJa:
+      'VIPゲストへの接遇から食事制限対応まで安心して任せられました。当日の運営も非常にスムーズでした。',
+    quoteEn:
+      'From VIP hospitality to dietary accommodations, we could rely on them completely — and day-of operations were seamless.',
+    authorJa: '外資系企業 イベントご担当者',
+    authorEn: 'Events Lead, Global Firm',
+  },
+]
+
+const faqs = [
+  {
+    qJa: '少人数のイベントでも依頼できますか？',
+    qEn: 'Can you cater smaller events?',
+    aJa: '役員会・少人数の会食から大規模パーティーまで対応します。規模に応じて最適な体制を設計します。',
+    aEn: 'From board dinners and small gatherings to large parties — we design the right setup for the scale.',
+  },
+  {
+    qJa: '会場が未定でも相談できますか？',
+    qEn: 'Can we consult before the venue is decided?',
+    aJa: '会場選定の段階からご相談いただけます。動線・設備・演出を踏まえた会場アドバイスも可能です。',
+    aEn: 'Yes — we can advise from the venue-selection stage, factoring in flow, facilities, and atmosphere.',
+  },
+  {
+    qJa: '食事制限（ハラル・ヴィーガン等）に対応できますか？',
+    qEn: 'Can you handle dietary restrictions?',
+    aJa: 'ハラル・ベジタリアン・ヴィーガン・主要アレルゲンに対応した献立を設計します。グローバルゲストも安心です。',
+    aEn: 'We design menus for halal, vegetarian, vegan, and major allergens — ready for a global guest list.',
+  },
+  {
+    qJa: '当日のサービススタッフも手配できますか？',
+    qEn: 'Can you provide day-of service staff?',
+    aJa: '現場に精通したサービススタッフの手配・統括まで一括で対応します。',
+    aEn: 'Yes — we arrange and oversee experienced service staff end-to-end.',
+  },
+]
+
 export default async function CateringPage({ params }: Props) {
   const { language } = await params
 
@@ -133,24 +224,68 @@ export default async function CateringPage({ params }: Props) {
                   ? 'ケータリング\n・イベント'
                   : 'Catering\n& Events'}
               </h1>
-              <p className="text-base md:text-lg leading-relaxed text-zinc-300 max-w-[600px]">
+              <p className="text-base md:text-lg leading-relaxed text-zinc-200 max-w-[620px]">
                 {language === 'ja'
-                  ? 'VIPイベント・社内パーティー・ビジネスランチまで。グレードに応じた食体験を設計・運営します。'
-                  : 'From VIP events and internal parties to business lunches — designing and delivering food experiences calibrated to the occasion.'}
+                  ? 'VIPイベント・役員会・社内パーティー・ポップアップまで。目的とグレードに応じた食体験を設計・実装します。'
+                  : 'From VIP events and board dinners to internal parties and pop-ups — designing and executing food experiences calibrated to purpose and standard.'}
               </p>
-              <div className="pt-4">
+              <div className="flex flex-col sm:flex-row gap-3 pt-4">
                 <Link href={`/${language}/contact`}>
                   <Button
                     type="button"
                     text={
-                      language === 'ja'
-                        ? 'まずは無料相談'
-                        : 'Book a Free Consultation'
+                      language === 'ja' ? 'まずは無料相談' : 'Book a Free Consultation'
                     }
-                    className="rounded-full bg-white text-darkNavy px-8 py-3 hover:opacity-80 duration-300 font-roboto text-sm font-semibold"
+                    className="rounded-full bg-white text-darkNavy px-8 py-3 hover:opacity-80 duration-300 font-roboto text-sm font-semibold w-fit"
+                  />
+                </Link>
+                <Link href={`/${language}/works`}>
+                  <Button
+                    type="button"
+                    text={language === 'ja' ? '導入事例を見る →' : 'View Case Studies →'}
+                    className="rounded-full border border-white text-white px-8 py-3 hover:bg-white hover:text-darkNavy duration-300 font-roboto text-sm font-semibold w-fit"
                   />
                 </Link>
               </div>
+              <p className="text-xs md:text-sm text-zinc-300 pt-2">
+                {language === 'ja'
+                  ? '外資金融グレードの接遇基準を、あらゆるイベントに。'
+                  : 'Finance-grade hospitality standards, brought to every event.'}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Trust bar */}
+        <div className="border-b border-zinc-200 bg-white">
+          <div className="max-w-[800px] lg:max-w-[1000px] w-full mx-auto px-4 py-8 md:py-10 flex flex-col gap-y-6">
+            <p className="text-center text-xs font-roboto tracking-[0.2em] uppercase text-zinc-400">
+              {language === 'ja' ? '支援実績のある領域' : 'Where We Serve'}
+            </p>
+            <div className="flex flex-wrap justify-center gap-2 md:gap-3">
+              {trustSectors.map((s) => (
+                <span
+                  key={s.ja}
+                  className="px-4 py-2 rounded-full border border-zinc-200 bg-zinc-50 text-xs md:text-sm font-semibold text-darkNavy"
+                >
+                  {language === 'ja' ? s.ja : s.en}
+                </span>
+              ))}
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+              {trustStats.map((st) => (
+                <div
+                  key={st.labelJa}
+                  className="flex flex-col items-center text-center gap-y-1"
+                >
+                  <p className="text-xl md:text-2xl font-bold text-darkNavy">
+                    {language === 'ja' ? st.valueJa : st.valueEn}
+                  </p>
+                  <p className="text-xs md:text-sm text-zinc-500 leading-relaxed">
+                    {language === 'ja' ? st.labelJa : st.labelEn}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -242,6 +377,112 @@ export default async function CateringPage({ params }: Props) {
                     {language === 'ja' ? s.descJa : s.descEn}
                   </p>
                 </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Related cases */}
+          <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
+            <div className="flex flex-col gap-y-3">
+              <p className="text-xs font-roboto tracking-widest text-zinc-400 uppercase text-center">
+                Case Studies
+              </p>
+              <h2 className="text-2xl md:text-3xl font-bold text-darkNavy text-center">
+                {language === 'ja' ? '関連する実績' : 'Related Work'}
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {relatedCases.map((c) => (
+                <Link
+                  key={c.slug}
+                  href={`/${language}/works/${c.slug}`}
+                  className="group bg-white rounded-md overflow-hidden shadow-sm border border-zinc-100 flex flex-col hover:shadow-md transition-shadow duration-200"
+                >
+                  <div className="relative aspect-[16/10] bg-zinc-100">
+                    <Image
+                      src={`/works/${c.slug}.jpg`}
+                      alt={language === 'ja' ? c.titleJa : c.titleEn}
+                      fill
+                      className="object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="px-5 py-4 flex flex-col gap-y-2 flex-1">
+                    <p className="text-xs font-roboto tracking-widest uppercase text-zinc-400">
+                      {language === 'ja' ? c.categoryJa : c.categoryEn}
+                    </p>
+                    <p className="text-sm font-bold text-darkNavy leading-snug">
+                      {language === 'ja' ? c.titleJa : c.titleEn}
+                    </p>
+                    <p className="text-xs font-roboto text-darkNavy mt-auto pt-1 group-hover:underline underline-offset-2">
+                      {language === 'ja' ? '詳しく見る →' : 'Read more →'}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+            <div className="text-center">
+              <Link
+                href={`/${language}/works`}
+                className="text-sm font-roboto text-darkNavy font-semibold hover:underline underline-offset-2"
+              >
+                {language === 'ja' ? 'すべての実績を見る →' : 'View all work →'}
+              </Link>
+            </div>
+          </div>
+
+          {/* Testimonial */}
+          <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
+            <div className="flex flex-col gap-y-3">
+              <p className="text-xs font-roboto tracking-widest text-zinc-400 uppercase text-center">
+                Voice
+              </p>
+              <h2 className="text-2xl md:text-3xl font-bold text-darkNavy text-center">
+                {language === 'ja' ? 'お客様の声' : 'Client Voice'}
+              </h2>
+            </div>
+            <div className="flex flex-col gap-y-6">
+              {testimonials.map((t) => (
+                <figure
+                  key={t.authorJa}
+                  className="bg-white rounded-md px-6 md:px-10 py-8 shadow-sm border border-zinc-100"
+                >
+                  <blockquote className="text-base md:text-lg leading-relaxed text-darkNavy">
+                    「{language === 'ja' ? t.quoteJa : t.quoteEn}」
+                  </blockquote>
+                  <figcaption className="mt-4 text-sm text-zinc-500">
+                    — {language === 'ja' ? t.authorJa : t.authorEn}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+
+          {/* FAQ */}
+          <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
+            <div className="flex flex-col gap-y-3">
+              <p className="text-xs font-roboto tracking-widest text-zinc-400 uppercase text-center">
+                FAQ
+              </p>
+              <h2 className="text-2xl md:text-3xl font-bold text-darkNavy text-center">
+                {language === 'ja' ? 'よくあるご質問' : 'Frequently Asked Questions'}
+              </h2>
+            </div>
+            <div className="flex flex-col gap-y-3">
+              {faqs.map((f) => (
+                <details
+                  key={f.qJa}
+                  className="group bg-white rounded-md px-6 py-5 shadow-sm border border-zinc-100"
+                >
+                  <summary className="flex items-center justify-between cursor-pointer list-none font-bold text-darkNavy text-sm md:text-base">
+                    <span>{language === 'ja' ? f.qJa : f.qEn}</span>
+                    <span className="ml-4 shrink-0 text-zinc-400 group-open:rotate-45 transition-transform duration-200 text-xl leading-none">
+                      +
+                    </span>
+                  </summary>
+                  <p className="mt-3 text-sm text-zinc-600 leading-relaxed">
+                    {language === 'ja' ? f.aJa : f.aEn}
+                  </p>
+                </details>
               ))}
             </div>
           </div>

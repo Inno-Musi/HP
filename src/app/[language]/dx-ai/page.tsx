@@ -1,5 +1,6 @@
 import { BreadCrumbs } from '@/components/bread-crumbs'
 import { Button } from '@/components/button'
+import Image from 'next/image'
 import Link from 'next/link'
 
 type Props = {
@@ -162,6 +163,57 @@ const supportPhases = [
   },
 ]
 
+const relatedCases = [
+  {
+    slug: 'us-ibank-executive-dining',
+    titleJa: '米国系投資銀行 オフィスホスピタリティ運営',
+    titleEn: 'US Investment Bank — Office Hospitality',
+    categoryJa: 'データドリブン運営',
+    categoryEn: 'Data-Driven Operations',
+  },
+  {
+    slug: 'us-bank-office-cafe',
+    titleJa: '米国系金融機関 オフィスカフェ運営',
+    titleEn: 'US Financial Institution — Office Café',
+    categoryJa: '利用データに基づく改善',
+    categoryEn: 'Data-Driven Improvement',
+  },
+  {
+    slug: 'enterprise-office-relocation-fb',
+    titleJa: 'エンタープライズ オフィス移転 F&B PM',
+    titleEn: 'Enterprise Office Relocation — F&B PM',
+    categoryJa: 'KPIモニタリング',
+    categoryEn: 'KPI Monitoring',
+  },
+]
+
+const faqs = [
+  {
+    qJa: 'ホスピタリティ業界以外でも相談できますか？',
+    qEn: 'Can we engage you outside the hospitality industry?',
+    aJa: '主軸はホスピタリティ業界ですが、「現場の属人化をAIで解く」方法論は他業種の現場にも応用可能です。まずはご相談ください。',
+    aEn: 'Our focus is hospitality, but our "solve floor-level individual-dependence with AI" methodology applies to other on-site industries too. Let’s talk.',
+  },
+  {
+    qJa: 'AIの知識が社内になくても大丈夫ですか？',
+    qEn: 'Is in-house AI knowledge required?',
+    aJa: '不要です。現場理解・業務設計・人材育成まで含めて伴走するため、AIの専門知識がない状態から始められます。',
+    aEn: 'No. We accompany you through operations understanding, workflow design, and people development — you can start with no AI expertise.',
+  },
+  {
+    qJa: 'PoCにはどのくらいの期間・費用がかかりますか？',
+    qEn: 'How long and how much is a PoC?',
+    aJa: '具体課題に対する短期PoC（2〜3ヶ月）から始めます。費用は応相談、成果ベースの設計も可能です。',
+    aEn: 'We start with a short PoC (2–3 months) on a specific problem. Fees are negotiable, including outcome-based structures.',
+  },
+  {
+    qJa: '既存のツールやシステムは活かせますか？',
+    qEn: 'Can we keep our existing tools and systems?',
+    aJa: '既存システムを前提に、業務に溶け込む形で設計します。ツールの入れ替えありきではありません。',
+    aEn: 'We design around your existing systems so AI fits into the workflow — no rip-and-replace by default.',
+  },
+]
+
 export default async function DxAiPage({ params }: Props) {
   const { language } = await params
 
@@ -214,6 +266,64 @@ export default async function DxAiPage({ params }: Props) {
                   />
                 </Link>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Trust bar */}
+        <div className="border-b border-zinc-200 bg-white">
+          <div className="max-w-[800px] lg:max-w-[1000px] w-full mx-auto px-4 py-8 md:py-10 flex flex-col gap-y-6">
+            <p className="text-center text-xs font-roboto tracking-[0.2em] uppercase text-zinc-400">
+              {language === 'ja' ? '対象業界' : 'Who We Build For'}
+            </p>
+            <div className="flex flex-wrap justify-center gap-2 md:gap-3">
+              {[
+                { ja: 'ホテル', en: 'Hotels' },
+                { ja: 'レストラン・飲食チェーン', en: 'Restaurants & Chains' },
+                { ja: 'イベント運営', en: 'Event Operators' },
+                { ja: 'リゾート', en: 'Resorts' },
+              ].map((s) => (
+                <span
+                  key={s.ja}
+                  className="px-4 py-2 rounded-full border border-zinc-200 bg-zinc-50 text-xs md:text-sm font-semibold text-darkNavy"
+                >
+                  {language === 'ja' ? s.ja : s.en}
+                </span>
+              ))}
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+              {[
+                {
+                  vJa: '現場運用者発',
+                  vEn: 'Built by Operators',
+                  lJa: '机上論ではない実装',
+                  lEn: 'implementation, not theory',
+                },
+                {
+                  vJa: 'AIネイティブ',
+                  vEn: 'AI-Native',
+                  lJa: '自社で実証した方法論',
+                  lEn: 'methodology proven in-house',
+                },
+                {
+                  vJa: '属人化→仕組み化',
+                  vEn: 'Individual → System',
+                  lJa: '現場で定着するDX',
+                  lEn: 'DX that takes root on-site',
+                },
+              ].map((st) => (
+                <div
+                  key={st.lJa}
+                  className="flex flex-col items-center text-center gap-y-1"
+                >
+                  <p className="text-xl md:text-2xl font-bold text-darkNavy">
+                    {language === 'ja' ? st.vJa : st.vEn}
+                  </p>
+                  <p className="text-xs md:text-sm text-zinc-500 leading-relaxed">
+                    {language === 'ja' ? st.lJa : st.lEn}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -511,6 +621,87 @@ export default async function DxAiPage({ params }: Props) {
                   className="rounded-full bg-darkNavy text-white px-8 py-3 hover:opacity-80 duration-300 font-roboto font-semibold text-sm w-fit"
                 />
               </Link>
+            </div>
+          </div>
+
+          {/* Related cases */}
+          <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
+            <div className="flex flex-col gap-y-3">
+              <p className="text-xs font-roboto tracking-widest text-zinc-400 uppercase text-center">
+                Case Studies
+              </p>
+              <h2 className="text-2xl md:text-3xl font-bold text-darkNavy text-center">
+                {language === 'ja'
+                  ? 'データドリブン運営の実績'
+                  : 'Data-Driven Operations in Practice'}
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {relatedCases.map((c) => (
+                <Link
+                  key={c.slug}
+                  href={`/${language}/works/${c.slug}`}
+                  className="group bg-white rounded-md overflow-hidden shadow-sm border border-zinc-100 flex flex-col hover:shadow-md transition-shadow duration-200"
+                >
+                  <div className="relative aspect-[16/10] bg-zinc-100">
+                    <Image
+                      src={`/works/${c.slug}.jpg`}
+                      alt={language === 'ja' ? c.titleJa : c.titleEn}
+                      fill
+                      className="object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="px-5 py-4 flex flex-col gap-y-2 flex-1">
+                    <p className="text-xs font-roboto tracking-widest uppercase text-zinc-400">
+                      {language === 'ja' ? c.categoryJa : c.categoryEn}
+                    </p>
+                    <p className="text-sm font-bold text-darkNavy leading-snug">
+                      {language === 'ja' ? c.titleJa : c.titleEn}
+                    </p>
+                    <p className="text-xs font-roboto text-darkNavy mt-auto pt-1 group-hover:underline underline-offset-2">
+                      {language === 'ja' ? '詳しく見る →' : 'Read more →'}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+            <div className="text-center">
+              <Link
+                href={`/${language}/works`}
+                className="text-sm font-roboto text-darkNavy font-semibold hover:underline underline-offset-2"
+              >
+                {language === 'ja' ? 'すべての実績を見る →' : 'View all work →'}
+              </Link>
+            </div>
+          </div>
+
+          {/* FAQ */}
+          <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
+            <div className="flex flex-col gap-y-3">
+              <p className="text-xs font-roboto tracking-widest text-zinc-400 uppercase text-center">
+                FAQ
+              </p>
+              <h2 className="text-2xl md:text-3xl font-bold text-darkNavy text-center">
+                {language === 'ja' ? 'よくあるご質問' : 'Frequently Asked Questions'}
+              </h2>
+            </div>
+            <div className="flex flex-col gap-y-3">
+              {faqs.map((f) => (
+                <details
+                  key={f.qJa}
+                  className="group bg-white rounded-md px-6 py-5 shadow-sm border border-zinc-100"
+                >
+                  <summary className="flex items-center justify-between cursor-pointer list-none font-bold text-darkNavy text-sm md:text-base">
+                    <span>{language === 'ja' ? f.qJa : f.qEn}</span>
+                    <span className="ml-4 shrink-0 text-zinc-400 group-open:rotate-45 transition-transform duration-200 text-xl leading-none">
+                      +
+                    </span>
+                  </summary>
+                  <p className="mt-3 text-sm text-zinc-600 leading-relaxed">
+                    {language === 'ja' ? f.aJa : f.aEn}
+                  </p>
+                </details>
+              ))}
             </div>
           </div>
 
