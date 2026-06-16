@@ -159,18 +159,6 @@ const relatedCases = [
   },
 ]
 
-// TODO(実テキスト差し替え): 公開前に実在のお客様の声へ差し替える。
-const testimonials = [
-  {
-    quoteJa:
-      'VIPゲストへの接遇から食事制限対応まで安心して任せられました。当日の運営も非常にスムーズでした。',
-    quoteEn:
-      'From VIP hospitality to dietary accommodations, we could rely on them completely — and day-of operations were seamless.',
-    authorJa: '外資系企業 イベントご担当者',
-    authorEn: 'Events Lead, Global Firm',
-  },
-]
-
 const faqs = [
   {
     qJa: '少人数のイベントでも依頼できますか？',
@@ -427,33 +415,6 @@ export default async function CateringPage({ params }: Props) {
               >
                 {language === 'ja' ? 'すべての実績を見る →' : 'View all work →'}
               </Link>
-            </div>
-          </div>
-
-          {/* Testimonial */}
-          <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
-            <div className="flex flex-col gap-y-3">
-              <p className="text-xs font-roboto tracking-widest text-zinc-400 uppercase text-center">
-                Voice
-              </p>
-              <h2 className="text-2xl md:text-3xl font-bold text-darkNavy text-center">
-                {language === 'ja' ? 'お客様の声' : 'Client Voice'}
-              </h2>
-            </div>
-            <div className="flex flex-col gap-y-6">
-              {testimonials.map((t) => (
-                <figure
-                  key={t.authorJa}
-                  className="bg-white rounded-md px-6 md:px-10 py-8 shadow-sm border border-zinc-100"
-                >
-                  <blockquote className="text-base md:text-lg leading-relaxed text-darkNavy">
-                    「{language === 'ja' ? t.quoteJa : t.quoteEn}」
-                  </blockquote>
-                  <figcaption className="mt-4 text-sm text-zinc-500">
-                    — {language === 'ja' ? t.authorJa : t.authorEn}
-                  </figcaption>
-                </figure>
-              ))}
             </div>
           </div>
 
