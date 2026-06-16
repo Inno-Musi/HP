@@ -16,13 +16,15 @@ export const generateMetadata = async ({ params }: Props) => {
   if (language === 'ja') {
     return {
       title: '会社概要 | 株式会社MUSICO',
-      description: '株式会社MUSICOの会社概要です。',
+      description:
+        'MUSICOは、ホスピタリティを再設計する "A Hospitality Innovation Firm"。食・空間・運用・テクノロジーを一気通貫で組み立て、ヒトの幸福な時間を仕組みで増やしていきます。',
     }
   }
 
   return {
     title: 'About Us | MUSICO Inc.',
-    description: 'This is the company profile of MUSICO Inc.',
+    description:
+      'MUSICO is "A Hospitality Innovation Firm," redesigning hospitality end to end. We weave food, space, operations, and technology into one continuous system to multiply meaningful time — by design.',
   }
 }
 
@@ -39,10 +41,21 @@ const members = [
     imageSrc: 'https://images.wantedly.com/i/PVjgi76',
   },
   {
+    nameJa: '高田 ゆき',
+    nameEn: 'Yuki Takada',
+    titleJa: '副社長兼CCO',
+    titleEn: 'Vice President & CCO',
+    bioJa:
+      'パリのLe Cordon Bleu・Alain Ducasseで料理哲学と空間演出を学ぶ。帰国後は食・空間・感性による体験価値の構造化・収益化を手がける。2024年6月にMUSICOへ参画し、グローバル金融機関・富裕層向けエグゼクティブ専用ホスピタリティ事業を統括。属人的な体験を再現可能・高収益・定期型のモデルへ設計している。',
+    bioEn:
+      'Studied culinary philosophy and spatial design at Le Cordon Bleu and Alain Ducasse in Paris. After returning to Japan, she focused on structuring and monetizing experiential value through food, space, and sensibility. She joined MUSICO in June 2024, leading the executive-exclusive hospitality business for global financial institutions and high-net-worth clients — redesigning individual-dependent experiences into reproducible, high-margin, recurring models.',
+    imageSrc: '',
+  },
+  {
     nameJa: '石黒 啓介',
     nameEn: 'Keisuke Ishiguro',
-    titleJa: '社長室 Director',
-    titleEn: "Director, President's Office",
+    titleJa: '執行役員Partner',
+    titleEn: 'Executive Officer / Partner',
     bioJa:
       '早稲田大学ビジネススクール（MBA）修了。株式会社オリエンタルランドにてフード開発・農園事業を経験後、Ridgelinezにてシニアコンサルタントとして大手企業のDX・基幹システム刷新を牽引。2025年よりMUSICOに参画し、事業戦略・営業・バックオフィス全般を統括。',
     bioEn:
@@ -66,30 +79,30 @@ export default async function AboutPage({ params }: Props) {
               titleEn="Philosophy"
               language={language}
             />
+
+            {/* Mission tagline + lead + 3 cards */}
             <div className="flex flex-col gap-y-6 text-darkNavy">
               <p className="text-2xl md:text-3xl font-bold leading-snug">
-                {language === 'ja'
-                  ? 'Innovating Hospitality, End to End'
-                  : 'Innovating Hospitality, End to End'}
+                Innovating Hospitality, End to End
               </p>
               <p className="text-base md:text-lg leading-relaxed">
                 {language === 'ja'
-                  ? '私たちは、ホスピタリティをデザインするイノベーション・ファームです。戦略策定に留まらず、実行と成果創出にコミットするコンサルティング＆ソリューションパートナーとして、食・空間・体験の領域を横断しながらクライアントの事業成長を力強く後押しします。'
-                  : "We are an innovation firm that designs hospitality. As a consulting and solution partner committed not just to strategy formulation but to execution and results, we support our clients' business growth across the domains of food, space, and experience."}
+                  ? '私たちは、ホスピタリティを再設計する Hospitality Innovation Firm です。食・空間・運用・テクノロジーを一気通貫で組み立てることで、ヒトの幸福な時間を、仕組みで増やしていきます。'
+                  : 'We are a Hospitality Innovation Firm, redesigning hospitality end to end. By weaving food, space, operations, and technology into one continuous system, we engineer more meaningful time — by design.'}
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2">
                 {[
                   {
-                    ja: '変化を機会と捉え\n事業成長を実現する',
-                    en: 'Turn Change into\nOpportunity',
+                    ja: '現場でつくり\n現場で証明する',
+                    en: 'Built on-site\nProven on-site',
                   },
                   {
-                    ja: 'アイデアを現実にし\n着実に成果を残す',
-                    en: 'Turn Ideas into\nTangible Results',
+                    ja: '属人化に頼らず\n個の力を仕組みで磨く',
+                    en: 'From individual craft\nto scalable systems',
                   },
                   {
-                    ja: 'ホスピタリティ × AI で\n新たな価値を創造する',
-                    en: 'Create New Value with\nHospitality × AI',
+                    ja: '完璧な計画より\n早い実装と早い修正',
+                    en: 'Ship early, fix early\nover perfect plans',
                   },
                 ].map((item) => (
                   <div
@@ -102,6 +115,118 @@ export default async function AboutPage({ params }: Props) {
                   </div>
                 ))}
               </div>
+            </div>
+
+            {/* WHY */}
+            <div className="flex flex-col gap-y-4 pt-8 border-t border-zinc-200 text-darkNavy">
+              <div className="flex flex-col gap-y-2">
+                <p className="text-xs tracking-[0.2em] font-semibold text-zinc-500">
+                  WHY
+                </p>
+                <p className="text-xl md:text-2xl font-bold leading-snug">
+                  {language === 'ja'
+                    ? 'ヒトの幸福な時間を、仕組みで増やす。'
+                    : 'Multiply meaningful time, by design.'}
+                </p>
+              </div>
+              <div className="flex flex-col gap-y-3 text-base md:text-lg leading-relaxed">
+                <p>
+                  {language === 'ja'
+                    ? '私たちは、ホスピタリティを再設計することで、ヒトの幸福な時間を増やしていきます。'
+                    : 'By redesigning hospitality, we set out to bring more meaningful time into the world.'}
+                </p>
+                <p>
+                  {language === 'ja'
+                    ? '食、空間、運用、テクノロジー。これらを一気通貫で組み立てることで、属人化したノウハウや再現できない品質を、スケールできる仕組みへと変えていきます。'
+                    : 'By weaving food, space, operations, and technology into one continuous system, we transform skills locked in individuals and quality that cannot be reproduced into scalable systems.'}
+                </p>
+                <p>
+                  {language === 'ja'
+                    ? 'グローバルエリートから現場の日常まで、関わるすべてのステークホルダーに、より良い時間を届けることが、私たちの目的です。'
+                    : 'From global elites to everyday operations on the floor, delivering better time to every stakeholder we serve is our purpose.'}
+                </p>
+              </div>
+            </div>
+
+            {/* HOW */}
+            <div className="flex flex-col gap-y-4 pt-8 border-t border-zinc-200 text-darkNavy">
+              <div className="flex flex-col gap-y-2">
+                <p className="text-xs tracking-[0.2em] font-semibold text-zinc-500">
+                  HOW
+                </p>
+                <p className="text-xl md:text-2xl font-bold leading-snug">
+                  {language === 'ja'
+                    ? '属人化に頼らず、個の力を仕組みで磨く。'
+                    : 'From individual craft to scalable systems.'}
+                </p>
+              </div>
+              <div className="flex flex-col gap-y-3 text-base md:text-lg leading-relaxed">
+                <p>
+                  {language === 'ja'
+                    ? '「属人化したノウハウ」「再現できない品質」「スケールしない仕組み」— 多くの現場で常態化しているこれらの課題を、私たちはハンズオンで設計し、解決します。'
+                    : '"Knowledge trapped in individuals," "quality that cannot be reproduced," "systems that do not scale" — these are routine problems on every floor. We tackle them hands-on, by design.'}
+                </p>
+                <p>
+                  {language === 'ja'
+                    ? '戦略・空間・運用までを切れ目なく一気通貫で組み立て、現場で実装し、データで検証する。これが私たちの再設計のアプローチです。'
+                    : 'Strategy, space, and operations — built as one continuous system, implemented on-site, validated by data. This is our approach to redesign.'}
+                </p>
+                <p>
+                  {language === 'ja'
+                    ? '"Noといわず、どうやったらできるか"を起点に、完璧な計画より早い実装と早い修正を選び、現場でつくり、現場で証明していきます。'
+                    : 'Starting from "How can we make this work?" instead of "no," we choose fast implementation and fast correction over perfect plans — building on-site, proving on-site.'}
+                </p>
+              </div>
+            </div>
+
+            {/* WHAT / VALUES */}
+            <div className="flex flex-col gap-y-4 pt-8 border-t border-zinc-200 text-darkNavy">
+              <div className="flex flex-col gap-y-2">
+                <p className="text-xs tracking-[0.2em] font-semibold text-zinc-500">
+                  WHAT / VALUES
+                </p>
+                <p className="text-xl md:text-2xl font-bold leading-snug">
+                  {language === 'ja'
+                    ? '現場でつくり、現場で証明する。'
+                    : 'Built on-site. Proven on-site.'}
+                </p>
+              </div>
+              <div className="flex flex-col gap-y-3 text-base md:text-lg leading-relaxed">
+                <p>
+                  {language === 'ja'
+                    ? '私たちは提案にとどまらず、専任チームを持ち、実行までハンズオンで伴走します。'
+                    : 'We go beyond proposals — with dedicated teams, we accompany clients hands-on through execution.'}
+                </p>
+                <p>
+                  {language === 'ja'
+                    ? 'ハイエンドホスピタリティ、コーポレートフード、ケータリング、AI/DX、地方創生など、複数の実行領域で実績を積み重ね、グローバル金融機関から地域コミュニティまで、多様な現場で成果を共に創り出してきました。'
+                    : 'Across multiple execution domains — high-end hospitality, corporate food, catering, AI/DX, regional revitalization — we have delivered tangible results, from global financial institutions to local communities.'}
+                </p>
+              </div>
+              <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-3">
+                {[
+                  { ja: 'カスタマーファースト', en: 'Customer First' },
+                  { ja: 'データドリブン', en: 'Data Driven' },
+                  { ja: '創造性と革新性', en: 'Creativity & Innovation' },
+                  { ja: 'とにかく早く動く', en: 'Move Fast' },
+                  { ja: '失敗を恐れない', en: 'No Fear of Failure' },
+                  { ja: '優秀なメンバー', en: 'Outstanding People' },
+                ].map((v) => (
+                  <div
+                    key={v.ja}
+                    className="bg-white rounded-md px-4 py-3 border border-zinc-100 text-center"
+                  >
+                    <p className="text-sm md:text-base font-bold text-darkNavy">
+                      {language === 'ja' ? v.ja : v.en}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <p className="text-sm md:text-base text-zinc-600 mt-2">
+                {language === 'ja'
+                  ? 'この6つを行動規範に、新しい価値をつくり続けます。'
+                  : 'These six guide our conduct as we continue to create new value.'}
+              </p>
             </div>
           </div>
 

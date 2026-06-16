@@ -1,5 +1,6 @@
 import { BreadCrumbs } from '@/components/bread-crumbs'
 import { Button } from '@/components/button'
+import Image from 'next/image'
 import Link from 'next/link'
 
 type Props = {
@@ -106,16 +107,107 @@ const strengths = [
   },
 ]
 
+// Anonymized sectors served (real track record, no client names).
+const trustSectors = [
+  { ja: '米系投資銀行', en: 'US Investment Bank' },
+  { ja: '米系金融機関', en: 'US Financial Institution' },
+  { ja: '大手エンタープライズ', en: 'Major Enterprise' },
+  { ja: 'グローバルIT', en: 'Global Tech' },
+]
+
+// Honest, fact-based numbers.
+const trustStats = [
+  {
+    valueJa: '1,000名以上',
+    valueEn: '1,000+',
+    labelJa: '規模のオフィスF&Bを運営',
+    labelEn: 'person office F&B operated',
+  },
+  {
+    valueJa: '企画→運営',
+    valueEn: 'Plan → Run',
+    labelJa: '一気通貫で支援',
+    labelEn: 'end-to-end support',
+  },
+  {
+    valueJa: '多言語・多文化',
+    valueEn: 'Multilingual',
+    labelJa: 'グローバル基準の接遇',
+    labelEn: 'global-standard service',
+  },
+]
+
+// Related case studies (links into /works).
+const relatedCases = [
+  {
+    slug: 'us-ibank-executive-dining',
+    titleJa: '米国系投資銀行 オフィスホスピタリティ運営',
+    titleEn: 'US Investment Bank — Office Hospitality',
+    categoryJa: 'エグゼクティブダイニング',
+    categoryEn: 'Executive Dining',
+  },
+  {
+    slug: 'us-bank-office-cafe',
+    titleJa: '米国系金融機関 オフィスカフェ運営',
+    titleEn: 'US Financial Institution — Office Café',
+    categoryJa: 'オフィスカフェ',
+    categoryEn: 'Office Café',
+  },
+  {
+    slug: 'enterprise-office-relocation-fb',
+    titleJa: 'エンタープライズ オフィス移転 F&B PM',
+    titleEn: 'Enterprise Office Relocation — F&B PM',
+    categoryJa: 'コーポレートF&B',
+    categoryEn: 'Corporate F&B',
+  },
+]
+
+const faqs = [
+  {
+    qJa: '小規模なオフィスでも依頼できますか？',
+    qEn: 'Can we engage you for a smaller office?',
+    aJa: '可能です。規模に応じて運営体制とコストを設計します。まずは現状の課題をお聞かせください。',
+    aEn: 'Yes. We design the operating model and cost to your scale. Start by telling us your current challenges.',
+  },
+  {
+    qJa: '既存の運営からの切り替えはできますか？',
+    qEn: 'Can you take over an existing operation?',
+    aJa: '現運営の引き継ぎ実績があります。移行リスクを抑えた段階的な切り替えを設計します。',
+    aEn: 'We have experience taking over existing operations, designing a phased transition that minimizes risk.',
+  },
+  {
+    qJa: 'ハラル・ヴィーガン等の食対応は可能ですか？',
+    qEn: 'Can you accommodate halal, vegan, and other dietary needs?',
+    aJa: 'ハラル・ベジタリアン・ヴィーガン・主要アレルゲン対応まで、グローバルゲスト向けの献立・衛生体制を構築します。',
+    aEn: 'Yes — halal, vegetarian, vegan, and major allergens, with menus and hygiene systems built for a global guest list.',
+  },
+  {
+    qJa: '相談だけでも費用はかかりますか？',
+    qEn: 'Is the initial consultation free?',
+    aJa: '初回のご相談は無料です。提案・売り込みは一切ありません。まずは率直にお話ししましょう。',
+    aEn: 'The first consultation is free, with no pitch and no sales. Just a candid conversation.',
+  },
+]
+
 export default async function CorporateFoodPage({ params }: Props) {
   const { language } = await params
 
   return (
     <>
       <div className="bg-zinc-50">
-        <div className="bg-darkNavy text-white">
-          <div className="max-w-[calc(100vw-32px)] mx-auto py-20 md:py-28">
+        <div className="relative bg-darkNavy text-white overflow-hidden">
+          <Image
+            src="/service-corporate-food.jpg"
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover opacity-30"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-darkNavy via-darkNavy/85 to-darkNavy/40" />
+          <div className="relative max-w-[calc(100vw-32px)] mx-auto py-20 md:py-28">
             <div className="flex flex-col gap-y-4 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
-              <p className="text-xs font-roboto tracking-widest text-zinc-400 uppercase">
+              <p className="text-xs font-roboto tracking-widest text-zinc-300 uppercase font-semibold">
                 Corporate Food Service
               </p>
               <h1 className="text-3xl md:text-5xl font-bold leading-tight">
@@ -123,24 +215,68 @@ export default async function CorporateFoodPage({ params }: Props) {
                   ? 'コーポレート\nフードサービス'
                   : 'Corporate\nFood Service'}
               </h1>
-              <p className="text-base md:text-lg leading-relaxed text-zinc-300 max-w-[600px]">
+              <p className="text-base md:text-lg leading-relaxed text-zinc-200 max-w-[620px]">
                 {language === 'ja'
-                  ? '外資・大手企業のオフィスカフェ・社員食堂を企画から運営まで一貫支援。品質・コスト・従業員エンゲージメントを同時に実現します。'
-                  : 'End-to-end support for office cafés and employee dining at global and major corporations — balancing quality, cost, and employee engagement simultaneously.'}
+                  ? '外資・大手企業のオフィスカフェ・社員食堂・エグゼクティブダイニングを、企画から運営まで一気通貫で再設計。品質・コスト・従業員エンゲージメントを同時に高めます。'
+                  : 'End-to-end redesign of office cafés, employee dining, and executive dining for global enterprises — raising quality, cost-efficiency, and employee engagement at once.'}
               </p>
-              <div className="pt-4">
+              <div className="flex flex-col sm:flex-row gap-3 pt-4">
                 <Link href={`/${language}/contact`}>
                   <Button
                     type="button"
                     text={
-                      language === 'ja'
-                        ? 'まずは無料相談'
-                        : 'Book a Free Consultation'
+                      language === 'ja' ? 'まずは無料相談' : 'Book a Free Consultation'
                     }
-                    className="rounded-full bg-white text-darkNavy px-8 py-3 hover:opacity-80 duration-300 font-roboto text-sm font-semibold"
+                    className="rounded-full bg-white text-darkNavy px-8 py-3 hover:opacity-80 duration-300 font-roboto text-sm font-semibold w-fit"
+                  />
+                </Link>
+                <Link href={`/${language}/works`}>
+                  <Button
+                    type="button"
+                    text={language === 'ja' ? '導入事例を見る →' : 'View Case Studies →'}
+                    className="rounded-full border border-white text-white px-8 py-3 hover:bg-white hover:text-darkNavy duration-300 font-roboto text-sm font-semibold w-fit"
                   />
                 </Link>
               </div>
+              <p className="text-xs md:text-sm text-zinc-300 pt-2">
+                {language === 'ja'
+                  ? 'グローバル金融機関から大手エンタープライズまで、ハイエンドな現場で実証。'
+                  : 'Proven on high-end floors, from global financial institutions to major enterprises.'}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Trust bar */}
+        <div className="border-b border-zinc-200 bg-white">
+          <div className="max-w-[800px] lg:max-w-[1000px] w-full mx-auto px-4 py-8 md:py-10 flex flex-col gap-y-6">
+            <p className="text-center text-xs font-roboto tracking-[0.2em] uppercase text-zinc-400">
+              {language === 'ja' ? '支援実績のある業種' : 'Sectors We Serve'}
+            </p>
+            <div className="flex flex-wrap justify-center gap-2 md:gap-3">
+              {trustSectors.map((s) => (
+                <span
+                  key={s.ja}
+                  className="px-4 py-2 rounded-full border border-zinc-200 bg-zinc-50 text-xs md:text-sm font-semibold text-darkNavy"
+                >
+                  {language === 'ja' ? s.ja : s.en}
+                </span>
+              ))}
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+              {trustStats.map((st) => (
+                <div
+                  key={st.labelJa}
+                  className="flex flex-col items-center text-center gap-y-1"
+                >
+                  <p className="text-xl md:text-2xl font-bold text-darkNavy">
+                    {language === 'ja' ? st.valueJa : st.valueEn}
+                  </p>
+                  <p className="text-xs md:text-sm text-zinc-500 leading-relaxed">
+                    {language === 'ja' ? st.labelJa : st.labelEn}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -232,6 +368,85 @@ export default async function CorporateFoodPage({ params }: Props) {
                     {language === 'ja' ? s.descJa : s.descEn}
                   </p>
                 </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Related cases */}
+          <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
+            <div className="flex flex-col gap-y-3">
+              <p className="text-xs font-roboto tracking-widest text-zinc-400 uppercase text-center">
+                Case Studies
+              </p>
+              <h2 className="text-2xl md:text-3xl font-bold text-darkNavy text-center">
+                {language === 'ja' ? '関連する実績' : 'Related Work'}
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {relatedCases.map((c) => (
+                <Link
+                  key={c.slug}
+                  href={`/${language}/works/${c.slug}`}
+                  className="group bg-white rounded-md overflow-hidden shadow-sm border border-zinc-100 flex flex-col hover:shadow-md transition-shadow duration-200"
+                >
+                  <div className="relative aspect-[16/10] bg-zinc-100">
+                    <Image
+                      src={`/works/${c.slug}.jpg`}
+                      alt={language === 'ja' ? c.titleJa : c.titleEn}
+                      fill
+                      className="object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="px-5 py-4 flex flex-col gap-y-2 flex-1">
+                    <p className="text-xs font-roboto tracking-widest uppercase text-zinc-400">
+                      {language === 'ja' ? c.categoryJa : c.categoryEn}
+                    </p>
+                    <p className="text-sm font-bold text-darkNavy leading-snug">
+                      {language === 'ja' ? c.titleJa : c.titleEn}
+                    </p>
+                    <p className="text-xs font-roboto text-darkNavy mt-auto pt-1 group-hover:underline underline-offset-2">
+                      {language === 'ja' ? '詳しく見る →' : 'Read more →'}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+            <div className="text-center">
+              <Link
+                href={`/${language}/works`}
+                className="text-sm font-roboto text-darkNavy font-semibold hover:underline underline-offset-2"
+              >
+                {language === 'ja' ? 'すべての実績を見る →' : 'View all work →'}
+              </Link>
+            </div>
+          </div>
+
+          {/* FAQ */}
+          <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
+            <div className="flex flex-col gap-y-3">
+              <p className="text-xs font-roboto tracking-widest text-zinc-400 uppercase text-center">
+                FAQ
+              </p>
+              <h2 className="text-2xl md:text-3xl font-bold text-darkNavy text-center">
+                {language === 'ja' ? 'よくあるご質問' : 'Frequently Asked Questions'}
+              </h2>
+            </div>
+            <div className="flex flex-col gap-y-3">
+              {faqs.map((f) => (
+                <details
+                  key={f.qJa}
+                  className="group bg-white rounded-md px-6 py-5 shadow-sm border border-zinc-100"
+                >
+                  <summary className="flex items-center justify-between cursor-pointer list-none font-bold text-darkNavy text-sm md:text-base">
+                    <span>{language === 'ja' ? f.qJa : f.qEn}</span>
+                    <span className="ml-4 shrink-0 text-zinc-400 group-open:rotate-45 transition-transform duration-200 text-xl leading-none">
+                      +
+                    </span>
+                  </summary>
+                  <p className="mt-3 text-sm text-zinc-600 leading-relaxed">
+                    {language === 'ja' ? f.aJa : f.aEn}
+                  </p>
+                </details>
               ))}
             </div>
           </div>

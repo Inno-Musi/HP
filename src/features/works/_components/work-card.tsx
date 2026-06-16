@@ -9,7 +9,10 @@ type Props = {
 }
 
 export const WorkCard = ({ work, language, href }: Props) => {
-  const image = language === 'en' ? work.imageEn || work.image : work.image
+  const cmsImage = language === 'en' ? work.imageEn || work.image : work.image
+  // Fallback to a repo-hosted image keyed by slug when the CMS has none.
+  const imageUrl =
+    cmsImage?.url ?? (work.slug ? `/works/${work.slug}.jpg` : undefined)
   const title = language === 'ja' ? work.titleJa : work.titleEn || work.titleJa
   const category =
     language === 'ja' ? work.categoryJa : work.categoryEn || work.categoryJa
@@ -21,8 +24,8 @@ export const WorkCard = ({ work, language, href }: Props) => {
   const card = (
     <article className="bg-white rounded-md overflow-hidden shadow-sm border border-zinc-100 h-full">
       <div className="relative aspect-[16/10] bg-zinc-100">
-        {image ? (
-          <Image src={image.url} alt={title} fill className="object-cover" />
+        {imageUrl ? (
+          <Image src={imageUrl} alt={title} fill className="object-cover" />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center text-zinc-300 text-sm">
             No Image

@@ -1,4 +1,26 @@
-import type { WorksListResponse } from './types'
+import devSeed from './dev-seed.json'
+import type { WorkItem, WorksListResponse } from './types'
+
+// Local-only preview: when the CMS has no published works yet, fall back to
+// the seed data in development so /works can be previewed before publishing.
+// This never runs in production builds.
+const devSeedFallback = (
+  limit?: number,
+  filters?: string,
+): WorksListResponse => {
+  let items = devSeed as WorkItem[]
+  const slugMatch = filters?.match(/slug\[equals\](.+)/)
+  if (slugMatch) {
+    items = items.filter((w) => w.slug === slugMatch[1])
+  }
+  const sliced = typeof limit === 'number' ? items.slice(0, limit) : items
+  return {
+    contents: sliced,
+    totalCount: items.length,
+    offset: 0,
+    limit: limit ?? items.length,
+  }
+}
 
 type Props = {
   limit?: number
@@ -51,9 +73,19 @@ export const fetchWorksList = async ({
 
     const data = (await res.json()) as WorksListResponse
 
+    if (
+      data.contents.length === 0 &&
+      process.env.NODE_ENV === 'development'
+    ) {
+      return devSeedFallback(limit, filters)
+    }
+
     return data
   } catch (error) {
     console.warn('Failed to fetch works', error)
+    if (process.env.NODE_ENV === 'development') {
+      return devSeedFallback(limit, filters)
+    }
     return createEmptyWorksList(limit)
   }
 }
