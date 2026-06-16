@@ -41,10 +41,21 @@ const members = [
     imageSrc: 'https://images.wantedly.com/i/PVjgi76',
   },
   {
+    nameJa: '高田 ゆき',
+    nameEn: 'Yuki Takada',
+    titleJa: '副社長兼CCO',
+    titleEn: 'Vice President & CCO',
+    bioJa:
+      'パリのLe Cordon Bleu・Alain Ducasseで料理哲学と空間演出を学ぶ。帰国後は食・空間・感性による体験価値の構造化・収益化を手がける。2024年6月にMUSICOへ参画し、グローバル金融機関・富裕層向けエグゼクティブ専用ホスピタリティ事業を統括。属人的な体験を再現可能・高収益・定期型のモデルへ設計している。',
+    bioEn:
+      'Studied culinary philosophy and spatial design at Le Cordon Bleu and Alain Ducasse in Paris. After returning to Japan, she focused on structuring and monetizing experiential value through food, space, and sensibility. She joined MUSICO in June 2024, leading the executive-exclusive hospitality business for global financial institutions and high-net-worth clients — redesigning individual-dependent experiences into reproducible, high-margin, recurring models.',
+    imageSrc: '',
+  },
+  {
     nameJa: '石黒 啓介',
     nameEn: 'Keisuke Ishiguro',
-    titleJa: '社長室 Director',
-    titleEn: "Director, President's Office",
+    titleJa: '執行役員Partner',
+    titleEn: 'Executive Officer / Partner',
     bioJa:
       '早稲田大学ビジネススクール（MBA）修了。株式会社オリエンタルランドにてフード開発・農園事業を経験後、Ridgelinezにてシニアコンサルタントとして大手企業のDX・基幹システム刷新を牽引。2025年よりMUSICOに参画し、事業戦略・営業・バックオフィス全般を統括。',
     bioEn:
