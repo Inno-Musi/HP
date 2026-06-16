@@ -37,13 +37,22 @@ export const SectionFv = ({ language }: Props) => {
 
             <div className="absolute w-full h-full flex flex-col gap-y-4 items-start justify-end pb-16 pl-8 md:pl-16 z-10">
               <MotionUp duration={1} initialY={0}>
-                <Link href={`/${language}/philosophy`}>
-                  <Button
-                    type="button"
-                    text="OUR PHILOSOPHY"
-                    className="rounded-full bg-white text-darkNavy border border-darkNavy px-8 sm:py-3 hover:opacity-100 hover:bg-darkNavy hover:text-white duration-300 font-roboto"
-                  />
-                </Link>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <Link href={`/${language}/services`}>
+                    <Button
+                      type="button"
+                      text={language === 'ja' ? '事業内容を見る' : 'Our Services'}
+                      className="rounded-full bg-darkNavy text-white border border-darkNavy px-8 py-3 hover:opacity-80 duration-300 font-roboto w-fit"
+                    />
+                  </Link>
+                  <Link href={`/${language}/contact`}>
+                    <Button
+                      type="button"
+                      text={language === 'ja' ? 'お問い合わせ' : 'Contact'}
+                      className="rounded-full bg-white text-darkNavy border border-darkNavy px-8 py-3 hover:bg-darkNavy hover:text-white duration-300 font-roboto w-fit"
+                    />
+                  </Link>
+                </div>
               </MotionUp>
             </div>
           </motion.div>

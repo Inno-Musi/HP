@@ -17,16 +17,16 @@ export const generateMetadata = async ({
 
   if (language === 'ja') {
     return {
-      title: '株式会社MUSICO',
+      title: '株式会社MUSICO | A Hospitality Innovation Firm',
       description:
-        '私たちは、企業のコーポレートサービスを支援するオーダーメイドのBPO企業として、経営・財務・ITなどの業務最適化を通じて、効率的で持続可能なビジネス運営に伴走します。',
+        'MUSICOは、ホスピタリティを再設計する Hospitality Innovation Firm。食・空間・運用・テクノロジーを一気通貫で組み立て、AI/DXと人材支援を注力領域に、コーポレートフード・ケータリング・地方創生の現場で価値を実装します。',
     }
   }
 
   return {
-    title: 'MUSICO Inc.',
+    title: 'MUSICO Inc. | A Hospitality Innovation Firm',
     description:
-      'We are a custom-made BPO company that supports corporate services, optimizing operations in management, finance, and IT to ensure efficient and sustainable business operations.',
+      'MUSICO is a Hospitality Innovation Firm. We weave food, space, operations, and technology into one continuous system — with AI/DX and Talent as focus areas, implemented on-site across corporate food, catering, and regional revitalization.',
   }
 }
 

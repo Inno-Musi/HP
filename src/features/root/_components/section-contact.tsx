@@ -32,12 +32,12 @@ export const SectionContact = ({ language }: Props) => {
             <p className="text-sm md:text-lg flex flex-col items-center md:flex-row">
               {language === 'ja' ? (
                 <>
-                  <span>BPO・事業に関するご相談・採用などに関する</span>
+                  <span>事業・サービスに関するご相談・採用などに関する</span>
                   <span>お問い合わせはこちらから</span>
                 </>
               ) : (
                 <>
-                  <span>For inquiries regarding BPO, business matters,</span>
+                  <span>For inquiries about our services, business matters,</span>
                   <span>or recruitment, please contact us here.</span>
                 </>
               )}
