@@ -26,10 +26,14 @@ export const SectionFv = ({ language }: Props) => {
             initial={{ opacity: 0, scale: 1.05 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="relative min-h-[calc(100vh-64px)] w-full mx-auto overflow-hidden"
+            className="relative h-[64svh] min-h-[520px] max-h-[680px] md:h-auto md:min-h-[calc(100vh-64px)] md:max-h-none w-full mx-auto overflow-hidden"
           >
             <div
-              className="absolute inset-0 w-full h-full bg-cover bg-center z-0"
+              className="absolute inset-0 w-full h-full bg-cover bg-center z-0 md:hidden"
+              style={{ backgroundImage: "url('/home-hero-mobile.jpg')" }}
+            />
+            <div
+              className="absolute inset-0 hidden w-full h-full bg-cover bg-center z-0 md:block"
               style={{ backgroundImage: "url('/home-hero.jpg')" }}
             />
 
