@@ -17,7 +17,9 @@ export const WorkContent = async ({ language, slug }: Props) => {
     notFound()
   }
 
-  const image = language === 'en' ? work.imageEn || work.image : work.image
+  const cmsImage = language === 'en' ? work.imageEn || work.image : work.image
+  const imageUrl =
+    cmsImage?.url ?? (work.slug ? `/works/${work.slug}.jpg` : undefined)
   const title = language === 'ja' ? work.titleJa : work.titleEn || work.titleJa
   const category =
     language === 'ja' ? work.categoryJa : work.categoryEn || work.categoryJa
@@ -42,9 +44,9 @@ export const WorkContent = async ({ language, slug }: Props) => {
         </div>
         <div className="bg-white">
           <div className="relative aspect-[16/9] bg-zinc-100">
-            {image ? (
+            {imageUrl ? (
               <Image
-                src={image.url}
+                src={imageUrl}
                 alt={title}
                 fill
                 className="object-cover"
