@@ -35,9 +35,9 @@ const members = [
     titleJa: '代表取締役',
     titleEn: 'Representative Director',
     bioJa:
-      '立教大学卒業後、株式会社オリエンタルランドにてテーマパークF&B事業・アグリビジネスに7年間従事。その後、株式会社MUSICOを創業。「Innovating Hospitality, End to End」をミッションに、ホスピタリティ領域の戦略・空間・運用を一気通貫で支援している。',
+      '立教大学卒業後、株式会社オリエンタルランドにてテーマパークF&B事業・アグリビジネスに従事。その後、株式会社MUSICOを創業。「Innovating Hospitality, End to End」をミッションに、ホスピタリティ領域の戦略・空間・運用を一気通貫で支援している。',
     bioEn:
-      'After graduating from Rikkyo University, spent 7 years at Oriental Land Co. in theme park F&B operations and agribusiness, then founded MUSICO Inc. Under the mission "Innovating Hospitality, End to End," he leads end-to-end support across strategy, space, and operations in the hospitality domain.',
+      'After graduating from Rikkyo University, worked at Oriental Land Co. in theme park F&B operations and agribusiness, then founded MUSICO Inc. Under the mission "Innovating Hospitality, End to End," he leads end-to-end support across strategy, space, and operations in the hospitality domain.',
     imageSrc: 'https://images.wantedly.com/i/PVjgi76',
   },
   {
