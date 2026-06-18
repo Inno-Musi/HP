@@ -9,6 +9,12 @@ type Props = {
 
 const focusServices = [
   {
+    titleJa: 'フード／ホスピタリティ',
+    titleEn: 'Food / Hospitality',
+    image: '/service-corporate-food.jpg',
+    href: '/corporate-food',
+  },
+  {
     titleJa: 'AI/DX × Hospitality',
     titleEn: 'AI/DX × Hospitality',
     image: '/service-ai-dx.jpg',
@@ -23,12 +29,6 @@ const focusServices = [
 ]
 
 const coreServices = [
-  {
-    titleJa: 'コーポレートフード',
-    titleEn: 'Corporate Food',
-    image: '/service-corporate-food.jpg',
-    href: '/corporate-food',
-  },
   {
     titleJa: 'ケータリング・イベント',
     titleEn: 'Catering & Events',
@@ -55,8 +55,8 @@ export const SectionServices = ({ language }: Props) => {
             </p>
             <p className="text-base lg:text-lg leading-relaxed text-zinc-700">
               {language === 'ja'
-                ? 'ホスピタリティを再設計する Hospitality Innovation Firm。「現場のAI/DX」と「人材課題のソリューション」を注力領域に、コーポレートフード・ケータリング・地方創生の現場で日々ホスピタリティを実装しています。'
-                : 'A Hospitality Innovation Firm. With on-the-floor AI/DX and end-to-end Talent Solutions as our focus areas, we implement hospitality every day across corporate food, catering, and regional revitalization.'}
+                ? 'ホスピタリティを再設計する Hospitality Innovation Firm。フード／ホスピタリティ・AI/DX・人材支援の3領域を注力領域として、戦略から現場実装まで一気通貫で支援。ケータリングや地方創生といった関連領域でもホスピタリティを実装しています。'
+                : 'A Hospitality Innovation Firm. Our three focus areas — Food/Hospitality, AI/DX, and Talent — are supported end to end from strategy to on-site execution, alongside related areas such as catering and regional revitalization.'}
             </p>
           </div>
         </MotionUp>
@@ -70,7 +70,7 @@ export const SectionServices = ({ language }: Props) => {
                 {language === 'ja' ? '注力領域 / Focus Areas' : 'Focus Areas'}
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
               {focusServices.map((s) => (
                 <Link
                   key={s.titleJa}
@@ -102,12 +102,10 @@ export const SectionServices = ({ language }: Props) => {
             <div className="flex items-center gap-x-3">
               <span className="inline-block w-2 h-2 rounded-full bg-zinc-400" />
               <p className="text-xs font-roboto tracking-[0.2em] font-semibold text-zinc-500 uppercase">
-                {language === 'ja'
-                  ? '現場で実装する3領域 / Execution Domains'
-                  : 'Execution Domains'}
+                {language === 'ja' ? '関連領域 / Related Areas' : 'Related Areas'}
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
               {coreServices.map((s) => (
                 <Link
                   key={s.titleJa}

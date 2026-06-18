@@ -14,18 +14,28 @@ export const generateMetadata = async ({ params }: Props) => {
     return {
       title: '事業内容 | 株式会社MUSICO',
       description:
-        'MUSICOは、ホスピタリティを再設計する Hospitality Innovation Firm。AI/DX と 人材支援 の2注力領域と、コーポレートフード・ケータリング・地方創生の現場領域で、ホスピタリティ業界の構造課題に挑みます。',
+        'MUSICOは、ホスピタリティを再設計する Hospitality Innovation Firm。フード／ホスピタリティ・AI/DX・人材支援の3注力領域と、ケータリング・地方創生の関連領域で、ホスピタリティ業界の構造課題に挑みます。',
     }
   }
 
   return {
     title: 'Services | MUSICO Inc.',
     description:
-      'MUSICO is a Hospitality Innovation Firm. Two focus areas — AI/DX and Talent — paired with three execution domains — Corporate Food, Catering, Regional Revitalization — tackling the structural challenges of the hospitality industry.',
+      'MUSICO is a Hospitality Innovation Firm. Three focus areas — Food/Hospitality, AI/DX, and Talent — alongside related areas of Catering and Regional Revitalization, tackling the structural challenges of the hospitality industry.',
   }
 }
 
 const featuredServices = [
+  {
+    titleJa: 'フード／ホスピタリティ',
+    titleEn: 'Food / Hospitality',
+    descJa:
+      '外資・大手企業のオフィスカフェ・社員食堂・エグゼクティブダイニングを、企画から運営まで一気通貫で再設計。グローバル金融機関からITまで支援実績多数。',
+    descEn:
+      'End-to-end redesign of office cafés, employee dining, and executive dining for global enterprises — proven across leading financial institutions and tech firms.',
+    image: '/service-corporate-food.jpg',
+    href: '/corporate-food',
+  },
   {
     titleJa: 'AI/DX × Hospitality',
     titleEn: 'AI/DX × Hospitality',
@@ -49,16 +59,6 @@ const featuredServices = [
 ]
 
 const coreServices = [
-  {
-    titleJa: 'コーポレートフードサービス',
-    titleEn: 'Corporate Food Service',
-    descJa:
-      '外資・大手企業のオフィスカフェ・社員食堂・エグゼクティブダイニングを、企画から運営まで一気通貫で再設計。グローバル金融機関からITまで支援実績多数。',
-    descEn:
-      'End-to-end redesign of office cafés, employee dining, and executive dining for global enterprises — proven across leading financial institutions and tech firms.',
-    image: '/service-corporate-food.jpg',
-    href: '/corporate-food',
-  },
   {
     titleJa: 'ケータリング・イベント',
     titleEn: 'Catering & Events',
@@ -106,13 +106,13 @@ export default async function ServicesPage({ params }: Props) {
               </p>
               <p>
                 {language === 'ja'
-                  ? '私たちは、現場運用で培ったホスピタリティの知見を起点に、「現場のAI/DX」と「人材課題のソリューション」という2つの注力領域で、業界の構造課題に挑んでいます。'
-                  : "Built on the hospitality know-how we've accumulated by running the floor, we tackle the industry's structural challenges through two focus areas: on-the-floor AI/DX, and end-to-end Talent Solutions."}
+                  ? '私たちは、フード／ホスピタリティ、AI/DX、人材支援の3領域を注力領域として、ホスピタリティ業界の構造課題に挑んでいます。現場運用で培った知見を起点に、戦略から現場実装まで一気通貫で支援します。'
+                  : "We focus on three areas — Food/Hospitality, AI/DX, and Talent — to tackle the structural challenges of the hospitality industry, supporting clients end to end from strategy to on-site execution, built on the know-how we've accumulated by running the floor."}
               </p>
               <p>
                 {language === 'ja'
-                  ? '加えて、コーポレートフード・ケータリング・地方創生の現場で日々ホスピタリティを実装し、そこで得た知見を注力領域の方法論に還元する。これが私たちの5領域の組み立て方です。'
-                  : 'In parallel, we implement hospitality on-site every day across Corporate Food, Catering, and Regional Revitalization — feeding what we learn back into the methodologies of our focus areas. This is how our five domains are wired together.'}
+                  ? '加えて、ケータリング・イベントや地方創生といった関連領域でも、現場でホスピタリティを実装。そこで得た知見を、注力領域の方法論に還元しています。'
+                  : 'We also implement hospitality on-site in related areas such as Catering & Events and Regional Revitalization — feeding what we learn back into the methodologies of our focus areas.'}
               </p>
             </div>
           </div>
@@ -125,7 +125,7 @@ export default async function ServicesPage({ params }: Props) {
                 {language === 'ja' ? '注力領域 / Focus Areas' : 'Focus Areas'}
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {featuredServices.map((service) => (
                 <Link
                   key={service.titleJa}
@@ -164,12 +164,10 @@ export default async function ServicesPage({ params }: Props) {
             <div className="flex items-center gap-x-3">
               <span className="inline-block w-2 h-2 rounded-full bg-zinc-400" />
               <p className="text-xs font-roboto tracking-[0.2em] font-semibold text-zinc-500 uppercase">
-                {language === 'ja'
-                  ? '現場で実装する3領域 / Execution Domains'
-                  : 'Execution Domains'}
+                {language === 'ja' ? '関連領域 / Related Areas' : 'Related Areas'}
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
               {coreServices.map((service) => (
                 <Link
                   key={service.titleJa}
@@ -184,14 +182,11 @@ export default async function ServicesPage({ params }: Props) {
                       className="object-cover group-hover:scale-[1.02] transition-transform duration-300"
                     />
                   </div>
-                  <div className="px-6 py-5 flex flex-col gap-y-2 flex-1">
+                  <div className="px-5 py-4 flex flex-col gap-y-2 flex-1">
                     <p className="text-darkNavy font-bold text-base">
                       {language === 'ja' ? service.titleJa : service.titleEn}
                     </p>
-                    <p className="text-sm text-zinc-500 leading-relaxed">
-                      {language === 'ja' ? service.descJa : service.descEn}
-                    </p>
-                    <p className="text-xs font-roboto text-darkNavy mt-auto pt-2 group-hover:underline underline-offset-2">
+                    <p className="text-xs font-roboto text-zinc-400 mt-auto group-hover:text-darkNavy group-hover:underline underline-offset-2">
                       {language === 'ja' ? '詳しく見る →' : 'Learn more →'}
                     </p>
                   </div>

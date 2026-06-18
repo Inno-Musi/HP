@@ -35,9 +35,9 @@ const members = [
     titleJa: '代表取締役',
     titleEn: 'Representative Director',
     bioJa:
-      '立教大学卒業後、株式会社オリエンタルランドにてテーマパークF&B事業・アグリビジネスに7年間従事。2022年、株式会社MUSICOを創業。「Innovating Hospitality, End to End」をミッションに、ホスピタリティ領域の戦略・空間・運用を一気通貫で支援している。',
+      '立教大学卒業後、株式会社オリエンタルランドにてテーマパークF&B事業・アグリビジネスに従事。その後、株式会社MUSICOを創業。「Innovating Hospitality, End to End」をミッションに、ホスピタリティ領域の戦略・空間・運用を一気通貫で支援している。',
     bioEn:
-      'After graduating from Rikkyo University, spent 7 years at Oriental Land Co. in theme park F&B operations and agribusiness. Founded MUSICO Inc. in 2022. Under the mission "Innovating Hospitality, End to End," he leads end-to-end support across strategy, space, and operations in the hospitality domain.',
+      'After graduating from Rikkyo University, worked at Oriental Land Co. in theme park F&B operations and agribusiness, then founded MUSICO Inc. Under the mission "Innovating Hospitality, End to End," he leads end-to-end support across strategy, space, and operations in the hospitality domain.',
     imageSrc: 'https://images.wantedly.com/i/PVjgi76',
   },
   {
@@ -46,10 +46,10 @@ const members = [
     titleJa: '副社長兼CCO',
     titleEn: 'Vice President & CCO',
     bioJa:
-      'パリのLe Cordon Bleu・Alain Ducasseで料理哲学と空間演出を学ぶ。帰国後は食・空間・感性による体験価値の構造化・収益化を手がける。2024年6月にMUSICOへ参画し、グローバル金融機関・富裕層向けエグゼクティブ専用ホスピタリティ事業を統括。属人的な体験を再現可能・高収益・定期型のモデルへ設計している。',
+      'パリのLe Cordon Bleu・Alain Ducasseで料理哲学と空間演出を学ぶ。帰国後は食・空間・感性による体験価値の構造化・収益化を手がける。MUSICOへ参画し、グローバル金融機関・富裕層向けエグゼクティブ専用ホスピタリティ事業を統括。属人的な体験を再現可能・高収益・定期型のモデルへ設計している。',
     bioEn:
-      'Studied culinary philosophy and spatial design at Le Cordon Bleu and Alain Ducasse in Paris. After returning to Japan, she focused on structuring and monetizing experiential value through food, space, and sensibility. She joined MUSICO in June 2024, leading the executive-exclusive hospitality business for global financial institutions and high-net-worth clients — redesigning individual-dependent experiences into reproducible, high-margin, recurring models.',
-    imageSrc: '',
+      'Studied culinary philosophy and spatial design at Le Cordon Bleu and Alain Ducasse in Paris. After returning to Japan, she focused on structuring and monetizing experiential value through food, space, and sensibility. At MUSICO, she leads the executive-exclusive hospitality business for global financial institutions and high-net-worth clients — redesigning individual-dependent experiences into reproducible, high-margin, recurring models.',
+    imageSrc: '/takada.jpg',
   },
   {
     nameJa: '石黒 啓介',
@@ -57,9 +57,9 @@ const members = [
     titleJa: '執行役員Partner',
     titleEn: 'Executive Officer / Partner',
     bioJa:
-      '早稲田大学ビジネススクール（MBA）修了。株式会社オリエンタルランドにてフード開発・農園事業を経験後、Ridgelinezにてシニアコンサルタントとして大手企業のDX・基幹システム刷新を牽引。2025年よりMUSICOに参画し、事業戦略・営業・バックオフィス全般を統括。',
+      '早稲田大学ビジネススクール（MBA）修了。株式会社オリエンタルランドにてフード開発・農園事業を経験後、Ridgelinezにてシニアコンサルタントとして大手企業のDX・基幹システム刷新を牽引。その後MUSICOに参画し、事業戦略・営業・バックオフィス全般を統括。',
     bioEn:
-      'Completed MBA at Waseda Business School. After experience in food development and farm operations at Oriental Land Co., led DX and core system transformation projects as Senior Consultant at Ridgelinez. Joined MUSICO in 2025, overseeing business strategy, sales, and back-office operations.',
+      'Completed MBA at Waseda Business School. After experience in food development and farm operations at Oriental Land Co., led DX and core system transformation projects as Senior Consultant at Ridgelinez. He then joined MUSICO, overseeing business strategy, sales, and back-office operations.',
     imageSrc: '/ishiguro.jpg',
   },
 ]
