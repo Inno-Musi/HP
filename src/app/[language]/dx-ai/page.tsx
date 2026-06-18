@@ -219,20 +219,20 @@ export default async function DxAiPage({ params }: Props) {
 
   return (
     <>
-      <div className="bg-zinc-50">
+      <div className="bg-ivory">
         {/* Hero */}
         <div className="bg-darkNavy text-white">
           <div className="max-w-[calc(100vw-32px)] mx-auto py-20 md:py-28">
             <div className="flex flex-col gap-y-4 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
               <div className="flex items-center gap-x-3">
-                <span className="inline-block px-2 py-1 bg-white text-darkNavy text-[10px] font-roboto font-semibold tracking-widest rounded">
+                <span className="inline-block px-2 py-1 bg-paper text-darkNavy text-[10px] font-roboto font-semibold tracking-widest rounded">
                   FOCUS
                 </span>
-                <p className="text-xs md:text-sm font-roboto tracking-widest text-zinc-300 uppercase font-semibold">
+                <p className="text-xs md:text-sm font-roboto tracking-widest text-brass uppercase font-semibold">
                   AI/DX × Hospitality
                 </p>
               </div>
-              <h1 className="text-3xl md:text-5xl font-bold leading-tight whitespace-pre-line">
+              <h1 className="text-3xl md:text-5xl font-display leading-tight whitespace-pre-line">
                 {language === 'ja'
                   ? 'ホスピタリティ業界専用の、\nAI/DX。'
                   : 'AI/DX, designed\nfor the hospitality industry.'}
@@ -251,7 +251,7 @@ export default async function DxAiPage({ params }: Props) {
                         ? 'PoCパートナーになる'
                         : 'Become a PoC Partner'
                     }
-                    className="rounded-full bg-white text-darkNavy px-8 py-3 hover:opacity-80 duration-300 font-roboto text-sm font-semibold w-fit"
+                    className="rounded-full bg-paper text-darkNavy px-8 py-3 hover:opacity-80 duration-300 font-roboto text-sm font-semibold w-fit"
                   />
                 </Link>
                 <Link href={`/${language}/contact`}>
@@ -262,7 +262,7 @@ export default async function DxAiPage({ params }: Props) {
                         ? '30分壁打ち相談 →'
                         : '30-Min Free Session →'
                     }
-                    className="rounded-full border border-white text-white px-8 py-3 hover:bg-white hover:text-darkNavy duration-300 font-roboto text-sm font-semibold w-fit"
+                    className="rounded-full border border-white text-white px-8 py-3 hover:bg-paper hover:text-darkNavy duration-300 font-roboto text-sm font-semibold w-fit"
                   />
                 </Link>
               </div>
@@ -271,7 +271,7 @@ export default async function DxAiPage({ params }: Props) {
         </div>
 
         {/* Trust bar */}
-        <div className="border-b border-zinc-200 bg-white">
+        <div className="border-b border-hairline bg-paper">
           <div className="max-w-[800px] lg:max-w-[1000px] w-full mx-auto px-4 py-8 md:py-10 flex flex-col gap-y-6">
             <p className="text-center text-xs font-roboto tracking-[0.2em] uppercase text-zinc-400">
               {language === 'ja' ? '対象業界' : 'Who We Build For'}
@@ -285,7 +285,7 @@ export default async function DxAiPage({ params }: Props) {
               ].map((s) => (
                 <span
                   key={s.ja}
-                  className="px-4 py-2 rounded-full border border-zinc-200 bg-zinc-50 text-xs md:text-sm font-semibold text-darkNavy"
+                  className="px-4 py-2 rounded-full border border-hairline bg-ivory text-xs md:text-sm font-semibold text-darkNavy"
                 >
                   {language === 'ja' ? s.ja : s.en}
                 </span>
@@ -328,14 +328,14 @@ export default async function DxAiPage({ params }: Props) {
           </div>
         </div>
 
-        <div className="max-w-[calc(100vw-32px)] mx-auto py-16 md:py-20 flex flex-col gap-y-20 lg:gap-y-28">
+        <div className="max-w-[calc(100vw-32px)] mx-auto py-24 md:py-32 flex flex-col gap-y-20 lg:gap-y-28">
           {/* Vision / Our Stance */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <div className="flex flex-col gap-y-3">
-              <p className="text-xs font-roboto tracking-widest text-zinc-400 uppercase text-center">
+              <p className="text-xs font-roboto tracking-widest text-brass uppercase text-center">
                 Our Stance
               </p>
-              <h2 className="text-2xl md:text-3xl font-bold text-darkNavy text-center whitespace-pre-line leading-snug">
+              <h2 className="text-3xl md:text-4xl font-display text-darkNavy text-center whitespace-pre-line leading-snug">
                 {language === 'ja'
                   ? '"Hospitality" の属人化は、\nAIで解ける。'
                   : "Hospitality's individual-dependence\ncan be solved by AI."}
@@ -363,10 +363,10 @@ export default async function DxAiPage({ params }: Props) {
           {/* 課題提起 */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <div className="flex flex-col gap-y-3">
-              <p className="text-xs font-roboto tracking-widest text-zinc-400 uppercase text-center">
+              <p className="text-xs font-roboto tracking-widest text-brass uppercase text-center">
                 Pain Points
               </p>
-              <h2 className="text-2xl md:text-3xl font-bold text-darkNavy text-center">
+              <h2 className="text-3xl md:text-4xl font-display text-darkNavy text-center">
                 {language === 'ja'
                   ? 'こんな課題はありませんか？'
                   : 'Do any of these resonate?'}
@@ -376,7 +376,7 @@ export default async function DxAiPage({ params }: Props) {
               {painPoints.map((point) => (
                 <div
                   key={point.ja}
-                  className="flex items-start gap-x-3 bg-white rounded-md px-6 py-5 shadow-sm border border-zinc-100"
+                  className="flex items-start gap-x-3 bg-paper rounded-md px-6 py-5 shadow-sm border border-hairline"
                 >
                   <span
                     aria-hidden="true"
@@ -395,10 +395,10 @@ export default async function DxAiPage({ params }: Props) {
           {/* なぜ失敗するか */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <div className="flex flex-col gap-y-3">
-              <p className="text-xs font-roboto tracking-widest text-zinc-400 uppercase text-center">
+              <p className="text-xs font-roboto tracking-widest text-brass uppercase text-center">
                 Why DX Fails
               </p>
-              <h2 className="text-2xl md:text-3xl font-bold text-darkNavy text-center whitespace-pre-line">
+              <h2 className="text-3xl md:text-4xl font-display text-darkNavy text-center whitespace-pre-line">
                 {language === 'ja'
                   ? 'AIを導入するだけでは\n現場は変わらない'
                   : "Simply deploying AI\ndoesn't change the floor"}
@@ -413,7 +413,7 @@ export default async function DxAiPage({ params }: Props) {
               {failureReasons.map((reason, index) => (
                 <div
                   key={reason.titleJa}
-                  className="flex gap-x-5 bg-white rounded-md px-6 py-6 shadow-sm border border-zinc-100"
+                  className="flex gap-x-5 bg-paper rounded-md px-6 py-6 shadow-sm border border-hairline"
                 >
                   <span className="text-4xl font-bold font-roboto text-zinc-100 shrink-0 leading-none">
                     {String(index + 1).padStart(2, '0')}
@@ -434,10 +434,10 @@ export default async function DxAiPage({ params }: Props) {
           {/* 提供価値 */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <div className="flex flex-col gap-y-3">
-              <p className="text-xs font-roboto tracking-widest text-zinc-400 uppercase text-center">
+              <p className="text-xs font-roboto tracking-widest text-brass uppercase text-center">
                 Our Approach
               </p>
-              <h2 className="text-2xl md:text-3xl font-bold text-darkNavy text-center">
+              <h2 className="text-3xl md:text-4xl font-display text-darkNavy text-center">
                 {language === 'ja' ? '私たちが提供するもの' : 'What We Deliver'}
               </h2>
               <p className="text-base text-zinc-600 leading-relaxed text-center max-w-[600px] mx-auto">
@@ -450,7 +450,7 @@ export default async function DxAiPage({ params }: Props) {
               {valueSteps.map((step, index) => (
                 <div
                   key={step.step}
-                  className="flex flex-col gap-y-4 bg-white rounded-md px-6 py-8 shadow-sm border border-zinc-100 relative"
+                  className="flex flex-col gap-y-4 bg-paper rounded-md px-6 py-8 shadow-sm border border-hairline relative"
                 >
                   {index < valueSteps.length - 1 && (
                     <div className="hidden md:block absolute top-1/2 -right-2 z-10 text-zinc-300 text-xl font-bold">
@@ -476,10 +476,10 @@ export default async function DxAiPage({ params }: Props) {
           {/* 強み */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <div className="flex flex-col gap-y-3">
-              <p className="text-xs font-roboto tracking-widest text-zinc-400 uppercase text-center">
+              <p className="text-xs font-roboto tracking-widest text-brass uppercase text-center">
                 Why MUSICO
               </p>
-              <h2 className="text-2xl md:text-3xl font-bold text-darkNavy text-center">
+              <h2 className="text-3xl md:text-4xl font-display text-darkNavy text-center">
                 {language === 'ja'
                   ? 'MUSICOが選ばれる理由'
                   : 'Why Organizations Choose MUSICO'}
@@ -489,7 +489,7 @@ export default async function DxAiPage({ params }: Props) {
               {strengths.map((strength) => (
                 <div
                   key={strength.titleJa}
-                  className="flex flex-col md:flex-row md:items-start gap-4 bg-white rounded-md px-6 py-6 shadow-sm border border-zinc-100"
+                  className="flex flex-col md:flex-row md:items-start gap-4 bg-paper rounded-md px-6 py-6 shadow-sm border border-hairline"
                 >
                   <div className="md:w-[240px] shrink-0">
                     <p className="text-darkNavy font-bold text-base">
@@ -507,10 +507,10 @@ export default async function DxAiPage({ params }: Props) {
           {/* 支援イメージ */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <div className="flex flex-col gap-y-3">
-              <p className="text-xs font-roboto tracking-widest text-zinc-400 uppercase text-center">
+              <p className="text-xs font-roboto tracking-widest text-brass uppercase text-center">
                 Engagement Model
               </p>
-              <h2 className="text-2xl md:text-3xl font-bold text-darkNavy text-center">
+              <h2 className="text-3xl md:text-4xl font-display text-darkNavy text-center">
                 {language === 'ja' ? '支援の流れ' : 'How We Engage'}
               </h2>
               <p className="text-base text-zinc-600 leading-relaxed text-center max-w-[600px] mx-auto">
@@ -519,7 +519,7 @@ export default async function DxAiPage({ params }: Props) {
                   : 'Starting from a free session, we design the project scope around your situation.'}
               </p>
             </div>
-            <div className="bg-white rounded-md px-6 md:px-10 py-8 shadow-sm border border-zinc-100">
+            <div className="bg-paper rounded-md px-6 md:px-10 py-8 shadow-sm border border-hairline">
               <div className="flex flex-col gap-y-0">
                 {supportPhases.map((phase, index) => (
                   <div key={phase.phaseJa} className="flex items-start gap-x-4">
@@ -548,7 +548,7 @@ export default async function DxAiPage({ params }: Props) {
           </div>
 
           {/* PoC Partner */}
-          <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto bg-white rounded-md px-8 md:px-12 py-12 shadow-sm border-2 border-darkNavy">
+          <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto bg-paper rounded-md px-8 md:px-12 py-12 shadow-sm border-2 border-darkNavy">
             <div className="flex flex-col gap-y-3">
               <div className="flex items-center gap-x-3">
                 <span className="inline-block px-2 py-1 bg-darkNavy text-white text-[10px] font-roboto font-semibold tracking-widest rounded">
@@ -558,7 +558,7 @@ export default async function DxAiPage({ params }: Props) {
                   PoC Partners
                 </p>
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold text-darkNavy leading-snug">
+              <h2 className="text-3xl md:text-4xl font-display text-darkNavy leading-snug">
                 {language === 'ja'
                   ? '業界の方法論を、一緒に作るパートナー企業を募集しています。'
                   : 'Looking for partner companies to build the industry methodology with us.'}
@@ -598,7 +598,7 @@ export default async function DxAiPage({ params }: Props) {
               ].map((item) => (
                 <div
                   key={item.labelJa}
-                  className="flex flex-col gap-y-2 bg-zinc-50 rounded-md px-5 py-5 border border-zinc-100"
+                  className="flex flex-col gap-y-2 bg-ivory rounded-md px-5 py-5 border border-hairline"
                 >
                   <p className="text-xs font-roboto tracking-widest text-darkNavy uppercase font-semibold">
                     {language === 'ja' ? item.labelJa : item.labelEn}
@@ -627,10 +627,10 @@ export default async function DxAiPage({ params }: Props) {
           {/* Related cases */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <div className="flex flex-col gap-y-3">
-              <p className="text-xs font-roboto tracking-widest text-zinc-400 uppercase text-center">
+              <p className="text-xs font-roboto tracking-widest text-brass uppercase text-center">
                 Case Studies
               </p>
-              <h2 className="text-2xl md:text-3xl font-bold text-darkNavy text-center">
+              <h2 className="text-3xl md:text-4xl font-display text-darkNavy text-center">
                 {language === 'ja'
                   ? 'データドリブン運営の実績'
                   : 'Data-Driven Operations in Practice'}
@@ -641,7 +641,7 @@ export default async function DxAiPage({ params }: Props) {
                 <Link
                   key={c.slug}
                   href={`/${language}/works/${c.slug}`}
-                  className="group bg-white rounded-md overflow-hidden shadow-sm border border-zinc-100 flex flex-col hover:shadow-md transition-shadow duration-200"
+                  className="group bg-paper rounded-md overflow-hidden shadow-sm border border-hairline flex flex-col hover:shadow-md transition-shadow duration-200"
                 >
                   <div className="relative aspect-[16/10] bg-zinc-100">
                     <Image
@@ -678,10 +678,10 @@ export default async function DxAiPage({ params }: Props) {
           {/* FAQ */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <div className="flex flex-col gap-y-3">
-              <p className="text-xs font-roboto tracking-widest text-zinc-400 uppercase text-center">
+              <p className="text-xs font-roboto tracking-widest text-brass uppercase text-center">
                 FAQ
               </p>
-              <h2 className="text-2xl md:text-3xl font-bold text-darkNavy text-center">
+              <h2 className="text-3xl md:text-4xl font-display text-darkNavy text-center">
                 {language === 'ja' ? 'よくあるご質問' : 'Frequently Asked Questions'}
               </h2>
             </div>
@@ -689,7 +689,7 @@ export default async function DxAiPage({ params }: Props) {
               {faqs.map((f) => (
                 <details
                   key={f.qJa}
-                  className="group bg-white rounded-md px-6 py-5 shadow-sm border border-zinc-100"
+                  className="group bg-paper rounded-md px-6 py-5 shadow-sm border border-hairline"
                 >
                   <summary className="flex items-center justify-between cursor-pointer list-none font-bold text-darkNavy text-sm md:text-base">
                     <span>{language === 'ja' ? f.qJa : f.qEn}</span>
@@ -707,10 +707,10 @@ export default async function DxAiPage({ params }: Props) {
 
           {/* CTA */}
           <div className="flex flex-col gap-y-6 max-w-[800px] lg:max-w-[1000px] w-full mx-auto bg-darkNavy rounded-md px-8 md:px-12 py-12 text-white text-center items-center">
-            <p className="text-xs font-roboto tracking-widest text-zinc-400 uppercase">
+            <p className="text-xs font-roboto tracking-widest text-brass uppercase">
               Get Started
             </p>
-            <p className="text-2xl md:text-3xl font-bold leading-snug">
+            <p className="text-2xl md:text-3xl font-display leading-snug">
               {language === 'ja'
                 ? 'まずは30分の壁打ちから'
                 : 'Start with a 30-Min Conversation'}
@@ -728,7 +728,7 @@ export default async function DxAiPage({ params }: Props) {
                     ? '30分壁打ちを申し込む →'
                     : 'Book 30-Min Session →'
                 }
-                className="rounded-full bg-white text-darkNavy px-10 py-3 hover:opacity-80 duration-300 font-roboto font-semibold text-sm w-fit"
+                className="rounded-full bg-paper text-darkNavy px-10 py-3 hover:opacity-80 duration-300 font-roboto font-semibold text-sm w-fit"
               />
             </Link>
           </div>

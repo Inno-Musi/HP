@@ -49,7 +49,7 @@ const mainLinks = [
 export const Footer = ({ language }: Props) => {
   return (
     <footer className="shadow-lg">
-      <div className="bg-white flex flex-col gap-y-3 items-center py-6 md:py-8 px-4 md:px-8">
+      <div className="bg-paper flex flex-col gap-y-3 items-center py-6 md:py-8 px-4 md:px-8">
         <Image
           src="/musico-logo.png"
           alt="musico logo"

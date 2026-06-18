@@ -29,7 +29,7 @@ export default async function ContactPage({ params }: Props) {
 
   return (
     <>
-      <div className="relative max-w-[calc(100vw-32px)] mx-auto py-16 md:py-20 flex flex-col gap-y-6 md:gap-y-12">
+      <div className="relative max-w-[calc(100vw-32px)] mx-auto py-24 md:py-32 flex flex-col gap-y-6 md:gap-y-12">
         <GeometricBackground className="fixed" />
         <TitleMain
           titleJa="お問い合わせ"

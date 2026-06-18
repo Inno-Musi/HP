@@ -11,7 +11,7 @@ export const WorksList = async ({ language }: Props) => {
 
   if (works.length === 0) {
     return (
-      <div className="bg-white rounded-md px-6 py-10 text-center text-zinc-500">
+      <div className="bg-paper rounded-md px-6 py-10 text-center text-zinc-500">
         {language === 'ja'
           ? '事例は現在準備中です。'
           : 'Works are currently being prepared.'}

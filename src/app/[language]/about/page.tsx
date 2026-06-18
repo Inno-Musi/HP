@@ -70,8 +70,8 @@ export default async function AboutPage({ params }: Props) {
 
   return (
     <>
-      <div className="bg-zinc-50">
-        <div className="max-w-[calc(100vw-32px)] mx-auto py-16 md:py-20 flex flex-col gap-y-16 lg:gap-y-24">
+      <div className="bg-ivory">
+        <div className="max-w-[calc(100vw-32px)] mx-auto py-24 md:py-32 flex flex-col gap-y-16 lg:gap-y-24">
           {/* 経営理念 */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <TitleMain
@@ -82,7 +82,7 @@ export default async function AboutPage({ params }: Props) {
 
             {/* Mission tagline + lead + 3 cards */}
             <div className="flex flex-col gap-y-6 text-darkNavy">
-              <p className="text-2xl md:text-3xl font-bold leading-snug">
+              <p className="text-2xl md:text-3xl font-display leading-snug">
                 Innovating Hospitality, End to End
               </p>
               <p className="text-base md:text-lg leading-relaxed">
@@ -107,7 +107,7 @@ export default async function AboutPage({ params }: Props) {
                 ].map((item) => (
                   <div
                     key={item.ja}
-                    className="bg-white rounded-md px-6 py-5 shadow-sm border border-zinc-100"
+                    className="bg-paper rounded-md px-6 py-5 shadow-sm border border-hairline"
                   >
                     <p className="text-darkNavy font-bold text-base leading-relaxed whitespace-pre-line">
                       {language === 'ja' ? item.ja : item.en}
@@ -118,7 +118,7 @@ export default async function AboutPage({ params }: Props) {
             </div>
 
             {/* WHY */}
-            <div className="flex flex-col gap-y-4 pt-8 border-t border-zinc-200 text-darkNavy">
+            <div className="flex flex-col gap-y-4 pt-8 border-t border-hairline text-darkNavy">
               <div className="flex flex-col gap-y-2">
                 <p className="text-xs tracking-[0.2em] font-semibold text-zinc-500">
                   WHY
@@ -149,7 +149,7 @@ export default async function AboutPage({ params }: Props) {
             </div>
 
             {/* HOW */}
-            <div className="flex flex-col gap-y-4 pt-8 border-t border-zinc-200 text-darkNavy">
+            <div className="flex flex-col gap-y-4 pt-8 border-t border-hairline text-darkNavy">
               <div className="flex flex-col gap-y-2">
                 <p className="text-xs tracking-[0.2em] font-semibold text-zinc-500">
                   HOW
@@ -180,7 +180,7 @@ export default async function AboutPage({ params }: Props) {
             </div>
 
             {/* WHAT / VALUES */}
-            <div className="flex flex-col gap-y-4 pt-8 border-t border-zinc-200 text-darkNavy">
+            <div className="flex flex-col gap-y-4 pt-8 border-t border-hairline text-darkNavy">
               <div className="flex flex-col gap-y-2">
                 <p className="text-xs tracking-[0.2em] font-semibold text-zinc-500">
                   WHAT / VALUES
@@ -214,7 +214,7 @@ export default async function AboutPage({ params }: Props) {
                 ].map((v) => (
                   <div
                     key={v.ja}
-                    className="bg-white rounded-md px-4 py-3 border border-zinc-100 text-center"
+                    className="bg-paper rounded-md px-4 py-3 border border-hairline text-center"
                   >
                     <p className="text-sm md:text-base font-bold text-darkNavy">
                       {language === 'ja' ? v.ja : v.en}
@@ -237,7 +237,7 @@ export default async function AboutPage({ params }: Props) {
               titleEn="Company Overview"
               language={language}
             />
-            <div className="flex flex-col gap-y-6 lg:gap-y-8 w-full bg-white px-4 md:px-10 py-6 md:py-12 rounded-md">
+            <div className="flex flex-col gap-y-6 lg:gap-y-8 w-full bg-paper px-4 md:px-10 py-6 md:py-12 rounded-md">
               {overviews.map((overview) => (
                 <div
                   key={overview.label}
@@ -263,7 +263,7 @@ export default async function AboutPage({ params }: Props) {
               {members.map((member) => (
                 <div
                   key={member.nameJa}
-                  className="bg-white rounded-md overflow-hidden shadow-sm"
+                  className="bg-paper rounded-md overflow-hidden shadow-sm"
                 >
                   <div className="relative aspect-[4/3] bg-zinc-100">
                     {member.imageSrc ? (

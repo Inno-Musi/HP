@@ -14,7 +14,7 @@ type Props = {
 
 export const BreadCrumbs = ({ language, crumbs, className }: Props) => {
   return (
-    <div className="bg-zinc-50">
+    <div className="bg-ivory">
       <div
         className={twMerge(
           'flex gap-x-2 items-center w-[1200px] mx-auto max-w-[calc(100vw-32px)] py-2 text-darkNavy',

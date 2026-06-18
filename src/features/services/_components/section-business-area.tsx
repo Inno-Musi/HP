@@ -34,7 +34,7 @@ const businessAreas = [
 
 export const SectionBusinessArea = ({ language }: Props) => {
   return (
-    <div className="bg-zinc-50 py-10 lg:py-20">
+    <div className="bg-ivory py-10 lg:py-20">
       <div className="w-[800px] lg:w-[1200px] mx-auto max-w-[calc(100vw-32px)] flex flex-col gap-y-8 lg:gap-y-12">
         <p className="text-2xl md:text-4xl font-bold text-center text-darkNavy">
           {language === 'ja' ? '事業概要' : 'Business Overview'}
@@ -43,7 +43,7 @@ export const SectionBusinessArea = ({ language }: Props) => {
           {businessAreas.map((businessArea) => (
             <div
               key={businessArea.titleJa}
-              className="shadow-md rounded-sm overflow-hidden bg-white"
+              className="shadow-md rounded-sm overflow-hidden bg-paper"
             >
               <div className="relative aspect-[16/10]">
                 <Image

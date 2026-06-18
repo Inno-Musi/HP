@@ -27,8 +27,8 @@ export const WorkContent = async ({ language, slug }: Props) => {
     language === 'ja' ? work.contentJa : work.contentEn || work.contentJa
 
   return (
-    <div className="bg-zinc-50">
-      <div className="py-16 md:py-20 w-[900px] max-w-[calc(100vw-32px)] mx-auto flex flex-col gap-y-10 md:gap-y-12">
+    <div className="bg-ivory">
+      <div className="py-24 md:py-32 w-[900px] max-w-[calc(100vw-32px)] mx-auto flex flex-col gap-y-10 md:gap-y-12">
         <div className="flex flex-col gap-y-4 text-center">
           {category && (
             <p className="text-sm font-roboto tracking-widest uppercase text-zinc-500">
@@ -42,7 +42,7 @@ export const WorkContent = async ({ language, slug }: Props) => {
             </p>
           )}
         </div>
-        <div className="bg-white">
+        <div className="bg-paper">
           <div className="relative aspect-[16/9] bg-zinc-100">
             {imageUrl ? (
               <Image

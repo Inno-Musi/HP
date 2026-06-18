@@ -7,7 +7,7 @@ type Props = {
 
 export const SectionAction = ({ language }: Props) => {
   return (
-    <div className="bg-white py-10 md:py-20">
+    <div className="bg-paper py-10 md:py-20">
       <MotionUp>
         <div className="w-[800px] lg:w-[1200px] mx-auto max-w-[calc(100vw-32px)] flex flex-col-reverse lg:flex-row items-center gap-x-10 gap-y-6">
           <div className="lg:w-1/2 flex flex-col gap-y-4">

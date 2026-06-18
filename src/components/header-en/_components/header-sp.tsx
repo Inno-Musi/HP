@@ -23,7 +23,7 @@ export const HeaderSp = ({ restPath }: Props) => {
       />
       <div
         className={twMerge(
-          'w-0 z-50 bg-white fixed h-screen top-0 right-0 duration-300 overflow-hidden',
+          'w-0 z-50 bg-paper fixed h-screen top-0 right-0 duration-300 overflow-hidden',
           isOpen && 'w-[100%]',
         )}
       >

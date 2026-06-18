@@ -1,4 +1,5 @@
 import { twMerge } from 'tailwind-merge'
+import { Reveal } from './reveal'
 
 type Props = {
   titleJa: string
@@ -9,22 +10,29 @@ type Props = {
 
 export const TitleMain = ({ titleJa, titleEn, language, className }: Props) => {
   return (
-    <h1
-      className={twMerge(
-        'text-center font-semibold text-3xl md:text-4xl text-darkNavy',
-        language === 'ja' && 'font-extrabold',
-        language === 'en' && 'md:text-5xl',
-        className,
-      )}
-    >
-      {language === 'ja' ? (
-        <span className="flex flex-col">
-          <span>{titleJa}</span>
-          <span className="font-roboto text-xl font-normal">{titleEn}</span>
-        </span>
-      ) : (
-        titleEn
-      )}
-    </h1>
+    <Reveal>
+      <div
+        className={twMerge(
+          'flex flex-col items-center text-center gap-y-3',
+          className,
+        )}
+      >
+        {language === 'ja' ? (
+          <>
+            <p className="text-xs font-roboto tracking-[0.25em] uppercase text-brass">
+              {titleEn}
+            </p>
+            <h1 className="font-display text-3xl md:text-5xl text-darkNavy leading-[1.2]">
+              {titleJa}
+            </h1>
+          </>
+        ) : (
+          <h1 className="font-display text-4xl md:text-5xl text-darkNavy leading-[1.2]">
+            {titleEn}
+          </h1>
+        )}
+        <div className="w-10 h-px bg-brass mt-2" />
+      </div>
+    </Reveal>
   )
 }

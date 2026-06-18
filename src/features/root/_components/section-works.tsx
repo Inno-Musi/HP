@@ -44,7 +44,7 @@ export const SectionWorks = async ({ language }: Props) => {
           <Button
             type="button"
             text="See More"
-            className="rounded-full bg-white text-darkNavy border border-darkNavy py-3 px-12 hover:opacity-100 hover:bg-darkNavy hover:text-white duration-300 text-lg font-roboto"
+            className="rounded-full bg-paper text-darkNavy border border-darkNavy py-3 px-12 hover:opacity-100 hover:bg-darkNavy hover:text-white duration-300 text-lg font-roboto"
           />
         </Link>
       </MotionUp>

@@ -22,7 +22,7 @@ export const WorkCard = ({ work, language, href }: Props) => {
       : work.descriptionEn || work.descriptionJa
 
   const card = (
-    <article className="bg-white rounded-md overflow-hidden shadow-sm border border-zinc-100 h-full">
+    <article className="bg-paper rounded-md overflow-hidden shadow-sm border border-hairline h-full">
       <div className="relative aspect-[16/10] bg-zinc-100">
         {imageUrl ? (
           <Image src={imageUrl} alt={title} fill className="object-cover" />

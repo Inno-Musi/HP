@@ -29,11 +29,11 @@ export const SectionFv = ({ language }: Props) => {
             className="relative h-[64svh] min-h-[520px] max-h-[680px] md:h-auto md:min-h-[calc(100vh-64px)] md:max-h-none w-full mx-auto overflow-hidden"
           >
             <div
-              className="absolute inset-0 w-full h-full bg-cover bg-center z-0 md:hidden"
+              className="absolute inset-0 w-full h-full bg-cover bg-center z-0 md:hidden animate-kenburns"
               style={{ backgroundImage: "url('/home-hero-mobile.jpg')" }}
             />
             <div
-              className="absolute inset-0 hidden w-full h-full bg-cover bg-center z-0 md:block"
+              className="absolute inset-0 hidden w-full h-full bg-cover bg-center z-0 md:block animate-kenburns"
               style={{ backgroundImage: "url('/home-hero.jpg')" }}
             />
 
@@ -53,7 +53,7 @@ export const SectionFv = ({ language }: Props) => {
                     <Button
                       type="button"
                       text={language === 'ja' ? 'お問い合わせ' : 'Contact'}
-                      className="rounded-full bg-white text-darkNavy border border-darkNavy px-8 py-3 hover:bg-darkNavy hover:text-white duration-300 font-roboto w-fit"
+                      className="rounded-full bg-paper text-darkNavy border border-darkNavy px-8 py-3 hover:bg-darkNavy hover:text-white duration-300 font-roboto w-fit"
                     />
                   </Link>
                 </div>

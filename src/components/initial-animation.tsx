@@ -47,7 +47,7 @@ export const InitialAnimation = ({
   }, [onComplete])
 
   return (
-    <div className="fixed inset-0 bg-white z-50">
+    <div className="fixed inset-0 bg-paper z-50">
       <AnimatePresence>
         {showLogo && (
           <motion.div

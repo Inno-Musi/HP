@@ -29,8 +29,8 @@ export default async function SecurityPolicyPage({ params }: Props) {
 
   return (
     <>
-      <div className="bg-zinc-50">
-        <div className="max-w-[calc(100vw-32px)] mx-auto py-16 md:py-20 flex flex-col gap-y-10 md:gap-y-12">
+      <div className="bg-ivory">
+        <div className="max-w-[calc(100vw-32px)] mx-auto py-24 md:py-32 flex flex-col gap-y-10 md:gap-y-12">
           <TitleMain
             titleJa="セキュリティポリシー"
             titleEn="Security Policy"
@@ -64,7 +64,7 @@ export default async function SecurityPolicyPage({ params }: Props) {
               </>
             )}
           </div>
-          <div className="bg-white max-w-[1000px] w-full mx-auto px-4 md:px-10 py-6 md:py-12 flex flex-col gap-y-12">
+          <div className="bg-paper max-w-[1000px] w-full mx-auto px-4 md:px-10 py-6 md:py-12 flex flex-col gap-y-12">
             <div className="flex flex-col gap-y-4">
               <SubtitlePolicy
                 language={language}

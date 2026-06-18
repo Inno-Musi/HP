@@ -27,8 +27,8 @@ export default async function WorksPage({ params }: Props) {
 
   return (
     <>
-      <div className="bg-zinc-50">
-        <div className="max-w-[calc(100vw-32px)] w-[800px] lg:w-[1200px] mx-auto py-16 md:py-20 flex flex-col gap-y-10">
+      <div className="bg-ivory">
+        <div className="max-w-[calc(100vw-32px)] w-[800px] lg:w-[1200px] mx-auto py-24 md:py-32 flex flex-col gap-y-10">
           <TitleMain titleJa="実績・事例" titleEn="Works" language={language} />
           <WorksList language={language} />
         </div>

@@ -18,10 +18,20 @@ export default {
         moss: '#3D963B',
         lightBlue: '#F0F4F8',
         vividBlue: '#2B6CB0',
+        // design refresh — warm editorial palette
+        ivory: '#F7F3EC',
+        sand: '#EFE8DA',
+        paper: '#FCFAF5',
+        ink: '#2A2620',
+        muted: '#6E675B',
+        hairline: '#E0D8C8',
+        brass: '#B0894F',
+        clay: '#BB6A45',
       },
       fontFamily: {
         sawarabiGothic: ['var(--font-sawarabi-gothic)'],
         roboto: ['var(--font-roboto)'],
+        display: ['var(--font-display)'],
       },
       borderRadius: {
         lg: 'var(--radius)',
