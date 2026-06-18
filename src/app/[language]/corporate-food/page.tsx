@@ -207,9 +207,14 @@ export default async function CorporateFoodPage({ params }: Props) {
           <div className="absolute inset-0 bg-gradient-to-r from-darkNavy via-darkNavy/85 to-darkNavy/40" />
           <div className="relative max-w-[calc(100vw-32px)] mx-auto py-20 md:py-28">
             <div className="flex flex-col gap-y-4 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
-              <p className="text-xs font-roboto tracking-widest text-zinc-300 uppercase font-semibold">
-                Corporate Food Service
-              </p>
+              <div className="flex items-center gap-x-3">
+                <span className="inline-block px-2 py-1 bg-white text-darkNavy text-[10px] font-roboto font-semibold tracking-widest rounded">
+                  FOCUS
+                </span>
+                <p className="text-xs md:text-sm font-roboto tracking-widest text-zinc-300 uppercase font-semibold">
+                  Food / Hospitality
+                </p>
+              </div>
               <h1 className="text-3xl md:text-5xl font-bold leading-tight">
                 {language === 'ja'
                   ? 'コーポレート\nフードサービス'
