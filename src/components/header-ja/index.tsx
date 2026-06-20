@@ -12,7 +12,7 @@ export const HeaderJa = () => {
   const restPath = pathname.split('/').slice(2).join('/')
 
   return (
-    <header className="h-16 w-full border-b border-gray flex items-center px-5 md:px-6 shadow justify-between fixed top-0 z-50 bg-white">
+    <header className="h-16 w-full border-b border-gray flex items-center px-5 md:px-6 shadow justify-between fixed top-0 z-50 bg-paper">
       <LinkCompanyName language="ja" />
       <div className="items-center gap-x-5 hidden md:flex font-semibold">
         {links.map((link) => (

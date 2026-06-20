@@ -4,7 +4,7 @@ import '../globals.css'
 import { Footer } from '@/components/footer'
 import { HeaderEn } from '@/components/header-en'
 import { GoogleTagManager } from '@next/third-parties/google'
-import { Roboto, Sawarabi_Gothic } from 'next/font/google'
+import { Fraunces, Roboto, Sawarabi_Gothic, Shippori_Mincho } from 'next/font/google'
 import { twMerge } from 'tailwind-merge'
 
 const sawarabiGothic = Sawarabi_Gothic({
@@ -17,6 +17,21 @@ const roboto = Roboto({
   subsets: ['latin'],
   weight: ['400', '500', '700', '900'],
   variable: '--font-roboto',
+})
+
+// Display (heading) fonts — editorial serif. Latin via Fraunces, JP via
+// Shippori Mincho. Falls back to system serif when blocked locally.
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  style: ['normal', 'italic'],
+  variable: '--font-fraunces',
+})
+
+const shipporiMincho = Shippori_Mincho({
+  subsets: ['latin'],
+  weight: ['500', '600'],
+  variable: '--font-shippori',
 })
 
 type Props = {
@@ -33,7 +48,7 @@ export default async function RootLayout({ children, params }: Props) {
       <GoogleTagManager gtmId={process.env.GTM_ID as string} />
       <body
         className={twMerge(
-          `${sawarabiGothic.variable}  ${roboto.variable}`,
+          `${sawarabiGothic.variable} ${roboto.variable} ${fraunces.variable} ${shipporiMincho.variable}`,
           language === 'ja' ? 'font-sawarabiGothic' : 'font-roboto',
         )}
       >

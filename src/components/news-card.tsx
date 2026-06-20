@@ -23,7 +23,7 @@ export const NewsCard = ({ news, language }: Props) => {
       : removeHtmlTag(news.contentEn).slice(0, 100)
 
   return (
-    <div key={news.id} className="bg-white flex flex-col h-full">
+    <div key={news.id} className="bg-paper flex flex-col h-full">
       <Link
         href={`/${language}/news/${news.id}`}
         className="relative aspect-[16/9] block group overflow-hidden"

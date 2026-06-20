@@ -18,6 +18,7 @@ const devSeedFallback = (limit?: number): NewsListResponse => {
 type Props = {
   limit?: number
   fields?: string[]
+  orders?: string
 }
 
 const createEmptyNewsList = (limit?: number): NewsListResponse => ({
@@ -30,6 +31,7 @@ const createEmptyNewsList = (limit?: number): NewsListResponse => ({
 export const fetchNewsList = async ({
   limit,
   fields,
+  orders = '-publishedAt',
 }: Props): Promise<NewsListResponse> => {
   const apiKey = process.env.MICROCMS_API_KEY
 
@@ -41,6 +43,7 @@ export const fetchNewsList = async ({
   const queries = []
   if (limit) queries.push(`limit=${limit}`)
   if (fields?.length) queries.push(`fields=${fields.join(',')}`)
+  if (orders) queries.push(`orders=${orders}`)
 
   const queryString = queries.length ? `?${queries.join('&')}` : ''
 

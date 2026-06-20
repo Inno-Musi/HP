@@ -64,8 +64,8 @@ export default async function CareersPage({ params }: Props) {
 
   return (
     <>
-      <div className="bg-zinc-50">
-        <div className="max-w-[calc(100vw-32px)] mx-auto py-16 md:py-20 flex flex-col gap-y-16 lg:gap-y-24">
+      <div className="bg-ivory">
+        <div className="max-w-[calc(100vw-32px)] mx-auto py-24 md:py-32 flex flex-col gap-y-16 lg:gap-y-24">
           {/* ヒーロー */}
           <div className="flex flex-col gap-y-6 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <TitleMain
@@ -82,14 +82,14 @@ export default async function CareersPage({ params }: Props) {
 
           {/* カルチャー・バリュー */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold text-darkNavy">
+            <h2 className="text-3xl md:text-4xl font-display text-darkNavy">
               {language === 'ja' ? 'Our Values' : 'Our Values'}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {values.map((value) => (
                 <div
                   key={value.titleJa}
-                  className="bg-white rounded-md px-6 py-5 shadow-sm border border-zinc-100"
+                  className="bg-paper rounded-md px-6 py-5 shadow-sm border border-hairline"
                 >
                   <p className="text-darkNavy font-bold text-base mb-2">
                     {language === 'ja' ? value.titleJa : value.titleEn}
@@ -104,10 +104,10 @@ export default async function CareersPage({ params }: Props) {
 
           {/* 募集職種 */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold text-darkNavy">
+            <h2 className="text-3xl md:text-4xl font-display text-darkNavy">
               {language === 'ja' ? '募集職種' : 'Open Positions'}
             </h2>
-            <div className="bg-white rounded-md px-6 md:px-10 py-8 shadow-sm flex flex-col gap-y-6">
+            <div className="bg-paper rounded-md px-6 md:px-10 py-8 shadow-sm flex flex-col gap-y-6">
               <p className="text-base text-zinc-600 leading-relaxed">
                 {language === 'ja'
                   ? '現在、Wantedlyにて募集中のポジションを掲載しています。学生インターン、広報、F&BプロジェクトPMなど多様なポジションでメンバーを募集しています。'
@@ -147,7 +147,7 @@ export default async function CareersPage({ params }: Props) {
               <Button
                 type="button"
                 text={language === 'ja' ? 'お問い合わせはこちら' : 'Contact Us'}
-                className="rounded-full bg-white text-darkNavy px-8 py-3 hover:opacity-80 duration-300 font-roboto w-fit"
+                className="rounded-full bg-paper text-darkNavy px-8 py-3 hover:opacity-80 duration-300 font-roboto w-fit"
               />
             </Link>
           </div>

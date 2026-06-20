@@ -16,12 +16,12 @@ export const NewsContent = async ({ language, id }: Props) => {
   const newsUrl = getSiteUrl(`/${language}/news/${id}`)
   const imageUrlJa = news.fvImage
     ? news.fvImage.url
-    : '/musico-logo-bg-white.png'
+    : '/musico-logo-bg-paper.png'
   const imageUrlEn = news.fvImageEn
     ? news.fvImageEn.url
     : news.fvImage
       ? news.fvImage.url
-      : '/musico-logo-bg-white.png'
+      : '/musico-logo-bg-paper.png'
 
   const shareTitle =
     language === 'ja'
@@ -31,12 +31,12 @@ export const NewsContent = async ({ language, id }: Props) => {
   const facebookShareUrl = `https://www.facebook.com/share.php?u=${encodeURIComponent(newsUrl)}`
 
   return (
-    <div className="bg-zinc-50">
-      <div className="py-16 md:py-20 w-[900px] max-w-[calc(100vw-32px)] mx-auto flex flex-col gap-y-10 md:gap-y-12 ">
+    <div className="bg-ivory">
+      <div className="py-24 md:py-32 w-[900px] max-w-[calc(100vw-32px)] mx-auto flex flex-col gap-y-10 md:gap-y-12 ">
         <h1 className="text-3xl font-bold text-center text-darkNavy">
           {language === 'ja' ? news.titleJa : news.titleEn}
         </h1>
-        <div className="bg-white">
+        <div className="bg-paper">
           <div className="relative aspect-[16/9]">
             <Image
               src={language === 'ja' ? imageUrlJa : imageUrlEn}

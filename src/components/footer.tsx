@@ -49,7 +49,7 @@ const mainLinks = [
 export const Footer = ({ language }: Props) => {
   return (
     <footer className="shadow-lg">
-      <div className="bg-white flex flex-col gap-y-3 items-center py-6 md:py-8 px-4 md:px-8">
+      <div className="bg-paper flex flex-col gap-y-3 items-center py-6 md:py-8 px-4 md:px-8">
         <Image
           src="/musico-logo.png"
           alt="musico logo"
@@ -68,7 +68,7 @@ export const Footer = ({ language }: Props) => {
                 >
                   <span className="font-semibold text-lg">{link.label}</span>
                   <span className="text-xs font-roboto">{link.labelEn}</span>
-                  <span className="group-hover:w-[100%] transition-all duration-300 w-0 h-[1px] bg-emerald" />
+                  <span className="group-hover:w-[100%] transition-all duration-300 w-0 h-[1px] bg-brass" />
                 </Link>
               ))}
             </>
@@ -81,7 +81,7 @@ export const Footer = ({ language }: Props) => {
                   className="flex flex-col items-center leading-none group"
                 >
                   <span className="font-semibold text-lg">{link.labelEn}</span>
-                  <span className="group-hover:w-[100%] transition-all duration-300 w-0 h-[1px] bg-emerald" />
+                  <span className="group-hover:w-[100%] transition-all duration-300 w-0 h-[1px] bg-brass" />
                 </Link>
               ))}
             </>

@@ -30,7 +30,7 @@ export default async function NewsPage({ params }: Props) {
 
   return (
     <>
-      <div className="py-16 md:py-20 flex flex-col gap-y-10 md:gap-y-12 bg-zinc-50">
+      <div className="py-24 md:py-32 flex flex-col gap-y-10 md:gap-y-12 bg-ivory">
         <TitleMain
           titleJa="お知らせ一覧"
           titleEn="Notifications"

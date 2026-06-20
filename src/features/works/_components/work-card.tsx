@@ -22,7 +22,7 @@ export const WorkCard = ({ work, language, href }: Props) => {
       : work.descriptionEn || work.descriptionJa
 
   const card = (
-    <article className="bg-white rounded-md overflow-hidden shadow-sm border border-zinc-100 h-full">
+    <article className="bg-paper rounded-md overflow-hidden shadow-sm border border-hairline h-full">
       <div className="relative aspect-[16/10] bg-zinc-100">
         {imageUrl ? (
           <Image src={imageUrl} alt={title} fill className="object-cover" />
@@ -34,7 +34,7 @@ export const WorkCard = ({ work, language, href }: Props) => {
       </div>
       <div className="px-5 py-5 flex flex-col gap-y-3">
         {category && (
-          <p className="text-xs font-roboto tracking-widest uppercase text-zinc-400">
+          <p className="text-sm font-roboto tracking-widest uppercase text-zinc-400">
             {category}
           </p>
         )}

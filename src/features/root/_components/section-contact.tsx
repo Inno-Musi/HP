@@ -20,7 +20,7 @@ export const SectionContact = ({ language }: Props) => {
       <div className="absolute top-0 left-0 w-full h-full bg-darkNavy opacity-70" />
       <MotionUp>
         <div className="relative z-20 w-[800px] mx-auto max-w-[calc(100vw-32px)]">
-          <div className="bg-white flex flex-col items-center py-10 px-4 gap-y-6">
+          <div className="bg-paper flex flex-col items-center py-10 px-4 gap-y-6">
             <div className="flex flex-col items-center gap-y-1">
               <p className="text-4xl md:text-5xl text-darkNavy font-semibold font-roboto">
                 Contact
@@ -45,7 +45,7 @@ export const SectionContact = ({ language }: Props) => {
             <Link href={`/${language}/contact`}>
               <Button
                 text={language === 'en' ? 'Contact' : 'お問い合わせ'}
-                className="rounded-full bg-white text-darkNavy border border-darkNavy px-12 py-3 hover:opacity-100 hover:bg-darkNavy hover:text-white duration-300 text-lg"
+                className="rounded-full bg-paper text-darkNavy border border-darkNavy px-12 py-3 hover:opacity-100 hover:bg-darkNavy hover:text-white duration-300 text-lg"
               />
             </Link>
           </div>

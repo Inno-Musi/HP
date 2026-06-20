@@ -23,7 +23,7 @@ export const FormContactJa = () => {
   return (
     <form
       action={formAction}
-      className="bg-white px-4 py-6 md:px-6 md:py-8 max-w-[800px] mx-auto w-full flex flex-col gap-y-6 rounded-md"
+      className="bg-paper px-4 py-6 md:px-6 md:py-8 max-w-[800px] mx-auto w-full flex flex-col gap-y-6 rounded-md"
     >
       <div className="flex flex-col gap-y-1">
         <Label text="お名前" required />

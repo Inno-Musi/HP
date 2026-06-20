@@ -31,8 +31,8 @@ export default async function ContactCompletedPage({ params }: Props) {
     <>
       <GeometricBackground className="fixed" />
       <div className="py-[100px] md:py-[160px] px-4">
-        <div className="bg-white max-w-[800px] w-full mx-auto px-4 md:px-10 py-8 md:py-10 rounded-md flex flex-col gap-y-6 text-center">
-          <h1 className="text-center text-2xl md:text-3xl font-bold">
+        <div className="bg-paper max-w-[800px] w-full mx-auto px-4 md:px-10 py-8 md:py-10 rounded-md flex flex-col gap-y-6 text-center">
+          <h1 className="text-center text-2xl md:text-3xl font-display">
             {language === 'ja' ? 'お問い合わせ完了' : 'Inquiry Completed'}
           </h1>
           <div className="leading-7 md:leading-8 tracking-wide text-sm md:text-base">

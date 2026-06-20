@@ -86,12 +86,12 @@ export default async function ServicesPage({ params }: Props) {
 
   return (
     <>
-      <div className="bg-zinc-50">
-        <div className="max-w-[calc(100vw-32px)] mx-auto py-16 md:py-20 flex flex-col gap-y-16 lg:gap-y-24">
+      <div className="bg-ivory">
+        <div className="max-w-[calc(100vw-32px)] mx-auto py-24 md:py-32 flex flex-col gap-y-16 lg:gap-y-24">
           {/* ヘッダー */}
           <div className="flex flex-col gap-y-6 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <div className="flex flex-col gap-y-3">
-              <p className="text-xs font-roboto tracking-widest text-zinc-400 uppercase">
+              <p className="text-sm font-roboto tracking-widest text-brass uppercase">
                 Services
               </p>
               <h1 className="text-3xl md:text-4xl font-bold text-darkNavy">
@@ -121,7 +121,7 @@ export default async function ServicesPage({ params }: Props) {
           <div className="flex flex-col gap-y-6 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <div className="flex items-center gap-x-3">
               <span className="inline-block w-2 h-2 rounded-full bg-darkNavy" />
-              <p className="text-xs font-roboto tracking-[0.2em] font-semibold text-darkNavy uppercase">
+              <p className="text-sm font-roboto tracking-[0.2em] font-semibold text-darkNavy uppercase">
                 {language === 'ja' ? '注力領域 / Focus Areas' : 'Focus Areas'}
               </p>
             </div>
@@ -130,7 +130,7 @@ export default async function ServicesPage({ params }: Props) {
                 <Link
                   key={service.titleJa}
                   href={`/${language}${service.href}`}
-                  className="group bg-white rounded-md overflow-hidden shadow-sm border-2 border-darkNavy flex flex-col hover:shadow-lg transition-shadow duration-200 relative"
+                  className="group bg-paper rounded-md overflow-hidden shadow-sm border-2 border-darkNavy flex flex-col hover:shadow-lg transition-shadow duration-200 relative"
                 >
                   <span className="absolute z-10 top-3 left-3 inline-block px-3 py-1 bg-darkNavy text-white text-[10px] font-roboto font-semibold tracking-widest rounded">
                     {language === 'ja' ? 'FOCUS' : 'FOCUS'}
@@ -163,7 +163,7 @@ export default async function ServicesPage({ params }: Props) {
           <div className="flex flex-col gap-y-6 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <div className="flex items-center gap-x-3">
               <span className="inline-block w-2 h-2 rounded-full bg-zinc-400" />
-              <p className="text-xs font-roboto tracking-[0.2em] font-semibold text-zinc-500 uppercase">
+              <p className="text-sm font-roboto tracking-[0.2em] font-semibold text-zinc-500 uppercase">
                 {language === 'ja' ? '関連領域 / Related Areas' : 'Related Areas'}
               </p>
             </div>
@@ -172,7 +172,7 @@ export default async function ServicesPage({ params }: Props) {
                 <Link
                   key={service.titleJa}
                   href={`/${language}${service.href}`}
-                  className="group bg-white rounded-md overflow-hidden shadow-sm border border-zinc-100 flex flex-col hover:shadow-md transition-shadow duration-200"
+                  className="group bg-paper rounded-md overflow-hidden shadow-sm border border-hairline flex flex-col hover:shadow-md transition-shadow duration-200"
                 >
                   <div className="relative aspect-[16/10]">
                     <Image
@@ -211,7 +211,7 @@ export default async function ServicesPage({ params }: Props) {
               <Button
                 type="button"
                 text={language === 'ja' ? 'お問い合わせはこちら' : 'Contact Us'}
-                className="rounded-full bg-white text-darkNavy px-8 py-3 hover:opacity-80 duration-300 font-roboto w-fit"
+                className="rounded-full bg-paper text-darkNavy px-8 py-3 hover:opacity-80 duration-300 font-roboto w-fit"
               />
             </Link>
           </div>

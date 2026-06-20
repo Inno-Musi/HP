@@ -2,7 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 @layer base {
+  /* Overall type scale up. rem-based Tailwind sizes scale from this.
+     16px=100% / 17px=106.25% / 18px=112.5% — adjust this one value. */
+  html {
+    font-size: 112.5%;
+  }
   :root {
-    --radius: 0.5rem
+    --radius: 0.5rem;
+
+    /* MUSICO design refresh — warm editorial palette */
+    --color-ivory: #f7f3ec;
+    --color-sand: #efe8da;
+    --color-paper: #fcfaf5;
+    --color-ink: #2a2620;
+    --color-muted: #6e675b;
+    --color-hairline: #e0d8c8;
+    --color-brass: #b0894f;
+    --color-clay: #bb6a45;
+
+    /* Display (heading) font stack: Latin -> Fraunces, JP -> Shippori Mincho,
+       with robust serif fallbacks so headings still read editorial when the
+       web fonts are blocked (corporate SSL) in local dev. */
+    --font-display: var(--font-fraunces), var(--font-shippori), Georgia,
+      'Hiragino Mincho ProN', 'Yu Mincho', YuMincho, serif;
+  }
+}
+
+/* Slow ken-burns for hero imagery — calm, premium drift. */
+@keyframes kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .animate-kenburns {
+    animation: kenburns 24s ease-in-out infinite alternate;
+    will-change: transform;
   }
 }

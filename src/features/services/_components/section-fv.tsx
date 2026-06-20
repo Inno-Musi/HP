@@ -18,7 +18,7 @@ export const SectionFv = ({ language }: Props) => {
         />
         <div className="absolute bottom-0 right-0 w-full h-full bg-black opacity-50" />
       </div>
-      <div className="absolute z-10 bg-white w-[40%] md:w-1/3 max-w-[500px] aspect-[480/298] shadow-md flex justify-center items-center top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
+      <div className="absolute z-10 bg-paper w-[40%] md:w-1/3 max-w-[500px] aspect-[480/298] shadow-md flex justify-center items-center top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
         {language === 'ja' ? (
           <div className="flex flex-col items-center gap-y-1 md:gap-y-3">
             <h1 className="font-bold text-2xl md:text-4xl text-darkNavy">
