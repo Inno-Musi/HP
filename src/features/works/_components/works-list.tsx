@@ -1,5 +1,5 @@
 import { fetchWorksList } from '@/services/works/fetch-works-list'
-import { WorkCard } from './work-card'
+import { WorksFilter } from './works-filter'
 
 type Props = {
   language: 'ja' | 'en'
@@ -19,16 +19,5 @@ export const WorksList = async ({ language }: Props) => {
     )
   }
 
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-      {works.map((work) => (
-        <WorkCard
-          key={work.id}
-          work={work}
-          language={language}
-          href={work.slug ? `/${language}/works/${work.slug}` : undefined}
-        />
-      ))}
-    </div>
-  )
+  return <WorksFilter works={works} language={language} />
 }
