@@ -7,21 +7,23 @@ type Props = {
 }
 
 type HeadingProps = {
-  eyebrow: string
+  eyebrowJa: string
+  eyebrowEn: string
   titleJa: string
   titleEn: string
   language: 'ja' | 'en'
 }
 
 const CategoryHeading = ({
-  eyebrow,
+  eyebrowJa,
+  eyebrowEn,
   titleJa,
   titleEn,
   language,
 }: HeadingProps) => (
   <div className="flex flex-col gap-y-2">
     <p className="text-sm font-roboto tracking-[0.2em] uppercase text-brass">
-      {eyebrow}
+      {language === 'ja' ? eyebrowJa : eyebrowEn}
     </p>
     <h2 className="font-display text-2xl md:text-3xl text-darkNavy leading-snug">
       {language === 'ja' ? titleJa : titleEn}
@@ -39,7 +41,8 @@ export const WorksList = async ({ language }: Props) => {
       {/* Category: 事例・実績 (existing case studies) */}
       <section className="flex flex-col gap-y-8">
         <CategoryHeading
-          eyebrow="Case Studies"
+          eyebrowJa="Case Studies"
+          eyebrowEn="Case Studies"
           titleJa="事例・実績"
           titleEn="Case Studies"
           language={language}
@@ -69,7 +72,8 @@ export const WorksList = async ({ language }: Props) => {
       {/* Category: AI活用・AX・DX事例 (focus area — frame for now) */}
       <section className="flex flex-col gap-y-8">
         <CategoryHeading
-          eyebrow="Focus ・ 注力領域"
+          eyebrowJa="Focus ・ 注力領域"
+          eyebrowEn="Focus Area"
           titleJa="AI活用・AX・DX事例"
           titleEn="AI / AX / DX"
           language={language}
