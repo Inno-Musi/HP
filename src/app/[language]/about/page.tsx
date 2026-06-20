@@ -233,8 +233,8 @@ export default async function AboutPage({ params }: Props) {
           {/* 会社概要 */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <TitleMain
-              titleJa="会社概要"
-              titleEn="Company Overview"
+              titleJa="会社情報"
+              titleEn="Company Profile"
               language={language}
             />
             <div className="flex flex-col gap-y-6 lg:gap-y-8 w-full bg-paper px-4 md:px-10 py-6 md:py-12 rounded-md">

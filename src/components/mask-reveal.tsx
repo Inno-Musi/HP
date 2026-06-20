@@ -17,13 +17,12 @@ export const MaskReveal = ({ children, delay = 0, className }: Props) => {
   if (reduce) return <span className={className}>{children}</span>
 
   return (
-    <span className="block overflow-hidden">
+    <span className="block overflow-hidden py-[0.06em]">
       <motion.span
         className={`block ${className ?? ''}`}
-        initial={{ y: '115%' }}
-        whileInView={{ y: '0%' }}
+        initial={{ y: '110%' }}
+        animate={{ y: '0%' }}
         transition={{ duration: 0.9, delay, ease: [0.22, 1, 0.36, 1] }}
-        viewport={{ once: true, margin: '-10% 0px' }}
       >
         {children}
       </motion.span>

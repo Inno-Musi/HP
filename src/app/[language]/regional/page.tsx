@@ -1,5 +1,7 @@
 import { BreadCrumbs } from '@/components/bread-crumbs'
 import { Button } from '@/components/button'
+import { MaskReveal } from '@/components/mask-reveal'
+import { Reveal } from '@/components/reveal'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -203,7 +205,7 @@ export default async function RegionalPage({ params }: Props) {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-darkNavy via-darkNavy/85 to-darkNavy/40" />
           <div className="relative max-w-[calc(100vw-32px)] mx-auto py-20 md:py-28">
-            <div className="flex flex-col gap-y-4 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
+            <Reveal className="flex flex-col gap-y-4 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
               <p className="text-sm font-roboto tracking-widest text-brass uppercase font-semibold">
                 Regional Revitalization
               </p>
@@ -240,14 +242,14 @@ export default async function RegionalPage({ params }: Props) {
                   ? '構想だけで終わらせない。現場に入り、事業を立ち上げ、運営まで。'
                   : 'Beyond plans — we go on-site to launch and operate.'}
               </p>
-            </div>
+            </Reveal>
           </div>
         </div>
 
         {/* Trust bar */}
         <div className="border-b border-hairline bg-paper">
           <div className="max-w-[800px] lg:max-w-[1000px] w-full mx-auto px-4 py-8 md:py-10 flex flex-col gap-y-6">
-            <p className="text-center text-sm font-roboto tracking-[0.2em] uppercase text-zinc-400">
+            <p className="text-center text-sm font-roboto tracking-[0.2em] uppercase text-brass">
               {language === 'ja' ? '共創してきた相手' : 'Who We Work With'}
             </p>
             <div className="flex flex-wrap justify-center gap-2 md:gap-3">
@@ -269,7 +271,7 @@ export default async function RegionalPage({ params }: Props) {
                   <p className="text-xl md:text-2xl font-bold text-darkNavy">
                     {language === 'ja' ? st.valueJa : st.valueEn}
                   </p>
-                  <p className="text-xs md:text-sm text-zinc-500 leading-relaxed">
+                  <p className="text-xs md:text-sm text-muted leading-relaxed">
                     {language === 'ja' ? st.labelJa : st.labelEn}
                   </p>
                 </div>
@@ -280,21 +282,26 @@ export default async function RegionalPage({ params }: Props) {
 
         <div className="max-w-[calc(100vw-32px)] mx-auto py-24 md:py-32 flex flex-col gap-y-20 lg:gap-y-28">
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
-            <div className="flex flex-col gap-y-3">
-              <p className="text-sm font-roboto tracking-widest text-brass uppercase text-center">
-                Pain Points
-              </p>
-              <h2 className="text-3xl md:text-4xl font-display text-darkNavy text-center">
-                {language === 'ja'
-                  ? 'こんな課題はありませんか？'
-                  : 'Do any of these resonate?'}
-              </h2>
-            </div>
+            <Reveal>
+              <div className="flex flex-col items-center gap-y-3">
+                <p className="text-sm font-roboto tracking-widest text-brass uppercase text-center">
+                  Pain Points
+                </p>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-darkNavy text-center">
+                  <MaskReveal delay={0.05}>
+                    {language === 'ja'
+                      ? 'こんな課題はありませんか？'
+                      : 'Do any of these resonate?'}
+                  </MaskReveal>
+                </h2>
+                <div className="w-10 h-px bg-brass mt-1" />
+              </div>
+            </Reveal>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {painPoints.map((p) => (
                 <div
                   key={p.ja}
-                  className="flex items-start gap-x-3 bg-paper rounded-md px-6 py-5 shadow-sm border border-hairline"
+                  className="flex items-start gap-x-3 bg-paper rounded-md px-6 py-5 border border-hairline"
                 >
                   <span
                     aria-hidden="true"
@@ -302,7 +309,7 @@ export default async function RegionalPage({ params }: Props) {
                   >
                     ✓
                   </span>
-                  <p className="text-sm text-zinc-700 leading-relaxed">
+                  <p className="text-base text-ink/80 leading-relaxed">
                     {language === 'ja' ? p.ja : p.en}
                   </p>
                 </div>
@@ -311,27 +318,32 @@ export default async function RegionalPage({ params }: Props) {
           </div>
 
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
-            <div className="flex flex-col gap-y-3">
-              <p className="text-sm font-roboto tracking-widest text-brass uppercase text-center">
-                Our Approach
-              </p>
-              <h2 className="text-3xl md:text-4xl font-display text-darkNavy text-center">
-                {language === 'ja' ? '支援の進め方' : 'How We Work'}
-              </h2>
-            </div>
+            <Reveal>
+              <div className="flex flex-col items-center gap-y-3">
+                <p className="text-sm font-roboto tracking-widest text-brass uppercase text-center">
+                  Our Approach
+                </p>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-darkNavy text-center">
+                  <MaskReveal delay={0.05}>
+                    {language === 'ja' ? '支援の進め方' : 'How We Work'}
+                  </MaskReveal>
+                </h2>
+                <div className="w-10 h-px bg-brass mt-1" />
+              </div>
+            </Reveal>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {valueSteps.map((step) => (
                 <div
                   key={step.step}
-                  className="flex flex-col gap-y-3 bg-paper rounded-md px-6 py-8 shadow-sm border border-hairline"
+                  className="flex flex-col gap-y-3 bg-paper rounded-md px-6 py-8 border border-hairline"
                 >
-                  <span className="text-5xl font-bold font-roboto text-zinc-100 leading-none">
+                  <span className="text-5xl font-display text-brass/40 leading-none">
                     {step.step}
                   </span>
                   <p className="text-darkNavy font-bold text-lg">
                     {language === 'ja' ? step.titleJa : step.titleEn}
                   </p>
-                  <p className="text-sm text-zinc-600 leading-relaxed">
+                  <p className="text-sm text-muted leading-relaxed">
                     {language === 'ja' ? step.descJa : step.descEn}
                   </p>
                 </div>
@@ -340,28 +352,33 @@ export default async function RegionalPage({ params }: Props) {
           </div>
 
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
-            <div className="flex flex-col gap-y-3">
-              <p className="text-sm font-roboto tracking-widest text-brass uppercase text-center">
-                Why MUSICO
-              </p>
-              <h2 className="text-3xl md:text-4xl font-display text-darkNavy text-center">
-                {language === 'ja'
-                  ? 'MUSICOが選ばれる理由'
-                  : 'Why Organizations Choose MUSICO'}
-              </h2>
-            </div>
+            <Reveal>
+              <div className="flex flex-col items-center gap-y-3">
+                <p className="text-sm font-roboto tracking-widest text-brass uppercase text-center">
+                  Why MUSICO
+                </p>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-darkNavy text-center">
+                  <MaskReveal delay={0.05}>
+                    {language === 'ja'
+                      ? 'MUSICOが選ばれる理由'
+                      : 'Why Organizations Choose MUSICO'}
+                  </MaskReveal>
+                </h2>
+                <div className="w-10 h-px bg-brass mt-1" />
+              </div>
+            </Reveal>
             <div className="flex flex-col gap-y-4">
               {strengths.map((s) => (
                 <div
                   key={s.titleJa}
-                  className="flex flex-col md:flex-row md:items-start gap-4 bg-paper rounded-md px-6 py-6 shadow-sm border border-hairline"
+                  className="flex flex-col md:flex-row md:items-start gap-4 bg-paper rounded-md px-6 py-6 border border-hairline"
                 >
                   <div className="md:w-[240px] shrink-0">
                     <p className="text-darkNavy font-bold text-base">
                       {language === 'ja' ? s.titleJa : s.titleEn}
                     </p>
                   </div>
-                  <p className="text-sm text-zinc-600 leading-relaxed">
+                  <p className="text-sm text-muted leading-relaxed">
                     {language === 'ja' ? s.descJa : s.descEn}
                   </p>
                 </div>
@@ -371,20 +388,25 @@ export default async function RegionalPage({ params }: Props) {
 
           {/* Related cases */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
-            <div className="flex flex-col gap-y-3">
-              <p className="text-sm font-roboto tracking-widest text-brass uppercase text-center">
-                Case Studies
-              </p>
-              <h2 className="text-3xl md:text-4xl font-display text-darkNavy text-center">
-                {language === 'ja' ? '関連する実績' : 'Related Work'}
-              </h2>
-            </div>
+            <Reveal>
+              <div className="flex flex-col items-center gap-y-3">
+                <p className="text-sm font-roboto tracking-widest text-brass uppercase text-center">
+                  Case Studies
+                </p>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-darkNavy text-center">
+                  <MaskReveal delay={0.05}>
+                    {language === 'ja' ? '関連する実績' : 'Related Work'}
+                  </MaskReveal>
+                </h2>
+                <div className="w-10 h-px bg-brass mt-1" />
+              </div>
+            </Reveal>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
               {relatedCases.map((c) => (
                 <Link
                   key={c.slug}
                   href={`/${language}/works/${c.slug}`}
-                  className="group bg-paper rounded-md overflow-hidden shadow-sm border border-hairline flex flex-col hover:shadow-md transition-shadow duration-200"
+                  className="group bg-paper rounded-md overflow-hidden border border-hairline flex flex-col hover:border-brass transition-colors duration-300"
                 >
                   <div className="relative aspect-[16/10] bg-zinc-100">
                     <Image
@@ -395,7 +417,7 @@ export default async function RegionalPage({ params }: Props) {
                     />
                   </div>
                   <div className="px-5 py-4 flex flex-col gap-y-2 flex-1">
-                    <p className="text-sm font-roboto tracking-widest uppercase text-zinc-400">
+                    <p className="text-sm font-roboto tracking-widest uppercase text-brass">
                       {language === 'ja' ? c.categoryJa : c.categoryEn}
                     </p>
                     <p className="text-sm font-bold text-darkNavy leading-snug">
@@ -420,27 +442,32 @@ export default async function RegionalPage({ params }: Props) {
 
           {/* FAQ */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
-            <div className="flex flex-col gap-y-3">
-              <p className="text-sm font-roboto tracking-widest text-brass uppercase text-center">
-                FAQ
-              </p>
-              <h2 className="text-3xl md:text-4xl font-display text-darkNavy text-center">
-                {language === 'ja' ? 'よくあるご質問' : 'Frequently Asked Questions'}
-              </h2>
-            </div>
+            <Reveal>
+              <div className="flex flex-col items-center gap-y-3">
+                <p className="text-sm font-roboto tracking-widest text-brass uppercase text-center">
+                  FAQ
+                </p>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-darkNavy text-center">
+                  <MaskReveal delay={0.05}>
+                    {language === 'ja' ? 'よくあるご質問' : 'Frequently Asked Questions'}
+                  </MaskReveal>
+                </h2>
+                <div className="w-10 h-px bg-brass mt-1" />
+              </div>
+            </Reveal>
             <div className="flex flex-col gap-y-3">
               {faqs.map((f) => (
                 <details
                   key={f.qJa}
-                  className="group bg-paper rounded-md px-6 py-5 shadow-sm border border-hairline"
+                  className="group bg-paper rounded-md px-6 py-5 border border-hairline"
                 >
                   <summary className="flex items-center justify-between cursor-pointer list-none font-bold text-darkNavy text-sm md:text-base">
                     <span>{language === 'ja' ? f.qJa : f.qEn}</span>
-                    <span className="ml-4 shrink-0 text-zinc-400 group-open:rotate-45 transition-transform duration-200 text-xl leading-none">
+                    <span className="ml-4 shrink-0 text-brass group-open:rotate-45 transition-transform duration-200 text-xl leading-none">
                       +
                     </span>
                   </summary>
-                  <p className="mt-3 text-sm text-zinc-600 leading-relaxed">
+                  <p className="mt-3 text-sm text-muted leading-relaxed">
                     {language === 'ja' ? f.aJa : f.aEn}
                   </p>
                 </details>
