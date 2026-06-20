@@ -33,7 +33,7 @@ const p = (body) =>
     .map((line) => `<p>${line}</p>`)
     .join('')
 
-const news = [
+export const news = [
   {
     publishedAt: '2026-06-16T00:00:00.000Z', // 要確定
     titleJa: 'コーポレートサイトを公開しました',
