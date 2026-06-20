@@ -26,11 +26,14 @@ const KEY = env
 const STATUS = process.argv.includes('--publish') ? 'publish' : 'draft'
 const ENDPOINT = 'https://musico-hp.microcms.io/api/v1/news'
 
+const esc = (s) =>
+  s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+
 const p = (body) =>
   body
     .split('\n')
     .filter(Boolean)
-    .map((line) => `<p>${line}</p>`)
+    .map((line) => `<p>${esc(line)}</p>`)
     .join('')
 
 export const news = [
