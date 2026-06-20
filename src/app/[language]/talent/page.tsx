@@ -233,7 +233,7 @@ export default async function TalentPage({ params }: Props) {
                 <span className="inline-block px-2 py-1 bg-paper text-darkNavy text-[10px] font-roboto font-semibold tracking-widest rounded">
                   FOCUS
                 </span>
-                <p className="text-xs md:text-sm font-roboto tracking-widest text-brass uppercase font-semibold">
+                <p className="text-sm md:text-sm font-roboto tracking-widest text-brass uppercase font-semibold">
                   Talent × Hospitality
                 </p>
               </div>
@@ -278,7 +278,7 @@ export default async function TalentPage({ params }: Props) {
         {/* Trust bar */}
         <div className="border-b border-hairline bg-paper">
           <div className="max-w-[800px] lg:max-w-[1000px] w-full mx-auto px-4 py-8 md:py-10 flex flex-col gap-y-6">
-            <p className="text-center text-xs font-roboto tracking-[0.2em] uppercase text-zinc-400">
+            <p className="text-center text-sm font-roboto tracking-[0.2em] uppercase text-zinc-400">
               {language === 'ja' ? '扱う打ち手' : 'Our Levers'}
             </p>
             <div className="flex flex-wrap justify-center gap-2 md:gap-3">
@@ -338,7 +338,7 @@ export default async function TalentPage({ params }: Props) {
           {/* Vision / Our Stance */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <div className="flex flex-col gap-y-3">
-              <p className="text-xs font-roboto tracking-widest text-brass uppercase text-center">
+              <p className="text-sm font-roboto tracking-widest text-brass uppercase text-center">
                 Our Stance
               </p>
               <h2 className="text-3xl md:text-4xl font-display text-darkNavy text-center whitespace-pre-line leading-snug">
@@ -369,7 +369,7 @@ export default async function TalentPage({ params }: Props) {
           {/* Pain Points */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <div className="flex flex-col gap-y-3">
-              <p className="text-xs font-roboto tracking-widest text-brass uppercase text-center">
+              <p className="text-sm font-roboto tracking-widest text-brass uppercase text-center">
                 Pain Points
               </p>
               <h2 className="text-3xl md:text-4xl font-display text-darkNavy text-center">
@@ -401,7 +401,7 @@ export default async function TalentPage({ params }: Props) {
           {/* Difference: vs. typical staffing agency */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <div className="flex flex-col gap-y-3">
-              <p className="text-xs font-roboto tracking-widest text-brass uppercase text-center">
+              <p className="text-sm font-roboto tracking-widest text-brass uppercase text-center">
                 The Difference
               </p>
               <h2 className="text-3xl md:text-4xl font-display text-darkNavy text-center">
@@ -413,7 +413,7 @@ export default async function TalentPage({ params }: Props) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* Typical staffing agency */}
               <div className="flex flex-col gap-y-3 bg-zinc-100 rounded-md px-6 py-6 border border-hairline">
-                <p className="text-xs font-roboto tracking-widest text-zinc-500 uppercase font-semibold">
+                <p className="text-sm font-roboto tracking-widest text-zinc-500 uppercase font-semibold">
                   {language === 'ja'
                     ? '一般的な人材会社'
                     : 'Typical Staffing Agency'}
@@ -443,7 +443,7 @@ export default async function TalentPage({ params }: Props) {
               </div>
               {/* MUSICO */}
               <div className="flex flex-col gap-y-3 bg-paper rounded-md px-6 py-6 border-2 border-darkNavy shadow-sm">
-                <p className="text-xs font-roboto tracking-widest text-darkNavy uppercase font-semibold">
+                <p className="text-sm font-roboto tracking-widest text-darkNavy uppercase font-semibold">
                   MUSICO
                 </p>
                 <p className="text-darkNavy font-bold text-lg">
@@ -475,7 +475,7 @@ export default async function TalentPage({ params }: Props) {
           {/* Our Approach */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <div className="flex flex-col gap-y-3">
-              <p className="text-xs font-roboto tracking-widest text-brass uppercase text-center">
+              <p className="text-sm font-roboto tracking-widest text-brass uppercase text-center">
                 Our Approach
               </p>
               <h2 className="text-3xl md:text-4xl font-display text-darkNavy text-center">
@@ -510,7 +510,7 @@ export default async function TalentPage({ params }: Props) {
           {/* Solution Menu */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <div className="flex flex-col gap-y-3">
-              <p className="text-xs font-roboto tracking-widest text-brass uppercase text-center">
+              <p className="text-sm font-roboto tracking-widest text-brass uppercase text-center">
                 Solution Menu
               </p>
               <h2 className="text-3xl md:text-4xl font-display text-darkNavy text-center">
@@ -549,7 +549,7 @@ export default async function TalentPage({ params }: Props) {
           {/* Why MUSICO */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <div className="flex flex-col gap-y-3">
-              <p className="text-xs font-roboto tracking-widest text-brass uppercase text-center">
+              <p className="text-sm font-roboto tracking-widest text-brass uppercase text-center">
                 Why MUSICO
               </p>
               <h2 className="text-3xl md:text-4xl font-display text-darkNavy text-center">
@@ -580,7 +580,7 @@ export default async function TalentPage({ params }: Props) {
           {/* Related cases */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <div className="flex flex-col gap-y-3">
-              <p className="text-xs font-roboto tracking-widest text-brass uppercase text-center">
+              <p className="text-sm font-roboto tracking-widest text-brass uppercase text-center">
                 Case Studies
               </p>
               <h2 className="text-3xl md:text-4xl font-display text-darkNavy text-center">
@@ -603,7 +603,7 @@ export default async function TalentPage({ params }: Props) {
                     />
                   </div>
                   <div className="px-5 py-4 flex flex-col gap-y-2 flex-1">
-                    <p className="text-xs font-roboto tracking-widest uppercase text-zinc-400">
+                    <p className="text-sm font-roboto tracking-widest uppercase text-zinc-400">
                       {language === 'ja' ? c.categoryJa : c.categoryEn}
                     </p>
                     <p className="text-sm font-bold text-darkNavy leading-snug">
@@ -629,7 +629,7 @@ export default async function TalentPage({ params }: Props) {
           {/* FAQ */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <div className="flex flex-col gap-y-3">
-              <p className="text-xs font-roboto tracking-widest text-brass uppercase text-center">
+              <p className="text-sm font-roboto tracking-widest text-brass uppercase text-center">
                 FAQ
               </p>
               <h2 className="text-3xl md:text-4xl font-display text-darkNavy text-center">
@@ -658,7 +658,7 @@ export default async function TalentPage({ params }: Props) {
 
           {/* CTA */}
           <div className="flex flex-col gap-y-6 max-w-[800px] lg:max-w-[1000px] w-full mx-auto bg-darkNavy rounded-md px-8 md:px-12 py-12 text-white text-center items-center">
-            <p className="text-xs font-roboto tracking-widest text-brass uppercase">
+            <p className="text-sm font-roboto tracking-widest text-brass uppercase">
               Get Started
             </p>
             <p className="text-2xl md:text-3xl font-display leading-snug">

@@ -68,7 +68,7 @@ export const Footer = ({ language }: Props) => {
                 >
                   <span className="font-semibold text-lg">{link.label}</span>
                   <span className="text-xs font-roboto">{link.labelEn}</span>
-                  <span className="group-hover:w-[100%] transition-all duration-300 w-0 h-[1px] bg-emerald" />
+                  <span className="group-hover:w-[100%] transition-all duration-300 w-0 h-[1px] bg-brass" />
                 </Link>
               ))}
             </>
@@ -81,7 +81,7 @@ export const Footer = ({ language }: Props) => {
                   className="flex flex-col items-center leading-none group"
                 >
                   <span className="font-semibold text-lg">{link.labelEn}</span>
-                  <span className="group-hover:w-[100%] transition-all duration-300 w-0 h-[1px] bg-emerald" />
+                  <span className="group-hover:w-[100%] transition-all duration-300 w-0 h-[1px] bg-brass" />
                 </Link>
               ))}
             </>

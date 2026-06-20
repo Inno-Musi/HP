@@ -47,7 +47,7 @@ export const InitialAnimation = ({
   }, [onComplete])
 
   return (
-    <div className="fixed inset-0 bg-paper z-50">
+    <div className="fixed inset-0 bg-ivory z-50">
       <AnimatePresence>
         {showLogo && (
           <motion.div
@@ -58,18 +58,12 @@ export const InitialAnimation = ({
             className="absolute inset-0 flex items-center justify-center"
           >
             <Image
-              src="/icon-512.png"
-              width={512}
-              height={512}
+              src="/musico-logo.png"
+              width={1008}
+              height={456}
               alt="musico"
-              className="w-[50px] md:w-[100px]"
-            />
-            <Image
-              src="/musico-company-name.png"
-              width={472}
-              height={158}
-              alt="musico"
-              className="w-[100px] md:w-[200px]"
+              priority
+              className="w-[220px] md:w-[360px]"
             />
           </motion.div>
         )}

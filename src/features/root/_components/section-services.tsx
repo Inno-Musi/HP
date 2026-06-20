@@ -51,7 +51,7 @@ export const SectionServices = ({ language }: Props) => {
         {/* Heading + intro */}
         <div className="flex flex-col gap-y-5 max-w-[720px]">
           <Reveal>
-            <p className="text-xs font-roboto tracking-[0.25em] uppercase text-brass">
+            <p className="text-sm font-roboto tracking-[0.25em] uppercase text-brass">
               Services
             </p>
           </Reveal>
@@ -75,7 +75,7 @@ export const SectionServices = ({ language }: Props) => {
         {/* Focus areas */}
         <div className="flex flex-col gap-y-6">
           <Reveal>
-            <p className="text-xs font-roboto tracking-[0.25em] uppercase text-brass">
+            <p className="text-sm font-roboto tracking-[0.25em] uppercase text-brass">
               {language === 'ja' ? 'Focus Areas — 注力領域' : 'Focus Areas'}
             </p>
           </Reveal>
@@ -114,7 +114,7 @@ export const SectionServices = ({ language }: Props) => {
         {/* Related areas */}
         <div className="flex flex-col gap-y-6 pt-6 border-t border-hairline">
           <Reveal>
-            <p className="text-xs font-roboto tracking-[0.25em] uppercase text-muted">
+            <p className="text-sm font-roboto tracking-[0.25em] uppercase text-muted">
               {language === 'ja' ? 'Related Areas — 関連領域' : 'Related Areas'}
             </p>
           </Reveal>

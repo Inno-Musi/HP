@@ -228,7 +228,7 @@ export default async function DxAiPage({ params }: Props) {
                 <span className="inline-block px-2 py-1 bg-paper text-darkNavy text-[10px] font-roboto font-semibold tracking-widest rounded">
                   FOCUS
                 </span>
-                <p className="text-xs md:text-sm font-roboto tracking-widest text-brass uppercase font-semibold">
+                <p className="text-sm md:text-sm font-roboto tracking-widest text-brass uppercase font-semibold">
                   AI/DX × Hospitality
                 </p>
               </div>
@@ -273,7 +273,7 @@ export default async function DxAiPage({ params }: Props) {
         {/* Trust bar */}
         <div className="border-b border-hairline bg-paper">
           <div className="max-w-[800px] lg:max-w-[1000px] w-full mx-auto px-4 py-8 md:py-10 flex flex-col gap-y-6">
-            <p className="text-center text-xs font-roboto tracking-[0.2em] uppercase text-zinc-400">
+            <p className="text-center text-sm font-roboto tracking-[0.2em] uppercase text-zinc-400">
               {language === 'ja' ? '対象業界' : 'Who We Build For'}
             </p>
             <div className="flex flex-wrap justify-center gap-2 md:gap-3">
@@ -332,7 +332,7 @@ export default async function DxAiPage({ params }: Props) {
           {/* Vision / Our Stance */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <div className="flex flex-col gap-y-3">
-              <p className="text-xs font-roboto tracking-widest text-brass uppercase text-center">
+              <p className="text-sm font-roboto tracking-widest text-brass uppercase text-center">
                 Our Stance
               </p>
               <h2 className="text-3xl md:text-4xl font-display text-darkNavy text-center whitespace-pre-line leading-snug">
@@ -363,7 +363,7 @@ export default async function DxAiPage({ params }: Props) {
           {/* 課題提起 */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <div className="flex flex-col gap-y-3">
-              <p className="text-xs font-roboto tracking-widest text-brass uppercase text-center">
+              <p className="text-sm font-roboto tracking-widest text-brass uppercase text-center">
                 Pain Points
               </p>
               <h2 className="text-3xl md:text-4xl font-display text-darkNavy text-center">
@@ -395,7 +395,7 @@ export default async function DxAiPage({ params }: Props) {
           {/* なぜ失敗するか */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <div className="flex flex-col gap-y-3">
-              <p className="text-xs font-roboto tracking-widest text-brass uppercase text-center">
+              <p className="text-sm font-roboto tracking-widest text-brass uppercase text-center">
                 Why DX Fails
               </p>
               <h2 className="text-3xl md:text-4xl font-display text-darkNavy text-center whitespace-pre-line">
@@ -434,7 +434,7 @@ export default async function DxAiPage({ params }: Props) {
           {/* 提供価値 */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <div className="flex flex-col gap-y-3">
-              <p className="text-xs font-roboto tracking-widest text-brass uppercase text-center">
+              <p className="text-sm font-roboto tracking-widest text-brass uppercase text-center">
                 Our Approach
               </p>
               <h2 className="text-3xl md:text-4xl font-display text-darkNavy text-center">
@@ -476,7 +476,7 @@ export default async function DxAiPage({ params }: Props) {
           {/* 強み */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <div className="flex flex-col gap-y-3">
-              <p className="text-xs font-roboto tracking-widest text-brass uppercase text-center">
+              <p className="text-sm font-roboto tracking-widest text-brass uppercase text-center">
                 Why MUSICO
               </p>
               <h2 className="text-3xl md:text-4xl font-display text-darkNavy text-center">
@@ -507,7 +507,7 @@ export default async function DxAiPage({ params }: Props) {
           {/* 支援イメージ */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <div className="flex flex-col gap-y-3">
-              <p className="text-xs font-roboto tracking-widest text-brass uppercase text-center">
+              <p className="text-sm font-roboto tracking-widest text-brass uppercase text-center">
                 Engagement Model
               </p>
               <h2 className="text-3xl md:text-4xl font-display text-darkNavy text-center">
@@ -554,7 +554,7 @@ export default async function DxAiPage({ params }: Props) {
                 <span className="inline-block px-2 py-1 bg-darkNavy text-white text-[10px] font-roboto font-semibold tracking-widest rounded">
                   {language === 'ja' ? '募集中' : 'OPEN'}
                 </span>
-                <p className="text-xs font-roboto tracking-[0.2em] text-darkNavy uppercase font-semibold">
+                <p className="text-sm font-roboto tracking-[0.2em] text-darkNavy uppercase font-semibold">
                   PoC Partners
                 </p>
               </div>
@@ -600,7 +600,7 @@ export default async function DxAiPage({ params }: Props) {
                   key={item.labelJa}
                   className="flex flex-col gap-y-2 bg-ivory rounded-md px-5 py-5 border border-hairline"
                 >
-                  <p className="text-xs font-roboto tracking-widest text-darkNavy uppercase font-semibold">
+                  <p className="text-sm font-roboto tracking-widest text-darkNavy uppercase font-semibold">
                     {language === 'ja' ? item.labelJa : item.labelEn}
                   </p>
                   <p className="text-sm text-zinc-700 leading-relaxed">
@@ -627,7 +627,7 @@ export default async function DxAiPage({ params }: Props) {
           {/* Related cases */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <div className="flex flex-col gap-y-3">
-              <p className="text-xs font-roboto tracking-widest text-brass uppercase text-center">
+              <p className="text-sm font-roboto tracking-widest text-brass uppercase text-center">
                 Case Studies
               </p>
               <h2 className="text-3xl md:text-4xl font-display text-darkNavy text-center">
@@ -652,7 +652,7 @@ export default async function DxAiPage({ params }: Props) {
                     />
                   </div>
                   <div className="px-5 py-4 flex flex-col gap-y-2 flex-1">
-                    <p className="text-xs font-roboto tracking-widest uppercase text-zinc-400">
+                    <p className="text-sm font-roboto tracking-widest uppercase text-zinc-400">
                       {language === 'ja' ? c.categoryJa : c.categoryEn}
                     </p>
                     <p className="text-sm font-bold text-darkNavy leading-snug">
@@ -678,7 +678,7 @@ export default async function DxAiPage({ params }: Props) {
           {/* FAQ */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <div className="flex flex-col gap-y-3">
-              <p className="text-xs font-roboto tracking-widest text-brass uppercase text-center">
+              <p className="text-sm font-roboto tracking-widest text-brass uppercase text-center">
                 FAQ
               </p>
               <h2 className="text-3xl md:text-4xl font-display text-darkNavy text-center">
@@ -707,7 +707,7 @@ export default async function DxAiPage({ params }: Props) {
 
           {/* CTA */}
           <div className="flex flex-col gap-y-6 max-w-[800px] lg:max-w-[1000px] w-full mx-auto bg-darkNavy rounded-md px-8 md:px-12 py-12 text-white text-center items-center">
-            <p className="text-xs font-roboto tracking-widest text-brass uppercase">
+            <p className="text-sm font-roboto tracking-widest text-brass uppercase">
               Get Started
             </p>
             <p className="text-2xl md:text-3xl font-display leading-snug">

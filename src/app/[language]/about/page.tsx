@@ -281,7 +281,7 @@ export default async function AboutPage({ params }: Props) {
                   </div>
                   <div className="px-6 py-6 flex flex-col gap-y-3">
                     <div>
-                      <p className="text-xs text-zinc-500 uppercase tracking-widest mb-1">
+                      <p className="text-sm text-zinc-500 uppercase tracking-widest mb-1">
                         {language === 'ja' ? member.titleJa : member.titleEn}
                       </p>
                       <p className="text-xl font-bold text-darkNavy">

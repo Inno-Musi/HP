@@ -211,7 +211,7 @@ export default async function CorporateFoodPage({ params }: Props) {
                 <span className="inline-block px-2 py-1 bg-paper text-darkNavy text-[10px] font-roboto font-semibold tracking-widest rounded">
                   FOCUS
                 </span>
-                <p className="text-xs md:text-sm font-roboto tracking-widest text-brass uppercase font-semibold">
+                <p className="text-sm md:text-sm font-roboto tracking-widest text-brass uppercase font-semibold">
                   Food / Hospitality
                 </p>
               </div>
@@ -255,7 +255,7 @@ export default async function CorporateFoodPage({ params }: Props) {
         {/* Trust bar */}
         <div className="border-b border-hairline bg-paper">
           <div className="max-w-[800px] lg:max-w-[1000px] w-full mx-auto px-4 py-8 md:py-10 flex flex-col gap-y-6">
-            <p className="text-center text-xs font-roboto tracking-[0.2em] uppercase text-zinc-400">
+            <p className="text-center text-sm font-roboto tracking-[0.2em] uppercase text-zinc-400">
               {language === 'ja' ? '支援実績のある業種' : 'Sectors We Serve'}
             </p>
             <div className="flex flex-wrap justify-center gap-2 md:gap-3">
@@ -289,7 +289,7 @@ export default async function CorporateFoodPage({ params }: Props) {
         <div className="max-w-[calc(100vw-32px)] mx-auto py-24 md:py-32 flex flex-col gap-y-20 lg:gap-y-28">
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <div className="flex flex-col gap-y-3">
-              <p className="text-xs font-roboto tracking-widest text-brass uppercase text-center">
+              <p className="text-sm font-roboto tracking-widest text-brass uppercase text-center">
                 Pain Points
               </p>
               <h2 className="text-3xl md:text-4xl font-display text-darkNavy text-center">
@@ -320,7 +320,7 @@ export default async function CorporateFoodPage({ params }: Props) {
 
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <div className="flex flex-col gap-y-3">
-              <p className="text-xs font-roboto tracking-widest text-brass uppercase text-center">
+              <p className="text-sm font-roboto tracking-widest text-brass uppercase text-center">
                 Our Approach
               </p>
               <h2 className="text-3xl md:text-4xl font-display text-darkNavy text-center">
@@ -349,7 +349,7 @@ export default async function CorporateFoodPage({ params }: Props) {
 
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <div className="flex flex-col gap-y-3">
-              <p className="text-xs font-roboto tracking-widest text-brass uppercase text-center">
+              <p className="text-sm font-roboto tracking-widest text-brass uppercase text-center">
                 Why MUSICO
               </p>
               <h2 className="text-3xl md:text-4xl font-display text-darkNavy text-center">
@@ -380,7 +380,7 @@ export default async function CorporateFoodPage({ params }: Props) {
           {/* Related cases */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <div className="flex flex-col gap-y-3">
-              <p className="text-xs font-roboto tracking-widest text-brass uppercase text-center">
+              <p className="text-sm font-roboto tracking-widest text-brass uppercase text-center">
                 Case Studies
               </p>
               <h2 className="text-3xl md:text-4xl font-display text-darkNavy text-center">
@@ -403,7 +403,7 @@ export default async function CorporateFoodPage({ params }: Props) {
                     />
                   </div>
                   <div className="px-5 py-4 flex flex-col gap-y-2 flex-1">
-                    <p className="text-xs font-roboto tracking-widest uppercase text-zinc-400">
+                    <p className="text-sm font-roboto tracking-widest uppercase text-zinc-400">
                       {language === 'ja' ? c.categoryJa : c.categoryEn}
                     </p>
                     <p className="text-sm font-bold text-darkNavy leading-snug">
@@ -429,7 +429,7 @@ export default async function CorporateFoodPage({ params }: Props) {
           {/* FAQ */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <div className="flex flex-col gap-y-3">
-              <p className="text-xs font-roboto tracking-widest text-brass uppercase text-center">
+              <p className="text-sm font-roboto tracking-widest text-brass uppercase text-center">
                 FAQ
               </p>
               <h2 className="text-3xl md:text-4xl font-display text-darkNavy text-center">

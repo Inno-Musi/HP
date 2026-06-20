@@ -19,7 +19,7 @@ export const TitleMain = ({ titleJa, titleEn, language, className }: Props) => {
       >
         {language === 'ja' ? (
           <>
-            <p className="text-xs font-roboto tracking-[0.25em] uppercase text-brass">
+            <p className="text-sm font-roboto tracking-[0.25em] uppercase text-brass">
               {titleEn}
             </p>
             <h1 className="font-display text-3xl md:text-5xl text-darkNavy leading-[1.2]">

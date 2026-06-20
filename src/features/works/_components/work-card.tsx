@@ -34,7 +34,7 @@ export const WorkCard = ({ work, language, href }: Props) => {
       </div>
       <div className="px-5 py-5 flex flex-col gap-y-3">
         {category && (
-          <p className="text-xs font-roboto tracking-widest uppercase text-zinc-400">
+          <p className="text-sm font-roboto tracking-widest uppercase text-zinc-400">
             {category}
           </p>
         )}
