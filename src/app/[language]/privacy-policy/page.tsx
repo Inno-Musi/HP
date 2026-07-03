@@ -428,7 +428,7 @@ export default async function PrivacyPolicyPage({ params }: Props) {
                   <div className="flex flex-col gap-y-1">
                     <p>【株式会社MUSICO】</p>
                     <div className="pl-2">
-                      <p>〒150-0042 東京都渋谷区宇田川町1-12</p>
+                      <p>〒152-0023 東京都目黒区八雲3-17-20</p>
                       <p>E-mail：info@musico.co.jp</p>
                       <p>（受付時間：平日9:00～17:00）</p>
                     </div>
@@ -444,7 +444,7 @@ export default async function PrivacyPolicyPage({ params }: Props) {
                   <div className="flex flex-col gap-y-1">
                     <p>【MUSICO Inc.】</p>
                     <div className="pl-2">
-                      <p>1-12 Udagawacho, Shibuya-ku, Tokyo 150-0042</p>
+                      <p>3-17-20 Yakumo, Meguro-ku, Tokyo 152-0023</p>
                       <p>E-mail: info@musico.co.jp</p>
                       <p>(Business hours: Weekdays 9:00-17:00)</p>
                     </div>

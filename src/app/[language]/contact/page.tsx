@@ -35,7 +35,7 @@ export default async function ContactPage({ params }: Props) {
           titleJa="お問い合わせ"
           titleEn="Contact"
           language={language}
-          className="text-white"
+          onDark
         />
         {language === 'ja' ? (
           <div className="max-w-[600px] w-full mx-auto text-sm md:text-base text-center leading-6 md:leading-7 text-white">
