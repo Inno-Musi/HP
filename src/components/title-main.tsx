@@ -6,9 +6,19 @@ type Props = {
   titleEn: string
   language: 'en' | 'ja'
   className?: string
+  // Use on dark backgrounds so the heading stays readable (default dark navy).
+  onDark?: boolean
 }
 
-export const TitleMain = ({ titleJa, titleEn, language, className }: Props) => {
+export const TitleMain = ({
+  titleJa,
+  titleEn,
+  language,
+  className,
+  onDark = false,
+}: Props) => {
+  const titleColor = onDark ? 'text-white' : 'text-darkNavy'
+
   return (
     <Reveal>
       <div
@@ -22,12 +32,16 @@ export const TitleMain = ({ titleJa, titleEn, language, className }: Props) => {
             <p className="text-sm font-roboto tracking-[0.25em] uppercase text-brass">
               {titleEn}
             </p>
-            <h1 className="font-display text-3xl md:text-5xl text-darkNavy leading-[1.2]">
+            <h1
+              className={`font-display text-3xl md:text-5xl ${titleColor} leading-[1.2]`}
+            >
               {titleJa}
             </h1>
           </>
         ) : (
-          <h1 className="font-display text-4xl md:text-5xl text-darkNavy leading-[1.2]">
+          <h1
+            className={`font-display text-4xl md:text-5xl ${titleColor} leading-[1.2]`}
+          >
             {titleEn}
           </h1>
         )}
