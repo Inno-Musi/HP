@@ -467,6 +467,63 @@ export default async function CorporateFoodPage({ params }: Props) {
             </div>
           </div>
 
+          {/* 関連サービス（サブ領域） */}
+          <div className="flex flex-col gap-y-6 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
+            <Reveal>
+              <div className="flex flex-col items-center gap-y-3">
+                <p className="text-sm font-roboto tracking-widest text-brass uppercase text-center">
+                  Related Services
+                </p>
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-display text-darkNavy text-center">
+                  <MaskReveal delay={0.05}>
+                    {language === 'ja' ? '関連サービス' : 'Related Services'}
+                  </MaskReveal>
+                </h2>
+                <div className="w-10 h-px bg-brass mt-1" />
+              </div>
+            </Reveal>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                {
+                  href: '/office-cafe',
+                  titleJa: 'オフィスカフェ運営',
+                  titleEn: 'Office Café Operation',
+                  descJa:
+                    'バリスタ育成から利用データ改善まで、オフィスカフェの導入・運営を専門に。',
+                  descEn:
+                    'Office café setup and operation — from barista training to data-driven improvement.',
+                },
+                {
+                  href: '/executive-dining',
+                  titleJa: 'エグゼクティブダイニング',
+                  titleEn: 'Executive Dining',
+                  descJa:
+                    '役員フロア・VIP対応。機密性とプロトコルを備えた最高水準の会食運営。',
+                  descEn:
+                    'Executive floor and VIP dining — top-tier operations built for confidentiality and protocol.',
+                },
+              ].map((s) => (
+                <Link
+                  key={s.href}
+                  href={`/${language}${s.href}`}
+                  className="group bg-paper rounded-md px-6 py-5 border border-hairline hover:border-brass transition-colors duration-300 flex flex-col gap-y-2"
+                >
+                  <div className="flex items-center justify-between">
+                    <p className="text-base md:text-lg font-bold text-darkNavy">
+                      {language === 'ja' ? s.titleJa : s.titleEn}
+                    </p>
+                    <span className="text-brass group-hover:translate-x-1 transition-transform">
+                      →
+                    </span>
+                  </div>
+                  <p className="text-sm text-muted leading-relaxed">
+                    {language === 'ja' ? s.descJa : s.descEn}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+
           {/* FAQ */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <Reveal>
