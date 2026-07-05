@@ -45,6 +45,56 @@ export const webSiteJsonLd = (language: Language) => ({
   publisher: { '@id': `${BASE_URL}/#organization` },
 })
 
+type FaqItem = { qJa: string; qEn: string; aJa: string; aEn: string }
+
+export const faqPageJsonLd = (language: Language, faqs: FaqItem[]) => ({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: language === 'ja' ? faq.qJa : faq.qEn,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: language === 'ja' ? faq.aJa : faq.aEn,
+    },
+  })),
+})
+
+type ServiceInfo = {
+  nameJa: string
+  nameEn: string
+  path: string
+  descriptionJa: string
+  descriptionEn: string
+}
+
+export const serviceJsonLd = (language: Language, service: ServiceInfo) => ({
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: language === 'ja' ? service.nameJa : service.nameEn,
+  serviceType: language === 'ja' ? service.nameJa : service.nameEn,
+  url: `${BASE_URL}/${language}/${service.path}`,
+  description:
+    language === 'ja' ? service.descriptionJa : service.descriptionEn,
+  provider: { '@id': `${BASE_URL}/#organization` },
+  areaServed: { '@type': 'Country', name: 'Japan' },
+})
+
+type PersonInfo = { nameJa: string; nameEn: string; titleJa: string; titleEn: string }
+
+export const aboutPageJsonLd = (language: Language, people: PersonInfo[]) => ({
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  url: `${BASE_URL}/${language}/about`,
+  mainEntity: { '@id': `${BASE_URL}/#organization` },
+  about: people.map((person) => ({
+    '@type': 'Person',
+    name: language === 'ja' ? person.nameJa : person.nameEn,
+    jobTitle: language === 'ja' ? person.titleJa : person.titleEn,
+    worksFor: { '@id': `${BASE_URL}/#organization` },
+  })),
+})
+
 export const breadcrumbJsonLd = (
   language: Language,
   crumbs: { labelJa: string; labelEn: string; href: string }[],

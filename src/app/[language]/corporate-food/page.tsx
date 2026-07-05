@@ -1,8 +1,10 @@
 import { BreadCrumbs } from '@/components/bread-crumbs'
 import { Button } from '@/components/button'
+import { JsonLd } from '@/components/json-ld'
 import { MaskReveal } from '@/components/mask-reveal'
 import { Reveal } from '@/components/reveal'
 import { buildMetadata } from '@/lib/metadata'
+import { faqPageJsonLd, serviceJsonLd } from '@/lib/structured-data'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -201,6 +203,18 @@ export default async function CorporateFoodPage({ params }: Props) {
 
   return (
     <>
+      <JsonLd
+        data={serviceJsonLd(language, {
+          nameJa: 'コーポレートフードサービス',
+          nameEn: 'Corporate Food Service',
+          path: 'corporate-food',
+          descriptionJa:
+            '外資・大手企業のオフィスカフェ・社員食堂を企画から運営まで一貫支援。品質・コスト・従業員エンゲージメントを同時に実現するMUSICOのコーポレートフードサービス。',
+          descriptionEn:
+            'End-to-end support for office cafés and employee dining at global corporations — balancing quality, cost, and employee engagement.',
+        })}
+      />
+      <JsonLd data={faqPageJsonLd(language, faqs)} />
       <div className="bg-ivory">
         <div className="relative bg-darkNavy text-white overflow-hidden">
           <Image
