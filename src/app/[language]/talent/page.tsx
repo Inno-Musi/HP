@@ -2,6 +2,7 @@ import { BreadCrumbs } from '@/components/bread-crumbs'
 import { Button } from '@/components/button'
 import { MaskReveal } from '@/components/mask-reveal'
 import { Reveal } from '@/components/reveal'
+import { buildMetadata } from '@/lib/metadata'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -12,17 +13,21 @@ type Props = {
 export const generateMetadata = async ({ params }: Props) => {
   const { language } = await params
   if (language === 'ja') {
-    return {
+    return buildMetadata({
+      language,
+      path: 'talent',
       title: '人材支援 | 株式会社MUSICO',
       description:
         '人材紹介会社ではなく、人材課題ソリューションファーム。中立コンサルから入り、採用・育成・派遣・業務委託・業務再設計を組み合わせて根本解決します。MUSICOの注力領域。',
-    }
+    })
   }
-  return {
+  return buildMetadata({
+    language,
+    path: 'talent',
     title: 'Talent Solutions | MUSICO Inc.',
     description:
       'Not a staffing agency — a talent solutions firm. Starting from a neutral diagnosis, we combine hiring, development, staffing, outsourcing, and workflow redesign to solve at the root.',
-  }
+  })
 }
 
 const painPoints = [

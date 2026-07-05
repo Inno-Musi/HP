@@ -4,6 +4,7 @@ import {
   overviewsEn,
   overviewsJa,
 } from '@/features/about/_assets/const/overviews'
+import { buildMetadata } from '@/lib/metadata'
 import Image from 'next/image'
 
 type Props = {
@@ -14,18 +15,22 @@ export const generateMetadata = async ({ params }: Props) => {
   const { language } = await params
 
   if (language === 'ja') {
-    return {
+    return buildMetadata({
+      language,
+      path: 'about',
       title: '会社概要 | 株式会社MUSICO',
       description:
         'MUSICOは、ホスピタリティを再設計する "A Hospitality Innovation Firm"。食・空間・運用・テクノロジーを一気通貫で組み立て、ヒトの幸福な時間を仕組みで増やしていきます。',
-    }
+    })
   }
 
-  return {
+  return buildMetadata({
+    language,
+    path: 'about',
     title: 'About Us | MUSICO Inc.',
     description:
       'MUSICO is "A Hospitality Innovation Firm," redesigning hospitality end to end. We weave food, space, operations, and technology into one continuous system to multiply meaningful time — by design.',
-  }
+  })
 }
 
 const members = [

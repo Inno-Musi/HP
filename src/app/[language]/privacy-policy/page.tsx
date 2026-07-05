@@ -1,6 +1,7 @@
 import { BreadCrumbs } from '@/components/bread-crumbs'
 import { SubtitlePolicy } from '@/components/subtitle-policy'
 import { TitleMain } from '@/components/title-main'
+import { buildMetadata } from '@/lib/metadata'
 
 type Props = {
   params: Promise<{ language: 'en' | 'ja' }>
@@ -10,18 +11,22 @@ export const generateMetadata = async ({ params }: Props) => {
   const { language } = await params
 
   if (language === 'ja') {
-    return {
+    return buildMetadata({
+      language,
+      path: 'privacy-policy',
       title: 'プライバシーポリシー | 株式会社MUSICO',
       description:
         'MUSICOのプライバシーポリシーです。個人情報の取り扱いに関して、基本方針をご案内しております。',
-    }
+    })
   }
 
-  return {
+  return buildMetadata({
+    language,
+    path: 'privacy-policy',
     title: 'Privacy Policy | MUSICO Inc.',
     description:
       "This is MUSICO's Privacy Policy, outlining our fundamental principles regarding the handling of personal information.",
-  }
+  })
 }
 
 export default async function PrivacyPolicyPage({ params }: Props) {
