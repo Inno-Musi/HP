@@ -1,9 +1,15 @@
 import { BreadCrumbs } from '@/components/bread-crumbs'
+import { JsonLd } from '@/components/json-ld'
 import dayjs from '@/lib/dayjs'
+import { articleJsonLd } from '@/lib/structured-data'
+import { removeHtmlTag } from '@/helpers/remove-html-tag'
 import { fetchWorkDetail } from '@/services/works/fetch-work-detail'
 import parse from 'html-react-parser'
 import Image from 'next/image'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import { Button } from '@/components/button'
+import { RelatedServices } from './related-services'
 
 type Props = {
   language: 'ja' | 'en'
@@ -25,9 +31,29 @@ export const WorkContent = async ({ language, slug }: Props) => {
     language === 'ja' ? work.categoryJa : work.categoryEn || work.categoryJa
   const content =
     language === 'ja' ? work.contentJa : work.contentEn || work.contentJa
+  const description =
+    language === 'ja'
+      ? work.descriptionJa
+      : work.descriptionEn || work.descriptionJa
+  const absoluteImage = imageUrl?.startsWith('http')
+    ? imageUrl
+    : imageUrl
+      ? `https://www.musico.co.jp${imageUrl}`
+      : undefined
 
   return (
     <div className="bg-ivory">
+      <JsonLd
+        data={articleJsonLd(language, {
+          title,
+          description: description
+            ? removeHtmlTag(description).slice(0, 160)
+            : undefined,
+          url: `https://www.musico.co.jp/${language}/works/${slug}`,
+          image: absoluteImage,
+          datePublished: work.publishedAt,
+        })}
+      />
       <div className="py-24 md:py-32 w-[900px] max-w-[calc(100vw-32px)] mx-auto flex flex-col gap-y-10 md:gap-y-12">
         <div className="flex flex-col gap-y-4 text-center">
           {category && (
@@ -68,6 +94,28 @@ export const WorkContent = async ({ language, slug }: Props) => {
               </p>
             )}
           </div>
+        </div>
+
+        <RelatedServices language={language} category={category} />
+
+        <div className="flex flex-col gap-y-5 bg-darkNavy rounded-md px-8 md:px-12 py-10 md:py-12 text-white text-center items-center">
+          <p className="text-xl md:text-2xl font-display">
+            {language === 'ja'
+              ? '同様の課題をお持ちですか？'
+              : 'Facing a similar challenge?'}
+          </p>
+          <p className="text-sm leading-relaxed opacity-80 max-w-[520px]">
+            {language === 'ja'
+              ? '現場の課題をお聞かせください。最適な支援範囲をご提案します。提案・売り込みは一切なし、まずは率直にお話ししましょう。'
+              : "Tell us what you're facing on the floor. We'll propose the right scope of support — no pitch, no sales, just a candid conversation."}
+          </p>
+          <Link href={`/${language}/contact`}>
+            <Button
+              type="button"
+              text={language === 'ja' ? 'お問い合わせはこちら →' : 'Contact Us →'}
+              className="rounded-full bg-paper text-darkNavy border border-paper px-8 py-3 hover:opacity-80 duration-300 font-roboto w-fit"
+            />
+          </Link>
         </div>
       </div>
       <BreadCrumbs

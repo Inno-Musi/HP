@@ -26,6 +26,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: 'about', priority: 0.8 },
     { path: 'services', priority: 0.8 },
     { path: 'corporate-food', priority: 0.7 },
+    { path: 'office-cafe', priority: 0.7 },
+    { path: 'executive-dining', priority: 0.7 },
     { path: 'catering', priority: 0.7 },
     { path: 'regional', priority: 0.7 },
     { path: 'dx-ai', priority: 0.7 },

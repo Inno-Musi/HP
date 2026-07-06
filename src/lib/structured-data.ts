@@ -80,6 +80,29 @@ export const serviceJsonLd = (language: Language, service: ServiceInfo) => ({
   areaServed: { '@type': 'Country', name: 'Japan' },
 })
 
+type ArticleInfo = {
+  title: string
+  description?: string
+  url: string
+  image?: string
+  datePublished?: string
+}
+
+export const articleJsonLd = (language: Language, article: ArticleInfo) => ({
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: article.title,
+  ...(article.description ? { description: article.description } : {}),
+  url: article.url,
+  ...(article.image ? { image: [article.image] } : {}),
+  ...(article.datePublished
+    ? { datePublished: article.datePublished, dateModified: article.datePublished }
+    : {}),
+  inLanguage: language,
+  author: { '@id': `${BASE_URL}/#organization` },
+  publisher: { '@id': `${BASE_URL}/#organization` },
+})
+
 type PersonInfo = { nameJa: string; nameEn: string; titleJa: string; titleEn: string }
 
 export const aboutPageJsonLd = (language: Language, people: PersonInfo[]) => ({
