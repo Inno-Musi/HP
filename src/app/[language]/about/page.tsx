@@ -1,9 +1,12 @@
 import { BreadCrumbs } from '@/components/bread-crumbs'
+import { JsonLd } from '@/components/json-ld'
 import { TitleMain } from '@/components/title-main'
 import {
   overviewsEn,
   overviewsJa,
 } from '@/features/about/_assets/const/overviews'
+import { buildMetadata } from '@/lib/metadata'
+import { aboutPageJsonLd } from '@/lib/structured-data'
 import Image from 'next/image'
 
 type Props = {
@@ -14,18 +17,22 @@ export const generateMetadata = async ({ params }: Props) => {
   const { language } = await params
 
   if (language === 'ja') {
-    return {
+    return buildMetadata({
+      language,
+      path: 'about',
       title: '会社概要 | 株式会社MUSICO',
       description:
         'MUSICOは、ホスピタリティを再設計する "A Hospitality Innovation Firm"。食・空間・運用・テクノロジーを一気通貫で組み立て、ヒトの幸福な時間を仕組みで増やしていきます。',
-    }
+    })
   }
 
-  return {
+  return buildMetadata({
+    language,
+    path: 'about',
     title: 'About Us | MUSICO Inc.',
     description:
       'MUSICO is "A Hospitality Innovation Firm," redesigning hospitality end to end. We weave food, space, operations, and technology into one continuous system to multiply meaningful time — by design.',
-  }
+  })
 }
 
 const members = [
@@ -70,14 +77,34 @@ export default async function AboutPage({ params }: Props) {
 
   return (
     <>
+      <JsonLd data={aboutPageJsonLd(language, members)} />
       <div className="bg-ivory">
         <div className="max-w-[calc(100vw-32px)] mx-auto py-24 md:py-32 flex flex-col gap-y-16 lg:gap-y-24">
+          {/* MUSICOとは（定義文・AIO用） */}
+          <div className="flex flex-col gap-y-6 max-w-[800px] lg:max-w-[1000px] w-full mx-auto text-darkNavy">
+            <div className="flex flex-col items-center text-center gap-y-3">
+              <p className="text-sm font-roboto tracking-[0.25em] uppercase text-brass">
+                About MUSICO
+              </p>
+              <h1 className="font-display text-3xl md:text-5xl leading-[1.2]">
+                {language === 'ja' ? 'MUSICOとは' : 'About MUSICO'}
+              </h1>
+              <div className="w-10 h-px bg-brass mt-2" />
+            </div>
+            <p className="text-base md:text-lg leading-relaxed">
+              {language === 'ja'
+                ? '株式会社MUSICO（ムジコ）は、東京を拠点とする Hospitality Innovation Firm です。外資系金融機関をはじめとする企業向けに、オフィスカフェ・社員食堂・エグゼクティブダイニングの運営、ケータリング、ホスピタリティ業界向けAI/DX支援、人材支援、地方創生支援を提供しています。食・空間・運用・テクノロジーを一気通貫で設計・実装することを強みとし、「幸福な時間を仕組みで増やす」ことをミッションとしています。2022年5月設立、代表取締役は瀬本頼一です。'
+                : 'MUSICO Inc. is a Tokyo-based Hospitality Innovation Firm. We operate office cafés, employee dining, and executive dining for corporations including global financial institutions, and provide catering, AI/DX solutions for the hospitality industry, talent solutions, and regional revitalization support. Our strength is designing and implementing food, space, operations, and technology as one continuous system, guided by our mission to multiply meaningful time by design. Founded in May 2022, led by Representative Director Yorikazu Semoto.'}
+            </p>
+          </div>
+
           {/* 経営理念 */}
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
             <TitleMain
               titleJa="経営理念"
               titleEn="Philosophy"
               language={language}
+              as="h2"
             />
 
             {/* Mission tagline + lead + 3 cards */}
@@ -236,6 +263,7 @@ export default async function AboutPage({ params }: Props) {
               titleJa="会社情報"
               titleEn="Company Profile"
               language={language}
+              as="h2"
             />
             <div className="flex flex-col gap-y-6 lg:gap-y-8 w-full bg-paper px-4 md:px-10 py-6 md:py-12 rounded-md">
               {overviews.map((overview) => (
@@ -258,6 +286,7 @@ export default async function AboutPage({ params }: Props) {
               titleJa="メンバー"
               titleEn="Members"
               language={language}
+              as="h2"
             />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {members.map((member) => (

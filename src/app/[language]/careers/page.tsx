@@ -1,6 +1,7 @@
 import { BreadCrumbs } from '@/components/bread-crumbs'
 import { Button } from '@/components/button'
 import { TitleMain } from '@/components/title-main'
+import { buildMetadata } from '@/lib/metadata'
 import Link from 'next/link'
 
 type Props = {
@@ -11,18 +12,22 @@ export const generateMetadata = async ({ params }: Props) => {
   const { language } = await params
 
   if (language === 'ja') {
-    return {
+    return buildMetadata({
+      language,
+      path: 'careers',
       title: '採用情報 | 株式会社MUSICO',
       description:
         '株式会社MUSICOの採用情報です。私たちと一緒にホスピタリティの未来を創りませんか。',
-    }
+    })
   }
 
-  return {
+  return buildMetadata({
+    language,
+    path: 'careers',
     title: 'Careers | MUSICO Inc.',
     description:
       'Career opportunities at MUSICO Inc. Join us in shaping the future of hospitality.',
-  }
+  })
 }
 
 const values = [

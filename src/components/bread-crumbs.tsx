@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import { FaChevronRight } from 'react-icons/fa6'
 import { twMerge } from 'tailwind-merge'
+import { JsonLd } from '@/components/json-ld'
+import { breadcrumbJsonLd } from '@/lib/structured-data'
 
 type Props = {
   language: 'en' | 'ja'
@@ -15,6 +17,7 @@ type Props = {
 export const BreadCrumbs = ({ language, crumbs, className }: Props) => {
   return (
     <div className="bg-ivory">
+      <JsonLd data={breadcrumbJsonLd(language, crumbs)} />
       <div
         className={twMerge(
           'flex gap-x-2 items-center w-[1200px] mx-auto max-w-[calc(100vw-32px)] py-2 text-darkNavy',

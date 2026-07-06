@@ -1,7 +1,10 @@
 import { BreadCrumbs } from '@/components/bread-crumbs'
 import { Button } from '@/components/button'
+import { JsonLd } from '@/components/json-ld'
 import { MaskReveal } from '@/components/mask-reveal'
 import { Reveal } from '@/components/reveal'
+import { buildMetadata } from '@/lib/metadata'
+import { faqPageJsonLd, serviceJsonLd } from '@/lib/structured-data'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -12,17 +15,21 @@ type Props = {
 export const generateMetadata = async ({ params }: Props) => {
   const { language } = await params
   if (language === 'ja') {
-    return {
+    return buildMetadata({
+      language,
+      path: 'regional',
       title: '地方創生支援 | 株式会社MUSICO',
       description:
         '食・農・観光を掛け合わせた地域ブランディングと事業開発を支援。自治体・地域事業者と共に持続可能なホスピタリティの仕組みを構築します。',
-    }
+    })
   }
-  return {
+  return buildMetadata({
+    language,
+    path: 'regional',
     title: 'Regional Revitalization | MUSICO Inc.',
     description:
       'Supporting regional branding and business development through food, agriculture, and tourism — building sustainable hospitality models with local governments and businesses.',
-  }
+  })
 }
 
 const painPoints = [
@@ -193,6 +200,18 @@ export default async function RegionalPage({ params }: Props) {
 
   return (
     <>
+      <JsonLd
+        data={serviceJsonLd(language, {
+          nameJa: '地方創生支援',
+          nameEn: 'Regional Revitalization',
+          path: 'regional',
+          descriptionJa:
+            '食・農・観光を掛け合わせた地域ブランディングと事業開発を支援。自治体・地域事業者と共に持続可能なホスピタリティの仕組みを構築します。',
+          descriptionEn:
+            'Supporting regional branding and business development through food, agriculture, and tourism — building sustainable hospitality models with local governments and businesses.',
+        })}
+      />
+      <JsonLd data={faqPageJsonLd(language, faqs)} />
       <div className="bg-ivory">
         <div className="relative bg-darkNavy text-white overflow-hidden">
           <Image

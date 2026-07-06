@@ -1,6 +1,7 @@
 import { BreadCrumbs } from '@/components/bread-crumbs'
 import { TitleMain } from '@/components/title-main'
 import { WorksList } from '@/features/works/_components/works-list'
+import { buildMetadata } from '@/lib/metadata'
 
 type Props = {
   params: Promise<{ language: 'en' | 'ja' }>
@@ -10,16 +11,20 @@ export const generateMetadata = async ({ params }: Props) => {
   const { language } = await params
 
   if (language === 'ja') {
-    return {
+    return buildMetadata({
+      language,
+      path: 'works',
       title: '実績・事例 | 株式会社MUSICO',
       description: '株式会社MUSICOの実績・事例をご紹介します。',
-    }
+    })
   }
 
-  return {
+  return buildMetadata({
+    language,
+    path: 'works',
     title: 'Works | MUSICO Inc.',
     description: 'Works and case studies from MUSICO Inc.',
-  }
+  })
 }
 
 export default async function WorksPage({ params }: Props) {
