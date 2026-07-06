@@ -8,6 +8,9 @@ type Props = {
   className?: string
   // Use on dark backgrounds so the heading stays readable (default dark navy).
   onDark?: boolean
+  // Heading level. Default 'h1'; use 'h2' for secondary sections on pages
+  // that already have a primary h1, to keep one h1 per page.
+  as?: 'h1' | 'h2'
 }
 
 export const TitleMain = ({
@@ -16,6 +19,7 @@ export const TitleMain = ({
   language,
   className,
   onDark = false,
+  as: Heading = 'h1',
 }: Props) => {
   const titleColor = onDark ? 'text-white' : 'text-darkNavy'
 
@@ -32,18 +36,18 @@ export const TitleMain = ({
             <p className="text-sm font-roboto tracking-[0.25em] uppercase text-brass">
               {titleEn}
             </p>
-            <h1
+            <Heading
               className={`font-display text-3xl md:text-5xl ${titleColor} leading-[1.2]`}
             >
               {titleJa}
-            </h1>
+            </Heading>
           </>
         ) : (
-          <h1
+          <Heading
             className={`font-display text-4xl md:text-5xl ${titleColor} leading-[1.2]`}
           >
             {titleEn}
-          </h1>
+          </Heading>
         )}
         <div className="w-10 h-px bg-brass mt-2" />
       </div>

@@ -1,8 +1,10 @@
 import { BreadCrumbs } from '@/components/bread-crumbs'
 import { Button } from '@/components/button'
+import { JsonLd } from '@/components/json-ld'
 import { MaskReveal } from '@/components/mask-reveal'
 import { Reveal } from '@/components/reveal'
 import { buildMetadata } from '@/lib/metadata'
+import { faqPageJsonLd, serviceJsonLd } from '@/lib/structured-data'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -198,6 +200,18 @@ export default async function CateringPage({ params }: Props) {
 
   return (
     <>
+      <JsonLd
+        data={serviceJsonLd(language, {
+          nameJa: 'ケータリングサービス',
+          nameEn: 'Catering Service',
+          path: 'catering',
+          descriptionJa:
+            'VIPイベント・社内パーティー・ビジネスランチまで。グレードに応じた食体験を設計・運営するMUSICOのケータリングサービス。外資金融・大手企業での豊富な実績。',
+          descriptionEn:
+            'From VIP events to business lunches — MUSICO designs and delivers food experiences calibrated to your occasion and standard. Proven track record with global financial institutions.',
+        })}
+      />
+      <JsonLd data={faqPageJsonLd(language, faqs)} />
       <div className="bg-ivory">
         <div className="relative bg-darkNavy text-white overflow-hidden">
           <Image

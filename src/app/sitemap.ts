@@ -1,3 +1,4 @@
+import { fetchInsightsList } from '@/services/insights/fetch-insights-list'
 import { fetchNewsList } from '@/services/news/fetch-news-list'
 import { fetchWorksList } from '@/services/works/fetch-works-list'
 import type { MetadataRoute } from 'next'
@@ -26,11 +27,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: 'about', priority: 0.8 },
     { path: 'services', priority: 0.8 },
     { path: 'corporate-food', priority: 0.7 },
+    { path: 'office-cafe', priority: 0.7 },
+    { path: 'executive-dining', priority: 0.7 },
     { path: 'catering', priority: 0.7 },
     { path: 'regional', priority: 0.7 },
     { path: 'dx-ai', priority: 0.7 },
     { path: 'talent', priority: 0.7 },
     { path: 'works', priority: 0.7 },
+    { path: 'insights', priority: 0.7 },
     { path: 'careers', priority: 0.7 },
     { path: 'contact', priority: 0.8 },
     { path: 'news', priority: 0.7 },
@@ -38,9 +42,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: 'security-policy', priority: 0.3 },
   ]
 
-  const [works, news] = await Promise.all([
+  const [works, news, insights] = await Promise.all([
     fetchWorksList({ limit: 100, fields: ['slug', 'publishedAt'] }),
     fetchNewsList({ limit: 100, fields: ['id', 'publishedAt'] }),
+    fetchInsightsList({ limit: 100, fields: ['slug', 'publishedAt'] }),
   ])
 
   return [
@@ -63,5 +68,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         item.publishedAt ? new Date(item.publishedAt) : undefined,
       ),
     ),
+    ...insights.contents
+      .filter((item) => item.slug)
+      .flatMap((item) =>
+        bilingualEntries(
+          `insights/${item.slug}`,
+          0.6,
+          item.publishedAt ? new Date(item.publishedAt) : undefined,
+        ),
+      ),
   ]
 }

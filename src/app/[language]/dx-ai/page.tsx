@@ -1,8 +1,10 @@
 import { BreadCrumbs } from '@/components/bread-crumbs'
 import { Button } from '@/components/button'
+import { JsonLd } from '@/components/json-ld'
 import { MaskReveal } from '@/components/mask-reveal'
 import { Reveal } from '@/components/reveal'
 import { buildMetadata } from '@/lib/metadata'
+import { faqPageJsonLd, serviceJsonLd } from '@/lib/structured-data'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -226,6 +228,18 @@ export default async function DxAiPage({ params }: Props) {
 
   return (
     <>
+      <JsonLd
+        data={serviceJsonLd(language, {
+          nameJa: 'AI/DX × Hospitality',
+          nameEn: 'AI/DX × Hospitality',
+          path: 'dx-ai',
+          descriptionJa:
+            '現場を知っているからこそ作れる、ホスピタリティ業界専用のAI/DX。属人化したノウハウを構造化し、現場で定着する仕組みへと再設計するMUSICOの注力領域。PoCパートナー募集中。',
+          descriptionEn:
+            'Built by people who run the floor — AI/DX designed specifically for the hospitality industry. We structure knowledge trapped in individuals into systems that take root on-site. PoC partners welcome.',
+        })}
+      />
+      <JsonLd data={faqPageJsonLd(language, faqs)} />
       <div className="bg-ivory">
         {/* Hero */}
         <div className="bg-darkNavy text-white">
