@@ -3,6 +3,7 @@ import { GeometricBackground } from '@/components/geometric-background'
 import { TitleMain } from '@/components/title-main'
 import { FormContactEn } from '@/features/contact/_components/form-contact-en'
 import { FormContactJa } from '@/features/contact/_components/form-contact-ja'
+import { buildMetadata } from '@/lib/metadata'
 
 type Props = {
   params: Promise<{ language: 'en' | 'ja' }>
@@ -12,16 +13,20 @@ export const generateMetadata = async ({ params }: Props) => {
   const { language } = await params
 
   if (language === 'ja') {
-    return {
+    return buildMetadata({
+      language,
+      path: 'contact',
       title: 'お問い合わせ | 株式会社MUSICO',
       description: '株式会社MUSICOへのお問い合わせフォームです。',
-    }
+    })
   }
 
-  return {
+  return buildMetadata({
+    language,
+    path: 'contact',
     title: 'Contact | MUSICO Inc.',
     description: 'Contact form for MUSICO Inc.',
-  }
+  })
 }
 
 export default async function ContactPage({ params }: Props) {

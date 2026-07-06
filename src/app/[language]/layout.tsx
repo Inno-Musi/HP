@@ -3,6 +3,8 @@ import type { ReactNode } from 'react'
 import '../globals.css'
 import { Footer } from '@/components/footer'
 import { HeaderEn } from '@/components/header-en'
+import { JsonLd } from '@/components/json-ld'
+import { organizationJsonLd, webSiteJsonLd } from '@/lib/structured-data'
 import { GoogleTagManager } from '@next/third-parties/google'
 import { Fraunces, Roboto, Sawarabi_Gothic, Shippori_Mincho } from 'next/font/google'
 import { twMerge } from 'tailwind-merge'
@@ -52,6 +54,8 @@ export default async function RootLayout({ children, params }: Props) {
           language === 'ja' ? 'font-sawarabiGothic' : 'font-roboto',
         )}
       >
+        <JsonLd data={organizationJsonLd(language)} />
+        <JsonLd data={webSiteJsonLd(language)} />
         {language === 'ja' && <HeaderJa />}
         {language === 'en' && <HeaderEn />}
         <main className="pt-16">{children}</main>

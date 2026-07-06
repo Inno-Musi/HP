@@ -2,6 +2,7 @@ import { BreadCrumbs } from '@/components/bread-crumbs'
 import { Button } from '@/components/button'
 import { MaskReveal } from '@/components/mask-reveal'
 import { Reveal } from '@/components/reveal'
+import { buildMetadata } from '@/lib/metadata'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -12,17 +13,21 @@ type Props = {
 export const generateMetadata = async ({ params }: Props) => {
   const { language } = await params
   if (language === 'ja') {
-    return {
+    return buildMetadata({
+      language,
+      path: 'catering',
       title: 'ケータリングサービス | 株式会社MUSICO',
       description:
         'VIPイベント・社内パーティー・ビジネスランチまで。グレードに応じた食体験を設計・運営するMUSICOのケータリングサービス。外資金融・大手企業での豊富な実績。',
-    }
+    })
   }
-  return {
+  return buildMetadata({
+    language,
+    path: 'catering',
     title: 'Catering Service | MUSICO Inc.',
     description:
       'From VIP events to business lunches — MUSICO designs and delivers food experiences calibrated to your occasion and standard. Proven track record with global financial institutions.',
-  }
+  })
 }
 
 const painPoints = [

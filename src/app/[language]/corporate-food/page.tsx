@@ -2,6 +2,7 @@ import { BreadCrumbs } from '@/components/bread-crumbs'
 import { Button } from '@/components/button'
 import { MaskReveal } from '@/components/mask-reveal'
 import { Reveal } from '@/components/reveal'
+import { buildMetadata } from '@/lib/metadata'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -12,17 +13,21 @@ type Props = {
 export const generateMetadata = async ({ params }: Props) => {
   const { language } = await params
   if (language === 'ja') {
-    return {
+    return buildMetadata({
+      language,
+      path: 'corporate-food',
       title: 'コーポレートフードサービス | 株式会社MUSICO',
       description:
         '外資・大手企業のオフィスカフェ・社員食堂を企画から運営まで一貫支援。品質・コスト・従業員エンゲージメントを同時に実現するMUSICOのコーポレートフードサービス。',
-    }
+    })
   }
-  return {
+  return buildMetadata({
+    language,
+    path: 'corporate-food',
     title: 'Corporate Food Service | MUSICO Inc.',
     description:
       'End-to-end support for office cafés and employee dining at global corporations — balancing quality, cost, and employee engagement.',
-  }
+  })
 }
 
 const painPoints = [

@@ -1,5 +1,6 @@
 import { BreadCrumbs } from '@/components/bread-crumbs'
 import { Button } from '@/components/button'
+import { buildMetadata } from '@/lib/metadata'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -11,18 +12,22 @@ export const generateMetadata = async ({ params }: Props) => {
   const { language } = await params
 
   if (language === 'ja') {
-    return {
+    return buildMetadata({
+      language,
+      path: 'services',
       title: '事業内容 | 株式会社MUSICO',
       description:
         'MUSICOは、ホスピタリティを再設計する Hospitality Innovation Firm。フード／ホスピタリティ・AI/DX・人材支援の3注力領域と、ケータリング・地方創生の関連領域で、ホスピタリティ業界の構造課題に挑みます。',
-    }
+    })
   }
 
-  return {
+  return buildMetadata({
+    language,
+    path: 'services',
     title: 'Services | MUSICO Inc.',
     description:
       'MUSICO is a Hospitality Innovation Firm. Three focus areas — Food/Hospitality, AI/DX, and Talent — alongside related areas of Catering and Regional Revitalization, tackling the structural challenges of the hospitality industry.',
-  }
+  })
 }
 
 const featuredServices = [

@@ -6,11 +6,14 @@ export const middleware = (req: NextRequest) => {
   const firstSegment = pathSegments[0]
 
   if (pathSegments.length === 0 || !['ja', 'en'].includes(firstSegment)) {
-    return NextResponse.redirect(new URL('/ja', req.url))
+    return NextResponse.redirect(new URL('/ja', req.url), 308)
   }
 
   if (pathSegments[1] === 'philosophy') {
-    return NextResponse.redirect(new URL(`/${pathSegments[0]}/about`, req.url))
+    return NextResponse.redirect(
+      new URL(`/${pathSegments[0]}/about`, req.url),
+      308,
+    )
   }
 
   // BASIC認証

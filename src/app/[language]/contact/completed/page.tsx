@@ -1,5 +1,6 @@
 import { BreadCrumbs } from '@/components/bread-crumbs'
 import { GeometricBackground } from '@/components/geometric-background'
+import { buildMetadata } from '@/lib/metadata'
 import Link from 'next/link'
 
 type Props = {
@@ -13,14 +14,24 @@ export const generateMetadata = async ({ params }: Props) => {
 
   if (language === 'ja') {
     return {
-      title: 'お問い合わせ完了 | 株式会社MUSICO',
-      description: '株式会社MUSICOへのお問い合わせ完了ページです。',
+      ...buildMetadata({
+        language,
+        path: 'contact/completed',
+        title: 'お問い合わせ完了 | 株式会社MUSICO',
+        description: '株式会社MUSICOへのお問い合わせ完了ページです。',
+      }),
+      robots: { index: false, follow: false },
     }
   }
 
   return {
-    title: 'Contact Completed | MUSICO Inc.',
-    description: 'Contact completion page for MUSICO Inc.',
+    ...buildMetadata({
+      language,
+      path: 'contact/completed',
+      title: 'Contact Completed | MUSICO Inc.',
+      description: 'Contact completion page for MUSICO Inc.',
+    }),
+    robots: { index: false, follow: false },
   }
 }
 
