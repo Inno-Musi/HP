@@ -5,7 +5,7 @@ import { Footer } from '@/components/footer'
 import { HeaderEn } from '@/components/header-en'
 import { JsonLd } from '@/components/json-ld'
 import { organizationJsonLd, webSiteJsonLd } from '@/lib/structured-data'
-import { GoogleTagManager } from '@next/third-parties/google'
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 import { Fraunces, Roboto, Sawarabi_Gothic, Shippori_Mincho } from 'next/font/google'
 import { twMerge } from 'tailwind-merge'
 
@@ -47,7 +47,8 @@ export default async function RootLayout({ children, params }: Props) {
 
   return (
     <html lang={language}>
-      <GoogleTagManager gtmId={process.env.GTM_ID as string} />
+      {process.env.GTM_ID && <GoogleTagManager gtmId={process.env.GTM_ID} />}
+      {process.env.GA_ID && <GoogleAnalytics gaId={process.env.GA_ID} />}
       <body
         className={twMerge(
           `${sawarabiGothic.variable} ${roboto.variable} ${fraunces.variable} ${shipporiMincho.variable}`,
