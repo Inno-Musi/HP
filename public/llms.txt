@@ -1,0 +1,34 @@
+# MUSICO Inc. (株式会社MUSICO)
+
+> 株式会社MUSICO（ムジコ）は、東京を拠点とするHospitality Innovation Firmです。外資系金融機関をはじめとする企業向けに、オフィスカフェ・社員食堂・エグゼクティブダイニングの運営、ケータリング、ホスピタリティ業界向けAI/DX支援、人材支援、地方創生支援を提供しています。食・空間・運用・テクノロジーを一気通貫で設計・実装することを強みとし、「幸福な時間を仕組みで増やす」ことをミッションとしています。2022年5月設立、代表取締役は瀬本頼一です。
+
+> MUSICO Inc. is a Tokyo-based Hospitality Innovation Firm. We operate office cafés, employee dining, and executive dining for corporations including global financial institutions, and provide catering, AI/DX solutions for the hospitality industry, talent solutions, and regional revitalization support. Founded in May 2022; Representative Director: Yorikazu Semoto.
+
+## 会社情報 / Company
+
+- [会社概要（MUSICOとは）](https://www.musico.co.jp/ja/about): 定義・経営理念・会社情報・メンバー
+- [About Us (English)](https://www.musico.co.jp/en/about)
+- 所在地: 〒152-0023 東京都目黒区八雲3-17-20
+
+## サービス / Services
+
+- [事業内容](https://www.musico.co.jp/ja/services): 3つの注力領域（フード／ホスピタリティ・AI/DX・人材支援）と2つの関連領域（ケータリング・地方創生）
+- [法人向けフードサービス](https://www.musico.co.jp/ja/corporate-food): 外資・大手企業のオフィスカフェ・社員食堂の企画〜運営
+- [オフィスカフェ運営](https://www.musico.co.jp/ja/office-cafe): バリスタ育成・メニュー開発・データ改善までワンストップ
+- [エグゼクティブダイニング](https://www.musico.co.jp/ja/executive-dining): 役員フロア・VIP向けダイニングの設計・運営
+- [ケータリング・イベント](https://www.musico.co.jp/ja/catering): VIP会食・レセプション・社内イベント
+- [AI/DX × Hospitality](https://www.musico.co.jp/ja/dx-ai): ホスピタリティ業界向けのAI/DX支援
+- [人材支援](https://www.musico.co.jp/ja/talent): 採用・育成・派遣・業務委託・業務再設計の組み合わせ
+- [地方創生支援](https://www.musico.co.jp/ja/regional): 食・農・観光を掛け合わせた地域ブランディング
+
+## 実績・情報 / Work & Updates
+
+- [実績・事例](https://www.musico.co.jp/ja/works): 導入事例（フード／ホスピタリティ、AI・AX・DX）
+- [インサイト](https://www.musico.co.jp/ja/insights): 記事・コラム
+- [お知らせ](https://www.musico.co.jp/ja/news)
+- [採用情報](https://www.musico.co.jp/ja/careers)
+- [お問い合わせ](https://www.musico.co.jp/ja/contact)
+
+## Sitemap
+
+- https://www.musico.co.jp/sitemap.xml

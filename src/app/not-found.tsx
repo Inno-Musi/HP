@@ -32,6 +32,17 @@ export default async function NotFound() {
             >
               トップページに戻る / Return to the homepage
             </Link>
+            <div className="flex gap-x-4 justify-center lg:justify-start mt-2 text-sm">
+              <Link href="/ja/services" className="text-vividBlue underline">
+                事業内容
+              </Link>
+              <Link href="/ja/works" className="text-vividBlue underline">
+                実績・事例
+              </Link>
+              <Link href="/ja/contact" className="text-vividBlue underline">
+                お問い合わせ
+              </Link>
+            </div>
           </div>
         </div>
       </body>
