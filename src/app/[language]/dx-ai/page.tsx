@@ -5,6 +5,8 @@ import { MaskReveal } from '@/components/mask-reveal'
 import { Reveal } from '@/components/reveal'
 import { buildMetadata } from '@/lib/metadata'
 import { faqPageJsonLd, serviceJsonLd } from '@/lib/structured-data'
+import { fetchWorksList } from '@/services/works/fetch-works-list'
+import type { WorkItem } from '@/services/works/types'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -172,7 +174,18 @@ const supportPhases = [
   },
 ]
 
-const relatedCases = [
+type CaseCard = {
+  slug: string
+  titleJa: string
+  titleEn: string
+  categoryJa: string
+  categoryEn: string
+  imageUrl?: string
+}
+
+// Shown while fewer than 3 AI/AX/DX cases are published; CMS cases take
+// precedence and push these out as they go live.
+const fallbackCases: CaseCard[] = [
   {
     slug: 'us-ibank-executive-dining',
     titleJa: '米国系投資銀行 オフィスホスピタリティ運営',
@@ -195,6 +208,30 @@ const relatedCases = [
     categoryEn: 'KPI Monitoring',
   },
 ]
+
+// Same tagging rule as the works list: an AI focus case carries AI / AX / DX
+// in its category text.
+const isAiWork = (w: WorkItem) =>
+  /AI|AX|DX/.test(`${w.categoryJa ?? ''} ${w.categoryEn ?? ''}`)
+
+const fetchRelatedCases = async (): Promise<CaseCard[]> => {
+  const res = await fetchWorksList({ orders: '-publishedAt', limit: 20 })
+  const aiCases: CaseCard[] = res.contents
+    .filter((w) => isAiWork(w) && w.slug)
+    .slice(0, 3)
+    .map((w) => ({
+      slug: w.slug as string,
+      titleJa: w.titleJa,
+      titleEn: w.titleEn || w.titleJa,
+      categoryJa: w.categoryJa || 'AI活用・AX・DX',
+      categoryEn: w.categoryEn || 'AI・AX・DX',
+      imageUrl: w.image?.url,
+    }))
+  const padding = fallbackCases
+    .filter((f) => !aiCases.some((c) => c.slug === f.slug))
+    .slice(0, Math.max(0, 3 - aiCases.length))
+  return [...aiCases, ...padding]
+}
 
 const faqs = [
   {
@@ -225,6 +262,7 @@ const faqs = [
 
 export default async function DxAiPage({ params }: Props) {
   const { language } = await params
+  const relatedCases = await fetchRelatedCases()
 
   return (
     <>
@@ -703,7 +741,7 @@ export default async function DxAiPage({ params }: Props) {
                 >
                   <div className="relative aspect-[16/10] bg-zinc-100">
                     <Image
-                      src={`/works/${c.slug}.jpg`}
+                      src={c.imageUrl ?? `/works/${c.slug}.jpg`}
                       alt={language === 'ja' ? c.titleJa : c.titleEn}
                       fill
                       className="object-cover group-hover:scale-[1.02] transition-transform duration-300"
