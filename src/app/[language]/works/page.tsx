@@ -15,7 +15,8 @@ export const generateMetadata = async ({ params }: Props) => {
       language,
       path: 'works',
       title: '実績・事例 | 株式会社MUSICO',
-      description: '株式会社MUSICOの実績・事例をご紹介します。',
+      description:
+        '外資系金融機関のオフィスカフェ・エグゼクティブダイニング運営から、AI・自動化による業務再設計、地方創生まで。株式会社MUSICOの実績・導入事例をご紹介します。',
     })
   }
 
@@ -23,7 +24,8 @@ export const generateMetadata = async ({ params }: Props) => {
     language,
     path: 'works',
     title: 'Works | MUSICO Inc.',
-    description: 'Works and case studies from MUSICO Inc.',
+    description:
+      'Case studies from MUSICO Inc. — office café and executive dining operations for global financial institutions, AI-driven operational redesign, and regional revitalization.',
   })
 }
 
