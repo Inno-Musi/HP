@@ -4,6 +4,7 @@ import dayjs from '@/lib/dayjs'
 import { articleJsonLd } from '@/lib/structured-data'
 import { removeHtmlTag } from '@/helpers/remove-html-tag'
 import { fetchWorkDetail } from '@/services/works/fetch-work-detail'
+import type { WorkItem } from '@/services/works/types'
 import parse from 'html-react-parser'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -23,6 +24,18 @@ export const WorkContent = async ({ language, slug }: Props) => {
     notFound()
   }
 
+  return <WorkArticle work={work} language={language} />
+}
+
+type ArticleProps = {
+  work: WorkItem
+  language: 'ja' | 'en'
+}
+
+// Presentational body shared by the public detail page and the draft
+// preview route (/works/preview).
+export const WorkArticle = ({ work, language }: ArticleProps) => {
+  const slug = work.slug ?? work.id
   const cmsImage = language === 'en' ? work.imageEn || work.image : work.image
   const imageUrl =
     cmsImage?.url ?? (work.slug ? `/works/${work.slug}.jpg` : undefined)

@@ -6,7 +6,13 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/ja/contact/completed', '/en/contact/completed', '/api/'],
+        disallow: [
+          '/ja/contact/completed',
+          '/en/contact/completed',
+          '/ja/works/preview',
+          '/en/works/preview',
+          '/api/',
+        ],
       },
     ],
     sitemap: 'https://www.musico.co.jp/sitemap.xml',
