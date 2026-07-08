@@ -4,20 +4,56 @@ import { Button } from '@/components/button'
 import { InitialAnimation } from '@/components/initial-animation'
 import { MotionUp } from '@/components/motion-up'
 import { motion } from 'framer-motion'
+import { getImageProps } from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 type Props = {
   language: 'en' | 'ja'
 }
 
+// Replay the opening animation once per browser session; repeat page views
+// within the session go straight to the hero.
+const INTRO_SEEN_KEY = 'musico_intro_seen'
+
 export const SectionFv = ({ language }: Props) => {
   const [showInitialAnimation, setShowInitialAnimation] = useState(true)
+
+  useEffect(() => {
+    if (sessionStorage.getItem(INTRO_SEEN_KEY)) {
+      setShowInitialAnimation(false)
+    }
+  }, [])
+
+  const handleIntroComplete = () => {
+    sessionStorage.setItem(INTRO_SEEN_KEY, '1')
+    setShowInitialAnimation(false)
+  }
+
+  // Art-directed hero via <picture>: one download per breakpoint, and the
+  // <img> is visible to the preload scanner (unlike a CSS background).
+  const {
+    props: { srcSet: desktopSrcSet },
+  } = getImageProps({
+    alt: '',
+    fill: true,
+    sizes: '100vw',
+    quality: 80,
+    src: '/home-hero.jpg',
+  })
+  const { props: heroImgProps } = getImageProps({
+    alt: '',
+    fill: true,
+    sizes: '100vw',
+    quality: 80,
+    priority: true,
+    src: '/home-hero-mobile.jpg',
+  })
 
   return (
     <>
       {showInitialAnimation && (
-        <InitialAnimation onComplete={() => setShowInitialAnimation(false)} />
+        <InitialAnimation onComplete={handleIntroComplete} />
       )}
 
       {/* Hero is always rendered (server-side) so the h1 is crawlable; the
@@ -28,14 +64,14 @@ export const SectionFv = ({ language }: Props) => {
         transition={{ duration: 0.8, ease: 'easeOut' }}
         className="relative h-[64svh] min-h-[520px] max-h-[680px] md:h-auto md:min-h-[calc(100vh-64px)] md:max-h-none w-full mx-auto overflow-hidden"
       >
-        <div
-          className="absolute inset-0 w-full h-full bg-cover bg-center z-0 md:hidden animate-kenburns"
-          style={{ backgroundImage: "url('/home-hero-mobile.jpg')" }}
-        />
-        <div
-          className="absolute inset-0 hidden w-full h-full bg-cover bg-center z-0 md:block animate-kenburns"
-          style={{ backgroundImage: "url('/home-hero.jpg')" }}
-        />
+        <picture>
+          <source media="(min-width: 768px)" srcSet={desktopSrcSet} sizes="100vw" />
+          {/* eslint-disable-next-line jsx-a11y/alt-text */}
+          <img
+            {...heroImgProps}
+            className="object-cover object-center z-0 animate-kenburns"
+          />
+        </picture>
 
         <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/20 to-black/10 z-[1]" />
 
