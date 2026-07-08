@@ -35,6 +35,11 @@ const mainLinks = [
     href: '/works',
   },
   {
+    label: 'お知らせ',
+    labelEn: 'NEWS',
+    href: '/news',
+  },
+  {
     label: '採用',
     labelEn: 'CAREERS',
     href: '/careers',
