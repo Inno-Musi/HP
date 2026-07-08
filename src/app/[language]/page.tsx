@@ -1,5 +1,6 @@
 import { SectionContact } from '@/features/root/_components/section-contact'
 import { SectionFv } from '@/features/root/_components/section-fv'
+import { SectionNews } from '@/features/root/_components/section-news'
 import { SectionServices } from '@/features/root/_components/section-services'
 import { SectionWorks } from '@/features/root/_components/section-works'
 import { buildMetadata } from '@/lib/metadata'
@@ -41,6 +42,7 @@ export default async function HomePage({ params }: Props) {
       <SectionFv language={language} />
       <SectionServices language={language} />
       <SectionWorks language={language} />
+      <SectionNews language={language} />
       <SectionContact language={language} />
     </div>
   )
