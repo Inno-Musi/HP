@@ -78,6 +78,11 @@ export const SectionFv = ({ language }: Props) => {
         <div className="absolute w-full h-full flex flex-col gap-y-5 md:gap-y-7 items-start justify-end pb-14 md:pb-16 pl-8 pr-8 md:pl-16 md:pr-16 z-10 max-w-[1200px]">
           <MotionUp duration={1} initialY={0}>
             <div className="flex flex-col gap-y-3 md:gap-y-4 text-white">
+              {/* Brand statement previously baked into the hero image; now
+                  real text so it can't collide with the headline. */}
+              <p className="font-display italic text-lg md:text-2xl tracking-wide opacity-95 drop-shadow-sm">
+                We&rsquo;re a Hospitality Innovation Firm
+              </p>
               <h1 className="font-display text-3xl sm:text-4xl md:text-6xl leading-[1.15] drop-shadow-sm">
                 {language === 'ja' ? (
                   <>
@@ -95,8 +100,8 @@ export const SectionFv = ({ language }: Props) => {
               </h1>
               <p className="text-sm md:text-lg leading-relaxed max-w-[34rem] opacity-95">
                 {language === 'ja'
-                  ? 'MUSICOは、食・空間・運用・テクノロジーを一気通貫で設計・実装する Hospitality Innovation Firm です。'
-                  : 'MUSICO is a Hospitality Innovation Firm that designs and implements food, space, operations, and technology as one continuous system.'}
+                  ? 'MUSICOは、食・空間・運用・テクノロジーを一気通貫で設計・実装します。'
+                  : 'MUSICO designs and implements food, space, operations, and technology as one continuous system.'}
               </p>
             </div>
           </MotionUp>
