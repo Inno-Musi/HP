@@ -40,6 +40,11 @@ const mainLinks = [
     href: '/news',
   },
   {
+    label: 'インサイト',
+    labelEn: 'INSIGHTS',
+    href: '/insights',
+  },
+  {
     label: '採用',
     labelEn: 'CAREERS',
     href: '/careers',
