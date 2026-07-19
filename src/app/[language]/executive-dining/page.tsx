@@ -3,6 +3,11 @@ import { Button } from '@/components/button'
 import { JsonLd } from '@/components/json-ld'
 import { MaskReveal } from '@/components/mask-reveal'
 import { Reveal } from '@/components/reveal'
+import {
+  TrustBar,
+  companyTrustSectors,
+  companyTrustStats,
+} from '@/components/trust-bar'
 import { buildMetadata } from '@/lib/metadata'
 import { faqPageJsonLd, serviceJsonLd } from '@/lib/structured-data'
 import Image from 'next/image'
@@ -197,6 +202,15 @@ export default async function ExecutiveDiningPage({ params }: Props) {
             </Reveal>
           </div>
         </div>
+
+        {/* Trust bar */}
+        <TrustBar
+          language={language}
+          labelJa="支援実績のある業種"
+          labelEn="Sectors We Serve"
+          sectors={companyTrustSectors}
+          stats={companyTrustStats}
+        />
 
         <div className="max-w-[calc(100vw-32px)] mx-auto py-24 md:py-32 flex flex-col gap-y-20 lg:gap-y-28">
           {/* What is Executive Dining */}

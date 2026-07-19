@@ -3,6 +3,11 @@ import { SectionFv } from '@/features/root/_components/section-fv'
 import { SectionNews } from '@/features/root/_components/section-news'
 import { SectionServices } from '@/features/root/_components/section-services'
 import { SectionWorks } from '@/features/root/_components/section-works'
+import {
+  TrustBar,
+  companyTrustSectors,
+  companyTrustStats,
+} from '@/components/trust-bar'
 import { buildMetadata } from '@/lib/metadata'
 import type { Metadata } from 'next'
 
@@ -40,6 +45,13 @@ export default async function HomePage({ params }: Props) {
   return (
     <div className="flex flex-col gap-y-12 lg:gap-y-20 bg-ivory overflow-hidden">
       <SectionFv language={language} />
+      <TrustBar
+        language={language}
+        labelJa="支援実績のある業種"
+        labelEn="Sectors We Serve"
+        sectors={companyTrustSectors}
+        stats={companyTrustStats}
+      />
       <SectionServices language={language} />
       <SectionWorks language={language} />
       <SectionNews language={language} />

@@ -3,6 +3,7 @@ import { Button } from '@/components/button'
 import { JsonLd } from '@/components/json-ld'
 import { MaskReveal } from '@/components/mask-reveal'
 import { Reveal } from '@/components/reveal'
+import { TrustBar } from '@/components/trust-bar'
 import { buildMetadata } from '@/lib/metadata'
 import { faqPageJsonLd, serviceJsonLd } from '@/lib/structured-data'
 import { fetchWorksList } from '@/services/works/fetch-works-list'
@@ -35,6 +36,35 @@ export const generateMetadata = async ({ params }: Props) => {
       'Built by people who run the floor — AI/DX designed specifically for the hospitality industry. We structure knowledge trapped in individuals into systems that take root on-site. PoC partners welcome.',
   })
 }
+
+// Industry-context social proof (built-for verticals, not food-ops stats).
+const trustSectors = [
+  { ja: 'ホテル', en: 'Hotels' },
+  { ja: 'レストラン・飲食チェーン', en: 'Restaurants & Chains' },
+  { ja: 'イベント運営', en: 'Event Operators' },
+  { ja: 'リゾート', en: 'Resorts' },
+]
+
+const trustStats = [
+  {
+    valueJa: '現場運用者発',
+    valueEn: 'Built by Operators',
+    labelJa: '机上論ではない実装',
+    labelEn: 'implementation, not theory',
+  },
+  {
+    valueJa: 'AIネイティブ',
+    valueEn: 'AI-Native',
+    labelJa: '自社で実証した方法論',
+    labelEn: 'methodology proven in-house',
+  },
+  {
+    valueJa: '属人化→仕組み化',
+    valueEn: 'Individual → System',
+    labelJa: '現場で定着するDX',
+    labelEn: 'DX that takes root on-site',
+  },
+]
 
 const painPoints = [
   {
@@ -330,62 +360,13 @@ export default async function DxAiPage({ params }: Props) {
         </div>
 
         {/* Trust bar */}
-        <div className="border-b border-hairline bg-paper">
-          <div className="max-w-[800px] lg:max-w-[1000px] w-full mx-auto px-4 py-8 md:py-10 flex flex-col gap-y-6">
-            <p className="text-center text-sm font-roboto tracking-[0.2em] uppercase text-brass">
-              {language === 'ja' ? '対象業界' : 'Who We Build For'}
-            </p>
-            <div className="flex flex-wrap justify-center gap-2 md:gap-3">
-              {[
-                { ja: 'ホテル', en: 'Hotels' },
-                { ja: 'レストラン・飲食チェーン', en: 'Restaurants & Chains' },
-                { ja: 'イベント運営', en: 'Event Operators' },
-                { ja: 'リゾート', en: 'Resorts' },
-              ].map((s) => (
-                <span
-                  key={s.ja}
-                  className="px-4 py-2 rounded-full border border-hairline bg-ivory text-xs md:text-sm font-semibold text-darkNavy"
-                >
-                  {language === 'ja' ? s.ja : s.en}
-                </span>
-              ))}
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-              {[
-                {
-                  vJa: '現場運用者発',
-                  vEn: 'Built by Operators',
-                  lJa: '机上論ではない実装',
-                  lEn: 'implementation, not theory',
-                },
-                {
-                  vJa: 'AIネイティブ',
-                  vEn: 'AI-Native',
-                  lJa: '自社で実証した方法論',
-                  lEn: 'methodology proven in-house',
-                },
-                {
-                  vJa: '属人化→仕組み化',
-                  vEn: 'Individual → System',
-                  lJa: '現場で定着するDX',
-                  lEn: 'DX that takes root on-site',
-                },
-              ].map((st) => (
-                <div
-                  key={st.lJa}
-                  className="flex flex-col items-center text-center gap-y-1"
-                >
-                  <p className="text-xl md:text-2xl font-bold text-darkNavy">
-                    {language === 'ja' ? st.vJa : st.vEn}
-                  </p>
-                  <p className="text-xs md:text-sm text-muted leading-relaxed">
-                    {language === 'ja' ? st.lJa : st.lEn}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+        <TrustBar
+          language={language}
+          labelJa="対象業界"
+          labelEn="Who We Build For"
+          sectors={trustSectors}
+          stats={trustStats}
+        />
 
         <div className="max-w-[calc(100vw-32px)] mx-auto py-24 md:py-32 flex flex-col gap-y-20 lg:gap-y-28">
           {/* Vision / Our Stance */}

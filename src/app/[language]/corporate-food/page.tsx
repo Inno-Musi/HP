@@ -3,6 +3,11 @@ import { Button } from '@/components/button'
 import { JsonLd } from '@/components/json-ld'
 import { MaskReveal } from '@/components/mask-reveal'
 import { Reveal } from '@/components/reveal'
+import {
+  TrustBar,
+  companyTrustSectors,
+  companyTrustStats,
+} from '@/components/trust-bar'
 import { buildMetadata } from '@/lib/metadata'
 import { faqPageJsonLd, serviceJsonLd } from '@/lib/structured-data'
 import Image from 'next/image'
@@ -113,36 +118,6 @@ const strengths = [
       'ハラル・ベジタリアン・アレルギー対応など、多様な食事ニーズに対応した献立設計と衛生管理体制を構築します。',
     descEn:
       'Menu planning and hygiene management systems built to accommodate diverse dietary needs — halal, vegetarian, allergen-conscious and more.',
-  },
-]
-
-// Anonymized sectors served (real track record, no client names).
-const trustSectors = [
-  { ja: '米系投資銀行', en: 'US Investment Bank' },
-  { ja: '米系金融機関', en: 'US Financial Institution' },
-  { ja: '大手エンタープライズ', en: 'Major Enterprise' },
-  { ja: 'グローバルIT', en: 'Global Tech' },
-]
-
-// Honest, fact-based numbers.
-const trustStats = [
-  {
-    valueJa: '1,000名以上',
-    valueEn: '1,000+',
-    labelJa: '規模のオフィスF&Bを運営',
-    labelEn: 'person office F&B operated',
-  },
-  {
-    valueJa: '企画→運営',
-    valueEn: 'Plan → Run',
-    labelJa: '一気通貫で支援',
-    labelEn: 'end-to-end support',
-  },
-  {
-    valueJa: '多言語・多文化',
-    valueEn: 'Multilingual',
-    labelJa: 'グローバル基準の接遇',
-    labelEn: 'global-standard service',
   },
 ]
 
@@ -274,38 +249,13 @@ export default async function CorporateFoodPage({ params }: Props) {
         </div>
 
         {/* Trust bar */}
-        <div className="border-b border-hairline bg-paper">
-          <div className="max-w-[800px] lg:max-w-[1000px] w-full mx-auto px-4 py-8 md:py-10 flex flex-col gap-y-6">
-            <p className="text-center text-sm font-roboto tracking-[0.2em] uppercase text-brass">
-              {language === 'ja' ? '支援実績のある業種' : 'Sectors We Serve'}
-            </p>
-            <div className="flex flex-wrap justify-center gap-2 md:gap-3">
-              {trustSectors.map((s) => (
-                <span
-                  key={s.ja}
-                  className="px-4 py-2 rounded-full border border-hairline bg-ivory text-xs md:text-sm font-semibold text-darkNavy"
-                >
-                  {language === 'ja' ? s.ja : s.en}
-                </span>
-              ))}
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-              {trustStats.map((st) => (
-                <div
-                  key={st.labelJa}
-                  className="flex flex-col items-center text-center gap-y-1"
-                >
-                  <p className="text-xl md:text-2xl font-bold text-darkNavy">
-                    {language === 'ja' ? st.valueJa : st.valueEn}
-                  </p>
-                  <p className="text-xs md:text-sm text-muted leading-relaxed">
-                    {language === 'ja' ? st.labelJa : st.labelEn}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+        <TrustBar
+          language={language}
+          labelJa="支援実績のある業種"
+          labelEn="Sectors We Serve"
+          sectors={companyTrustSectors}
+          stats={companyTrustStats}
+        />
 
         <div className="max-w-[calc(100vw-32px)] mx-auto py-24 md:py-32 flex flex-col gap-y-20 lg:gap-y-28">
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
