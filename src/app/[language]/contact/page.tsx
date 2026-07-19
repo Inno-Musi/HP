@@ -65,6 +65,30 @@ export default async function ContactPage({ params }: Props) {
           </div>
         )}
         {language === 'ja' ? <FormContactJa /> : <FormContactEn />}
+        <div className="max-w-[600px] w-full mx-auto text-center text-sm md:text-base leading-6 md:leading-7 text-white">
+          {language === 'ja' ? (
+            <p>
+              フォーム以外のお問い合わせは、
+              <br className="block md:hidden" />
+              <a href="mailto:info@musico.co.jp" className="underline">
+                info@musico.co.jp
+              </a>
+              宛にご連絡ください。
+              <br />
+              （受付時間：平日9:00〜17:00）
+            </p>
+          ) : (
+            <p>
+              You can also reach us by email at{' '}
+              <a href="mailto:info@musico.co.jp" className="underline">
+                info@musico.co.jp
+              </a>
+              .
+              <br />
+              (Business hours: Weekdays 9:00–17:00)
+            </p>
+          )}
+        </div>
       </div>
       <BreadCrumbs
         language={language}

@@ -75,7 +75,7 @@ export const FormContactEn = () => {
         <ErrorMessage error={actionState?.errors?.email} />
       </div>
       <div className="flex flex-col gap-y-1">
-        <Label text="Phone Number" htmlFor="phoneNumber" required />
+        <Label text="Phone Number (Optional)" htmlFor="phoneNumber" />
         <Input
           type="tel"
           name="phoneNumber"
