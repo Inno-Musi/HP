@@ -93,8 +93,8 @@ export default async function AboutPage({ params }: Props) {
             </div>
             <p className="text-base md:text-lg leading-relaxed">
               {language === 'ja'
-                ? '株式会社MUSICO（ムジコ）は、東京を拠点とする Hospitality Innovation Firm です。外資系金融機関をはじめとする企業向けに、オフィスカフェ・社員食堂・エグゼクティブダイニングの運営、ケータリング、ホスピタリティ業界向けAI/DX支援、人材支援、地方創生支援を提供しています。食・空間・運用・テクノロジーを一気通貫で設計・実装することを強みとし、「幸福な時間を仕組みで増やす」ことをミッションとしています。2022年5月設立、代表取締役は瀬本頼一です。'
-                : 'MUSICO Inc. is a Tokyo-based Hospitality Innovation Firm. We operate office cafés, employee dining, and executive dining for corporations including global financial institutions, and provide catering, AI/DX solutions for the hospitality industry, talent solutions, and regional revitalization support. Our strength is designing and implementing food, space, operations, and technology as one continuous system, guided by our mission to multiply meaningful time by design. Founded in May 2022, led by Representative Director Yorikazu Semoto.'}
+                ? '株式会社MUSICO（ミュジコ）は、東京を拠点とする Hospitality Innovation Firm です。外資系金融機関をはじめとする企業向けに、オフィスカフェ・社員食堂・エグゼクティブダイニングの運営、ケータリング、ホスピタリティ業界向けAI/DX支援、人材支援、地方創生支援を提供しています。食・空間・運用・テクノロジーを一気通貫で設計・実装することを強みとし、「幸福な時間を仕組みで増やす」ことをミッションとしています。代表取締役は瀬本頼一です。'
+                : 'MUSICO Inc. is a Tokyo-based Hospitality Innovation Firm. We operate office cafés, employee dining, and executive dining for corporations including global financial institutions, and provide catering, AI/DX solutions for the hospitality industry, talent solutions, and regional revitalization support. Our strength is designing and implementing food, space, operations, and technology as one continuous system, guided by our mission to multiply meaningful time by design. Led by Representative Director Yorikazu Semoto.'}
             </p>
           </div>
 
