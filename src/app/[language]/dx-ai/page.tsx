@@ -21,7 +21,7 @@ export const generateMetadata = async ({ params }: Props) => {
     return buildMetadata({
       language,
       path: 'dx-ai',
-      title: 'AI/DX × Hospitality | 株式会社MUSICO',
+      title: 'ホスピタリティ×AI/DX｜飲食・現場業務の属人化を解消 | 株式会社MUSICO',
       description:
         '現場を知っているからこそ作れる、ホスピタリティ業界専用のAI/DX。属人化したノウハウを構造化し、現場で定着する仕組みへと再設計するMUSICOの注力領域。PoCパートナー募集中。',
     })

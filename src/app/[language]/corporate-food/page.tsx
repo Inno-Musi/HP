@@ -18,15 +18,15 @@ export const generateMetadata = async ({ params }: Props) => {
     return buildMetadata({
       language,
       path: 'corporate-food',
-      title: 'コーポレートフードサービス | 株式会社MUSICO',
+      title: '社員食堂・オフィスカフェ運営会社｜外資・大手の実績 | 株式会社MUSICO',
       description:
-        '外資・大手企業のオフィスカフェ・社員食堂を企画から運営まで一貫支援。品質・コスト・従業員エンゲージメントを同時に実現するMUSICOのコーポレートフードサービス。',
+        '外資・大手企業のオフィスカフェ・社員食堂の運営会社をお探しの企業へ。企画・立ち上げから運営・改善まで一貫支援し、品質・コスト・従業員エンゲージメントを同時に実現するMUSICOのコーポレートフードサービス。',
     })
   }
   return buildMetadata({
     language,
     path: 'corporate-food',
-    title: 'Corporate Food Service | MUSICO Inc.',
+    title: 'Office Café & Cafeteria Operator | MUSICO Inc.',
     description:
       'End-to-end support for office cafés and employee dining at global corporations — balancing quality, cost, and employee engagement.',
   })

@@ -18,7 +18,7 @@ export const generateMetadata = async ({ params }: Props) => {
     return buildMetadata({
       language,
       path: 'catering',
-      title: 'ケータリングサービス | 株式会社MUSICO',
+      title: '法人ケータリング｜VIPイベント・会食・オフィス対応 | 株式会社MUSICO',
       description:
         'VIPイベント・社内パーティー・ビジネスランチまで。グレードに応じた食体験を設計・運営するMUSICOのケータリングサービス。外資金融・大手企業での豊富な実績。',
     })
@@ -26,7 +26,7 @@ export const generateMetadata = async ({ params }: Props) => {
   return buildMetadata({
     language,
     path: 'catering',
-    title: 'Catering Service | MUSICO Inc.',
+    title: 'Corporate Catering for Events & Offices | MUSICO Inc.',
     description:
       'From VIP events to business lunches — MUSICO designs and delivers food experiences calibrated to your occasion and standard. Proven track record with global financial institutions.',
   })

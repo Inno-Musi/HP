@@ -19,7 +19,7 @@ export const generateMetadata = async ({ params }: Props) => {
       language,
       path: 'executive-dining',
       title:
-        'エグゼクティブダイニング運営 | 役員フロア・VIP対応 | 株式会社MUSICO',
+        'エグゼクティブダイニング（役員食堂）運営｜VIP・会食対応 | 株式会社MUSICO',
       description:
         '米系投資銀行で実績のあるエグゼクティブダイニング（役員食堂・VIPダイニング）の設計・運営。シェフ・サービススタッフの採用育成から会食オペレーションまで、最高水準のホスピタリティを提供します。',
     })
@@ -99,6 +99,12 @@ const works = [
 ]
 
 const faqs = [
+  {
+    qJa: '役員食堂の運営を委託できますか？',
+    qEn: 'Can we outsource the operation of our executive dining room?',
+    aJa: '可能です。役員食堂（エグゼクティブダイニング）の運営受託を専門としています。シェフ・サービススタッフの採用育成から日々の会食オペレーションまで一括で委託いただけます。',
+    aEn: 'Yes. Operating executive dining rooms is our specialty. You can outsource the entire scope to us — from hiring and training chefs and service staff to day-to-day dining operations.',
+  },
   {
     qJa: '役員フロア専用の少人数運営でも依頼できますか？',
     qEn: 'Can you operate a small, executive-floor-only setup?',
@@ -219,8 +225,8 @@ export default async function ExecutiveDiningPage({ params }: Props) {
             <div className="bg-paper rounded-md px-6 md:px-10 py-8 md:py-10 border border-hairline">
               <p className="text-base md:text-lg text-ink/80 leading-relaxed">
                 {language === 'ja'
-                  ? 'エグゼクティブダイニングとは、役員・来賓向けに提供される最高水準の社内食体験であり、機密性・プロトコル・食の質が同時に求められる領域です。一般の社員食堂とは異なり、会話の秘匿性、来賓を迎える作法、そして料理とサービスの一貫した品質を、どの場面でも崩さず提供することが本質です。'
-                  : 'Executive dining is the highest-standard in-house dining experience provided for executives and distinguished guests — a domain where confidentiality, protocol, and food quality are demanded at the same time. Unlike a general employee cafeteria, its essence is delivering confidentiality of conversation, the etiquette of receiving guests, and consistent quality of food and service without compromise on any occasion.'}
+                  ? 'エグゼクティブダイニング（役員食堂）とは、役員・来賓向けに提供される最高水準の社内食体験であり、機密性・プロトコル・食の質が同時に求められる領域です。一般の社員食堂とは異なり、会話の秘匿性、来賓を迎える作法、そして料理とサービスの一貫した品質を、どの場面でも崩さず提供することが本質です。MUSICOは役員食堂の設計から運営受託までを一気通貫で担います。'
+                  : 'Executive dining is the highest-standard in-house dining experience provided for executives and distinguished guests — a domain where confidentiality, protocol, and food quality are demanded at the same time. Unlike a general employee cafeteria, its essence is delivering confidentiality of conversation, the etiquette of receiving guests, and consistent quality of food and service without compromise on any occasion. MUSICO handles executive dining end to end — from design to operational outsourcing.'}
               </p>
             </div>
           </div>
