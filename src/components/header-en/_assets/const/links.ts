@@ -12,6 +12,10 @@ export const links = [
     text: 'WORKS',
   },
   {
+    href: '/insights',
+    text: 'INSIGHTS',
+  },
+  {
     href: '/careers',
     text: 'CAREERS',
   },

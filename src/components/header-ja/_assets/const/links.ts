@@ -15,6 +15,11 @@ export const links = [
     subText: 'WORKS',
   },
   {
+    href: '/insights',
+    text: 'インサイト',
+    subText: 'INSIGHTS',
+  },
+  {
     href: '/careers',
     text: '採用',
     subText: 'CAREERS',
