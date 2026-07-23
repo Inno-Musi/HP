@@ -1,4 +1,5 @@
 import { BreadCrumbs } from '@/components/bread-crumbs'
+import { Button } from '@/components/button'
 import { JsonLd } from '@/components/json-ld'
 import { TitleMain } from '@/components/title-main'
 import {
@@ -8,6 +9,7 @@ import {
 import { buildMetadata } from '@/lib/metadata'
 import { aboutPageJsonLd } from '@/lib/structured-data'
 import Image from 'next/image'
+import Link from 'next/link'
 
 type Props = {
   params: Promise<{ language: 'en' | 'ja' }>
@@ -324,6 +326,29 @@ export default async function AboutPage({ params }: Props) {
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* CTA */}
+          <div className="flex flex-col gap-y-6 max-w-[800px] lg:max-w-[1000px] w-full mx-auto bg-darkNavy rounded-md px-8 md:px-12 py-12 text-white text-center items-center">
+            <p className="text-2xl md:text-3xl font-display">
+              {language === 'ja'
+                ? 'まずは無料相談から'
+                : 'Start with a Free Consultation'}
+            </p>
+            <p className="text-sm leading-relaxed opacity-80 max-w-[520px]">
+              {language === 'ja'
+                ? '事業・サービスに関するご相談、採用に関するお問い合わせなど、まずはお気軽にご連絡ください。提案・売り込みは一切なし。まずは率直に話しましょう。'
+                : "For inquiries about our services, business matters, or recruitment, please reach out. No pitch, no sales — just a candid conversation."}
+            </p>
+            <Link href={`/${language}/contact`}>
+              <Button
+                type="button"
+                text={
+                  language === 'ja' ? 'お問い合わせはこちら →' : 'Contact Us →'
+                }
+                className="rounded-full bg-paper text-darkNavy px-10 py-3 hover:opacity-80 duration-300 font-roboto font-semibold text-sm w-fit"
+              />
+            </Link>
           </div>
         </div>
       </div>

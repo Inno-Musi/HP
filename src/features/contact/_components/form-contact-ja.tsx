@@ -46,7 +46,7 @@ export const FormContactJa = () => {
         <ErrorMessage error={nameError} />
       </div>
       <div className="flex flex-col gap-y-1">
-        <Label text="お名前（カタカナ）" required />
+        <Label text="お名前（カタカナ・任意）" />
         <div className="flex gap-x-2">
           <Input
             type="text"
@@ -87,7 +87,7 @@ export const FormContactJa = () => {
         <ErrorMessage error={actionState?.errors?.email} />
       </div>
       <div className="flex flex-col gap-y-1">
-        <Label text="電話番号（ハイフンなし）" htmlFor="phoneNumber" required />
+        <Label text="電話番号（ハイフンなし・任意）" htmlFor="phoneNumber" />
         <Input
           type="tel"
           name="phoneNumber"

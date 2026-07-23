@@ -8,8 +8,8 @@ export const schemaContactFormEn = z.object({
   email: z.string().email('Please enter a valid email address'),
   phoneNumber: z
     .string()
-    .regex(
-      /^[0-9]{10}$/,
+    .refine(
+      (value) => value === '' || /^[0-9]{10}$/.test(value),
       'Please enter a 10-digit integer in half-width characters.',
     ),
   inquiryType: z.string().min(1, 'Please select an inquiry type'),
