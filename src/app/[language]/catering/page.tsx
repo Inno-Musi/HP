@@ -3,6 +3,7 @@ import { Button } from '@/components/button'
 import { JsonLd } from '@/components/json-ld'
 import { MaskReveal } from '@/components/mask-reveal'
 import { Reveal } from '@/components/reveal'
+import { TrustBar } from '@/components/trust-bar'
 import { buildMetadata } from '@/lib/metadata'
 import { faqPageJsonLd, serviceJsonLd } from '@/lib/structured-data'
 import Image from 'next/image'
@@ -266,38 +267,13 @@ export default async function CateringPage({ params }: Props) {
         </div>
 
         {/* Trust bar */}
-        <div className="border-b border-hairline bg-paper">
-          <div className="max-w-[800px] lg:max-w-[1000px] w-full mx-auto px-4 py-8 md:py-10 flex flex-col gap-y-6">
-            <p className="text-center text-sm font-roboto tracking-[0.2em] uppercase text-brass">
-              {language === 'ja' ? '支援実績のある領域' : 'Where We Serve'}
-            </p>
-            <div className="flex flex-wrap justify-center gap-2 md:gap-3">
-              {trustSectors.map((s) => (
-                <span
-                  key={s.ja}
-                  className="px-4 py-2 rounded-full border border-hairline bg-ivory text-xs md:text-sm font-semibold text-darkNavy"
-                >
-                  {language === 'ja' ? s.ja : s.en}
-                </span>
-              ))}
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-              {trustStats.map((st) => (
-                <div
-                  key={st.labelJa}
-                  className="flex flex-col items-center text-center gap-y-1"
-                >
-                  <p className="text-xl md:text-2xl font-bold text-darkNavy">
-                    {language === 'ja' ? st.valueJa : st.valueEn}
-                  </p>
-                  <p className="text-xs md:text-sm text-muted leading-relaxed">
-                    {language === 'ja' ? st.labelJa : st.labelEn}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+        <TrustBar
+          language={language}
+          labelJa="支援実績のある領域"
+          labelEn="Where We Serve"
+          sectors={trustSectors}
+          stats={trustStats}
+        />
 
         <div className="max-w-[calc(100vw-32px)] mx-auto py-24 md:py-32 flex flex-col gap-y-20 lg:gap-y-28">
           <div className="flex flex-col gap-y-8 max-w-[800px] lg:max-w-[1000px] w-full mx-auto">
