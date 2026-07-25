@@ -358,7 +358,7 @@ export default async function AboutPage({ params }: Props) {
           {
             labelJa: '会社概要',
             labelEn: 'About Us',
-            href: `/${language}/about`,
+            href: '/about',
           },
         ]}
       />

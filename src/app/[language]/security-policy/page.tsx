@@ -451,7 +451,7 @@ export default async function SecurityPolicyPage({ params }: Props) {
           {
             labelJa: 'セキュリティポリシー',
             labelEn: 'Security Policy',
-            href: `/${language}/security-policy`,
+            href: '/security-policy',
           },
         ]}
       />

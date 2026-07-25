@@ -466,7 +466,7 @@ export default async function PrivacyPolicyPage({ params }: Props) {
           {
             labelJa: 'プライバシーポリシー',
             labelEn: 'Privacy Policy',
-            href: `/${language}/privacy-policy`,
+            href: '/privacy-policy',
           },
         ]}
       />
