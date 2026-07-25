@@ -5,15 +5,25 @@ export const middleware = (req: NextRequest) => {
   const pathSegments = pathname.split('/').filter(Boolean)
   const firstSegment = pathSegments[0]
 
-  if (pathSegments.length === 0 || !['ja', 'en'].includes(firstSegment)) {
-    return NextResponse.redirect(new URL('/ja', req.url), 308)
+  if (pathSegments.length === 0) {
+    const url = req.nextUrl.clone()
+    url.pathname = '/ja'
+    return NextResponse.redirect(url, 308)
+  }
+
+  // ロケール無しの旧URL（/about・/works 等）は、トップではなく
+  // 同じパスの日本語版へ送る。トップへ丸めるとGoogleがソフト404扱いし、
+  // 旧URLの被リンク・ブックマークの評価も落ちるため。
+  if (!['ja', 'en'].includes(firstSegment)) {
+    const url = req.nextUrl.clone()
+    url.pathname = `/ja/${pathSegments.join('/')}`
+    return NextResponse.redirect(url, 308)
   }
 
   if (pathSegments[1] === 'philosophy') {
-    return NextResponse.redirect(
-      new URL(`/${pathSegments[0]}/about`, req.url),
-      308,
-    )
+    const url = req.nextUrl.clone()
+    url.pathname = `/${firstSegment}/about`
+    return NextResponse.redirect(url, 308)
   }
 
   // BASIC認証
@@ -43,6 +53,9 @@ export const middleware = (req: NextRequest) => {
 
 export const config = {
   matcher: [
-    '/((?!api|_next/static|_next/image|favicon.ico|googlefba99e68cb98d5c1.html|sitemap.xml|robots.txt|llms.txt|public|.*\\.(?:jpg|jpeg|gif|png|svg|ico|webp)$).*)',
+    // 拡張子付きの静的ファイルはロケール付与の対象外。
+    // ここに漏れると /manifest.webmanifest のように 308 → /ja へ飛ばされ、
+    // ファイルとして配信されなくなる（llms.txt で発生した事象と同型）。
+    '/((?!api|_next/static|_next/image|favicon.ico|googlefba99e68cb98d5c1.html|sitemap.xml|robots.txt|llms.txt|manifest.webmanifest|public|.*\\.(?:jpg|jpeg|gif|png|svg|ico|webp|txt|xml|json|webmanifest|woff|woff2|ttf|otf|pdf|mp4|webm|css|js|map)$).*)',
   ],
 }

@@ -5,6 +5,7 @@ import { fetchNewsDetail } from '@/services/news/fetch-news'
 import parse from 'html-react-parser'
 import Image from 'next/image'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 
 type Props = {
   language: 'ja' | 'en'
@@ -13,6 +14,11 @@ type Props = {
 
 export const NewsContent = async ({ language, id }: Props) => {
   const news = await fetchNewsDetail(id)
+
+  if (!news) {
+    notFound()
+  }
+
   const newsUrl = getSiteUrl(`/${language}/news/${id}`)
   const imageUrlJa = news.fvImage
     ? news.fvImage.url
