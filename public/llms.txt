@@ -21,10 +21,23 @@
 - [人材支援](https://www.musico.co.jp/ja/talent): 採用・育成・派遣・業務委託・業務再設計の組み合わせ
 - [地方創生支援](https://www.musico.co.jp/ja/regional): 食・農・観光を掛け合わせた地域ブランディング
 
+## インサイト（解説記事）/ Insights
+
+現場運用の知見をもとにした実務者向けの解説記事です。各記事は英語版も同一slugで公開しています（`/en/insights/{slug}`）。
+
+- [社員食堂の運営委託とは？費用相場・契約形態・選び方](https://www.musico.co.jp/ja/insights/employee-cafeteria-outsourcing): 委託のメリット/デメリット、費用の構造、完全委託・準委託・補助の契約形態、事業者の選び方と切替手順
+- [オフィスカフェ導入ガイド：スペース要件・運営体制・費用](https://www.musico.co.jp/ja/insights/office-cafe-introduction-guide): 採用・定着・社内交流への効果、必要なスペースと水回り、バリスタ育成を含む運営体制、導入ステップ
+- [エグゼクティブダイニングとは？外資系金融で標準の役員フロア食体験](https://www.musico.co.jp/ja/insights/what-is-executive-dining): 役員食堂の定義、必要とされる理由、機密性・プロトコル・食の質という求められる水準、導入の進め方
+- [法人ケータリングの選び方：価格帯・グレード・対応範囲](https://www.musico.co.jp/ja/insights/corporate-catering-selection): 選定軸とシーン別の選び方、発注リードタイムと数量目安、アレルギー・ビーガン・ハラル対応
+- [オフィスコーヒーの導入方式を比較：メンテナンスフリー・バリスタ運営・給茶機](https://www.musico.co.jp/ja/insights/office-coffee-options): 給茶機/ドリップ型、メンテナンスフリーのコーヒーマシン、有人バリスタ運営の3方式をコスト・手間・体験価値で比較
+- [外資系企業のオフィスフード運営はなぜ違うのか](https://www.musico.co.jp/ja/insights/foreign-company-office-food): 日系企業との前提の違い、多言語・多文化・宗教/アレルギー対応、セキュリティと機密性、運営パートナーの条件
+- [従業員体験（EX）を高める社員食堂・オフィスカフェの設計](https://www.musico.co.jp/ja/insights/employee-experience-office-food): EXを左右する設計要素、満足度と定着・エンゲージメントのつなげ方、データに基づく運用
+- [飲食・ホスピタリティ業界のDXが進まない構造的理由と突破口](https://www.musico.co.jp/ja/insights/why-hospitality-dx-stalls): 属人化・紙運用・データ不在・現場負荷という構造要因、他業界との違い、小さく始めるPoCの進め方
+
 ## 実績・情報 / Work & Updates
 
 - [実績・事例](https://www.musico.co.jp/ja/works): 導入事例（フード／ホスピタリティ、AI・AX・DX）
-- [インサイト](https://www.musico.co.jp/ja/insights): 記事・コラム
+- [インサイト記事一覧](https://www.musico.co.jp/ja/insights): 上記記事の一覧ページ
 - [お知らせ](https://www.musico.co.jp/ja/news)
 - [採用情報](https://www.musico.co.jp/ja/careers)
 - [お問い合わせ](https://www.musico.co.jp/ja/contact)
