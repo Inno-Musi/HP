@@ -103,7 +103,11 @@ export const Footer = ({ language }: Props) => {
           {policies.map((policy) => (
             <Link
               key={policy.href}
-              href={`/${language}/${policy.href}`}
+              // policy.href は先頭スラッシュ込み（'/privacy-policy'）なので、
+              // ここでスラッシュを足すと /ja//privacy-policy になる。
+              // GSCの「クロール済み - インデックス未登録」に出ていた
+              // ダブルスラッシュURLの発生源だった。
+              href={`/${language}${policy.href}`}
               className="flex flex-col items-center leading-none"
             >
               {language === 'ja' ? (

@@ -9,6 +9,8 @@ export default function robots(): MetadataRoute.Robots {
         disallow: [
           '/ja/contact/completed',
           '/en/contact/completed',
+          '/ja/materials/completed',
+          '/en/materials/completed',
           '/ja/works/preview',
           '/en/works/preview',
           '/api/',
