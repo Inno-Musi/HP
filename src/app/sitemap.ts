@@ -37,8 +37,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: 'insights', priority: 0.7 },
     { path: 'careers', priority: 0.7 },
     { path: 'contact', priority: 0.8 },
-    // TODO: 配布する資料PDFが確定したら 'materials' を追加する。
-    // PDFが無い状態で公開導線を張ると、完了ページのダウンロードが404になるため。
+    { path: 'materials', priority: 0.6 },
     { path: 'news', priority: 0.7 },
     { path: 'privacy-policy', priority: 0.3 },
     { path: 'security-policy', priority: 0.3 },
