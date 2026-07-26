@@ -3,6 +3,7 @@ import { removeHtmlTag } from '@/helpers/remove-html-tag'
 import { buildMetadata } from '@/lib/metadata'
 import { fetchWorkDetail } from '@/services/works/fetch-work-detail'
 import { fetchWorksList } from '@/services/works/fetch-works-list'
+import { notFound } from 'next/navigation'
 import { Suspense } from 'react'
 
 type Props = {
@@ -69,6 +70,15 @@ export const generateMetadata = async ({ params }: Props) => {
 
 export default async function WorkDetailPage({ params }: Props) {
   const { language, slug } = await params
+
+  // ストリーミング開始前にここで判定する。Suspense の内側で notFound() を
+  // 呼ぶとヘッダー送出後になり、404ページの見た目のまま HTTP 200 が返る
+  // （＝ソフト404）。fetch は Next にメモ化されるため追加コストは無い。
+  const work = await fetchWorkDetail(slug)
+
+  if (!work) {
+    notFound()
+  }
 
   return (
     <Suspense>

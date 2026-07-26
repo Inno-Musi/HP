@@ -3,6 +3,7 @@ import { removeHtmlTag } from '@/helpers/remove-html-tag'
 import { buildMetadata } from '@/lib/metadata'
 import { fetchInsightDetail } from '@/services/insights/fetch-insight'
 import { fetchInsightsList } from '@/services/insights/fetch-insights-list'
+import { notFound } from 'next/navigation'
 import { Suspense } from 'react'
 
 type Props = {
@@ -70,6 +71,15 @@ export const generateMetadata = async ({ params }: Props) => {
 
 export default async function InsightDetailPage({ params }: Props) {
   const { language, slug } = await params
+
+  // ストリーミング開始前にここで判定する。Suspense の内側で notFound() を
+  // 呼ぶとヘッダー送出後になり、404ページの見た目のまま HTTP 200 が返る
+  // （＝ソフト404）。fetch は Next にメモ化されるため追加コストは無い。
+  const insight = await fetchInsightDetail(slug)
+
+  if (!insight) {
+    notFound()
+  }
 
   return (
     <Suspense>
