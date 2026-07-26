@@ -4,6 +4,7 @@ import { TitleMain } from '@/components/title-main'
 import { FormContactEn } from '@/features/contact/_components/form-contact-en'
 import { FormContactJa } from '@/features/contact/_components/form-contact-ja'
 import { buildMetadata } from '@/lib/metadata'
+import Link from 'next/link'
 
 type Props = {
   params: Promise<{ language: 'en' | 'ja' }>
@@ -86,6 +87,33 @@ export default async function ContactPage({ params }: Props) {
               .
               <br />
               (Business hours: Weekdays 9:00–17:00)
+            </p>
+          )}
+        </div>
+        {/* 中間CV: /contact到達19人に対し完了0人。まだ問い合わせる段階でない層の受け皿 */}
+        <div className="max-w-[600px] w-full mx-auto text-center text-sm md:text-base leading-6 md:leading-7 text-white border-t border-white/20 pt-6">
+          {language === 'ja' ? (
+            <p>
+              まだ情報収集の段階という方は、
+              <br className="block md:hidden" />
+              <Link
+                href={`/${language}/materials`}
+                className="underline underline-offset-2"
+              >
+                会社紹介資料のダウンロード
+              </Link>
+              もご利用ください。
+            </p>
+          ) : (
+            <p>
+              Just gathering information? You can also{' '}
+              <Link
+                href={`/${language}/materials`}
+                className="underline underline-offset-2"
+              >
+                download our company profile
+              </Link>
+              .
             </p>
           )}
         </div>
