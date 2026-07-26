@@ -15,18 +15,18 @@ export const generateMetadata = async ({ params }: Props) => {
     return buildMetadata({
       language,
       path: 'services',
-      title: '事業内容 | 株式会社MUSICO',
+      title: '事業内容｜フード／ホスピタリティ・AI/DX・人材支援 | 株式会社MUSICO',
       description:
-        'MUSICOは、ホスピタリティを再設計する Hospitality Innovation Firm。フード／ホスピタリティ・AI/DX・人材支援の3注力領域と、ケータリング・地方創生の関連領域で、ホスピタリティ業界の構造課題に挑みます。',
+        '社員食堂・オフィスカフェの運営から、ホスピタリティ業界向けのAI/DX、人材支援まで。MUSICOの3つの注力領域と、ケータリング・地方創生の関連領域をご紹介します。外資・大手企業での実績多数。',
     })
   }
 
   return buildMetadata({
     language,
     path: 'services',
-    title: 'Services | MUSICO Inc.',
+    title: 'Services - Food/Hospitality, AI/DX, Talent | MUSICO Inc.',
     description:
-      'MUSICO is a Hospitality Innovation Firm. Three focus areas — Food/Hospitality, AI/DX, and Talent — alongside related areas of Catering and Regional Revitalization, tackling the structural challenges of the hospitality industry.',
+      'From office café and employee dining operations to hospitality AI/DX and talent solutions — MUSICO’s three focus areas, plus catering and regional revitalization.',
   })
 }
 

@@ -15,18 +15,18 @@ export const generateMetadata = async ({ params }: Props) => {
     return buildMetadata({
       language,
       path: 'careers',
-      title: '採用情報 | 株式会社MUSICO',
+      title: '採用情報｜ホスピタリティ×AI/DXを実装する仲間を募集 | 株式会社MUSICO',
       description:
-        '株式会社MUSICOの採用情報です。私たちと一緒にホスピタリティの未来を創りませんか。',
+        '株式会社MUSICOの採用情報。データドリブン・AIネイティブなカルチャーのもと、ホスピタリティの現場とテクノロジーの両方を動かす仲間を募集しています。学生インターン・広報・F&BプロジェクトPMなど募集中。',
     })
   }
 
   return buildMetadata({
     language,
     path: 'careers',
-    title: 'Careers | MUSICO Inc.',
+    title: 'Careers - Hospitality × AI/DX Roles | MUSICO Inc.',
     description:
-      'Career opportunities at MUSICO Inc. Join us in shaping the future of hospitality.',
+      'Careers at MUSICO Inc. Data-driven and AI-native by culture, we hire people who move both the hospitality floor and the technology behind it. See current openings.',
   })
 }
 
@@ -164,7 +164,7 @@ export default async function CareersPage({ params }: Props) {
           {
             labelJa: '採用情報',
             labelEn: 'Careers',
-            href: `/${language}/careers`,
+            href: '/careers',
           },
         ]}
       />

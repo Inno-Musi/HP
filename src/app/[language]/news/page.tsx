@@ -50,7 +50,7 @@ export default async function NewsPage({ params }: Props) {
           {
             labelJa: 'お知らせ一覧',
             labelEn: 'Notifications',
-            href: `/${language}/news`,
+            href: '/news',
           },
         ]}
       />

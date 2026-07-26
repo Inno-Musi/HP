@@ -46,7 +46,7 @@ export default async function WorksPage({ params }: Props) {
           {
             labelJa: '実績・事例',
             labelEn: 'Works',
-            href: `/${language}/works`,
+            href: '/works',
           },
         ]}
       />
