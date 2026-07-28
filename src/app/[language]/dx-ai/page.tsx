@@ -1,6 +1,7 @@
 import { BreadCrumbs } from '@/components/bread-crumbs'
 import { Button } from '@/components/button'
 import { JsonLd } from '@/components/json-ld'
+import { LinkMaterialDownload } from '@/components/link-material-download'
 import { MaskReveal } from '@/components/mask-reveal'
 import { Reveal } from '@/components/reveal'
 import { TrustBar } from '@/components/trust-bar'
@@ -813,6 +814,7 @@ export default async function DxAiPage({ params }: Props) {
                 className="rounded-full bg-paper text-darkNavy px-10 py-3 hover:opacity-80 duration-300 font-roboto font-semibold text-sm w-fit"
               />
             </Link>
+            <LinkMaterialDownload language={language} />
           </div>
         </div>
       </div>

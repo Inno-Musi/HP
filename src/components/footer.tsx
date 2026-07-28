@@ -54,6 +54,12 @@ const mainLinks = [
     labelEn: 'CONTACT',
     href: '/contact',
   },
+  // 中間CV導線。全ページのフッターに置くことで /contact 以外からも到達できるようにする
+  {
+    label: '会社紹介資料',
+    labelEn: 'DOWNLOAD',
+    href: '/materials',
+  },
 ]
 
 export const Footer = ({ language }: Props) => {

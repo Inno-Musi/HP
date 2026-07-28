@@ -1,6 +1,7 @@
 import { BreadCrumbs } from '@/components/bread-crumbs'
 import { Button } from '@/components/button'
 import { JsonLd } from '@/components/json-ld'
+import { LinkMaterialDownload } from '@/components/link-material-download'
 import { removeHtmlTag } from '@/helpers/remove-html-tag'
 import dayjs from '@/lib/dayjs'
 import { articleJsonLd } from '@/lib/structured-data'
@@ -96,6 +97,7 @@ export const InsightContent = async ({ language, slug }: Props) => {
               className="rounded-full bg-paper text-darkNavy border border-paper px-8 py-3 hover:opacity-80 duration-300 font-roboto w-fit"
             />
           </Link>
+          <LinkMaterialDownload language={language} />
         </div>
       </div>
       <BreadCrumbs
