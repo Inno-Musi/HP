@@ -17,6 +17,8 @@ export type WorkItem = {
   imageEn?: WorkImage
   isFeatured?: boolean
   publishedAt?: string
+  /** 最終改訂日時。本文を直すと更新されるので sitemap の lastmod に使う */
+  revisedAt?: string
 }
 
 export type WorksListResponse = {

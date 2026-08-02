@@ -9,6 +9,8 @@ export type NewsItem = {
   contentJa: string
   contentEn: string
   publishedAt: string
+  /** 最終改訂日時。本文を直すと更新されるので sitemap の lastmod に使う */
+  revisedAt?: string
   fvImage?: NewsImage
   fvImageEn?: NewsImage
 }
