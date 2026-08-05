@@ -5,6 +5,20 @@ import type { MetadataRoute } from 'next'
 
 const BASE_URL = 'https://www.musico.co.jp'
 
+/**
+ * sitemap の lastmod に使う日付。
+ * publishedAt は初回公開日で、microCMS で本文を直しても動かない。
+ * 記事を改訂したことを検索エンジンに伝えるには revisedAt（最終改訂日時）を優先する。
+ */
+const lastModifiedOf = (
+  item: { revisedAt?: string; publishedAt?: string },
+): Date | undefined => {
+  const value = item.revisedAt ?? item.publishedAt
+  if (!value) return undefined
+  const date = new Date(value)
+  return Number.isNaN(date.getTime()) ? undefined : date
+}
+
 const bilingualEntries = (
   path: string,
   priority: number,
@@ -44,9 +58,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ]
 
   const [works, news, insights] = await Promise.all([
-    fetchWorksList({ limit: 100, fields: ['slug', 'publishedAt'] }),
-    fetchNewsList({ limit: 100, fields: ['id', 'publishedAt'] }),
-    fetchInsightsList({ limit: 100, fields: ['slug', 'publishedAt'] }),
+    fetchWorksList({ limit: 100, fields: ['slug', 'publishedAt', 'revisedAt'] }),
+    fetchNewsList({ limit: 100, fields: ['id', 'publishedAt', 'revisedAt'] }),
+    fetchInsightsList({ limit: 100, fields: ['slug', 'publishedAt', 'revisedAt'] }),
   ])
 
   return [
@@ -56,27 +70,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...works.contents
       .filter((work) => work.slug)
       .flatMap((work) =>
-        bilingualEntries(
-          `works/${work.slug}`,
-          0.6,
-          work.publishedAt ? new Date(work.publishedAt) : undefined,
-        ),
+        bilingualEntries(`works/${work.slug}`, 0.6, lastModifiedOf(work)),
       ),
     ...news.contents.flatMap((item) =>
-      bilingualEntries(
-        `news/${item.id}`,
-        0.5,
-        item.publishedAt ? new Date(item.publishedAt) : undefined,
-      ),
+      bilingualEntries(`news/${item.id}`, 0.5, lastModifiedOf(item)),
     ),
     ...insights.contents
       .filter((item) => item.slug)
       .flatMap((item) =>
-        bilingualEntries(
-          `insights/${item.slug}`,
-          0.6,
-          item.publishedAt ? new Date(item.publishedAt) : undefined,
-        ),
+        bilingualEntries(`insights/${item.slug}`, 0.6, lastModifiedOf(item)),
       ),
   ]
 }

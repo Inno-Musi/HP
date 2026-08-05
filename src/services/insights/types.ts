@@ -16,6 +16,8 @@ export type InsightItem = {
   image?: InsightImage
   imageEn?: InsightImage
   publishedAt?: string
+  /** 最終改訂日時。本文を直すと更新されるので sitemap の lastmod に使う */
+  revisedAt?: string
 }
 
 export type InsightsListResponse = {
