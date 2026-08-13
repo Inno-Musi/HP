@@ -59,6 +59,27 @@ export const faqPageJsonLd = (language: Language, faqs: FaqItem[]) => ({
   })),
 })
 
+// 本文（microCMS）から取り出した単一言語の FAQ 用。サービスLPは日英ペアを
+// コードで持つので faqPageJsonLd を使うが、記事側は本文が正本なので分ける。
+type SingleLanguageFaq = { question: string; answer: string }
+
+export const faqPageFromContentJsonLd = (
+  url: string,
+  faqs: SingleLanguageFaq[],
+) => ({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  '@id': `${url}#faq`,
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+})
+
 type ServiceInfo = {
   nameJa: string
   nameEn: string
