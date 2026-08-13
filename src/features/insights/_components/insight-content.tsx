@@ -2,9 +2,10 @@ import { BreadCrumbs } from '@/components/bread-crumbs'
 import { Button } from '@/components/button'
 import { JsonLd } from '@/components/json-ld'
 import { LinkMaterialDownload } from '@/components/link-material-download'
+import { extractFaqFromHtml } from '@/helpers/extract-faq'
 import { removeHtmlTag } from '@/helpers/remove-html-tag'
 import dayjs from '@/lib/dayjs'
-import { articleJsonLd } from '@/lib/structured-data'
+import { articleJsonLd, faqPageFromContentJsonLd } from '@/lib/structured-data'
 import { fetchInsightDetail } from '@/services/insights/fetch-insight'
 import parse from 'html-react-parser'
 import Link from 'next/link'
@@ -39,6 +40,9 @@ export const InsightContent = async ({ language, slug }: Props) => {
   const image =
     language === 'en' ? insight.imageEn?.url ?? insight.image?.url : insight.image?.url
 
+  const url = `https://www.musico.co.jp/${language}/insights/${slug}`
+  const faqs = extractFaqFromHtml(content)
+
   return (
     <div className="bg-ivory">
       <JsonLd
@@ -47,11 +51,14 @@ export const InsightContent = async ({ language, slug }: Props) => {
           description: description
             ? removeHtmlTag(description).slice(0, 160)
             : undefined,
-          url: `https://www.musico.co.jp/${language}/insights/${slug}`,
+          url,
           image,
           datePublished: insight.publishedAt,
         })}
       />
+      {faqs.length > 0 && (
+        <JsonLd data={faqPageFromContentJsonLd(url, faqs)} />
+      )}
       <div className="py-24 md:py-32 w-[840px] max-w-[calc(100vw-32px)] mx-auto flex flex-col gap-y-10 md:gap-y-12">
         <div className="flex flex-col gap-y-4 text-center">
           <div className="flex items-center justify-center gap-x-3 text-sm font-roboto tracking-widest uppercase">
