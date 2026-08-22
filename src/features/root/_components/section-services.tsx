@@ -29,6 +29,24 @@ const focusServices = [
   },
 ]
 
+/**
+ * フード／ホスピタリティ配下の個別サービスLP。
+ * ナビゲーションには載せない方針のため、トップからの唯一の導線がここになる
+ * （検索で上位を取れている「役員食堂」「オフィスカフェ運営」の受け皿）。
+ */
+const foodSubServices = [
+  {
+    labelJa: 'オフィスカフェ運営',
+    labelEn: 'Office Café Operations',
+    href: '/office-cafe',
+  },
+  {
+    labelJa: '役員食堂（エグゼクティブダイニング）',
+    labelEn: 'Executive Dining',
+    href: '/executive-dining',
+  },
+]
+
 const coreServices = [
   {
     titleJa: 'ケータリング・イベント',
@@ -109,6 +127,26 @@ export const SectionServices = ({ language }: Props) => {
               </Reveal>
             ))}
           </div>
+          <Reveal delay={0.3}>
+            <p className="text-sm lg:text-base leading-[1.9] text-ink/70">
+              <span className="text-muted">
+                {language === 'ja'
+                  ? 'フード／ホスピタリティの個別サービス：'
+                  : 'Food / Hospitality services: '}
+              </span>
+              {foodSubServices.map((s, i) => (
+                <span key={s.href}>
+                  {i > 0 && <span className="text-muted mx-1">/</span>}
+                  <Link
+                    href={`/${language}${s.href}`}
+                    className="underline underline-offset-4 decoration-hairline hover:text-brass transition-colors duration-300"
+                  >
+                    {language === 'ja' ? s.labelJa : s.labelEn}
+                  </Link>
+                </span>
+              ))}
+            </p>
+          </Reveal>
         </div>
 
         {/* Related areas */}

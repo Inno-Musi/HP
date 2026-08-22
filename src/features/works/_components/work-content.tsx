@@ -65,6 +65,7 @@ export const WorkArticle = ({ work, language }: ArticleProps) => {
           url: `https://www.musico.co.jp/${language}/works/${slug}`,
           image: absoluteImage,
           datePublished: work.publishedAt,
+          dateModified: work.revisedAt ?? work.publishedAt,
         })}
       />
       <div className="py-24 md:py-32 w-[900px] max-w-[calc(100vw-32px)] mx-auto flex flex-col gap-y-10 md:gap-y-12">
