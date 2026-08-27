@@ -5,7 +5,11 @@ import { LinkMaterialDownload } from '@/components/link-material-download'
 import { extractFaqFromHtml } from '@/helpers/extract-faq'
 import { removeHtmlTag } from '@/helpers/remove-html-tag'
 import dayjs from '@/lib/dayjs'
-import { articleJsonLd, faqPageFromContentJsonLd } from '@/lib/structured-data'
+import {
+  articleAuthorPerson,
+  articleJsonLd,
+  faqPageFromContentJsonLd,
+} from '@/lib/structured-data'
 import { fetchInsightDetail } from '@/services/insights/fetch-insight'
 import parse from 'html-react-parser'
 import Link from 'next/link'
@@ -54,6 +58,8 @@ export const InsightContent = async ({ language, slug }: Props) => {
           url,
           image,
           datePublished: insight.publishedAt,
+          dateModified: insight.revisedAt ?? insight.publishedAt,
+          author: articleAuthorPerson(language),
         })}
       />
       {faqs.length > 0 && (

@@ -100,12 +100,49 @@ export const serviceJsonLd = (language: Language, service: ServiceInfo) => ({
   areaServed: { '@type': 'Country', name: 'Japan' },
 })
 
+/**
+ * 人物の安定した @id を英語表記から作る。
+ * 会社概要ページの Person と記事の author を「同一人物」として繋ぐために使う
+ * （@id が一致しないと、検索エンジン・AI からは別人として扱われる）。
+ */
+export const personIdOf = (nameEn: string) =>
+  `${BASE_URL}/#person-${nameEn
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '')}`
+
+/**
+ * インサイト記事の著者。
+ * ⚠️ 氏名・肩書は会社概要ページ（src/app/[language]/about/page.tsx の members）の表記と
+ * 完全に一致させること。表記が割れると同一人物と認識されず、著者性の裏づけにならない。
+ */
+const ARTICLE_AUTHOR = {
+  nameJa: '石黒 啓介',
+  nameEn: 'Keisuke Ishiguro',
+  jobTitleJa: '執行役員Partner',
+  jobTitleEn: 'Executive Officer / Partner',
+}
+
+export const articleAuthorPerson = (language: Language) => ({
+  '@type': 'Person',
+  '@id': personIdOf(ARTICLE_AUTHOR.nameEn),
+  name: language === 'ja' ? ARTICLE_AUTHOR.nameJa : ARTICLE_AUTHOR.nameEn,
+  jobTitle:
+    language === 'ja' ? ARTICLE_AUTHOR.jobTitleJa : ARTICLE_AUTHOR.jobTitleEn,
+  url: `${BASE_URL}/${language}/about`,
+  worksFor: { '@id': `${BASE_URL}/#organization` },
+})
+
 type ArticleInfo = {
   title: string
   description?: string
   url: string
   image?: string
   datePublished?: string
+  /** 最終改訂日時。未指定なら datePublished を使う（sitemap の lastmod と同じ考え方） */
+  dateModified?: string
+  /** 省略時は組織を著者にする（実績記事など、個人に帰属させない記事向け） */
+  author?: object
 }
 
 export const articleJsonLd = (language: Language, article: ArticleInfo) => ({
@@ -116,10 +153,13 @@ export const articleJsonLd = (language: Language, article: ArticleInfo) => ({
   url: article.url,
   ...(article.image ? { image: [article.image] } : {}),
   ...(article.datePublished
-    ? { datePublished: article.datePublished, dateModified: article.datePublished }
+    ? {
+        datePublished: article.datePublished,
+        dateModified: article.dateModified ?? article.datePublished,
+      }
     : {}),
   inLanguage: language,
-  author: { '@id': `${BASE_URL}/#organization` },
+  author: article.author ?? { '@id': `${BASE_URL}/#organization` },
   publisher: { '@id': `${BASE_URL}/#organization` },
 })
 
@@ -132,6 +172,7 @@ export const aboutPageJsonLd = (language: Language, people: PersonInfo[]) => ({
   mainEntity: { '@id': `${BASE_URL}/#organization` },
   about: people.map((person) => ({
     '@type': 'Person',
+    '@id': personIdOf(person.nameEn),
     name: language === 'ja' ? person.nameJa : person.nameEn,
     jobTitle: language === 'ja' ? person.titleJa : person.titleEn,
     worksFor: { '@id': `${BASE_URL}/#organization` },

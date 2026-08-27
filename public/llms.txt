@@ -25,7 +25,7 @@
 
 現場運用の知見をもとにした実務者向けの解説記事です。各記事は英語版も同一slugで公開しています（`/en/insights/{slug}`）。
 
-- [社員食堂の運営委託とは？費用相場・契約形態・選び方](https://www.musico.co.jp/ja/insights/employee-cafeteria-outsourcing): 委託のメリット/デメリット、費用の構造、完全委託・準委託・補助の契約形態、事業者の選び方と切替手順
+- [社員食堂の運営委託（業務委託）とは？費用相場と選び方](https://www.musico.co.jp/ja/insights/employee-cafeteria-outsourcing): 一食あたりの価格帯は200〜3,000円程度がボリュームゾーン。費用の内訳（食材原価・人件費・運営管理費・設備消耗品費）、直営/準直営/全部委託の違い、完全委託・準委託・補助の契約形態、事業者の選び方、稼働までの期間の目安（デリバリー最短2週間／現地運営最短4週間／設備改修込みで平均4か月）
 - [オフィスカフェ導入ガイド：スペース要件・運営体制・費用](https://www.musico.co.jp/ja/insights/office-cafe-introduction-guide): 採用・定着・社内交流への効果、必要なスペースと水回り、バリスタ育成を含む運営体制、導入ステップ
 - [エグゼクティブダイニングとは？外資系金融で標準の役員フロア食体験](https://www.musico.co.jp/ja/insights/what-is-executive-dining): 役員食堂の定義、必要とされる理由、機密性・プロトコル・食の質という求められる水準、導入の進め方
 - [法人ケータリングの選び方：価格帯・グレード・対応範囲](https://www.musico.co.jp/ja/insights/corporate-catering-selection): 選定軸とシーン別の選び方、発注リードタイムと数量目安、アレルギー・ビーガン・ハラル対応
