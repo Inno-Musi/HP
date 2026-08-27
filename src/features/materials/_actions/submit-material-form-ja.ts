@@ -2,7 +2,7 @@
 
 import { createErrorToast, type FormActionState } from '@/lib/form-action'
 import { sendEmailNotification } from '@/services/email/send-email-notification'
-import { notifySlack } from '@/services/slack/notify-slack'
+import { notifyGoogleChat } from '@/services/google-chat/notify-google-chat'
 import { redirect } from 'next/navigation'
 import { schemaMaterialFormJa } from '../_helpers/schema-material-form'
 
@@ -35,8 +35,8 @@ export const submitMaterialFormJa = async (
 
   // 通知は問い合わせと同じ経路に流す（既に見ている受信箱に届くのが最も確実なため）。
   // 種別を「資料ダウンロード」にして問い合わせと区別する。
-  const [_resSlack, res] = await Promise.all([
-    notifySlack(
+  const [_resChat, res] = await Promise.all([
+    notifyGoogleChat(
       `資料ダウンロードがありました
       【名前】: ${name}
       【会社名】: ${company}
@@ -59,7 +59,7 @@ export const submitMaterialFormJa = async (
   ])
 
   if (!res.ok) {
-    await notifySlack(
+    await notifyGoogleChat(
       '資料ダウンロードの通知送信に失敗しました。速やかに確認してください。',
     )
     return {

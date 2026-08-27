@@ -125,7 +125,7 @@ src/
 | `MICROCMS_API_KEY` | microCMS（news / works / insights）取得 | 本番 |
 | `RESEND_API_KEY` | お問い合わせ通知メール送信（Resend） | 本番 |
 | `SENDER_EMAIL` | 通知メールの送信元アドレス | 本番 |
-| `SLACK_WEBHOOK_URL` | 問い合わせの Slack 通知 | 本番 |
+| `GOOGLE_CHAT_WEBHOOK_URL` | 問い合わせ・資料DLの Google Chat 通知（スペースの Incoming Webhook）。未設定でも送信は止まらない | 任意 |
 | `X_API_KEY` | 外部連携用 API キー | 任意 |
 | `GA_ID` | Google Analytics 4 測定ID（`G-XXXXXXX`） | 任意 |
 | `GTM_ID` | Google Tag Manager コンテナID（`GTM-XXXX`） | 任意 |

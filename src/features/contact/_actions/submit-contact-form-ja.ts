@@ -2,7 +2,7 @@
 
 import { createErrorToast, type FormActionState } from '@/lib/form-action'
 import { sendEmailNotification } from '@/services/email/send-email-notification'
-import { notifySlack } from '@/services/slack/notify-slack'
+import { notifyGoogleChat } from '@/services/google-chat/notify-google-chat'
 import { redirect } from 'next/navigation'
 import { schemaContactFormJa } from '../_helpers/schema-contact-form-ja'
 
@@ -56,8 +56,8 @@ export const submitContactFormJa = async (
     inquiryDetails,
   } = result.data
 
-  const [_resSlack, res] = await Promise.all([
-    notifySlack(
+  const [_resChat, res] = await Promise.all([
+    notifyGoogleChat(
       `お問い合わせがありました
       【名前】: ${lastName} ${firstName} (${lastNameKana} ${firstNameKana})
       【所属】: ${affiliation}
@@ -82,7 +82,7 @@ export const submitContactFormJa = async (
   ])
 
   if (!res.ok) {
-    await notifySlack(
+    await notifyGoogleChat(
       'お問い合わせの送信に失敗しました。速やかに確認してください。',
     )
     return {
