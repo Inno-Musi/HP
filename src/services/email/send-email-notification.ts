@@ -1,35 +1,68 @@
-import { getSiteUrl } from '@/lib/site-url'
+import ContactFormUser from '@/react-email-starter/emails/contact-from-user'
+import { render } from '@react-email/render'
+import { Resend } from 'resend'
 import type { ContactEmailProps } from './types'
 
-type ContactEmailPayload = {
+export type ContactEmailPayload = {
   template: 'contact'
   props: ContactEmailProps
   subject: string
 }
 
+export type NotificationResult = {
+  status: 'success' | 'error'
+  message: string
+}
+
+const RECIPIENT_EMAIL = 'info@musico.co.jp'
+
 /**
- * /api/email 経由で通知メールを送る。
- * fetch が例外を投げるケース（URL組み立て失敗・ネットワーク断など）でも呼び出し元に
- * 500 を伝播させず `{ ok: false }` を返す。原因は Vercel のランタイムログに残す。
+ * フォームの通知メールを送る。
+ * サーバーアクションから自分自身の /api/email を fetch すると、
+ * ベースURLの設定ミスやAPIキー不一致で通知が丸ごと落ちるため直接送信する。
+ * 例外は投げず、必ず結果を返す（呼び出し側が失敗を検知できるようにするため）。
  */
 export const sendEmailNotification = async (
   payload: ContactEmailPayload,
-): Promise<{ ok: boolean; status?: number }> => {
-  try {
-    const res = await fetch(getSiteUrl('/api/email'), {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-API-KEY': process.env.X_API_KEY ?? '',
-      },
-      body: JSON.stringify(payload),
-    })
-    if (!res.ok) {
-      console.error('[sendEmailNotification] non-OK response:', res.status)
+): Promise<NotificationResult> => {
+  if (!process.env.RESEND_API_KEY) {
+    return {
+      status: 'error',
+      message: 'RESEND_API_KEYが設定されていません。',
     }
-    return { ok: res.ok, status: res.status }
+  }
+
+  try {
+    const resend = new Resend(process.env.RESEND_API_KEY)
+    const htmlContent = await render(ContactFormUser(payload.props))
+
+    const { error } = await resend.emails.send({
+      from: process.env.SENDER_EMAIL ?? 'MUSICO Web <noreply@musico.co.jp>',
+      to: RECIPIENT_EMAIL,
+      subject: payload.subject,
+      html: htmlContent,
+    })
+
+    // Resendはエラーを例外ではなく戻り値で返すため、必ず error を見る。
+    if (error) {
+      console.error('Email sending error:', error)
+
+      return {
+        status: 'error',
+        message: error.message,
+      }
+    }
+
+    return {
+      status: 'success',
+      message: 'お問い合わせをメールで通知しました。',
+    }
   } catch (error) {
-    console.error('[sendEmailNotification] failed:', error)
-    return { ok: false }
+    console.error('Email sending error:', error)
+
+    return {
+      status: 'error',
+      message: 'メールの送信に失敗しました',
+    }
   }
 }

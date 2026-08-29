@@ -33,7 +33,7 @@ export const submitMaterialFormEn = async (
 
   const { name, company, email } = result.data
 
-  const [_resChat, res] = await Promise.all([
+  const [chatResult, emailResult] = await Promise.all([
     notifyGoogleChat(
       `資料ダウンロードがありました（英語ページ）
       【名前】: ${name}
@@ -56,10 +56,14 @@ export const submitMaterialFormEn = async (
     }),
   ])
 
-  if (!res.ok) {
+  // 資料ダウンロードは通知が落ちてもPDFは渡す。両方の通知が落ちた時だけエラーを返す。
+  if (emailResult.status === 'error') {
     await notifyGoogleChat(
-      '資料ダウンロード（EN）の通知送信に失敗しました。速やかに確認してください。',
+      `⚠️ 上の資料ダウンロード（EN）のメール通知に失敗しました（${emailResult.message}）。info@musico.co.jp には届いていないので、この内容で対応してください。`,
     )
+  }
+
+  if (chatResult.status === 'error' && emailResult.status === 'error') {
     return {
       toast: createErrorToast('Failed to submit. Please try again.'),
       formObject,
