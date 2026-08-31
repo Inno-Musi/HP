@@ -56,7 +56,7 @@ export const submitContactFormJa = async (
     inquiryDetails,
   } = result.data
 
-  const [_resChat, res] = await Promise.all([
+  const [chatResult, emailResult] = await Promise.all([
     notifyGoogleChat(
       `お問い合わせがありました
       【名前】: ${lastName} ${firstName} (${lastNameKana} ${firstNameKana})
@@ -81,10 +81,15 @@ export const submitContactFormJa = async (
     }),
   ])
 
-  if (!res.ok) {
+  // 通知はメールとGoogle Chatの2経路。片方でも届いていれば問い合わせは失われていないので
+  // 送信者を止めない。両方落ちた時だけエラーを返す（＝再送してもらうしかないケース）。
+  if (emailResult.status === 'error') {
     await notifyGoogleChat(
-      'お問い合わせの送信に失敗しました。速やかに確認してください。',
+      `⚠️ 上のお問い合わせのメール通知に失敗しました（${emailResult.message}）。info@musico.co.jp には届いていないので、この内容で対応してください。`,
     )
+  }
+
+  if (chatResult.status === 'error' && emailResult.status === 'error') {
     return {
       toast: createErrorToast('お問い合わせの送信に失敗しました。'),
       formObject,
