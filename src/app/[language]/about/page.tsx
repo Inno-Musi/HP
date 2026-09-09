@@ -50,17 +50,6 @@ const members = [
     imageSrc: 'https://images.wantedly.com/i/PVjgi76',
   },
   {
-    nameJa: '高田 ゆき',
-    nameEn: 'Yuki Takada',
-    titleJa: '副社長兼CCO',
-    titleEn: 'Vice President & CCO',
-    bioJa:
-      'パリのLe Cordon Bleu・Alain Ducasseで料理哲学と空間演出を学ぶ。帰国後は食・空間・感性による体験価値の構造化・収益化を手がける。MUSICOへ参画し、グローバル金融機関・富裕層向けエグゼクティブ専用ホスピタリティ事業を統括。属人的な体験を再現可能・高収益・定期型のモデルへ設計している。',
-    bioEn:
-      'Studied culinary philosophy and spatial design at Le Cordon Bleu and Alain Ducasse in Paris. After returning to Japan, she focused on structuring and monetizing experiential value through food, space, and sensibility. At MUSICO, she leads the executive-exclusive hospitality business for global financial institutions and high-net-worth clients — redesigning individual-dependent experiences into reproducible, high-margin, recurring models.',
-    imageSrc: '/takada.jpg',
-  },
-  {
     nameJa: '石黒 啓介',
     nameEn: 'Keisuke Ishiguro',
     titleJa: '執行役員Partner',
