@@ -6,6 +6,13 @@ import type { MetadataRoute } from 'next'
 const BASE_URL = 'https://www.musico.co.jp'
 
 /**
+ * sitemap.ts は既定でビルド時に静的生成されるため、microCMS で記事を改訂しても
+ * 次のデプロイまで lastmod が動かない（実測: 2026-09-12 の改訂が反映されず
+ * 8/15・8/22 のまま）。記事ページと同じく ISR で定期的に再生成する。
+ */
+export const revalidate = 3600
+
+/**
  * sitemap の lastmod に使う日付。
  * publishedAt は初回公開日で、microCMS で本文を直しても動かない。
  * 記事を改訂したことを検索エンジンに伝えるには revisedAt（最終改訂日時）を優先する。
