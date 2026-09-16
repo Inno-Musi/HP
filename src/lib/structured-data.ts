@@ -31,7 +31,10 @@ export const organizationJsonLd = (language: Language) => ({
     streetAddress: language === 'ja' ? '八雲3-17-20' : '3-17-20 Yakumo',
     addressCountry: 'JP',
   },
-  sameAs: ['https://www.wantedly.com/companies/company_3531768'],
+  sameAs: [
+    'https://www.wantedly.com/companies/company_3531768',
+    'https://prtimes.jp/main/html/searchrlp/company_id/175599',
+  ],
 })
 
 export const webSiteJsonLd = (language: Language) => ({
