@@ -17,7 +17,7 @@ export const generateMetadata = async ({ params }: Props) => {
       path: 'careers',
       title: '採用情報｜ホスピタリティ×AI/DXを実装する仲間を募集 | 株式会社MUSICO',
       description:
-        '株式会社MUSICOの採用情報。データドリブン・AIネイティブなカルチャーのもと、ホスピタリティの現場とテクノロジーの両方を動かす仲間を募集しています。学生インターン・広報・F&BプロジェクトPMなど募集中。',
+        '株式会社MUSICOの採用情報。データドリブン・AIネイティブなカルチャーのもと、ホスピタリティの現場とテクノロジーの両方を動かす仲間を募集しています。シェフ・バリスタ・サービスなどの現場職から、F&B事業責任者・コンサルタント、学生インターンまで募集中。',
     })
   }
 
@@ -115,8 +115,8 @@ export default async function CareersPage({ params }: Props) {
             <div className="bg-paper rounded-md px-6 md:px-10 py-8 shadow-sm flex flex-col gap-y-6">
               <p className="text-base text-zinc-600 leading-relaxed">
                 {language === 'ja'
-                  ? '現在、Wantedlyにて募集中のポジションを掲載しています。学生インターン、広報、F&BプロジェクトPMなど多様なポジションでメンバーを募集しています。'
-                  : 'We are currently posting open positions on Wantedly. We are recruiting for a variety of roles including student interns, PR, and F&B Project PMs.'}
+                  ? '現在、Wantedlyにて募集中のポジションを掲載しています。シェフ・バリスタ・サービスなどの現場職から、F&B事業責任者・コンサルタント、学生インターンまで、幅広いポジションでメンバーを募集しています。'
+                  : 'We are currently posting open positions on Wantedly. We are recruiting for a variety of roles from chefs, baristas and service staff to F&B business leads, consultants and student interns.'}
               </p>
               <Link
                 href="https://www.wantedly.com/companies/company_3531768"
