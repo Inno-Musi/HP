@@ -56,7 +56,7 @@ const InsightCard = ({
 }
 
 export const InsightsList = async ({ language }: Props) => {
-  const data = await fetchInsightsList({ orders: '-publishedAt' })
+  const data = await fetchInsightsList({ orders: '-publishedAt', limit: 100 })
   const insights = data.contents
 
   if (insights.length === 0) {

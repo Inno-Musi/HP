@@ -58,7 +58,7 @@ const isAiWork = (w: WorkItem) =>
   /AI|AX|DX/.test(`${w.categoryJa ?? ''} ${w.categoryEn ?? ''}`)
 
 export const WorksList = async ({ language }: Props) => {
-  const data = await fetchWorksList({ orders: '-publishedAt' })
+  const data = await fetchWorksList({ orders: '-publishedAt', limit: 100 })
   const works = data.contents
   const aiWorks = works.filter(isAiWork)
   const generalWorks = works.filter((w) => !isAiWork(w))

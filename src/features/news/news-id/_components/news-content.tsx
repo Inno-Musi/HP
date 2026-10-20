@@ -22,17 +22,17 @@ export const NewsContent = async ({ language, id }: Props) => {
   const newsUrl = getSiteUrl(`/${language}/news/${id}`)
   const imageUrlJa = news.fvImage
     ? news.fvImage.url
-    : '/musico-logo-bg-paper.png'
+    : '/og-image.jpg'
   const imageUrlEn = news.fvImageEn
     ? news.fvImageEn.url
     : news.fvImage
       ? news.fvImage.url
-      : '/musico-logo-bg-paper.png'
+      : '/og-image.jpg'
 
   const shareTitle =
     language === 'ja'
-      ? `【株式会社Musico】${news.titleJa}`
-      : `【Musico Inc.】${news.titleEn}`
+      ? `【株式会社MUSICO】${news.titleJa}`
+      : `【MUSICO Inc.】${news.titleEn}`
   const xShareUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(shareTitle)}&url=${encodeURIComponent(newsUrl)}`
   const facebookShareUrl = `https://www.facebook.com/share.php?u=${encodeURIComponent(newsUrl)}`
 

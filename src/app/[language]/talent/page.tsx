@@ -213,10 +213,10 @@ const faqs = [
     aEn: 'Hospitality is our strength, but we also cover back-office and specialist roles. Tell us your challenge first.',
   },
   {
-    qJa: '有料職業紹介・派遣の免許は持っていますか？',
-    qEn: 'Do you hold placement and dispatch licenses?',
-    aJa: '有料職業紹介（13-ユ-319136）・労働者派遣（派13-318465）の両ライセンスを保有しています。',
-    aEn: 'Yes — paid placement (13-ユ-319136) and worker dispatch (派13-318465) licenses.',
+    qJa: '有料職業紹介・労働者派遣の許可は持っていますか？',
+    qEn: 'Do you hold placement and dispatch permits?',
+    aJa: '有料職業紹介（13-ユ-319136）・労働者派遣（派13-318465）の許可を取得しています。',
+    aEn: 'Yes — paid placement (13-ユ-319136) and worker dispatch (派13-318465) permits from the Minister of Health, Labour and Welfare.',
   },
 ]
 
@@ -334,7 +334,7 @@ export default async function TalentPage({ params }: Props) {
                   lEn: 'diagnosis to execution in-house',
                 },
                 {
-                  vJa: '有料紹介・派遣 免許',
+                  vJa: '有料紹介・派遣 許可',
                   vEn: 'Licensed',
                   lJa: '13-ユ-319136 / 派13-318465',
                   lEn: '13-ユ-319136 / 派13-318465',
