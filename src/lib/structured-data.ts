@@ -4,8 +4,8 @@ type Language = 'en' | 'ja'
 
 // AIが引用しやすい定義文。about本文・OG description と文言を揃えて使う。
 const ORGANIZATION_DESCRIPTION = {
-  ja: '株式会社MUSICO（ミュジコ）は、東京を拠点とするHospitality Innovation Firmです。外資系金融機関をはじめとする企業向けに、オフィスカフェ・社員食堂・エグゼクティブダイニングの運営、ケータリング、ホスピタリティ業界向けAI/DX支援、人材支援、地方創生支援を提供しています。食・空間・運用・テクノロジーを一気通貫で設計・実装することを強みとしています。',
-  en: 'MUSICO Inc. is a Tokyo-based Hospitality Innovation Firm. We operate office cafés, employee dining, and executive dining for corporations including global financial institutions, and provide catering, AI/DX solutions for the hospitality industry, talent solutions, and regional revitalization support. Our strength is designing and implementing food, space, operations, and technology as one continuous system.',
+  ja: '株式会社MUSICO（ミュジコ）は、東京を拠点とするHospitality Innovation Firmです。外資系企業のオフィスを中心に、オフィスカフェ・社員食堂・エグゼクティブダイニングの運営、ケータリング、ホスピタリティ業界向けAI/DX支援、人材支援、地方創生支援を提供しています。食・空間・運用・テクノロジーを一気通貫で設計・実装することを強みとしています。',
+  en: 'MUSICO Inc. is a Tokyo-based Hospitality Innovation Firm. We operate office cafés, employee dining, and executive dining primarily for the offices of global companies, and provide catering, AI/DX solutions for the hospitality industry, talent solutions, and regional revitalization support. Our strength is designing and implementing food, space, operations, and technology as one continuous system.',
 } as const
 
 export const organizationJsonLd = (language: Language) => ({
@@ -17,6 +17,8 @@ export const organizationJsonLd = (language: Language) => ({
   url: BASE_URL,
   logo: `${BASE_URL}/musico-logo-bg-white.png`,
   description: ORGANIZATION_DESCRIPTION[language],
+  foundingDate: '2022-05',
+  numberOfEmployees: { '@type': 'QuantitativeValue', value: 35 },
   founder: {
     '@type': 'Person',
     name: language === 'ja' ? '瀬本 頼一' : 'Yorikazu Semoto',

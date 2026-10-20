@@ -4,25 +4,41 @@ export const overviewsJa = [
     content: '株式会社MUSICO（ミュジコ）',
   },
   {
-    label: '事業内容',
-    content: (
-      <ul className="list-disc pl-6">
-        <li>経営およびITコンサルティング</li>
-        <li>コーポレートフードサービス運営</li>
-        <li>地方創生・町おこし支援</li>
-        <li>タレント支援</li>
-        <li>有料職業紹介　13-ユ-319136</li>
-        <li>労働者派遣　派13-318465</li>
-      </ul>
-    ),
+    label: '設立',
+    content: '2022年5月',
+  },
+  {
+    label: '代表取締役',
+    content: '瀬本 頼一',
   },
   {
     label: '資本金',
     content: '1,000万円',
   },
   {
-    label: '代表取締役',
-    content: '瀬本 頼一',
+    label: '従業員数',
+    content: '35名（2026年10月時点）',
+  },
+  {
+    label: '事業内容',
+    content: (
+      <ul className="list-disc pl-6">
+        <li>コーポレートフードサービス（社員食堂・カフェ・パントリー・朝食の運営）</li>
+        <li>VIPダイニング・ケータリング</li>
+        <li>現場DX・AI（発注・メニュー／アレルゲン管理・仕込と廃棄のデータ化）</li>
+        <li>人材支援（ホスピタリティ人材の紹介・派遣）</li>
+        <li>地方創生（食・農・観光を軸にした地域の事業づくり）</li>
+      </ul>
+    ),
+  },
+  {
+    label: '許認可',
+    content: (
+      <ul className="list-disc pl-6">
+        <li>有料職業紹介事業　13-ユ-319136</li>
+        <li>労働者派遣事業　派13-318465</li>
+      </ul>
+    ),
   },
   {
     label: 'オフィス',
@@ -62,25 +78,41 @@ export const overviewsEn = [
     content: 'MUSICO Inc.',
   },
   {
-    label: 'Business Activities',
-    content: (
-      <ul className="list-disc pl-6">
-        <li>Management and IT consulting</li>
-        <li>Corporate food service operation</li>
-        <li>Regional revitalization and community development support</li>
-        <li>Talent support</li>
-        <li>Paid employment placement: 13-ユ-319136</li>
-        <li>Worker dispatching: 派13-318465</li>
-      </ul>
-    ),
+    label: 'Founded',
+    content: 'May 2022',
+  },
+  {
+    label: 'Representative Director',
+    content: 'Yorikazu Semoto',
   },
   {
     label: 'Capital',
     content: '10 million yen',
   },
   {
-    label: 'Representative Director',
-    content: 'Yorikazu Semoto',
+    label: 'Employees',
+    content: '35 (as of October 2026)',
+  },
+  {
+    label: 'Business Activities',
+    content: (
+      <ul className="list-disc pl-6">
+        <li>Corporate food service (employee dining, cafés, pantries, breakfast)</li>
+        <li>VIP dining and catering</li>
+        <li>Operations DX and AI (ordering, menu and allergen management, prep and waste data)</li>
+        <li>Talent solutions (hospitality staffing and placement)</li>
+        <li>Regional revitalization (food, agriculture, and tourism)</li>
+      </ul>
+    ),
+  },
+  {
+    label: 'Licenses',
+    content: (
+      <ul className="list-disc pl-6">
+        <li>Paid Employment Placement Business, Permit No. 13-ユ-319136</li>
+        <li>Worker Dispatching Business, Permit No. 派13-318465</li>
+      </ul>
+    ),
   },
   {
     label: 'Office',

@@ -78,6 +78,9 @@ export const companyTrustSectors: readonly Sector[] = [
   { ja: '米系金融機関', en: 'US Financial Institution' },
   { ja: '大手エンタープライズ', en: 'Major Enterprise' },
   { ja: 'グローバルIT', en: 'Global Tech' },
+  { ja: '外資系エンタメ', en: 'Global Entertainment' },
+  { ja: '外資系コンサル', en: 'Global Consulting Firm' },
+  { ja: '米系AI企業', en: 'US AI Company' },
 ]
 
 export const companyTrustStats: readonly Stat[] = [
