@@ -17,8 +17,6 @@ export const organizationJsonLd = (language: Language) => ({
   url: BASE_URL,
   logo: `${BASE_URL}/musico-logo-bg-white.png`,
   description: ORGANIZATION_DESCRIPTION[language],
-  foundingDate: '2022-05',
-  numberOfEmployees: { '@type': 'QuantitativeValue', value: 35 },
   founder: {
     '@type': 'Person',
     name: language === 'ja' ? '瀬本 頼一' : 'Yorikazu Semoto',

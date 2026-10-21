@@ -4,20 +4,12 @@ export const overviewsJa = [
     content: '株式会社MUSICO（ミュジコ）',
   },
   {
-    label: '設立',
-    content: '2022年5月',
-  },
-  {
     label: '代表取締役',
     content: '瀬本 頼一',
   },
   {
     label: '資本金',
     content: '1,000万円',
-  },
-  {
-    label: '従業員数',
-    content: '35名（2026年10月時点）',
   },
   {
     label: '事業内容',
@@ -78,20 +70,12 @@ export const overviewsEn = [
     content: 'MUSICO Inc.',
   },
   {
-    label: 'Founded',
-    content: 'May 2022',
-  },
-  {
     label: 'Representative Director',
     content: 'Yorikazu Semoto',
   },
   {
     label: 'Capital',
     content: '10 million yen',
-  },
-  {
-    label: 'Employees',
-    content: '35 (as of October 2026)',
   },
   {
     label: 'Business Activities',
